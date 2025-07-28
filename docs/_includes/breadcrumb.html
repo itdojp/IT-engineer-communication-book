@@ -1,7 +1,4 @@
 <!-- Breadcrumb Navigation -->
-{% assign url_parts = page.url | split: '/' | compact %}
-{% assign breadcrumb_url = '' %}
-
 <ol class="breadcrumb-list">
     <!-- Home -->
     <li class="breadcrumb-item">
@@ -14,39 +11,10 @@
         </a>
     </li>
 
-    <!-- Build breadcrumb from URL parts -->
-    {% for part in url_parts %}
-        {% unless part == '' %}
-            {% assign breadcrumb_url = breadcrumb_url | append: '/' | append: part %}
-            
-            {% if forloop.last %}
-                <!-- Current page (last item) -->
-                <li class="breadcrumb-item active" aria-current="page">
-                    {{ page.title | default: part | replace: '-', ' ' | capitalize }}
-                </li>
-            {% else %}
-                <!-- Parent pages -->
-                <li class="breadcrumb-item">
-                    {% comment %} Try to find a matching page for better titles {% endcomment %}
-                    {% assign parent_page = nil %}
-                    {% for p in site.pages %}
-                        {% if p.url == breadcrumb_url or p.url == breadcrumb_url | append: '/' or p.url == breadcrumb_url | append: '/index.html' %}
-                            {% assign parent_page = p %}
-                            {% break %}
-                        {% endif %}
-                    {% endfor %}
-                    
-                    <a href="{{ breadcrumb_url | relative_url }}" class="breadcrumb-link">
-                        {% if parent_page %}
-                            {{ parent_page.title }}
-                        {% else %}
-                            {{ part | replace: '-', ' ' | capitalize }}
-                        {% endif %}
-                    </a>
-                </li>
-            {% endif %}
-        {% endunless %}
-    {% endfor %}
+    <!-- Current page (simplified) -->
+    <li class="breadcrumb-item active" aria-current="page">
+        {{ page.title }}
+    </li>
 </ol>
 
 <style>

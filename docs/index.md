@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: book
 title: "エンジニアのための実践コミュニケーション設計"
 description: "システム思考とデータ駆動で身につける対人スキルとメンタル管理"
 author: "ITDO Inc.（株式会社アイティードゥ）"
