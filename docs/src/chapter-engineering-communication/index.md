@@ -31,116 +31,400 @@ layout: book
 
 **システム思考の特徴**：
 
-```markdown
-## システム思考の認知プロセス
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <title>システム思考の認知プロセス</title>
+  <desc>エンジニアの認知特性を4つの要素で構造化した図表</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    システム思考の認知プロセス
+  </text>
+  
+  <!-- Central Hub -->
+  <circle cx="400" cy="250" r="60" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="245" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#1e293b">
+    システム
+  </text>
+  <text x="400" y="260" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#1e293b">
+    思考
+  </text>
+  
+  <!-- Process 1: 全体性の理解 -->
+  <g>
+    <rect x="50" y="80" width="200" height="100" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="150" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1e293b">
+      1. 全体性の理解
+    </text>
+    <text x="60" y="125" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 部分と全体の関係を重視
+    </text>
+    <text x="60" y="140" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 相互依存性の認識
+    </text>
+    <text x="60" y="155" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • アーキテクチャ視点での問題把握
+    </text>
+    <line x1="250" y1="130" x2="340" y2="200" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Process 2: 因果関係の分析 -->
+  <g>
+    <rect x="550" y="80" width="200" height="100" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="650" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1e293b">
+      2. 因果関係の分析
+    </text>
+    <text x="560" y="125" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 根本原因の追求（RCA）
+    </text>
+    <text x="560" y="140" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 複数要因の相互作用の理解
+    </text>
+    <text x="560" y="155" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 時系列での影響分析
+    </text>
+    <line x1="550" y1="130" x2="460" y2="200" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Process 3: 抽象化能力 -->
+  <g>
+    <rect x="50" y="320" width="200" height="100" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="150" y="345" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1e293b">
+      3. 抽象化能力
+    </text>
+    <text x="60" y="365" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 共通パターンの抽出
+    </text>
+    <text x="60" y="380" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • レイヤー化された思考
+    </text>
+    <text x="60" y="395" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 再利用可能な概念の構築
+    </text>
+    <line x1="250" y1="370" x2="340" y2="300" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Process 4: 最適化志向 -->
+  <g>
+    <rect x="550" y="320" width="200" height="100" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="650" y="345" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1e293b">
+      4. 最適化志向
+    </text>
+    <text x="560" y="365" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • 効率性の追求
+    </text>
+    <text x="560" y="380" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • リソース制約の考慮
+    </text>
+    <text x="560" y="395" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+      • トレードオフの明確化
+    </text>
+    <line x1="550" y1="370" x2="460" y2="300" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Subtle shadow effect -->
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <style>
+    .process-box { filter: url(#shadow); }
+  </style>
+</svg>
 
-### 1. 全体性の理解
-- 部分と全体の関係を重視
-- 相互依存性の認識
-- アーキテクチャ視点での問題把握
+**システム思考の4つの認知プロセス**：
 
-### 2. 因果関係の分析
-- 根本原因の追求（Root Cause Analysis）
-- 複数要因の相互作用の理解
-- 時系列での影響分析
-
-### 3. 抽象化能力
-- 共通パターンの抽出
-- レイヤー化された思考
-- 再利用可能な概念の構築
-
-### 4. 最適化志向
-- 効率性の追求
-- リソース制約の考慮
-- トレードオフの明確化
-```
+エンジニアの思考は、これら4つのプロセスが相互に連携し、技術的問題解決において強力な能力を発揮します。しかし、対人コミュニケーションでは、この特性が時として障壁となることもあります。
 
 ### 論理的推論：技術者の思考基盤
 
 **論理的推論の特性**：
 
-```markdown
-## エンジニアの推論パターン
+**エンジニアの3つの推論パターン**：
 
-### 演繹的推論（Deductive Reasoning）
-**プロセス**：一般原則 → 具体事例
-**例**：
-- アルゴリズムの複雑度理論 → 具体的な実装判断
-- セキュリティベストプラクティス → 個別の実装方針
+| 推論タイプ | プロセス | 技術的な具体例 |
+|---|---|---|
+| **演繹的推論**<br>(Deductive) | 一般原則 → 具体事例 | • アルゴリズム複雑度理論 → 実装判断<br>• セキュリティ原則 → 個別実装方針 |
+| **帰納的推論**<br>(Inductive) | 具体事例 → 一般原則 | • 複数のバグパターン → 設計原則<br>• 性能測定結果 → 最適化ガイドライン |
+| **仮説検証型**<br>(Hypothesis-Driven) | 仮説 → 実験 → 検証 → 結論 | • 性能問題仮説 → A/Bテスト → 分析 → 対策 |
 
-### 帰納的推論（Inductive Reasoning）  
-**プロセス**：具体事例 → 一般原則
-**例**：
-- 複数のバグパターン → 設計原則の抽出
-- パフォーマンス測定結果 → 最適化ガイドライン
-
-### 仮説検証型思考（Hypothesis-Driven）
-**プロセス**：仮説設定 → 実験設計 → 検証 → 結論
-**例**：
-- 性能問題の原因仮説 → A/Bテスト → データ分析 → 対策実装
-```
+**推論の特徴**：
+- **論理的一貫性**：前提と結論の関係が明確
+- **検証可能性**：結果を測定・評価できる
+- **再現性**：同じ条件で同じ結果が得られる
+- **構造化思考**：段階的で体系的なアプローチ
 
 ### 詳細志向：品質へのこだわり
 
 **詳細志向の認知特性**：
 
-```markdown
-## 詳細志向の二面性
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <title>詳細志向の二面性</title>
+  <desc>エンジニアの詳細志向がもたらすポジティブ・ネガティブ両面の影響</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    詳細志向の二面性
+  </text>
+  
+  <!-- Central Element -->
+  <rect x="320" y="180" width="160" height="60" rx="8" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="205" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1e293b">
+    詳細志向
+  </text>
+  <text x="400" y="220" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">
+    (Detail-Oriented)
+  </text>
+  
+  <!-- Positive Side -->
+  <g>
+    <rect x="50" y="80" width="250" height="200" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="175" y="105" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#15803d">
+      ✓ ポジティブ側面
+    </text>
+    
+    <!-- High Quality Output -->
+    <text x="70" y="135" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#15803d">
+      高品質アウトプット
+    </text>
+    <text x="80" y="155" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • エッジケースの考慮
+    </text>
+    <text x="80" y="170" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • 例外処理の網羅性
+    </text>
+    <text x="80" y="185" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • 長期保守性の配慮
+    </text>
+    
+    <!-- Reliability Focus -->
+    <text x="70" y="210" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#15803d">
+      信頼性重視
+    </text>
+    <text x="80" y="230" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • 完全性の追求
+    </text>
+    <text x="80" y="245" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • 一貫性の維持
+    </text>
+    <text x="80" y="260" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • 予測可能性の確保
+    </text>
+    
+    <line x1="300" y1="180" x2="320" y2="200" stroke="#16a34a" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Negative Side -->
+  <g>
+    <rect x="500" y="80" width="250" height="200" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+    <text x="625" y="105" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#dc2626">
+      ⚠ ネガティブ側面
+    </text>
+    
+    <!-- Perfectionist Communication -->
+    <text x="520" y="135" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#dc2626">
+      完璧主義的コミュニケーション
+    </text>
+    <text x="530" y="155" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
+      • 全ての詳細を説明したがる
+    </text>
+    <text x="530" y="170" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
+      • 前提条件の過度な確認
+    </text>
+    <text x="530" y="185" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
+      • 例外事項の網羅的言及
+    </text>
+    
+    <!-- Time Perception Gap -->
+    <text x="520" y="210" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#dc2626">
+      時間感覚のズレ
+    </text>
+    <text x="530" y="230" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
+      • 十分な説明 vs 効率的な会話
+    </text>
+    <text x="530" y="245" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
+      • 技術的正確性 vs 実用的判断
+    </text>
+    <text x="530" y="260" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
+      • 品質 vs スピード
+    </text>
+    
+    <line x1="500" y1="180" x2="480" y2="200" stroke="#dc2626" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Balance note -->
+  <text x="400" y="320" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">
+    技術領域では強みとなる詳細志向が、対人コミュニケーションでは課題となることがある
+  </text>
+  
+  <!-- Icons -->
+  <circle cx="175" cy="70" r="8" fill="#16a34a" opacity="0.2"/>
+  <text x="175" y="75" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#16a34a">+</text>
+  
+  <circle cx="625" cy="70" r="8" fill="#dc2626" opacity="0.2"/>
+  <text x="625" y="75" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#dc2626">−</text>
+</svg>
 
-### ポジティブ側面
-**高品質アウトプット**：
-- エッジケースの考慮
-- 例外処理の網羅性
-- 長期保守性の配慮
+**詳細志向の特徴**：
 
-**信頼性重視**：
-- 完全性の追求
-- 一貫性の維持
-- 予測可能性の確保
-
-### ネガティブ側面（対人関係）
-**完璧主義的コミュニケーション**：
-- 全ての詳細を説明したがる
-- 前提条件の過度な確認
-- 例外事項の網羅的言及
-
-**時間感覚のズレ**：
-- 十分な説明 vs 効率的な会話
-- 技術的正確性 vs 実用的判断
-- 品質 vs スピード
-```
+エンジニアの詳細志向は、技術的品質向上に不可欠な特性ですが、コミュニケーション場面では相手との認識ギャップを生む要因にもなります。重要なのは、**状況に応じて適切な抽象化レベルを選択する能力**を身につけることです。
 
 ### 認知負荷理論：エンジニアの情報処理
 
 **ワーキングメモリとコミュニケーション**：
 
-```markdown
-## 認知負荷とコミュニケーション効率
+**認知負荷の3つのタイプ**：
 
-### 内在的認知負荷（Intrinsic Load）
-**技術的内容の複雑性**：
-- システム構成の複雑さ
-- アルゴリズムの理解
-- ドメイン知識の前提
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <title>認知負荷とコミュニケーション効率</title>
+  <desc>エンジニアの情報処理における3つの認知負荷タイプと最適化戦略</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    認知負荷とコミュニケーション効率
+  </text>
+  
+  <!-- Central Working Memory -->
+  <ellipse cx="400" cy="220" rx="80" ry="40" fill="#fbbf24" opacity="0.2" stroke="#f59e0b" stroke-width="2"/>
+  <text x="400" y="215" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#92400e">
+    ワーキング
+  </text>
+  <text x="400" y="230" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#92400e">
+    メモリ
+  </text>
+  
+  <!-- Intrinsic Load (Left) -->
+  <g>
+    <rect x="50" y="80" width="200" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+    <text x="150" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      内在的認知負荷
+    </text>
+    <text x="150" y="120" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" fill="#3b82f6">
+      (Intrinsic Load)
+    </text>
+    <text x="60" y="145" font-family="Inter, sans-serif" font-size="11" fill="#1e40af">
+      • システム構成の複雑さ
+    </text>
+    <text x="60" y="160" font-family="Inter, sans-serif" font-size="11" fill="#1e40af">
+      • アルゴリズムの理解
+    </text>
+    <text x="60" y="175" font-family="Inter, sans-serif" font-size="11" fill="#1e40af">
+      • ドメイン知識の前提
+    </text>
+    <line x1="250" y1="140" x2="320" y2="200" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Extraneous Load (Right) -->
+  <g>
+    <rect x="550" y="80" width="200" height="120" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="650" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#dc2626">
+      外在的認知負荷
+    </text>
+    <text x="650" y="120" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" fill="#ef4444">
+      (Extraneous Load)
+    </text>
+    <text x="560" y="145" font-family="Inter, sans-serif" font-size="11" fill="#dc2626">
+      • 非技術者への説明コスト
+    </text>
+    <text x="560" y="160" font-family="Inter, sans-serif" font-size="11" fill="#dc2626">
+      • 文脈切り替えオーバーヘッド
+    </text>
+    <text x="560" y="175" font-family="Inter, sans-serif" font-size="11" fill="#dc2626">
+      • 感情的要素の処理負荷
+    </text>
+    <line x1="550" y1="140" x2="480" y2="200" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Germane Load (Bottom) -->
+  <g>
+    <rect x="300" y="300" width="200" height="120" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="400" y="325" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#15803d">
+      学習関連認知負荷
+    </text>
+    <text x="400" y="340" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" fill="#16a34a">
+      (Germane Load)
+    </text>
+    <text x="310" y="365" font-family="Inter, sans-serif" font-size="11" fill="#15803d">
+      • 相手の視点の理解
+    </text>
+    <text x="310" y="380" font-family="Inter, sans-serif" font-size="11" fill="#15803d">
+      • 適切な抽象化レベル選択
+    </text>
+    <text x="310" y="395" font-family="Inter, sans-serif" font-size="11" fill="#15803d">
+      • メンタルモデルの調整
+    </text>
+    <line x1="400" y1="300" x2="400" y2="260" stroke="#16a34a" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Optimization Strategies -->
+  <rect x="50" y="250" width="200" height="180" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+  <text x="150" y="275" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#334155">
+    最適化戦略
+  </text>
+  <text x="60" y="300" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#475569">
+    1. チャンキング
+  </text>
+  <text x="70" y="315" font-family="Inter, sans-serif" font-size="10" fill="#64748b">
+    関連情報のグループ化
+  </text>
+  <text x="60" y="335" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#475569">
+    2. スキーマ構築
+  </text>
+  <text x="70" y="350" font-family="Inter, sans-serif" font-size="10" fill="#64748b">
+    パターン化された手法
+  </text>
+  <text x="60" y="370" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#475569">
+    3. 自動化
+  </text>
+  <text x="70" y="385" font-family="Inter, sans-serif" font-size="10" fill="#64748b">
+    頻出説明の定型化
+  </text>
+  <text x="60" y="405" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#475569">
+    4. 外部記憶活用
+  </text>
+  <text x="70" y="420" font-family="Inter, sans-serif" font-size="10" fill="#64748b">
+    図表・文書による軽減
+  </text>
+  
+  <!-- Strategy arrows -->
+  <rect x="550" y="250" width="200" height="180" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+  <text x="650" y="275" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#334155">
+    効果的な配分
+  </text>
+  <text x="560" y="300" font-family="Inter, sans-serif" font-size="11" fill="#475569">
+    内在的負荷：適切な前提共有
+  </text>
+  <text x="560" y="320" font-family="Inter, sans-serif" font-size="11" fill="#475569">
+    外在的負荷：環境・手法の改善
+  </text>
+  <text x="560" y="340" font-family="Inter, sans-serif" font-size="11" fill="#475569">
+    学習関連負荷：建設的な理解促進
+  </text>
+  
+  <text x="650" y="380" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#7c3aed">
+    理想的な状態
+  </text>
+  <text x="560" y="400" font-family="Inter, sans-serif" font-size="10" fill="#64748b">
+    外在的負荷を最小化し、学習関連負荷に
+  </text>
+  <text x="560" y="415" font-family="Inter, sans-serif" font-size="10" fill="#64748b">
+    認知リソースを集中させる
+  </text>
+</svg>
 
-### 外在的認知負荷（Extraneous Load）  
-**コミュニケーション環境による負荷**：
-- 非技術者への説明コスト
-- 文脈切り替えのオーバーヘッド
-- 感情的要素の処理負荷
+**認知負荷最適化の原則**：
 
-### 学習関連認知負荷（Germane Load）
-**新しい理解の構築**：
-- 相手の視点の理解
-- 適切な抽象化レベルの選択
-- メンタルモデルの調整
-
-### 認知負荷最適化戦略
-1. **チャンキング**：関連情報のグループ化
-2. **スキーマ構築**：パターン化されたコミュニケーション手法
-3. **自動化**：頻出する説明の定型化
-4. **外部記憶の活用**：図表・ドキュメントによる認知負荷軽減
-```
+エンジニアの認知リソースは有限です。**外在的負荷（環境的な阻害要因）を削減**し、**学習関連負荷（建設的な理解構築）**に集中することで、コミュニケーション効率が大幅に向上します。
 
 ---
 
