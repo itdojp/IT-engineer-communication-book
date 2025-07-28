@@ -1,0 +1,83 @@
+{
+  "title": "エンジニアのための実践コミュニケーション設計",
+  "description": "システム思考とデータ駆動で身につける対人スキルとメンタル管理",
+  "author": "ITDO Inc.（株式会社アイティードゥ）",
+  "version": "1.0.0",
+  "structure": {
+    "chapters": [
+      {
+        "id": "quickstart",
+        "title": "クイックスタートガイド",
+        "description": "今日から始める実践コミュニケーション改善"
+      },
+      {
+        "id": "engineering-communication",
+        "title": "エンジニアリング思考とコミュニケーション",
+        "description": "技術者の認知特性とコミュニケーションのシステムモデル"
+      },
+      {
+        "id": "communication-challenges",
+        "title": "エンジニア特有のコミュニケーション課題",
+        "description": "技術者間・非技術者との情報ギャップと組織階層での情報伝達"
+      },
+      {
+        "id": "structured-communication",
+        "title": "構造化コミュニケーション手法",
+        "description": "RFC形式・PREP法・段階的詳細化・デバッグ思考の活用"
+      },
+      {
+        "id": "stakeholder-communication",
+        "title": "ステークホルダー別コミュニケーション戦略",
+        "description": "チーム内・PM・顧客との効果的な連携手法"
+      },
+      {
+        "id": "digital-communication",
+        "title": "デジタルコミュニケーション最適化",
+        "description": "リモートワーク・ドキュメント管理・チャット運用の最適化"
+      },
+      {
+        "id": "stress-analysis",
+        "title": "エンジニア特有のストレス要因分析",
+        "description": "技術的・組織的・個人特性由来のストレス要因の理解"
+      },
+      {
+        "id": "technical-mental-health",
+        "title": "技術的アプローチによるメンタルヘルス管理",
+        "description": "システム思考・データ駆動・アジャイル手法による自己管理"
+      },
+      {
+        "id": "preventive-systems",
+        "title": "予防的メンタルヘルスシステム構築",
+        "description": "個人・チーム・組織レベルでの予防システム設計"
+      },
+      {
+        "id": "technical-leadership",
+        "title": "技術リーダーシップとコミュニケーション",
+        "description": "意思決定・メンタリング・プロジェクト管理の実践"
+      },
+      {
+        "id": "career-development",
+        "title": "キャリア開発とセルフブランディング",
+        "description": "技術者としてのキャリア戦略と外部発信"
+      }
+    ],
+    "appendices": [
+      {
+        "id": "checklists",
+        "title": "実践チェックリスト集"
+      },
+      {
+        "id": "templates",
+        "title": "テンプレート・フォーマット集"
+      },
+      {
+        "id": "tools",
+        "title": "ツール・リソース一覧"
+      },
+      {
+        "id": "references",
+        "title": "参考文献・引用"
+      }
+    ]
+  }
+}
