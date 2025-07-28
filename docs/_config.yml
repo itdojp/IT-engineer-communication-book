@@ -18,10 +18,14 @@ plugins:
 # 除外ファイル
 exclude:
   - node_modules/
+  - vendor/
+  - .bundle/
   - package.json
   - package-lock.json
   - scripts/
   - tests/
+  - Gemfile
+  - Gemfile.lock
   - "*.md"
   - "README.md"
 
