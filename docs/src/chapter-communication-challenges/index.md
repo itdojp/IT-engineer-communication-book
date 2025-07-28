@@ -27,91 +27,259 @@ layout: book
 
 **技術者間の高効率コミュニケーション**：
 
-```markdown
-## Technical Communication Bandwidth
-
-### 専門用語による情報圧縮
-**圧縮率の例**：
-```
-一般的な説明（120文字）：
-「データベースに大量のアクセスが集中した際に、
-応答時間が極端に遅くなる問題が発生しています。
-負荷を分散させる仕組みが必要だと思います。」
-
-技術者間（25文字）：
-「DBがボトルネック。ロードバランサー導入要検討」
-
-圧縮率：120文字 → 25文字（79%削減）
-```
+<svg width="800" height="350" viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <title>技術者間コミュニケーションの情報圧縮</title>
+  <desc>専門用語による情報圧縮効果と効率性の可視化</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="350" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    技術者間コミュニケーションの情報圧縮
+  </text>
+  
+  <!-- General Communication (Top) -->
+  <g>
+    <rect x="50" y="60" width="700" height="80" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="70" y="85" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#dc2626">
+      一般的な説明（120文字）
+    </text>
+    <text x="70" y="105" font-family="Inter, sans-serif" font-size="12" fill="#991b1b">
+      「データベースに大量のアクセスが集中した際に、応答時間が極端に遅くなる
+    </text>
+    <text x="70" y="120" font-family="Inter, sans-serif" font-size="12" fill="#991b1b">
+      問題が発生しています。負荷を分散させる仕組みが必要だと思います。」
+    </text>
+    
+    <!-- Verbosity indicator -->
+    <rect x="600" y="80" width="120" height="30" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+    <text x="660" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#b91c1c">
+      冗長・時間消費
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <g>
+    <polygon points="380,160 420,160 400,180" fill="#6b7280"/>
+    <text x="400" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#374151">
+      圧縮
+    </text>
+  </g>
+  
+  <!-- Technical Communication (Bottom) -->
+  <g>
+    <rect x="50" y="200" width="700" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="70" y="225" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#15803d">
+      技術者間（25文字）
+    </text>
+    <text x="70" y="250" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#166534">
+      「DBがボトルネック。ロードバランサー導入要検討」
+    </text>
+    
+    <!-- Efficiency indicator -->
+    <rect x="600" y="220" width="120" height="30" rx="4" fill="#d1fae5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="660" y="240" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#059669">
+      効率的・高速
+    </text>
+  </g>
+  
+  <!-- Compression Stats -->
+  <g>
+    <rect x="250" y="300" width="300" height="40" rx="20" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="400" y="325" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#1e293b">
+      📊 圧縮率：79%削減（120文字 → 25文字）
+    </text>
+  </g>
+  
+  <!-- Benefits -->
+  <text x="70" y="320" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+    ✓ 理解速度向上
+  </text>
+  <text x="170" y="320" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+    ✓ 意思決定迅速化
+  </text>
+  <text x="620" y="320" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+    ✓ 認知負荷軽減
+  </text>
+  <text x="720" y="320" font-family="Inter, sans-serif" font-size="11" fill="#64748b">
+    ✓ 精度向上
+  </text>
+</svg>
 
 **技術コンテキストの暗黙的共有**：
-```yaml
-shared_context:
-  infrastructure:
-    - "クラウド環境の制約"
-    - "CI/CDパイプラインの前提"
-    - "監視・ログ収集システム"
-  
-  development_process:
-    - "アジャイル開発の進行"
-    - "コードレビュープロセス"
-    - "テスト戦略・品質基準"
-  
-  business_context:
-    - "システムの役割・重要度"
-    - "ユーザー特性・利用パターン"
-    - "パフォーマンス要件"
-```
-```
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0;">
+
+### 🏗️ インフラストラクチャ
+- **クラウド環境の制約**: AWS/GCP/Azureの特性と制限事項
+- **CI/CDパイプラインの前提**: デプロイ戦略とビルドプロセス
+- **監視・ログ収集システム**: アラート基準とメトリクス定義
+
+### ⚙️ 開発プロセス
+- **アジャイル開発の進行**: スプリント計画とバックログ管理
+- **コードレビュープロセス**: 品質基準とマージルール
+- **テスト戦略・品質基準**: カバレッジ要件と自動化範囲
+
+### 💼 ビジネスコンテキスト
+- **システムの役割・重要度**: SLA要件とビジネス影響度
+- **ユーザー特性・利用パターン**: トラフィック特性と行動分析
+- **パフォーマンス要件**: レスポンス時間とスループット目標
+
+</div>
+
+**共有コンテキストの効果**：
+技術者間では、これらの前提知識が暗黙的に共有されるため、詳細な説明を省略した効率的なコミュニケーションが可能になります。
 
 ### 前提知識レベルの調整問題
 
 **知識レベル・ミスマッチの類型**：
 
-```markdown
-## Knowledge Gap Analysis Matrix
-
-### 技術領域別の専門性分布
-```
-Team Member Expertise Matrix:
-
-           Backend  Frontend  Infrastructure  Database  Testing
-Member A      5        2           3           4         2
-Member B      3        5           2           2         4  
-Member C      4        3           5           3         3
-Member D      2        4           4           5         3
-
-Legend: 1=初心者, 2=基礎, 3=中級, 4=上級, 5=専門家
-
-課題:
-- フロントエンド専門のMember Bがバックエンド設計を理解するのに時間がかかる
-- インフラ専門のMember Cの説明が、他メンバーには抽象的すぎる
-- データベース専門のMember Dの最適化提案の価値が正しく評価されない
-```
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <title>チーム内技術専門性マトリックス</title>
+  <desc>メンバー別技術領域の専門性レベルと知識ギャップの可視化</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    チーム内技術専門性マトリックス
+  </text>
+  
+  <!-- Headers -->
+  <text x="100" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#374151">メンバー</text>
+  <text x="200" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#374151">Backend</text>
+  <text x="280" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#374151">Frontend</text>
+  <text x="360" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#374151">Infrastructure</text>
+  <text x="460" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#374151">Database</text>
+  <text x="540" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#374151">Testing</text>
+  
+  <!-- Member A Row -->
+  <g>
+    <text x="100" y="100" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1f2937">Member A</text>
+    <circle cx="200" cy="95" r="15" fill="#dc2626"/>
+    <text x="200" y="100" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">5</text>
+    <circle cx="280" cy="95" r="12" fill="#f59e0b"/>
+    <text x="280" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">2</text>
+    <circle cx="360" cy="95" r="13" fill="#eab308"/>
+    <text x="360" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">3</text>
+    <circle cx="460" cy="95" r="14" fill="#16a34a"/>
+    <text x="460" y="100" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">4</text>
+    <circle cx="540" cy="95" r="12" fill="#f59e0b"/>
+    <text x="540" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">2</text>
+  </g>
+  
+  <!-- Member B Row -->
+  <g>
+    <text x="100" y="140" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1f2937">Member B</text>
+    <circle cx="200" cy="135" r="13" fill="#eab308"/>
+    <text x="200" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">3</text>
+    <circle cx="280" cy="135" r="15" fill="#dc2626"/>
+    <text x="280" y="140" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">5</text>
+    <circle cx="360" cy="135" r="12" fill="#f59e0b"/>
+    <text x="360" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">2</text>
+    <circle cx="460" cy="135" r="12" fill="#f59e0b"/>
+    <text x="460" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">2</text>
+    <circle cx="540" cy="135" r="14" fill="#16a34a"/>
+    <text x="540" y="140" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">4</text>
+  </g>
+  
+  <!-- Member C Row -->
+  <g>
+    <text x="100" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1f2937">Member C</text>
+    <circle cx="200" cy="175" r="14" fill="#16a34a"/>
+    <text x="200" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">4</text>
+    <circle cx="280" cy="175" r="13" fill="#eab308"/>
+    <text x="280" y="180" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">3</text>
+    <circle cx="360" cy="175" r="15" fill="#dc2626"/>
+    <text x="360" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">5</text>
+    <circle cx="460" cy="175" r="13" fill="#eab308"/>
+    <text x="460" y="180" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">3</text>
+    <circle cx="540" cy="175" r="13" fill="#eab308"/>
+    <text x="540" y="180" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">3</text>
+  </g>
+  
+  <!-- Member D Row -->
+  <g>
+    <text x="100" y="220" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1f2937">Member D</text>
+    <circle cx="200" cy="215" r="12" fill="#f59e0b"/>
+    <text x="200" y="220" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">2</text>
+    <circle cx="280" cy="215" r="14" fill="#16a34a"/>
+    <text x="280" y="220" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">4</text>
+    <circle cx="360" cy="215" r="14" fill="#16a34a"/>
+    <text x="360" y="220" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">4</text>
+    <circle cx="460" cy="215" r="15" fill="#dc2626"/>
+    <text x="460" y="220" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">5</text>
+    <circle cx="540" cy="215" r="13" fill="#eab308"/>
+    <text x="540" y="220" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">3</text>
+  </g>
+  
+  <!-- Legend -->
+  <g>
+    <text x="100" y="260" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#374151">専門性レベル</text>
+    <circle cx="120" cy="280" r="8" fill="#6b7280"/>
+    <text x="120" y="285" font-family="Inter, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="white">1</text>
+    <text x="140" y="285" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">初心者</text>
+    
+    <circle cx="200" cy="280" r="10" fill="#f59e0b"/>
+    <text x="200" y="285" font-family="Inter, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="white">2</text>
+    <text x="220" y="285" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">基礎</text>
+    
+    <circle cx="270" cy="280" r="11" fill="#eab308"/>
+    <text x="270" y="285" font-family="Inter, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="white">3</text>
+    <text x="290" y="285" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">中級</text>
+    
+    <circle cx="340" cy="280" r="12" fill="#16a34a"/>
+    <text x="340" y="285" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">4</text>
+    <text x="360" y="285" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">上級</text>
+    
+    <circle cx="410" cy="280" r="13" fill="#dc2626"/>
+    <text x="410" y="285" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="white">5</text>
+    <text x="430" y="285" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">専門家</text>
+  </g>
+  
+  <!-- Key Issues -->
+  <g>
+    <text x="600" y="90" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#ef4444">主な課題</text>
+    <text x="610" y="115" font-family="Inter, sans-serif" font-size="11" fill="#dc2626">• Member B：バックエンド設計理解に時間</text>
+    <text x="610" y="135" font-family="Inter, sans-serif" font-size="11" fill="#dc2626">• Member C：インフラ説明が抽象的</text>
+    <text x="610" y="155" font-family="Inter, sans-serif" font-size="11" fill="#dc2626">• Member D：DB提案の価値評価困難</text>
+    
+    <rect x="600" y="170" width="180" height="80" rx="6" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+    <text x="690" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#dc2626">
+      コミュニケーション戦略
+    </text>
+    <text x="610" y="210" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
+      ✓ 専門性ギャップを考慮した説明調整
+    </text>
+    <text x="610" y="225" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
+      ✓ 相手のレベルに応じた用語選択
+    </text>
+    <text x="610" y="240" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
+      ✓ 段階的な情報提供アプローチ
+    </text>
+  </g>
+</svg>
 
 **専門性ギャップの対処戦略**：
-```python
-def adjust_explanation_level(audience_expertise, topic_complexity):
-    """
-    聞き手の専門性と話題の複雑性に応じて説明レベルを調整
-    """
-    if audience_expertise >= topic_complexity:
-        return "technical_details"
-    elif audience_expertise >= topic_complexity - 1:
-        return "architectural_overview"  
-    elif audience_expertise >= topic_complexity - 2:
-        return "conceptual_explanation"
-    else:
-        return "business_impact_focus"
 
-# 使用例
-explanation_level = adjust_explanation_level(
-    audience_expertise=2,  # 基礎レベル
-    topic_complexity=4     # 上級レベルのトピック
-)
-# Result: "conceptual_explanation"
-```
-```
+| 聞き手の専門性 | トピックの複雑性 | 推奨する説明アプローチ | 具体的な特徴 |
+|---|---|---|---|
+| **専門性 ≥ 複雑性** | 同レベル以上 | **技術詳細重視**<br>(technical_details) | • 専門用語を積極使用<br>• 実装レベルの詳細<br>• 技術トレードオフの議論 |
+| **専門性 ≥ 複雑性-1** | ほぼ同レベル | **アーキテクチャ概要**<br>(architectural_overview) | • システム全体の構造説明<br>• 主要コンポーネントの関係<br>• 設計思想の共有 |
+| **専門性 ≥ 複雑性-2** | 基礎レベル | **概念的説明**<br>(conceptual_explanation) | • 抽象化された概念<br>• 具体例を用いた説明<br>• 段階的な理解構築 |
+| **その他** | 大きなギャップ | **ビジネス影響重視**<br>(business_impact_focus) | • 業務への影響説明<br>• 費用対効果の観点<br>• 意思決定支援情報 |
+
+**実践例**：
+- **聞き手の専門性**: 2（基礎レベル）
+- **トピックの複雑性**: 4（上級レベル）
+- **選択される説明アプローチ**: 概念的説明（conceptual_explanation）
+
+**効果的な説明調整のポイント**：
+1. **事前の専門性把握**: 相手の技術レベルを事前に確認
+2. **段階的な情報提供**: 理解度に応じて詳細レベルを調整
+3. **フィードバックの活用**: 相手の反応を見て説明方法を修正
 
 ### コンテキスト共有の効率化
 
