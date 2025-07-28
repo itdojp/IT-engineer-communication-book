@@ -1,0 +1,36 @@
+title: "エンジニアのための実践コミュニケーション設計"
+description: "システム思考とデータ駆動で身につける対人スキルとメンタル管理"
+author: "ITDO Inc.（株式会社アイティードゥ）"
+version: "1.0.0"
+lang: "ja"
+
+# Jekyll設定
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# プラグイン
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 除外ファイル
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - scripts/
+  - tests/
+  - "*.md"
+  - "README.md"
+
+# 日本語対応
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
+# GitHub Pages設定
+
+repository: "itdojp/IT-engineer-communication-book"
+
