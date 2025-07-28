@@ -27,27 +27,150 @@ layout: book
 
 **Defense in Depth for Mental Health**：
 
-```markdown
-## Layered Mental Health Defense Architecture
-
-### セキュリティモデルのメンタルヘルス適用
-**Multi-layered Protection Strategy**：
-```
-┌─────────────────────────────────────────────────────────┐
-│                  Layer 7: Application                  │
-│           個人の習慣・行動レベル（日常的実践）            │
-│  ・瞑想、運動、睡眠管理  ・ストレス対処技術              │
-└─────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────┐
-│                Layer 6: Presentation                   │
-│             インターフェース・レベル（見える化）           │
-│  ・ダッシュボード  ・アラート  ・可視化ツール             │
-└─────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────┐
-│                 Layer 5: Session                       │
-│           セッション管理レベル（継続性確保）              │
-│  ・習慣トラッキング  ・進捗状況  ・モチベーション管理      │
-└─────────────────────────────────────────────────────────┘
+<svg width="800" height="700" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+  <title>多層防御型メンタルヘルス・アーキテクチャ</title>
+  <desc>OSI参照モデルを適用した7層メンタルヘルス防御システム</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="700" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    Defense in Depth for Mental Health Architecture
+  </text>
+  
+  <!-- Layer 7: Application -->
+  <g>
+    <rect x="100" y="60" width="600" height="80" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="120" y="85" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#dc2626">
+      Layer 7: Application（個人の習慣・行動レベル）
+    </text>
+    <text x="120" y="105" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
+      • 瞑想、運動、睡眠管理　• ストレス対処技術　• セルフケア実践
+    </text>
+    <text x="120" y="120" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
+      • 認知行動療法　• マインドフルネス　• 生活習慣最適化
+    </text>
+  </g>
+  
+  <!-- Layer 6: Presentation -->
+  <g>
+    <rect x="100" y="160" width="600" height="80" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="120" y="185" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#d97706">
+      Layer 6: Presentation（インターフェース・見える化）
+    </text>
+    <text x="120" y="205" font-family="Inter, sans-serif" font-size="10" fill="#92400e">
+      • ダッシュボード　• アラート・通知システム　• 可視化ツール
+    </text>
+    <text x="120" y="220" font-family="Inter, sans-serif" font-size="10" fill="#92400e">
+      • レポート生成　• トレンド分析　• 状態表示インターフェース
+    </text>
+  </g>
+  
+  <!-- Layer 5: Session -->
+  <g>
+    <rect x="100" y="260" width="600" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="120" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#15803d">
+      Layer 5: Session（セッション管理・継続性確保）
+    </text>
+    <text x="120" y="305" font-family="Inter, sans-serif" font-size="10" fill="#166534">
+      • 習慣トラッキング　• 進捗状況管理　• モチベーション維持
+    </text>
+    <text x="120" y="320" font-family="Inter, sans-serif" font-size="10" fill="#166534">
+      • セッション状態管理　• 継続支援機能　• 目標設定・調整
+    </text>
+  </g>
+  
+  <!-- Layer 4: Transport -->
+  <g>
+    <rect x="100" y="360" width="600" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="120" y="385" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">
+      Layer 4: Transport（データ転送・処理保証）
+    </text>
+    <text x="120" y="405" font-family="Inter, sans-serif" font-size="10" fill="#1e40af">
+      • データ整合性保証　• エラー検出・修正　• フロー制御
+    </text>
+    <text x="120" y="420" font-family="Inter, sans-serif" font-size="10" fill="#1e40af">
+      • 信頼性のあるデータ転送　• バックアップ・冗長性確保
+    </text>
+  </g>
+  
+  <!-- Layer 3: Network -->
+  <g>
+    <rect x="100" y="460" width="600" height="80" rx="8" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="120" y="485" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#7c3aed">
+      Layer 3: Network（データルーティング・意思決定）
+    </text>
+    <text x="120" y="505" font-family="Inter, sans-serif" font-size="10" fill="#6d28d9">
+      • データ分析・解析　• パターン認識　• 異常検知
+    </text>
+    <text x="120" y="520" font-family="Inter, sans-serif" font-size="10" fill="#6d28d9">
+      • ルーティング・優先度判定　• アクション選択・決定支援
+    </text>
+  </g>
+  
+  <!-- Layer 2: Data Link -->
+  <g>
+    <rect x="100" y="560" width="600" height="80" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+    <text x="120" y="585" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#be185d">
+      Layer 2: Data Link（データフレーミング・構造化）
+    </text>
+    <text x="120" y="605" font-family="Inter, sans-serif" font-size="10" fill="#9d174d">
+      • データ構造化・正規化　• メタデータ管理　• フォーマット変換
+    </text>
+    <text x="120" y="620" font-family="Inter, sans-serif" font-size="10" fill="#9d174d">
+      • データ品質管理　• フレーム検証・エラー検出
+    </text>
+  </g>
+  
+  <!-- Layer 1: Physical -->
+  <g>
+    <rect x="100" y="660" width="600" height="80" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="120" y="685" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#475569">
+      Layer 1: Physical（センサー・データ収集）
+    </text>
+  </g>
+  
+  <!-- Side arrows and labels -->
+  <g>
+    <text x="50" y="100" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 100)">
+      User Experience
+    </text>
+    <text x="50" y="200" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 200)">
+      Interface
+    </text>
+    <text x="50" y="300" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 300)">
+      Application Logic
+    </text>
+    <text x="50" y="400" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 400)">
+      Data Processing
+    </text>
+    <text x="50" y="500" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 500)">
+      Analysis Engine
+    </text>
+    <text x="50" y="600" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 600)">
+      Data Structure
+    </text>
+    <text x="50" y="700" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 700)">
+      Raw Data
+    </text>
+  </g>
+  
+  <!-- Data flow arrows -->
+  <g>
+    <polygon points="750,100 760,95 760,105" fill="#6b7280"/>
+    <polygon points="750,200 760,195 760,205" fill="#6b7280"/>
+    <polygon points="750,300 760,295 760,305" fill="#6b7280"/>
+    <polygon points="750,400 760,395 760,405" fill="#6b7280"/>
+    <polygon points="750,500 760,495 760,505" fill="#6b7280"/>
+    <polygon points="750,600 760,595 760,605" fill="#6b7280"/>
+    <polygon points="750,700 760,695 760,705" fill="#6b7280"/>
+    
+    <text x="770" y="400" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 770, 400)">
+      Information Flow
+    </text>
+  </g>
+</svg>
 ┌─────────────────────────────────────────────────────────┐
 │                Layer 4: Transport                      │
 │             転送レベル（サポート・ネットワーク）           │

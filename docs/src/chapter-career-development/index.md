@@ -462,8 +462,6 @@ class CareerAnalyticsSystem:
         }
         
         return optimization_algorithms
-```
-```
 
 ---
 

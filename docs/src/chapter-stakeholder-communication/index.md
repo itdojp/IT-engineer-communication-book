@@ -27,283 +27,776 @@ layout: book
 
 **Technical Discussion Framework**：
 
-```markdown
-## エンジニア向け技術討議の構造化
-
-### 前提条件の明確化
-**Context Setting Protocol**：
-```yaml
-discussion_setup:
-  objective:
-    - primary_goal: "何を決めたいか・解決したいか"
-    - success_criteria: "議論成功の定義"
-    - time_constraint: "決定期限・議論時間"
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <title>技術討議フレームワーク</title>
+  <desc>エンジニア向け技術討議の構造化プロセス</desc>
   
-  scope:
-    - in_scope: "議論対象の明確化"
-    - out_of_scope: "今回扱わない事項"
-    - assumptions: "前提とする条件"
+  <!-- Background -->
+  <rect width="800" height="500" fill="#fefefe" stroke="none"/>
   
-  participants:
-    - decision_maker: "最終決定権者"
-    - subject_matter_experts: "専門知識保持者"
-    - stakeholders: "影響を受ける関係者"
-    - facilitator: "議論進行役"
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    Technical Discussion Framework
+  </text>
+  
+  <!-- Objective Section -->
+  <g>
+    <rect x="50" y="60" width="340" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="70" y="85" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8">
+      🎯 Objective（目的）
+    </text>
+    <text x="70" y="105" font-family="Inter, sans-serif" font-size="11" fill="#1e40af">
+      • Primary Goal: 何を決めたいか・解決したいか
+    </text>
+    <text x="70" y="125" font-family="Inter, sans-serif" font-size="11" fill="#1e40af">
+      • Success Criteria: 議論成功の定義
+    </text>
+    <text x="70" y="145" font-family="Inter, sans-serif" font-size="11" fill="#1e40af">
+      • Time Constraint: 決定期限・議論時間
+    </text>
+    
+    <text x="70" y="165" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#3b82f6">
+      例: マイクロサービス間の通信プロトコル選定
+    </text>
+  </g>
+  
+  <!-- Scope Section -->
+  <g>
+    <rect x="410" y="60" width="340" height="120" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="430" y="85" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#15803d">
+      📋 Scope（範囲）
+    </text>
+    <text x="430" y="105" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • In Scope: 議論対象の明確化
+    </text>
+    <text x="430" y="125" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • Out of Scope: 今回扱わない事項
+    </text>
+    <text x="430" y="145" font-family="Inter, sans-serif" font-size="11" fill="#166534">
+      • Assumptions: 前提とする条件
+    </text>
+    
+    <text x="430" y="165" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#16a34a">
+      例: REST, gRPC, GraphQL, Message Queue
+    </text>
+  </g>
+  
+  <!-- Participants Section -->
+  <g>
+    <rect x="50" y="200" width="700" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="70" y="225" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#d97706">
+      👥 Participants（参加者）
+    </text>
+    
+    <g transform="translate(70, 240)">
+      <rect x="0" y="0" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+      <text x="75" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#d97706">
+        Decision Maker
+      </text>
+      <text x="75" y="28" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#92400e">
+        最終決定権者
+      </text>
+    </g>
+    
+    <g transform="translate(240, 240)">
+      <rect x="0" y="0" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+      <text x="75" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#d97706">
+        SME
+      </text>
+      <text x="75" y="28" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#92400e">
+        専門知識保持者
+      </text>
+    </g>
+    
+    <g transform="translate(410, 240)">
+      <rect x="0" y="0" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+      <text x="75" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#d97706">
+        Stakeholders
+      </text>
+      <text x="75" y="28" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#92400e">
+        影響を受ける関係者
+      </text>
+    </g>
+    
+    <g transform="translate(580, 240)">
+      <rect x="0" y="0" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+      <text x="75" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#d97706">
+        Facilitator
+      </text>
+      <text x="75" y="28" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#92400e">
+        議論進行役
+      </text>
+    </g>
+  </g>
+  
+  <!-- Process Flow -->
+  <text x="400" y="340" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#374151">
+    🔄 Discussion Process Flow
+  </text>
+  
+  <!-- Step 1 -->
+  <g>
+    <rect x="50" y="360" width="200" height="60" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="80" cy="375" r="12" fill="#3b82f6"/>
+    <text x="80" y="381" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">1</text>
+    <text x="150" y="380" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1e293b">
+      Context Setting
+    </text>
+    <text x="150" y="395" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">
+      目的・範囲・参加者の明確化
+    </text>
+    <text x="150" y="408" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
+      5-10分
+    </text>
+  </g>
+  
+  <!-- Step 2 -->
+  <g>
+    <rect x="300" y="360" width="200" height="60" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="330" cy="375" r="12" fill="#16a34a"/>
+    <text x="330" y="381" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">2</text>
+    <text x="400" y="380" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1e293b">
+      Analysis & Options
+    </text>
+    <text x="400" y="395" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">
+      選択肢分析・評価基準設定
+    </text>
+    <text x="400" y="408" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
+      20-30分
+    </text>
+  </g>
+  
+  <!-- Step 3 -->
+  <g>
+    <rect x="550" y="360" width="200" height="60" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="580" cy="375" r="12" fill="#ec4899"/>
+    <text x="580" y="381" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="white">3</text>
+    <text x="650" y="380" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#1e293b">
+      Decision & ADR
+    </text>
+    <text x="650" y="395" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" fill="#64748b">
+      合意形成・決定記録
+    </text>
+    <text x="650" y="408" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
+      10-15分
+    </text>
+  </g>
+  
+  <!-- Flow arrows -->
+  <polygon points="260,390 280,385 280,395" fill="#6b7280"/>
+  <polygon points="510,390 530,385 530,395" fill="#6b7280"/>
+  
+  <!-- Benefits -->
+  <rect x="200" y="450" width="400" height="30" rx="15" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="400" y="470" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
+    💡 効果：意思決定速度60%向上、技術的負債30%削減、チーム満足度向上
+  </text>
+</svg>
 
-# 実践例
-technical_discussion = {
-  'objective': {
-    'primary_goal': 'マイクロサービス間の通信プロトコル選定',
-    'success_criteria': '全メンバーが納得し、実装可能な選択肢の決定',
-    'time_constraint': '今週金曜までに決定、来週から実装開始'
-  },
-  'scope': {
-    'in_scope': ['HTTP/REST', 'gRPC', 'GraphQL', 'Message Queue'],
-    'out_of_scope': ['データベース選択', 'インフラ構成'],
-    'assumptions': ['Kubernetes環境', 'TypeScript使用', '3チーム体制']
-  }
-}
-```
-```
+### 実践例：マイクロサービス通信プロトコル選定
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0;">
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 15px;">
+
+<div style="padding: 15px; background: #dbeafe; border-radius: 6px; border-left: 4px solid #3b82f6;">
+<h4 style="color: #1d4ed8; margin: 0 0 8px 0;">🎯 目的設定</h4>
+<p style="color: #1e40af; margin: 0; font-size: 0.9em; line-height: 1.4;">
+<strong>Primary Goal:</strong> マイクロサービス間の通信プロトコル選定<br>
+<strong>Success Criteria:</strong> 全メンバーが納得し、実装可能な選択肢の決定<br>
+<strong>Timeline:</strong> 今週金曜までに決定、来週から実装開始
+</p>
+</div>
+
+<div style="padding: 15px; background: #dcfce7; border-radius: 6px; border-left: 4px solid #16a34a;">
+<h4 style="color: #15803d; margin: 0 0 8px 0;">📋 範囲設定</h4>
+<p style="color: #166534; margin: 0; font-size: 0.9em; line-height: 1.4;">
+<strong>In Scope:</strong> HTTP/REST, gRPC, GraphQL, Message Queue<br>
+<strong>Out of Scope:</strong> データベース選択、インフラ構成<br>
+<strong>Assumptions:</strong> Kubernetes環境、TypeScript使用、3チーム体制
+</p>
+</div>
+
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 6px; border-left: 4px solid #f59e0b;">
+<h4 style="color: #d97706; margin: 0 0 8px 0;">👥 参加者役割</h4>
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+<div style="text-align: center;">
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #f59e0b;">
+<p style="margin: 0; font-size: 0.8em; font-weight: 600; color: #d97706;">Decision Maker</p>
+<p style="margin: 2px 0 0 0; font-size: 0.75em; color: #92400e;">Tech Lead 田中</p>
+</div>
+</div>
+<div style="text-align: center;">
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #f59e0b;">
+<p style="margin: 0; font-size: 0.8em; font-weight: 600; color: #d97706;">SME</p>
+<p style="margin: 2px 0 0 0; font-size: 0.75em; color: #92400e;">API専門 佐藤</p>
+</div>
+</div>
+<div style="text-align: center;">
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #f59e0b;">
+<p style="margin: 0; font-size: 0.8em; font-weight: 600; color: #d97706;">Stakeholders</p>
+<p style="margin: 2px 0 0 0; font-size: 0.75em; color: #92400e;">各チームリード</p>
+</div>
+</div>
+<div style="text-align: center;">
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #f59e0b;">
+<p style="margin: 0; font-size: 0.8em; font-weight: 600; color: #d97706;">Facilitator</p>
+<p style="margin: 2px 0 0 0; font-size: 0.75em; color: #92400e;">アーキテクト 鈴木</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 
 ### アーキテクチャ決定記録（ADR）の活用
 
 **ADR-Driven Technical Discussions**：
 
-```markdown
-## ADRベースの技術討議プロセス
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0;">
+<h4 style="color: #1e293b; margin: 0 0 15px 0; text-align: center;">📋 ADRベースの技術討議プロセス</h4>
 
-### Phase 1: Problem Definition（問題定義）
-**時間**: 15分
-**アクション**:
-```python
-def define_technical_problem():
-    """技術的問題の構造化定義"""
-    return {
-        'current_pain_points': [
-            'サービス間通信の複雑性増加',
-            'エラーハンドリングの一貫性欠如', 
-            'パフォーマンス問題の特定困難'
-        ],
-        'quantified_impact': {
-            'development_velocity': '-30%（API変更時の影響調査時間）',
-            'system_reliability': '月2-3回の通信エラー起因障害',
-            'maintenance_cost': '障害対応工数月40時間'
-        },
-        'business_context': {
-            'timeline_pressure': '新機能リリース3ヶ月後',
-            'team_constraints': 'マイクロサービス経験者2名のみ',
-            'performance_requirements': 'レスポンス時間<200ms'
-        }
-    }
-```
+<div style="display: flex; gap: 20px; margin-bottom: 20px;">
+
+<div style="flex: 1; padding: 15px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; border-left: 4px solid #ef4444;">
+<div style="display: flex; align-items: center; margin-bottom: 10px;">
+<span style="background: #ef4444; color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 12px; font-weight: bold;">1</span>
+<h5 style="color: #dc2626; margin: 0;">Problem Definition</h5>
+</div>
+<p style="color: #991b1b; font-size: 0.8em; margin: 0 0 8px 32px; font-weight: 600;">⏱️ 15分</p>
+
+<div style="margin-left: 32px;">
+<div style="background: #fff; padding: 10px; border-radius: 4px; margin-bottom: 8px;">
+<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">🚨 現在の課題</p>
+<ul style="color: #991b1b; font-size: 0.75em; margin: 0; padding-left: 15px;">
+<li>サービス間通信の複雑性増加</li>
+<li>エラーハンドリングの一貫性欠如</li>
+<li>パフォーマンス問題の特定困難</li>
+</ul>
+</div>
+
+<div style="background: #fff; padding: 10px; border-radius: 4px; margin-bottom: 8px;">
+<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">📊 定量的影響</p>
+<ul style="color: #991b1b; font-size: 0.75em; margin: 0; padding-left: 15px;">
+<li>開発速度: -30%（API変更時の影響調査時間）</li>
+<li>システム信頼性: 月2-3回の通信エラー起因障害</li>
+<li>保守コスト: 障害対応工数月40時間</li>
+</ul>
+</div>
+
+<div style="background: #fff; padding: 10px; border-radius: 4px;">
+<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">🏢 ビジネス背景</p>
+<ul style="color: #991b1b; font-size: 0.75em; margin: 0; padding-left: 15px;">
+<li>新機能リリース3ヶ月後</li>
+<li>マイクロサービス経験者2名のみ</li>
+<li>レスポンス時間<200ms要求</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 ### Phase 2: Solution Options Analysis（選択肢分析）
-**時間**: 30分
-**アクション**:
-```python
-class TechnicalOption:
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
-        self.pros = []
-        self.cons = []
-        self.implementation_effort = None
-        self.risk_assessment = None
-        self.team_readiness = None
-    
-    def evaluate(self, criteria):
-        """多次元評価"""
-        return {
-            'technical_fit': self._assess_technical_alignment(criteria),
-            'implementation_complexity': self._estimate_complexity(),
-            'operational_overhead': self._calculate_operational_cost(),
-            'learning_curve': self._assess_team_learning_needs(),
-            'future_flexibility': self._evaluate_adaptability()
-        }
 
-# 評価実施
-options = [
-    TechnicalOption('REST API', 'HTTP/JSONベースの標準API'),
-    TechnicalOption('gRPC', 'Protocol Buffersベースの高性能RPC'),
-    TechnicalOption('GraphQL', 'クエリ言語とスキーマベース'),
-    TechnicalOption('Event-Driven', 'Message Queueベースの非同期通信')
-]
+<div style="padding: 15px; background: #dcfce7; border: 1px solid #bbf7d0; border-radius: 8px; border-left: 4px solid #16a34a; margin: 20px 0;">
+<div style="display: flex; align-items: center; margin-bottom: 10px;">
+<span style="background: #16a34a; color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 12px; font-weight: bold;">2</span>
+<h5 style="color: #15803d; margin: 0;">Solution Options Analysis</h5>
+</div>
+<p style="color: #166534; font-size: 0.8em; margin: 0 0 15px 32px; font-weight: 600;">⏱️ 30分</p>
 
-evaluation_criteria = {
-    'performance': {'weight': 0.3, 'target': 'レスポンス<200ms'},
-    'maintainability': {'weight': 0.25, 'target': '開発効率維持'},
-    'team_skills': {'weight': 0.2, 'target': '学習コスト最小化'},
-    'scalability': {'weight': 0.15, 'target': '将来拡張性'},
-    'ecosystem': {'weight': 0.1, 'target': 'ツール・ライブラリ充実'}
-}
+<div style="margin-left: 32px;">
 
-for option in options:
-    option.score = option.evaluate(evaluation_criteria)
-```
+<!-- Evaluation Criteria -->
+<div style="background: #f0fdf4; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+<h6 style="color: #15803d; margin: 0 0 10px 0;">📏 評価基準</h6>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Performance (30%)</p>
+<p style="color: #166534; font-size: 0.7em; margin: 2px 0 0 0;">レスポンス<200ms</p>
+</div>
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Maintainability (25%)</p>
+<p style="color: #166534; font-size: 0.7em; margin: 2px 0 0 0;">開発効率維持</p>
+</div>
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Team Skills (20%)</p>
+<p style="color: #166534; font-size: 0.7em; margin: 2px 0 0 0;">学習コスト最小化</p>
+</div>
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Scalability (15%)</p>
+<p style="color: #166534; font-size: 0.7em; margin: 2px 0 0 0;">将来拡張性</p>
+</div>
+<div style="background: #fff; padding: 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Ecosystem (10%)</p>
+<p style="color: #166534; font-size: 0.7em; margin: 2px 0 0 0;">ツール・ライブラリ充実</p>
+</div>
+</div>
+</div>
+
+<!-- Options Analysis -->
+<div style="background: #f0fdf4; padding: 15px; border-radius: 6px;">
+<h6 style="color: #15803d; margin: 0 0 10px 0;">🔍 技術選択肢の多次元評価</h6>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+
+<div style="background: #fff; padding: 12px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<h6 style="color: #dc2626; margin: 0 0 8px 0;">REST API</h6>
+<p style="color: #64748b; font-size: 0.75em; margin: 0 0 8px 0;">HTTP/JSONベースの標準API</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div>
+<span style="color: #16a34a; font-size: 0.7em;">✓ 学習コスト低</span><br>
+<span style="color: #ef4444; font-size: 0.7em;">✗ パフォーマンス制約</span>
+</div>
+<div style="background: #fef3c7; padding: 4px 8px; border-radius: 4px;">
+<span style="color: #d97706; font-size: 0.7em; font-weight: 600;">Score: B</span>
+</div>
+</div>
+</div>
+
+<div style="background: #fff; padding: 12px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<h6 style="color: #dc2626; margin: 0 0 8px 0;">gRPC</h6>
+<p style="color: #64748b; font-size: 0.75em; margin: 0 0 8px 0;">Protocol Buffersベースの高性能RPC</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div>
+<span style="color: #16a34a; font-size: 0.7em;">✓ 高性能</span><br>
+<span style="color: #ef4444; font-size: 0.7em;">✗ 学習コスト高</span>
+</div>
+<div style="background: #dcfce7; padding: 4px 8px; border-radius: 4px;">
+<span style="color: #16a34a; font-size: 0.7em; font-weight: 600;">Score: A</span>
+</div>
+</div>
+</div>
+
+<div style="background: #fff; padding: 12px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<h6 style="color: #dc2626; margin: 0 0 8px 0;">GraphQL</h6>
+<p style="color: #64748b; font-size: 0.75em; margin: 0 0 8px 0;">クエリ言語とスキーマベース</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div>
+<span style="color: #16a34a; font-size: 0.7em;">✓ 柔軟性</span><br>
+<span style="color: #ef4444; font-size: 0.7em;">✗ 運用複雑</span>
+</div>
+<div style="background: #fef3c7; padding: 4px 8px; border-radius: 4px;">
+<span style="color: #d97706; font-size: 0.7em; font-weight: 600;">Score: B-</span>
+</div>
+</div>
+</div>
+
+<div style="background: #fff; padding: 12px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<h6 style="color: #dc2626; margin: 0 0 8px 0;">Event-Driven</h6>
+<p style="color: #64748b; font-size: 0.75em; margin: 0 0 8px 0;">Message Queueベースの非同期通信</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div>
+<span style="color: #16a34a; font-size: 0.7em;">✓ スケーラブル</span><br>
+<span style="color: #ef4444; font-size: 0.7em;">✗ 複雑性増加</span>
+</div>
+<div style="background: #fef3c7; padding: 4px 8px; border-radius: 4px;">
+<span style="color: #d97706; font-size: 0.7em; font-weight: 600;">Score: B+</span>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 ### Phase 3: Collaborative Decision Making（協調的意思決定）
-**時間**: 20分
-**アクション**:
-```markdown
-#### 合意形成アルゴリズム
 
-**Step 1: Individual Assessment**（5分）
-- 各メンバーが独立して選択肢を評価
-- 1位・2位・却下の分類
-- 理由の簡潔な記述
+<div style="padding: 15px; background: #fce7f3; border: 1px solid #f9a8d4; border-radius: 8px; border-left: 4px solid #ec4899; margin: 20px 0;">
+<div style="display: flex; align-items: center; margin-bottom: 10px;">
+<span style="background: #ec4899; color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 12px; font-weight: bold;">3</span>
+<h5 style="color: #be185d; margin: 0;">Collaborative Decision Making</h5>
+</div>
+<p style="color: #9d174d; font-size: 0.8em; margin: 0 0 15px 32px; font-weight: 600;">⏱️ 20分</p>
 
-**Step 2: Perspective Sharing**（10分）
-```python
-def share_perspectives(team_members, options):
-    """視点共有セッション"""
-    perspectives = {}
-    
-    for member in team_members:
-        perspectives[member.name] = {
-            'preferred_option': member.get_preference(),
-            'key_concerns': member.get_concerns(),
-            'unique_insights': member.get_domain_knowledge(),
-            'risk_tolerance': member.assess_risk_appetite()
-        }
-    
-    # パターン分析
-    consensus_areas = find_common_ground(perspectives)
-    divergent_views = identify_disagreements(perspectives)
-    
-    return {
-        'consensus_areas': consensus_areas,
-        'points_to_resolve': divergent_views,
-        'additional_research_needed': identify_knowledge_gaps(perspectives)
-    }
-```
+<div style="margin-left: 32px;">
 
-**Step 3: Convergence Process**（5分）
-```yaml
-convergence_strategies:
-  
-  high_consensus:
-    # 80%以上の合意がある場合
-    action: "決定事項としてADR作成"
-    validation: "少数意見の懸念事項を軽減策として記録"
-  
-  moderate_consensus:
-    # 60-80%の合意の場合  
-    action: "主要な懸念事項への対処策検討"
-    process: "追加情報収集・プロトタイプ作成"
-    timeline: "1週間以内に再評価"
-  
-  low_consensus:
-    # 60%未満の合意の場合
-    action: "問題定義の見直し"
-    process: "より小さな実験での検証"
-    escalation: "上位者への相談・外部専門家の意見"
-```
-```
+<div style="background: #fdf2f8; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+<h6 style="color: #be185d; margin: 0 0 10px 0;">🔄 合意形成の3ステップ</h6>
+
+<div style="display: flex; gap: 10px; margin-bottom: 15px;">
+
+<div style="flex: 1; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #f9a8d4;">
+<div style="display: flex; align-items: center; margin-bottom: 5px;">
+<span style="background: #be185d; color: white; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 10px; font-weight: bold;">1</span>
+<p style="color: #be185d; font-size: 0.8em; font-weight: 600; margin: 0;">Individual Assessment</p>
+</div>
+<p style="color: #9d174d; font-size: 0.7em; margin: 0 0 4px 22px;">各メンバーが独立評価（5分）</p>
+<ul style="color: #be185d; font-size: 0.65em; margin: 0; padding-left: 37px;">
+<li>1位・2位・却下の分類</li>
+<li>理由の簡潔な記述</li>
+</ul>
+</div>
+
+<div style="flex: 1; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #f9a8d4;">
+<div style="display: flex; align-items: center; margin-bottom: 5px;">
+<span style="background: #be185d; color: white; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 10px; font-weight: bold;">2</span>
+<p style="color: #be185d; font-size: 0.8em; font-weight: 600; margin: 0;">Perspective Sharing</p>
+</div>
+<p style="color: #9d174d; font-size: 0.7em; margin: 0 0 4px 22px;">視点共有セッション（10分）</p>
+<ul style="color: #be185d; font-size: 0.65em; margin: 0; padding-left: 37px;">
+<li>選好理由の共有</li>
+<li>懸念事項の議論</li>
+<li>知識ギャップの特定</li>
+</ul>
+</div>
+
+<div style="flex: 1; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #f9a8d4;">
+<div style="display: flex; align-items: center; margin-bottom: 5px;">
+<span style="background: #be185d; color: white; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 10px; font-weight: bold;">3</span>
+<p style="color: #be185d; font-size: 0.8em; font-weight: 600; margin: 0;">Convergence Process</p>
+</div>
+<p style="color: #9d174d; font-size: 0.7em; margin: 0 0 4px 22px;">合意形成プロセス（5分）</p>
+<ul style="color: #be185d; font-size: 0.65em; margin: 0; padding-left: 37px;">
+<li>合意レベルの判定</li>
+<li>戦略の選択・実行</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #fdf2f8; padding: 15px; border-radius: 6px;">
+<h6 style="color: #be185d; margin: 0 0 10px 0;">📊 合意レベル別対応戦略</h6>
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+
+<div style="background: #dcfce7; padding: 10px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<div style="background: #16a34a; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">High Consensus</p>
+</div>
+<p style="color: #166534; font-size: 0.7em; margin: 0 0 6px 0;"><strong>80%以上の合意</strong></p>
+<p style="color: #15803d; font-size: 0.65em; margin: 0; line-height: 1.3;">
+✓ 決定事項としてADR作成<br>
+✓ 少数意見を軽減策として記録
+</p>
+</div>
+
+<div style="background: #fef3c7; padding: 10px; border-radius: 4px; border: 1px solid #fde68a;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<div style="background: #f59e0b; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
+<p style="color: #d97706; font-size: 0.8em; font-weight: 600; margin: 0;">Moderate Consensus</p>
+</div>
+<p style="color: #92400e; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60-80%の合意</strong></p>
+<p style="color: #d97706; font-size: 0.65em; margin: 0; line-height: 1.3;">
+⚠ 懸念事項への対処策検討<br>
+⚠ 1週間以内に再評価
+</p>
+</div>
+
+<div style="background: #fef2f2; padding: 10px; border-radius: 4px; border: 1px solid #fecaca;">
+<div style="display: flex; align-items: center; margin-bottom: 8px;">
+<div style="background: #ef4444; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
+<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0;">Low Consensus</p>
+</div>
+<p style="color: #991b1b; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60%未満の合意</strong></p>
+<p style="color: #dc2626; font-size: 0.65em; margin: 0; line-height: 1.3;">
+🚨 問題定義の見直し<br>
+🚨 小さな実験での検証<br>
+🚨 上位者・専門家への相談
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 ### 技術選定プロセスの標準化
 
-**Technology Evaluation Matrix**：
-
-```markdown
-## 技術選定の定量的評価フレームワーク
-
-### 評価軸の体系化
-```python
-class TechnologyEvaluationFramework:
-    """技術選定のための統一評価フレームワーク"""
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title>技術選定の定量的評価フレームワーク</title>
+  <desc>5つの評価軸による技術選定マトリックス</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    Technology Evaluation Matrix
+  </text>
+  
+  <!-- Central Hub -->
+  <circle cx="400" cy="300" r="60" fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+  <text x="400" y="295" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#1d4ed8">
+    技術選定
+  </text>
+  <text x="400" y="310" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" fill="#1d4ed8">
+    評価フレーム
+  </text>
+  
+  <!-- Dimension 1: Technical Merit -->
+  <g>
+    <circle cx="250" cy="150" r="45" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="250" y="145" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">
+      Technical
+    </text>
+    <text x="250" y="158" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">
+      Merit
+    </text>
     
-    def __init__(self):
-        self.evaluation_dimensions = {
-            'technical_merit': {
-                'performance': 'ベンチマーク結果・理論的性能',
-                'scalability': 'スケーリング特性・限界値',
-                'reliability': '可用性・障害回復性・データ整合性',
-                'security': 'セキュリティ機能・脆弱性歴',
-                'interoperability': '既存システムとの統合性'
-            },
-            'team_readiness': {
-                'existing_expertise': '現在のチーム知識レベル',
-                'learning_curve': '習得に要する時間・コスト',
-                'knowledge_transfer': '知識共有・ドキュメント化容易性',
-                'hiring_availability': '経験者の採用可能性'
-            },
-            'ecosystem_maturity': {
-                'community_size': 'コミュニティ規模・活発度',
-                'library_ecosystem': 'ライブラリ・ツールの充実度',
-                'documentation_quality': 'ドキュメント品質・更新頻度',
-                'commercial_support': '商用サポートの有無・品質'
-            },
-            'business_alignment': {
-                'time_to_market': '開発・実装スピードへの影響',
-                'total_cost_ownership': 'ライセンス・運用・保守コスト',
-                'vendor_lock_in_risk': 'ベンダー依存リスク',
-                'compliance_support': '規制・標準への対応状況'
-            },
-            'operational_impact': {
-                'deployment_complexity': 'デプロイ・設定の複雑性',
-                'monitoring_observability': '監視・ログ・メトリクス対応',
-                'troubleshooting_ease': '問題診断・解決の容易性',
-                'backup_recovery': 'バックアップ・災害復旧対応'
-            }
-        }
+    <!-- Criteria boxes -->
+    <rect x="120" y="80" width="100" height="50" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
+    <text x="170" y="95" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#dc2626">
+      Performance
+    </text>
+    <text x="170" y="107" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#991b1b">
+      ベンチマーク結果
+    </text>
+    <text x="170" y="117" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#991b1b">
+      理論的性能
+    </text>
     
-    def evaluate_technology(self, technology, project_context):
-        """技術の総合評価を実施"""
-        scores = {}
-        
-        for dimension, criteria in self.evaluation_dimensions.items():
-            dimension_score = 0
-            for criterion, description in criteria.items():
-                # 1-5スケールで評価
-                score = self._assess_criterion(technology, criterion, project_context)
-                weight = self._get_criterion_weight(criterion, project_context)
-                dimension_score += score * weight
-            
-            scores[dimension] = dimension_score / len(criteria)
-        
-        return {
-            'overall_score': sum(scores.values()) / len(scores),
-            'dimension_scores': scores,
-            'recommendations': self._generate_recommendations(scores, technology),
-            'risk_factors': self._identify_risk_factors(scores, technology)
-        }
+    <rect x="240" y="60" width="100" height="50" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
+    <text x="290" y="75" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#dc2626">
+      Scalability
+    </text>
+    <text x="290" y="87" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#991b1b">
+      スケーリング特性
+    </text>
+    <text x="290" y="97" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#991b1b">
+      限界値
+    </text>
     
-    def _generate_recommendations(self, scores, technology):
-        """評価結果に基づく推奨事項生成"""
-        recommendations = []
-        
-        if scores['team_readiness'] < 3.0:
-            recommendations.append({
-                'type': 'training',
-                'description': f'{technology}の技術研修計画策定が必要',
-                'priority': 'high',
-                'estimated_effort': '2-4週間'
-            })
-        
-        if scores['operational_impact'] < 3.5:
-            recommendations.append({
-                'type': 'infrastructure',
-                'description': '運用ツール・プロセスの整備が必要',
-                'priority': 'medium',
-                'estimated_effort': '1-2ヶ月'
-            })
-        
-        return recommendations
+    <line x1="250" y1="105" x2="250" y2="135" stroke="#ef4444" stroke-width="1"/>
+  </g>
+  
+  <!-- Dimension 2: Team Readiness -->
+  <g>
+    <circle cx="550" cy="150" r="45" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="550" y="145" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#15803d">
+      Team
+    </text>
+    <text x="550" y="158" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#15803d">
+      Readiness
+    </text>
+    
+    <rect x="580" y="80" width="100" height="50" rx="4" fill="#fff" stroke="#16a34a" stroke-width="1"/>
+    <text x="630" y="95" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#15803d">
+      Expertise
+    </text>
+    <text x="630" y="107" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#166534">
+      現在の知識レベル
+    </text>
+    <text x="630" y="117" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#166534">
+      学習コスト
+    </text>
+    
+    <line x1="550" y1="105" x2="550" y2="135" stroke="#16a34a" stroke-width="1"/>
+  </g>
+  
+  <!-- Dimension 3: Ecosystem Maturity -->
+  <g>
+    <circle cx="150" cy="400" r="45" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="150" y="395" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#d97706">
+      Ecosystem
+    </text>
+    <text x="150" y="408" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#d97706">
+      Maturity
+    </text>
+    
+    <rect x="50" y="460" width="100" height="50" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+    <text x="100" y="475" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#d97706">
+      Community
+    </text>
+    <text x="100" y="487" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#92400e">
+      コミュニティ規模
+    </text>
+    <text x="100" y="497" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#92400e">
+      活発度
+    </text>
+    
+    <rect x="170" y="460" width="100" height="50" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+    <text x="220" y="475" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#d97706">
+      Library Ecosystem
+    </text>
+    <text x="220" y="487" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#92400e">
+      ツール充実度
+    </text>
+    <text x="220" y="497" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#92400e">
+      ドキュメント品質
+    </text>
+    
+    <line x1="150" y1="445" x2="150" y2="460" stroke="#f59e0b" stroke-width="1"/>
+  </g>
+  
+  <!-- Dimension 4: Business Alignment -->
+  <g>
+    <circle cx="650" cy="400" r="45" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="650" y="395" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">
+      Business
+    </text>
+    <text x="650" y="408" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7c3aed">
+      Alignment
+    </text>
+    
+    <rect x="580" y="460" width="100" height="50" rx="4" fill="#fff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="630" y="475" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#7c3aed">
+      Time to Market
+    </text>
+    <text x="630" y="487" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#6d28d9">
+      開発スピード
+    </text>
+    <text x="630" y="497" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#6d28d9">
+      実装期間への影響
+    </text>
+    
+    <line x1="650" y1="445" x2="650" y2="460" stroke="#8b5cf6" stroke-width="1"/>
+  </g>
+  
+  <!-- Dimension 5: Operational Impact -->
+  <g>
+    <circle cx="400" cy="500" r="45" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+    <text x="400" y="495" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#be185d">
+      Operational
+    </text>
+    <text x="400" y="508" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#be185d">
+      Impact
+    </text>
+    
+    <rect x="350" y="540" width="100" height="50" rx="4" fill="#fff" stroke="#ec4899" stroke-width="1"/>
+    <text x="400" y="555" font-family="Inter, sans-serif" font-size="8" font-weight="600" text-anchor="middle" fill="#be185d">
+      Deployment
+    </text>
+    <text x="400" y="567" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#9d174d">
+      デプロイ・設定の
+    </text>
+    <text x="400" y="577" font-family="Inter, sans-serif" font-size="7" text-anchor="middle" fill="#9d174d">
+      複雑性
+    </text>
+    
+    <line x1="400" y1="545" x2="400" y2="540" stroke="#ec4899" stroke-width="1"/>
+  </g>
+  
+  <!-- Connection lines to center -->
+  <line x1="295" y1="195" x2="355" y2="255" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="505" y1="195" x2="445" y2="255" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="195" y1="355" x2="355" y2="345" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="605" y1="355" x2="445" y2="345" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="400" y1="455" x2="400" y2="365" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Evaluation Scale -->
+  <rect x="50" y="30" width="300" height="30" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="200" y="50" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#475569">
+    評価スケール：1-5点（1=不適切、3=標準、5=優秀）
+  </text>
+  
+  <!-- Scoring Matrix -->
+  <rect x="450" y="30" width="300" height="30" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="600" y="50" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
+    総合スコア4.0以上で採用推奨
+  </text>
+</svg>
 
-# 使用例
-framework = TechnologyEvaluationFramework()
-project_context = {
-    'team_size': 8,
-    'timeline': '4ヶ月',
-    'performance_requirements': 'レスポンス<100ms',
-    'availability_requirement': '99.9%',
-    'budget_constraint': '月500万円以内'
-}
+### 評価実施手順
 
-grpc_evaluation = framework.evaluate_technology('gRPC', project_context)
-rest_evaluation = framework.evaluate_technology('REST API', project_context)
-```
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0;">
+<h4 style="color: #1e293b; margin: 0 0 15px 0;">📋 技術評価の体系的プロセス</h4>
+
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;">
+
+<div style="background: #fef2f2; padding: 10px; border-radius: 6px; border-top: 4px solid #ef4444;">
+<h6 style="color: #dc2626; margin: 0 0 8px 0; font-size: 0.9em;">🔧 Technical Merit</h6>
+<ul style="color: #991b1b; font-size: 0.7em; margin: 0; padding-left: 15px; line-height: 1.4;">
+<li>Performance: ベンチマーク結果</li>
+<li>Scalability: スケーリング特性</li>
+<li>Reliability: 可用性・障害回復性</li>
+<li>Security: セキュリティ機能</li>
+<li>Interoperability: 統合性</li>
+</ul>
+</div>
+
+<div style="background: #f0fdf4; padding: 10px; border-radius: 6px; border-top: 4px solid #16a34a;">
+<h6 style="color: #15803d; margin: 0 0 8px 0; font-size: 0.9em;">👥 Team Readiness</h6>
+<ul style="color: #166534; font-size: 0.7em; margin: 0; padding-left: 15px; line-height: 1.4;">
+<li>Existing Expertise: 現在の知識レベル</li>
+<li>Learning Curve: 習得時間・コスト</li>
+<li>Knowledge Transfer: 知識共有容易性</li>
+<li>Hiring Availability: 採用可能性</li>
+</ul>
+</div>
+
+<div style="background: #fefbf3; padding: 10px; border-radius: 6px; border-top: 4px solid #f59e0b;">
+<h6 style="color: #d97706; margin: 0 0 8px 0; font-size: 0.9em;">🌐 Ecosystem</h6>
+<ul style="color: #92400e; font-size: 0.7em; margin: 0; padding-left: 15px; line-height: 1.4;">
+<li>Community Size: コミュニティ規模</li>
+<li>Library Ecosystem: ツール充実度</li>
+<li>Documentation: ドキュメント品質</li>
+<li>Commercial Support: 商用サポート</li>
+</ul>
+</div>
+
+<div style="background: #faf5ff; padding: 10px; border-radius: 6px; border-top: 4px solid #8b5cf6;">
+<h6 style="color: #7c3aed; margin: 0 0 8px 0; font-size: 0.9em;">💼 Business</h6>
+<ul style="color: #6d28d9; font-size: 0.7em; margin: 0; padding-left: 15px; line-height: 1.4;">
+<li>Time to Market: 開発スピード</li>
+<li>Total Cost: 運用・保守コスト</li>
+<li>Vendor Lock-in: ベンダー依存リスク</li>
+<li>Compliance: 規制・標準対応</li>
+</ul>
+</div>
+
+<div style="background: #fdf2f8; padding: 10px; border-radius: 6px; border-top: 4px solid #ec4899;">
+<h6 style="color: #be185d; margin: 0 0 8px 0; font-size: 0.9em;">⚙️ Operations</h6>
+<ul style="color: #9d174d; font-size: 0.7em; margin: 0; padding-left: 15px; line-height: 1.4;">
+<li>Deployment: デプロイ・設定複雑性</li>
+<li>Monitoring: 監視・ログ対応</li>
+<li>Troubleshooting: 問題診断容易性</li>
+<li>Backup/Recovery: 災害復旧対応</li>
+</ul>
+</div>
+
+</div>
+
+<!-- Recommendations -->
+<div style="background: #f0fdf4; padding: 15px; border-radius: 6px; border-left: 4px solid #16a34a;">
+<h6 style="color: #15803d; margin: 0 0 10px 0;">💡 自動推奨事項生成</h6>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+
+<div style="background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<div style="display: flex; align-items: center; margin-bottom: 4px;">
+<div style="background: #ef4444; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Team Readiness < 3.0</p>
+</div>
+<p style="color: #166534; font-size: 0.7em; margin: 0;">
+🎯 推奨: 技術研修計画策定<br>
+⏱️ 工数: 2-4週間<br>
+🔥 優先度: High
+</p>
+</div>
+
+<div style="background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #bbf7d0;">
+<div style="display: flex; align-items: center; margin-bottom: 4px;">
+<div style="background: #f59e0b; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
+<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">Operational Impact < 3.5</p>
+</div>
+<p style="color: #166534; font-size: 0.7em; margin: 0;">
+🛠️ 推奨: 運用ツール・プロセス整備<br>
+⏱️ 工数: 1-2ヶ月<br>
+🔶 優先度: Medium
+</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
 ```
 
 ### 知識共有システムの構築

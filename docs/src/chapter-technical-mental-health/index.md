@@ -27,34 +27,172 @@ layout: book
 
 **Human System Architecture**：
 
-```markdown
-## Personal Mental Health System Design
-
-### コンポーネント設計
-**Core Components（コア・コンポーネント）**：
-```
-Mental Health System {
-    ├── Monitoring Layer (監視レイヤー)
-    │   ├── ストレス・センサー
-    │   ├── 感情状態トラッキング
-    │   └── パフォーマンス・メトリクス
-    │
-    ├── Processing Layer (処理レイヤー) 
-    │   ├── 認知的評価エンジン
-    │   ├── ストレス分析アルゴリズム
-    │   └── 意思決定支援システム
-    │
-    ├── Action Layer (アクション・レイヤー)
-    │   ├── 対処法データベース
-    │   ├── リカバリー・プロセス
-    │   └── 予防的メンテナンス
-    │
-    └── Interface Layer (インターフェース・レイヤー)
-        ├── セルフチェック・ダッシュボード
-        ├── アラート・システム
-        └── 外部サポート連携
-}
-```
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Personal Mental Health System Architecture</title>
+  <desc>システム設計原則を適用したメンタルヘルス管理アーキテクチャ</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fefefe" stroke="none"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
+    Personal Mental Health System Architecture
+  </text>
+  
+  <!-- Layer 1: Interface Layer -->
+  <g>
+    <rect x="100" y="60" width="600" height="100" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="85" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#1d4ed8">
+      🖥️ Interface Layer（インターフェース・レイヤー）
+    </text>
+    
+    <!-- Interface Components -->
+    <rect x="120" y="100" width="150" height="40" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
+    <text x="195" y="115" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      セルフチェック
+    </text>
+    <text x="195" y="127" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      ダッシュボード
+    </text>
+    
+    <rect x="290" y="100" width="150" height="40" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
+    <text x="365" y="115" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      アラート
+    </text>
+    <text x="365" y="127" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      システム
+    </text>
+    
+    <rect x="460" y="100" width="150" height="40" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
+    <text x="535" y="115" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      外部サポート
+    </text>
+    <text x="535" y="127" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
+      連携
+    </text>
+  </g>
+  
+  <!-- Layer 2: Action Layer -->
+  <g>
+    <rect x="100" y="180" width="600" height="100" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="400" y="205" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#15803d">
+      ⚡ Action Layer（アクション・レイヤー）
+    </text>
+    
+    <rect x="120" y="220" width="150" height="40" rx="4" fill="#fff" stroke="#16a34a" stroke-width="1"/>
+    <text x="195" y="235" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#15803d">
+      対処法
+    </text>
+    <text x="195" y="247" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#15803d">
+      データベース
+    </text>
+    
+    <rect x="290" y="220" width="150" height="40" rx="4" fill="#fff" stroke="#16a34a" stroke-width="1"/>
+    <text x="365" y="235" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#15803d">
+      リカバリー
+    </text>
+    <text x="365" y="247" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#15803d">
+      プロセス
+    </text>
+    
+    <rect x="460" y="220" width="150" height="40" rx="4" fill="#fff" stroke="#16a34a" stroke-width="1"/>
+    <text x="535" y="235" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#15803d">
+      予防的
+    </text>
+    <text x="535" y="247" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#15803d">
+      メンテナンス
+    </text>
+  </g>
+  
+  <!-- Layer 3: Processing Layer -->
+  <g>
+    <rect x="100" y="300" width="600" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="400" y="325" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#d97706">
+      🧠 Processing Layer（処理レイヤー）
+    </text>
+    
+    <rect x="120" y="340" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+    <text x="195" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
+      認知的評価
+    </text>
+    <text x="195" y="367" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
+      エンジン
+    </text>
+    
+    <rect x="290" y="340" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+    <text x="365" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
+      ストレス分析
+    </text>
+    <text x="365" y="367" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
+      アルゴリズム
+    </text>
+    
+    <rect x="460" y="340" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+    <text x="535" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
+      意思決定支援
+    </text>
+    <text x="535" y="367" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
+      システム
+    </text>
+  </g>
+  
+  <!-- Layer 4: Monitoring Layer -->
+  <g>
+    <rect x="100" y="420" width="600" height="100" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="400" y="445" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#dc2626">
+      📊 Monitoring Layer（監視レイヤー）
+    </text>
+    
+    <rect x="120" y="460" width="150" height="40" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
+    <text x="195" y="475" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
+      ストレス
+    </text>
+    <text x="195" y="487" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
+      センサー
+    </text>
+    
+    <rect x="290" y="460" width="150" height="40" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
+    <text x="365" y="475" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
+      感情状態
+    </text>
+    <text x="365" y="487" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
+      トラッキング
+    </text>
+    
+    <rect x="460" y="460" width="150" height="40" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
+    <text x="535" y="475" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
+      パフォーマンス
+    </text>
+    <text x="535" y="487" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
+      メトリクス
+    </text>
+  </g>
+  
+  <!-- Data Flow Arrows -->
+  <polygon points="400,510 405,530 395,530" fill="#6b7280"/>
+  <polygon points="400,390 405,410 395,410" fill="#6b7280"/>
+  <polygon points="400,270 405,290 395,290" fill="#6b7280"/>
+  
+  <!-- Side Labels -->
+  <text x="50" y="110" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 110)">
+    User Interface
+  </text>
+  <text x="50" y="230" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 230)">
+    Response
+  </text>
+  <text x="50" y="350" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 350)">
+    Analysis
+  </text>
+  <text x="50" y="470" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 470)">
+    Data Collection
+  </text>
+  
+  <!-- System Benefits -->
+  <rect x="200" y="550" width="400" height="30" rx="15" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="400" y="570" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
+    💡 効果：体系的なセルフケア、予防的メンタルヘルス管理、データドリブンな改善
+  </text>
+</svg>
 
 ### システム設計原則の適用
 
