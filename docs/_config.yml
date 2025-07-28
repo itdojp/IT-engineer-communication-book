@@ -25,7 +25,6 @@ exclude:
   - tests/
   - Gemfile
   - Gemfile.lock
-  - "*.md"
   - "README.md"
 
 # 日本語対応
