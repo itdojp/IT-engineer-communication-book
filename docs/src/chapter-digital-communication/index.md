@@ -377,60 +377,40 @@ layout: book
 
 ### 会議の構造化設計
 **Meeting Architecture Pattern**:
+**リモート会議での不確実性削減アプローチ**：
+
 ```python
-class VirtualMeetingOptimizer:
-    """バーチャル会議最適化システム"""
+# 会議効率化の3つの核心原則
+meeting_principles = {
+    'uncertainty_reduction': {
+        'clear_purpose': "会議の目的と成功条件を事前共有",
+        'structured_agenda': "論点を3-5個に絞り込み", 
+        'defined_outcomes': "決定事項と次のアクションを明確化"
+    },
+    'cognitive_load_management': {
+        'optimal_duration': "技術議論45分、意思決定30分が限界",
+        'participant_limit': "発言する人は最大5名まで",
+        'context_sharing': "背景情報は会議前に文書共有"
+    }
+}
+```
     
-    def __init__(self):
-        self.meeting_templates = self._load_meeting_templates()
-        self.efficiency_metrics = MeetingMetrics()
-        self.facilitation_tools = FacilitationToolkit()
-    
-    def design_meeting(self, purpose, participants, constraints):
-        """会議設計の最適化"""
-        
-        # 会議の必要性評価
-        necessity_score = self._evaluate_meeting_necessity(purpose, participants)
-        if necessity_score < 0.7:
-            return self._suggest_async_alternatives(purpose, participants)
-        
-        # 最適な会議形式の選択
-        meeting_format = self._select_optimal_format(purpose, participants, constraints)
-        
-        # 効率的なアジェンダ設計
-        agenda = self._create_structured_agenda(purpose, participants, constraints)
-        
-        # 参加最適化
-        optimized_participants = self._optimize_participant_list(participants, agenda)
-        
-        return {
-            'meeting_format': meeting_format,
-            'agenda': agenda,
-            'participants': optimized_participants,
-            'estimated_duration': self._estimate_duration(agenda),
-            'preparation_requirements': self._define_prep_requirements(agenda),
-            'success_metrics': self._define_success_metrics(purpose)
-        }
-    
-    def _create_structured_agenda(self, purpose, participants, constraints):
-        """構造化されたアジェンダの作成"""
-        
-        # 時間配分の最適化
-        time_allocation = {
-            'context_setting': 0.1,      # 10%: 文脈共有・目標確認
-            'information_sharing': 0.2,   # 20%: 情報共有・現状報告
-            'discussion': 0.4,           # 40%: 議論・意見交換
-            'decision_making': 0.2,      # 20%: 意思決定・合意形成
-            'action_planning': 0.1       # 10%: アクションアイテム定義
-        }
-        
-        total_duration = constraints.get('max_duration', 60)  # デフォルト60分
-        
-        agenda_items = []
-        
-        # Context Setting（文脈設定）
-        agenda_items.append({
-            'phase': 'context_setting',
+**実践的な会議構造テンプレート**：
+
+```markdown
+## 効率的会議の5フェーズ（合計45分）
+
+1. **文脈共有**（5分）：前提情報の確認
+2. **現状報告**（10分）：データと事実の共有  
+3. **論点整理**（15分）：解決すべき課題の特定
+4. **意思決定**（10分）：具体的なアクションの決定
+5. **確認**（5分）：次回までの責任者・期限の明確化
+```
+
+**なぜこの構造が不確実性を削減するのか**：
+- 参加者全員が同じ前提で議論できる（認識ギャップの解消）
+- 論点が明確で議論が発散しない（時間効率の向上）
+- 決定事項が具体的でアクションが明確（実行の確実性向上）
             'duration': int(total_duration * time_allocation['context_setting']),
             'activities': [
                 '会議の目的・成功条件の確認',

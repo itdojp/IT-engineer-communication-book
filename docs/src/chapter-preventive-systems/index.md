@@ -25,6 +25,10 @@ layout: book
 
 ### 多層防御型メンタルヘルス・アーキテクチャ
 
+**なぜシステム的アプローチが不確実性を削減するのか**：
+
+個人のメンタルヘルスは、「今日は調子が悪い」という主観的な状態で終わりがちです。しかし、**システム的に設計することで、将来のリスクを予測し、適切な対策を自動化**できます。
+
 サイバーセキュリティにおける「多層防御（Defense in Depth）」は、単一の防御ラインに依存せず、複数の独立した防御レイヤーを組み合わせることで、全体のセキュリティを向上させる戦略です。この概念をメンタルヘルスに適用すると、非常に効果的な予防システムを構築できます。
 
 OSI参照モデルの7層構造を参考に、個人から組織まで段階的に防御システムを配置することで、ストレス要因の早期発見、多重の予防策、システムの冗長性を確保できます。一つの層で対処しきれない問題も、複数の層が連携することで適切に処理されます。
@@ -206,41 +210,30 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 
 ### 機能要件（Functional Requirements）
 **FR-001: 早期警戒システム**
-```python
-class EarlyWarningSystem:
-    """ストレス・バーンアウトの早期検出システム"""
-    
-    def __init__(self):
-        self.risk_indicators = [
-            'productivity_decline', 'mood_deterioration',
-            'sleep_pattern_disruption', 'social_withdrawal',
-            'physical_symptoms', 'cognitive_impairment'
-        ]
-        self.alert_thresholds = self.configure_thresholds()
-    
-    def monitor_risk_signals(self, individual_id):
-        """個人のリスク・シグナルを継続監視"""
-        current_metrics = self.collect_current_metrics(individual_id)
-        baseline_metrics = self.get_baseline_metrics(individual_id)
-        
-        risk_score = self.calculate_composite_risk_score(
-            current_metrics, baseline_metrics
-        )
-        
-        if risk_score > self.alert_thresholds['critical']:
-            return self.trigger_immediate_intervention(individual_id, risk_score)
-        elif risk_score > self.alert_thresholds['warning']:
-            return self.schedule_proactive_support(individual_id, risk_score)
-        else:
-            return self.continue_monitoring(individual_id, risk_score)
-    
-    def calculate_composite_risk_score(self, current, baseline):
-        """複合リスク・スコアの算出"""
-        weighted_deviations = []
-        
-        # 生産性指標の重み付き偏差
-        productivity_deviation = (
-            baseline['productivity'] - current['productivity']
+**早期警告システムの設計原則**：
+
+```markdown
+## メンタルヘルス・モニタリングの三段階
+
+### 1. ベースライン設定（初回2週間）
+- 通常時の生産性・気分・睡眠パターンを記録
+- 個人差を考慮した閾値を設定
+
+### 2. 異常検知（日常的な監視）
+- 生産性がベースラインから20%以下に低下
+- 睡眠時間が通常の±50%以上変動
+- 3日連続でネガティブな気分を記録
+
+### 3. 介入アクション（自動化された対応）
+- **警告レベル**：セルフケア活動の推奨通知
+- **危険レベル**：信頼できる人への自動連絡
+- **緊急レベル**：専門家サポートへの誘導
+```
+
+**なぜこのアプローチが効果的か**：
+- **主観の不確実性を排除**：数値ベースで状態を判定
+- **早期発見の確実性向上**：自分で気づく前にサインをキャッチ
+- **一貫した対応**：情緒に左右されないシステマティックなケア
         ) / baseline['productivity']
         weighted_deviations.append(productivity_deviation * 0.25)
         
