@@ -242,19 +242,19 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
     <text x="50" y="205" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 205)">
       Presentation
     </text>
-    <text x="50" y="305" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 305)">
+    <text x="50" y="400" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 400)">
       Session
     </text>
-    <text x="50" y="405" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 405)">
+    <text x="50" y="500" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 500)">
       Transport
     </text>
-    <text x="50" y="505" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 505)">
+    <text x="50" y="600" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 600)">
       Network
     </text>
-    <text x="50" y="605" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 605)">
+    <text x="50" y="700" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 700)">
       Data Link
     </text>
-    <text x="50" y="705" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 705)">
+    <text x="50" y="800" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 800)">
       Physical
     </text>
   </g>
