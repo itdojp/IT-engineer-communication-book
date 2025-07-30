@@ -812,7 +812,7 @@ layout: book
 
 ### 技術知識ベースの構築
 **Knowledge Repository Structure**:
-```
+
 team_knowledge_base/
 ├── architectural_decisions/
 │   ├── adr-001-microservices-adoption.md

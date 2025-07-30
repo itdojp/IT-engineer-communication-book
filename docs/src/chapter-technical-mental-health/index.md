@@ -275,7 +275,7 @@ stress_circuit_breaker:
 
 ### External Resource Integration
 **Support Network as Microservices**：
-```
+
 Personal Support Ecosystem:
 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
 │   Family/Friends │  │  Professional   │  │   Peer Network  │
@@ -596,7 +596,7 @@ personal_sprint_framework:
 
 ### カンバン・ボード設計
 **Mental Wellness Task Flow**：
-```
+
 ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
 │   Backlog   │  │   To Do     │  │ In Progress │  │    Done     │
 │             │  │             │  │             │  │             │
