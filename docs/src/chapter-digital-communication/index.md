@@ -555,7 +555,6 @@ class MeetingQualityMetrics:
         
         return (speaking_balance * 0.4 + engagement_score * 0.6)
 ```
-```
 
 ### ⚡ ツールチェーン最適化
 
@@ -779,7 +778,6 @@ class CommunicationToolOrchestrator:
             'team_policy': team_policy,
             'automation_rules': self._create_notification_automation(optimization_strategy)
         }
-```
 ```
 
 ---
@@ -1093,7 +1091,6 @@ class KnowledgeBaseAnalytics:
         
         return sorted(prioritized_gaps, key=lambda x: x['priority_score'], reverse=True)
 ```
-```
 
 ### 🔍 検索性の向上
 
@@ -1297,7 +1294,6 @@ class SearchExperienceOptimizer:
             'dynamic_suggestions': self._create_dynamic_suggestions(successful_queries),
             'contextual_suggestions': self._create_contextual_suggestions(behavior_data)
         }
-```
 ```
 
 ---
@@ -1586,7 +1582,6 @@ class SlackChannelOptimizer:
             'device_settings': device_settings,
             'personalization_score': self._calculate_personalization_effectiveness(preferences)
         }
-```
 ```
 
 ### 🤖 自動化・Bot活用
@@ -1888,7 +1883,6 @@ class BotAnalyticsSystem:
             'success_stories': self._identify_success_cases(interaction_logs, user_feedback),
             'roi_analysis': self._calculate_bot_roi(effectiveness_metrics)
         }
-```
 ```
 
 ---

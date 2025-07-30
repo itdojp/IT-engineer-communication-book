@@ -426,7 +426,6 @@ class PrivacyProtectionSystem:
         
         return noisy_dataset
 ```
-```
 
 ---
 
@@ -786,7 +785,6 @@ class AutomatedSelfCareSystem:
         
         return self.recovery_system.implement_protocols(recovery_protocols)
 ```
-```
 
 ---
 
@@ -1103,7 +1101,6 @@ team_intervention_framework:
           - goal_alignment_workshops
           - success_story_sharing_meetings
           - collective_vision_creation_exercises
-```
 ```
 
 ---
@@ -1463,7 +1460,6 @@ class MentalHealthCultureTransformation:
         
         return self.measurement_system.implement_monitoring(culture_monitoring_system)
 ```
-```
 
 ---
 
@@ -1757,7 +1753,6 @@ class MentalHealthROICalculator:
         }
         
         return business_metrics
-```
 ```
 
 ---

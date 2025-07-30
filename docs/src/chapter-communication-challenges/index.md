@@ -334,7 +334,6 @@ adr_template:
 - **SLA (Service Level Agreement)**: サービス品質保証レベル
 - **KPI (Key Performance Indicator)**: 重要業績評価指標
 ```
-```
 
 ---
 
@@ -462,7 +461,6 @@ cost_benefit_analysis:
     - "レピュテーション損失の防止"
   net_benefit: "年間5000万円相当のリスク回避"
 ```
-```
 
 ### リスクコミュニケーションの構造化
 
@@ -548,7 +546,6 @@ risks.sort(key=lambda x: x.business_risk_score(), reverse=True)
 2. 根本対策の開発リソース確保
 3. 類似リスクの全システム点検
 ```
-```
 
 ---
 
@@ -619,7 +616,6 @@ def tech_lead_filter(technical_info):
         'code_quality_strategy': define_quality_standards(technical_info),
         'technology_stack': specify_tools_and_frameworks(technical_info)
     }
-```
 ```
 
 ### エスカレーション戦略の設計
@@ -738,7 +734,6 @@ class EscalationContext:
         elif audience_level == 'technical':
             return self._technical_details()
 ```
-```
 
 ### 意思決定権限の明確化
 
@@ -811,7 +806,6 @@ delegation_criteria:
       - "開発プロセス・ツールチェーンの変更"
       - "外部サービス・SaaSの導入"
     approval_process: "アーキテクチャ委員会 + 工数見積 + ROI評価"
-```
 ```
 
 ---
@@ -952,7 +946,6 @@ class ArchitectureEvolution:
             }
         ]
 ```
-```
 
 ### アンチパターンの認識と回避
 
@@ -1062,7 +1055,6 @@ class CommunicationOptimizer:
             'action_required': identify_required_decisions(content),
             'timeline': extract_critical_dates(content)
         }
-```
 ```
 
 ---
