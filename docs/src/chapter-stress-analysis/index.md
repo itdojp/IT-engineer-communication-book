@@ -571,7 +571,6 @@ layout: book
   </text>
 </svg>
 ```
-```
 
 ### 🔄 技術陳腐化への不安
 
@@ -1251,7 +1250,6 @@ class OnCallQualityMetrics:
             'optimization_roadmap': self._create_optimization_roadmap(effectiveness_metrics)
         }
 ```
-```
 
 ---
 
@@ -1510,7 +1508,6 @@ class StakeholderPressureManager:
             'escalation_procedures': self._define_escalation_procedures(monitoring_system)
         }
 ```
-```
 
 ### 🤝 チーム力学とコミュニケーション摩擦
 
@@ -1666,7 +1663,6 @@ class PsychologicalSafetyOptimizer:
             'barriers': self._identify_speaking_barriers(speaking_indicators, response_quality),
             'enablers': self._identify_speaking_enablers(speaking_indicators, response_quality)
         }
-```
 ```
 
 ---
@@ -1913,7 +1909,6 @@ class PerfectionismStressManager:
             'continued_support_needs': self._assess_continued_support_needs(progress_analysis)
         }
 ```
-```
 
 ### 🧠 認知バイアスと意思決定疲労
 
@@ -2084,7 +2079,6 @@ class CognitiveBiasManager:
             'risk_areas': self._identify_confirmation_bias_risks(confirmation_indicators),
             'mitigation_strategies': self._suggest_confirmation_bias_mitigation(confirmation_indicators)
         }
-```
 ```
 
 ---

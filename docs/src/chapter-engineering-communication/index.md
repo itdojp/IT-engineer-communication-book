@@ -565,12 +565,13 @@ if (相手の知識レベル == 初級) {
 
 **パフォーマンス・エンジニアリングの人間適用**：
 
-```markdown
 ## Human Performance Engineering
 
 ### CPU使用率に相当する認知負荷
+
 **Cognitive Load Monitoring**：
-```
+
+```yaml
 Normal Load (< 70%):
   - 集中力維持可能
   - 創造的思考が活発
@@ -593,8 +594,10 @@ Critical Load (> 90%):
 - リソース増強（休憩、サポート）の自動投入
 
 ### Memory Leak相当のストレス蓄積
+
 **Stress Accumulation Pattern**：
-```
+
+```javascript
 Short-term Stress {
     if properly_handled {
         memory_released();
@@ -611,7 +614,6 @@ Long-term Pattern {
         system_restart_needed();        // より大きな環境変更
     }
 }
-```
 ```
 
 ### ストレスの定量的測定
@@ -662,13 +664,11 @@ alert_rules:
     severity: "critical"
     action: ["mandatory_time_off", "environment_change_discussion"]
 ```
-```
 
 ### パフォーマンス最適化戦略
 
 **Human Performance Tuning**：
 
-```markdown
 ## Performance Optimization for Engineers
 
 ### Caching Strategy（キャッシュ戦略）
@@ -724,7 +724,6 @@ if current_stress_level < 30% {
     ];
 }
 ```
-```
 
 ---
 
@@ -736,7 +735,6 @@ if current_stress_level < 30% {
 
 **確証バイアス（Confirmation Bias）の技術的発現**：
 
-```markdown
 ## Engineering-Specific Cognitive Biases
 
 ### Architecture Confirmation Bias
@@ -796,13 +794,11 @@ E: 専門家レベル（安定した自信）
 - メンタリング・ペアプログラミングによる客観的フィードバック
 - 段階的な責任拡大（いきなり重要な判断を任せない）
 - 継続的な学習・振り返りの文化構築
-```
 
 ### 意思決定疲労（Decision Fatigue）
 
 **技術選択における意思決定疲労**：
 
-```markdown
 ## Decision Fatigue Management
 
 ### 意思決定の優先度分類
@@ -854,7 +850,6 @@ technology_adoption_decision:
     total_score >= 60: "TRIAL"
     total_score < 60: "AVOID"
 ```
-```
 
 ---
 
@@ -864,7 +859,6 @@ technology_adoption_decision:
 
 **Flow State Engineering**：
 
-```markdown
 ## Flow State Optimization for Engineers
 
 ### フロー状態の必要条件
@@ -910,7 +904,6 @@ flow_enabling_conditions:
 
 **Distraction-Free Environment**：
 
-```markdown
 ## 集中環境の設計原則
 
 ### Digital Environment（デジタル環境）
@@ -1022,7 +1015,6 @@ Context Switch Cost:
 1. Time Boxing: 最低90分の集中ブロック確保
 2. Batch Processing: 類似タスクのグループ化
 3. Context Preservation: 作業状態の明示的な保存
-```
 ```
 
 ---

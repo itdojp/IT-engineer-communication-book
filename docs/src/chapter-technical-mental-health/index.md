@@ -319,7 +319,6 @@ class MentalHealthAutoScaler:
             'emergency_protocols': 'standby'
         }
 ```
-```
 
 ---
 
@@ -538,7 +537,6 @@ dashboard_layout:
       - improvement_suggestions: "personalized recommendations"
       - milestone_celebrations: "positive reinforcement"
 ```
-```
 
 ---
 
@@ -707,7 +705,6 @@ statistical_analysis:
   confidence_level: "95%"
   effect_size: "Cohen's d"
   practical_significance: "日常生活での体感的価値"
-```
 ```
 
 ---
@@ -906,7 +903,6 @@ class MentalPerformanceProfiler:
                 })
         
         return optimizations
-```
 ```
 
 ---
@@ -1127,7 +1123,6 @@ class PersonalErrorBudget:
             ]
         }
         return recommendations.get(budget_status, ["状況を詳しく分析してください"])
-```
 ```
 
 ---

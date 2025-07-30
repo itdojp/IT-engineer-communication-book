@@ -930,7 +930,6 @@ knowledge_quality_metrics = {
     }
 }
 ```
-```
 
 ---
 
@@ -1179,7 +1178,6 @@ solution_proposal:
       - "ユーザー満足度調査（四半期）"
       - "運用コスト・エラー率（月次）"
 ```
-```
 
 ### 見積もり手法の精緻化
 
@@ -1342,7 +1340,6 @@ class EstimationLearningSystem:
             }
         
         return biases
-```
 ```
 
 ---
@@ -1523,7 +1520,6 @@ sla_monitor.register_sla('api_response_time', {
 
 # 月次レポート生成
 monthly_report = sla_monitor.generate_sla_report('2024-01', audience='customer')
-```
 ```
 
 ### 障害対応・技術サポート
@@ -1724,7 +1720,6 @@ class IncidentResponseImprovement:
             'training_needs': self._identify_training_needs(patterns)
         }
 ```
-```
 
 ### 契約技術評価・ベンダー管理
 
@@ -1880,7 +1875,6 @@ project_requirements = {
 }
 
 evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_requirements)
-```
 ```
 
 ---
