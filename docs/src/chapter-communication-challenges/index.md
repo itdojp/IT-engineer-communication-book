@@ -739,29 +739,106 @@ class EscalationContext:
 
 **RACI Matrix for Technical Decisions**：
 
-```markdown
-## 技術的意思決定の責任分担
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0;">
 
-### 決定レベル別RACI定義
-```
-Decision Type        | Individual Engineer | Tech Lead | Engineering Manager | CTO
--------------------- | ------------------- | --------- | ------------------- | ---
-Implementation Detail| R,A                 | I         | I                   | -
-Code Review          | R                   | A         | I                   | -
-Design Pattern       | R                   | A,C       | I                   | -
-API Design           | R                   | A,C       | I                   | I
-Architecture Choice  | R                   | A,C       | C                   | I
-Technology Stack     | C                   | R,A       | C                   | I
-Infrastructure       | C                   | C         | R,A                 | I
-Budget Allocation    | -                   | C         | R,A                 | I
-Strategic Direction  | -                   | I         | C                   | R,A
+#### 技術的意思決定の責任分担
 
-Legend:
-R = Responsible (実行責任)
-A = Accountable (説明責任) 
-C = Consulted (相談対象)
-I = Informed (情報共有対象)
-```
+<table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+<thead>
+<tr style="background: #3b82f6; color: white;">
+<th style="padding: 12px; text-align: left; border: 1px solid #2563eb;">Decision Type</th>
+<th style="padding: 12px; text-align: center; border: 1px solid #2563eb;">Individual Engineer</th>
+<th style="padding: 12px; text-align: center; border: 1px solid #2563eb;">Tech Lead</th>
+<th style="padding: 12px; text-align: center; border: 1px solid #2563eb;">Engineering Manager</th>
+<th style="padding: 12px; text-align: center; border: 1px solid #2563eb;">CTO</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background: #f1f5f9;">
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Implementation Detail</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>R,A</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">-</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Code Review</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fef3c7;">R</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>A</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">-</td>
+</tr>
+<tr style="background: #f1f5f9;">
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Design Pattern</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fef3c7;">R</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>A,C</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">-</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">API Design</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fef3c7;">R</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>A,C</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+</tr>
+<tr style="background: #f1f5f9;">
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Architecture Choice</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fef3c7;">R</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>A,C</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Technology Stack</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>R,A</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+</tr>
+<tr style="background: #f1f5f9;">
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Infrastructure</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>R,A</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Budget Allocation</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">-</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>R,A</strong></td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+</tr>
+<tr style="background: #f1f5f9;">
+<td style="padding: 10px; border: 1px solid #cbd5e1; font-weight: 600;">Strategic Direction</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">-</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center;">I</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #fce7f3;">C</td>
+<td style="padding: 10px; border: 1px solid #cbd5e1; text-align: center; background: #dcfce7;"><strong>R,A</strong></td>
+</tr>
+</tbody>
+</table>
+
+<div style="background: #dbeafe; padding: 15px; border-radius: 6px; margin-top: 15px;">
+<p style="margin: 0 0 10px 0; font-weight: 600; color: #1d4ed8;">Legend:</p>
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+<div style="background: #dcfce7; padding: 8px; border-radius: 4px; text-align: center;">
+<strong>R</strong> = Responsible<br><span style="font-size: 0.85em;">実行責任</span>
+</div>
+<div style="background: #dcfce7; padding: 8px; border-radius: 4px; text-align: center;">
+<strong>A</strong> = Accountable<br><span style="font-size: 0.85em;">説明責任</span>
+</div>
+<div style="background: #fce7f3; padding: 8px; border-radius: 4px; text-align: center;">
+<strong>C</strong> = Consulted<br><span style="font-size: 0.85em;">相談対象</span>
+</div>
+<div style="background: #f1f5f9; padding: 8px; border-radius: 4px; text-align: center;">
+<strong>I</strong> = Informed<br><span style="font-size: 0.85em;">情報共有対象</span>
+</div>
+</div>
+</div>
+
+</div>
 
 **Decision Delegation Framework**：
 ```yaml

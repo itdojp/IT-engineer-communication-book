@@ -35,12 +35,12 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 
 **Defense in Depth for Mental Health**：
 
-<svg width="800" height="700" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="870" viewBox="0 0 800 870" xmlns="http://www.w3.org/2000/svg">
   <title>多層防御型メンタルヘルス・アーキテクチャ</title>
   <desc>OSI参照モデルを適用した7層メンタルヘルス防御システム</desc>
   
   <!-- Background -->
-  <rect width="800" height="700" fill="#fefefe" stroke="none"/>
+  <rect width="800" height="870" fill="#fefefe" stroke="none"/>
   
   <!-- Title -->
   <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
@@ -164,6 +164,101 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
     </text>
   </g>
   
+  <!-- Layer 5: Session -->
+  <g>
+    <rect x="100" y="360" width="600" height="80" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="120" y="385" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#15803d">
+      Layer 5: Session（対話・コミュニケーション・レベル）
+    </text>
+    <text x="120" y="405" font-family="Inter, sans-serif" font-size="10" fill="#166534">
+      • 1on1面談　• チーム・ミーティング　• 相談体制構築
+    </text>
+    <text x="120" y="420" font-family="Inter, sans-serif" font-size="10" fill="#166534">
+      • フィードバック文化　• オープン・コミュニケーション
+    </text>
+  </g>
+  
+  <!-- Layer 4: Transport -->
+  <g>
+    <rect x="100" y="460" width="600" height="80" rx="8" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="120" y="485" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#7c3aed">
+      Layer 4: Transport（サポート・ネットワーク・レベル）
+    </text>
+    <text x="120" y="505" font-family="Inter, sans-serif" font-size="10" fill="#6d28d9">
+      • ピアサポート　• メンター関係　• 専門家連携
+    </text>
+    <text x="120" y="520" font-family="Inter, sans-serif" font-size="10" fill="#6d28d9">
+      • EAP（Employee Assistance Program）　• カウンセリング
+    </text>
+  </g>
+  
+  <!-- Layer 3: Network -->
+  <g>
+    <rect x="100" y="560" width="600" height="80" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+    <text x="120" y="585" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#be185d">
+      Layer 3: Network（組織・チーム文化レベル）
+    </text>
+    <text x="120" y="605" font-family="Inter, sans-serif" font-size="10" fill="#9d174d">
+      • 心理的安全性　• チーム規範　• 組織ポリシー
+    </text>
+    <text x="120" y="620" font-family="Inter, sans-serif" font-size="10" fill="#9d174d">
+      • ワークライフバランス　• ダイバーシティ＆インクルージョン
+    </text>
+  </g>
+  
+  <!-- Layer 2: Data Link -->
+  <g>
+    <rect x="100" y="660" width="600" height="80" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="120" y="685" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#047857">
+      Layer 2: Data Link（計測・監視レベル）
+    </text>
+    <text x="120" y="705" font-family="Inter, sans-serif" font-size="10" fill="#065f46">
+      • メトリクス収集　• パターン分析　• トレンド監視
+    </text>
+    <text x="120" y="720" font-family="Inter, sans-serif" font-size="10" fill="#065f46">
+      • 早期警戒システム　• データ駆動型アラート
+    </text>
+  </g>
+  
+  <!-- Layer 1: Physical -->
+  <g>
+    <rect x="100" y="760" width="600" height="80" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="120" y="785" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#475569">
+      Layer 1: Physical（基盤・環境・リソースレベル）
+    </text>
+    <text x="120" y="805" font-family="Inter, sans-serif" font-size="10" fill="#334155">
+      • 作業環境　• 時間・予算リソース　• ツール・インフラ
+    </text>
+    <text x="120" y="820" font-family="Inter, sans-serif" font-size="10" fill="#334155">
+      • オフィス設計　• 福利厚生　• テクノロジー基盤
+    </text>
+  </g>
+  
+  <!-- Layer indicators on the left -->
+  <g>
+    <text x="50" y="105" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 105)">
+      Application
+    </text>
+    <text x="50" y="205" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 205)">
+      Presentation
+    </text>
+    <text x="50" y="305" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 305)">
+      Session
+    </text>
+    <text x="50" y="405" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 405)">
+      Transport
+    </text>
+    <text x="50" y="505" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 505)">
+      Network
+    </text>
+    <text x="50" y="605" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 605)">
+      Data Link
+    </text>
+    <text x="50" y="705" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6b7280" transform="rotate(-90, 50, 705)">
+      Physical
+    </text>
+  </g>
+  
   <!-- Data flow arrows -->
   <g>
     <polygon points="750,100 760,95 760,105" fill="#6b7280"/>
@@ -173,32 +268,13 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
     <polygon points="750,500 760,495 760,505" fill="#6b7280"/>
     <polygon points="750,600 760,595 760,605" fill="#6b7280"/>
     <polygon points="750,700 760,695 760,705" fill="#6b7280"/>
+    <polygon points="750,800 760,795 760,805" fill="#6b7280"/>
     
-    <text x="770" y="400" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 770, 400)">
+    <text x="770" y="450" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 770, 450)">
       Information Flow
     </text>
   </g>
 </svg>
-┌─────────────────────────────────────────────────────────┐
-│                Layer 4: Transport                      │
-│             転送レベル（サポート・ネットワーク）           │
-│  ・ピアサポート  ・メンター関係  ・専門家連携            │
-└─────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────┐
-│                 Layer 3: Network                       │
-│          ネットワーク・レベル（組織・チーム文化）          │
-│  ・心理的安全性  ・チーム規範  ・組織ポリシー            │
-└─────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────┐
-│                Layer 2: Data Link                      │
-│            データリンク・レベル（計測・監視）             │
-│  ・メトリクス収集  ・パターン分析  ・トレンド監視         │
-└─────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────┐
-│                Layer 1: Physical                       │
-│              物理レベル（基盤・環境・リソース）            │
-│  ・作業環境  ・時間・予算  ・ツール・インフラ            │
-└─────────────────────────────────────────────────────────┘
 ```
 
 ### システム要件定義
