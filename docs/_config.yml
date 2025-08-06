@@ -40,5 +40,5 @@ kramdown:
   syntax_highlighter: rouge
   
 # リポジトリ情報
-repository: "https://github.com/itdojp/IT-engineer-communication-book"
+repository: "itdojp/IT-engineer-communication-book"
 
