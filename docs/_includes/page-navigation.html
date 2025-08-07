@@ -1,72 +1,40 @@
 <!-- Page Navigation (Previous/Next) -->
-{% assign prev_page = nil %}
-{% assign next_page = nil %}
+{% assign current_index = nil %}
+{% assign all_pages = site.pages | where: "layout", "book" | where_exp: "page", "page.order" | sort: 'order' %}
 
-<!-- Manual navigation mapping for performance -->
-{% if page.url contains 'chapter-quickstart' %}
-    {% assign next_page_url = '/src/chapter-engineering-communication/' %}
-    {% assign next_page_title = 'エンジニアリング思考とコミュニケーション' %}
-{% elsif page.url contains 'chapter-engineering-communication' %}
-    {% assign prev_page_url = '/src/chapter-quickstart/' %}
-    {% assign prev_page_title = 'クイックスタートガイド' %}
-    {% assign next_page_url = '/src/chapter-communication-challenges/' %}
-    {% assign next_page_title = 'エンジニア特有のコミュニケーション課題' %}
-{% elsif page.url contains 'chapter-communication-challenges' %}
-    {% assign prev_page_url = '/src/chapter-engineering-communication/' %}
-    {% assign prev_page_title = 'エンジニアリング思考とコミュニケーション' %}
-    {% assign next_page_url = '/src/chapter-structured-communication/' %}
-    {% assign next_page_title = '構造化コミュニケーション手法' %}
-{% elsif page.url contains 'chapter-structured-communication' %}
-    {% assign prev_page_url = '/src/chapter-communication-challenges/' %}
-    {% assign prev_page_title = 'エンジニア特有のコミュニケーション課題' %}
-    {% assign next_page_url = '/src/chapter-stakeholder-communication/' %}
-    {% assign next_page_title = 'ステークホルダー別コミュニケーション戦略' %}
-{% elsif page.url contains 'chapter-stakeholder-communication' %}
-    {% assign prev_page_url = '/src/chapter-structured-communication/' %}
-    {% assign prev_page_title = '構造化コミュニケーション手法' %}
-    {% assign next_page_url = '/src/chapter-digital-communication/' %}
-    {% assign next_page_title = 'デジタルコミュニケーション最適化' %}
-{% elsif page.url contains 'chapter-digital-communication' %}
-    {% assign prev_page_url = '/src/chapter-stakeholder-communication/' %}
-    {% assign prev_page_title = 'ステークホルダー別コミュニケーション戦略' %}
-    {% assign next_page_url = '/src/chapter-stress-analysis/' %}
-    {% assign next_page_title = 'エンジニア特有のストレス要因分析' %}
-{% elsif page.url contains 'chapter-stress-analysis' %}
-    {% assign prev_page_url = '/src/chapter-digital-communication/' %}
-    {% assign prev_page_title = 'デジタルコミュニケーション最適化' %}
-    {% assign next_page_url = '/src/chapter-technical-mental-health/' %}
-    {% assign next_page_title = '技術的アプローチによるメンタルヘルス管理' %}
-{% elsif page.url contains 'chapter-technical-mental-health' %}
-    {% assign prev_page_url = '/src/chapter-stress-analysis/' %}
-    {% assign prev_page_title = 'エンジニア特有のストレス要因分析' %}
-    {% assign next_page_url = '/src/chapter-preventive-systems/' %}
-    {% assign next_page_title = '予防的メンタルヘルスシステム構築' %}
-{% elsif page.url contains 'chapter-preventive-systems' %}
-    {% assign prev_page_url = '/src/chapter-technical-mental-health/' %}
-    {% assign prev_page_title = '技術的アプローチによるメンタルヘルス管理' %}
-    {% assign next_page_url = '/src/chapter-technical-leadership/' %}
-    {% assign next_page_title = '技術リーダーシップとコミュニケーション' %}
-{% elsif page.url contains 'chapter-technical-leadership' %}
-    {% assign prev_page_url = '/src/chapter-preventive-systems/' %}
-    {% assign prev_page_title = '予防的メンタルヘルスシステム構築' %}
-    {% assign next_page_url = '/src/chapter-career-development/' %}
-    {% assign next_page_title = 'キャリア開発とセルフブランディング' %}
-{% elsif page.url contains 'chapter-career-development' %}
-    {% assign prev_page_url = '/src/chapter-technical-leadership/' %}
-    {% assign prev_page_title = '技術リーダーシップとコミュニケーション' %}
+<!-- Find current page index -->
+{% for p in all_pages %}
+    {% if p.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+<!-- Calculate previous and next indices -->
+{% if current_index %}
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+    
+    {% if prev_index >= 0 %}
+        {% assign previous_page = all_pages[prev_index] %}
+    {% endif %}
+    
+    {% if next_index < all_pages.size %}
+        {% assign next_page = all_pages[next_index] %}
+    {% endif %}
 {% endif %}
 
 <div class="page-nav">
     <!-- Previous Page -->
     <div class="page-nav-item page-nav-prev">
-        {% if prev_page_url %}
-        <a href="{{ prev_page_url | relative_url }}" class="page-nav-link">
+        {% if previous_page %}
+        <a href="{{ previous_page.url | relative_url }}" class="page-nav-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
             <div class="page-nav-content">
                 <span class="page-nav-label">前のページ</span>
-                <span class="page-nav-title">{{ prev_page_title }}</span>
+                <span class="page-nav-title">{{ previous_page.title }}</span>
             </div>
         </a>
         {% endif %}
@@ -74,11 +42,11 @@
 
     <!-- Next Page -->
     <div class="page-nav-item page-nav-next">
-        {% if next_page_url %}
-        <a href="{{ next_page_url | relative_url }}" class="page-nav-link">
+        {% if next_page %}
+        <a href="{{ next_page.url | relative_url }}" class="page-nav-link">
             <div class="page-nav-content">
                 <span class="page-nav-label">次のページ</span>
-                <span class="page-nav-title">{{ next_page_title }}</span>
+                <span class="page-nav-title">{{ next_page.title }}</span>
             </div>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="9 18 15 12 9 6"></polyline>

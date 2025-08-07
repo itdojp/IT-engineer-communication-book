@@ -1,9 +1,11 @@
-<!-- Sidebar Navigation -->
+<!-- Sidebar Navigation - IT Engineer Communication Book -->
 <div class="sidebar-content">
     <!-- Book Info -->
     <div class="book-info">
-        <h2 class="book-title">{{ site.title | escape }}</h2>
-        <p class="book-subtitle">{{ site.description | escape }}</p>
+        <h2 class="book-title">📚 エンジニアのための実践コミュニケーション設計</h2>
+        
+        <p class="book-subtitle">システム思考とデータ駆動で身につける対人スキルとメンタル管理</p>
+        
     </div>
 
     <!-- Table of Contents -->
@@ -12,11 +14,22 @@
         
         <!-- Introduction -->
         <div class="toc-section">
-            <h4 class="toc-section-title">クイックスタート</h4>
+            <ul class="toc-list">
+                <li class="toc-item">
+                    <a href="{{ '/' | relative_url }}" class="toc-link {% if page.url == '/' %}active{% endif %}">
+                        🏠 はじめに
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="toc-section">
+            <h3 class="toc-section-title">🚀 クイックスタート</h3>
             <ul class="toc-list">
                 <li class="toc-item">
                     <a href="{{ '/src/chapter-quickstart/' | relative_url }}" class="toc-link {% if page.url contains 'chapter-quickstart' %}active{% endif %}">
-                        クイックスタートガイド
+                        ⚡ クイックスタートガイド
                     </a>
                 </li>
             </ul>
@@ -24,7 +37,7 @@
 
         <!-- Main Chapters -->
         <div class="toc-section">
-            <h4 class="toc-section-title">本編</h4>
+            <h3 class="toc-section-title">📖 メインコンテンツ</h3>
             <ul class="toc-list">
                 <li class="toc-item toc-chapter">
                     <a href="{{ '/src/chapter-engineering-communication/' | relative_url }}" class="toc-link {% if page.url contains 'chapter-engineering-communication' %}active{% endif %}">
@@ -88,11 +101,10 @@
                 </li>
             </ul>
         </div>
-    </div>
 
         <!-- Resources Section -->
         <div class="toc-section">
-            <h4 class="toc-section-title">📚 リソース</h4>
+            <h3 class="toc-section-title">📚 リソース</h3>
             <ul class="toc-list">
                 <li class="toc-item">
                     <a href="https://github.com/itdojp/IT-engineer-communication-book" class="toc-link" target="_blank" rel="noopener">
@@ -111,5 +123,6 @@
                 </li>
             </ul>
         </div>
+        
     </div>
 </div>
