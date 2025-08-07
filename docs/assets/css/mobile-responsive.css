@@ -8,20 +8,15 @@
   position: absolute;
   left: -9999px;
   opacity: 0;
-  pointer-events: none;
 }
 
-/* Label styling to prevent unwanted behaviors */
-.sidebar-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  user-select: none;
-}
-
+/* Prevent page jumping and unwanted focus */
 .sidebar-toggle:focus {
   outline: none;
+}
+
+html {
+  scroll-behavior: auto;
 }
 
 /* Mobile/Tablet Implementation (≤1024px) */
@@ -34,12 +29,8 @@
   
   .book-layout .book-main .book-content {
     margin: 0 !important;
-    padding: 0.5rem 1rem 2rem !important;
-  }
-  
-  .book-layout .book-main .book-content .page-content {
-    padding: 1rem !important;
-    margin-top: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
   
   /* Show hamburger menu */
@@ -63,13 +54,25 @@
   }
 
   /* Show sidebar when toggled */
-  #sidebar-toggle:checked ~ .book-layout .book-sidebar {
+  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar {
     transform: translateX(0) !important;
   }
   
-  /* Alternative selector for better compatibility */
-  body:has(#sidebar-toggle:checked) .book-sidebar {
-    transform: translateX(0) !important;
+  /* Ensure sidebar content is interactive */
+  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar .toc-link {
+    color: var(--text-secondary) !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+  
+  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar .toc-link:hover {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar .toc-link.active {
+    background: var(--bg-tertiary) !important;
+    color: var(--primary-color) !important;
   }
   
   /* Background overlay */
@@ -82,17 +85,9 @@
     visibility: hidden;
     transition: opacity 0.3s ease;
     pointer-events: none;
-    cursor: pointer;
   }
 
-  #sidebar-toggle:checked ~ .book-sidebar-overlay {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-  
-  /* Alternative selector for better compatibility */
-  body:has(#sidebar-toggle:checked) .book-sidebar-overlay {
+  .sidebar-toggle-checkbox:checked ~ .book-sidebar-overlay {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
