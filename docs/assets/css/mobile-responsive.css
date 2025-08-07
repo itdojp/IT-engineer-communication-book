@@ -29,8 +29,12 @@ html {
   
   .book-layout .book-main .book-content {
     margin: 0 !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding: 0.5rem 1rem 2rem !important;
+  }
+  
+  .book-layout .book-main .book-content .page-content {
+    padding: 1rem !important;
+    margin-top: 0 !important;
   }
   
   /* Show hamburger menu */
@@ -54,23 +58,23 @@ html {
   }
 
   /* Show sidebar when toggled */
-  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar {
+  #sidebar-toggle:checked ~ .book-layout .book-sidebar {
     transform: translateX(0) !important;
   }
   
   /* Ensure sidebar content is interactive */
-  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar .toc-link {
+  #sidebar-toggle:checked ~ .book-layout .book-sidebar .toc-link {
     color: var(--text-secondary) !important;
     pointer-events: auto !important;
     cursor: pointer !important;
   }
   
-  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar .toc-link:hover {
+  #sidebar-toggle:checked ~ .book-layout .book-sidebar .toc-link:hover {
     background: var(--bg-secondary) !important;
     color: var(--text-primary) !important;
   }
   
-  .sidebar-toggle-checkbox:checked ~ .book-layout .book-sidebar .toc-link.active {
+  #sidebar-toggle:checked ~ .book-layout .book-sidebar .toc-link.active {
     background: var(--bg-tertiary) !important;
     color: var(--primary-color) !important;
   }
@@ -85,9 +89,10 @@ html {
     visibility: hidden;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    cursor: pointer;
   }
 
-  .sidebar-toggle-checkbox:checked ~ .book-sidebar-overlay {
+  #sidebar-toggle:checked ~ .book-sidebar-overlay {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

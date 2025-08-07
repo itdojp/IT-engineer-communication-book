@@ -42,17 +42,20 @@
     </script>
 </head>
 <body>
+    <!-- CSS-only responsive sidebar toggle -->
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox" aria-hidden="true">
+    
     <div class="book-layout">
         <!-- Header -->
         <header class="book-header">
             <div class="header-left">
-                <button class="sidebar-toggle" aria-label="Toggle sidebar" aria-expanded="false">
+                <label for="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
-                </button>
+                </label>
                 <a href="{{ '/' | relative_url }}" class="header-title">
                     <h1>{{ site.title | escape }}</h1>
                 </a>
@@ -98,12 +101,6 @@
         <!-- Main Content -->
         <main class="book-main" id="main">
             <div class="book-content">
-                <!-- Breadcrumb -->
-                {% if page.url != '/' %}
-                <nav class="breadcrumb" aria-label="Breadcrumb">
-                    {% include breadcrumb.html %}
-                </nav>
-                {% endif %}
 
                 <!-- Page Content -->
                 <article class="page-content">
@@ -136,11 +133,10 @@
         </main>
     </div>
 
-    <!-- Overlay for mobile sidebar -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <!-- CSS-only overlay for mobile sidebar -->
+    <label for="sidebar-toggle" class="book-sidebar-overlay"></label>
 
     <!-- Scripts - Minimal loading for performance -->
     <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/sidebar.js' | relative_url }}"></script>
 </body>
 </html>

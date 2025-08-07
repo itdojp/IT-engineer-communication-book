@@ -287,14 +287,15 @@ a:hover {
 .book-content {
     max-width: var(--content-max-width);
     margin: 0 auto;
-    padding: 2rem 3rem;
+    padding: 1rem 3rem 2rem;
 }
 
 .page-content {
     background: var(--bg-primary);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1rem 2rem;
     box-shadow: var(--shadow-sm);
+    margin-top: 0;
 }
 
 /* Search */
