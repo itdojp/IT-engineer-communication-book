@@ -3,6 +3,7 @@ title: "予防的メンタルヘルスシステム構築"
 description: "個人・チーム・組織レベルでの予防システム設計"
 chapter: 8
 layout: book
+order: 10
 ---
 
 # 第8章：予防的メンタルヘルスシステム構築

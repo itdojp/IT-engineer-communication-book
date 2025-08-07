@@ -3,6 +3,7 @@ title: "ステークホルダー別コミュニケーション戦略"
 description: "チーム内・PM・顧客との効果的な連携手法"
 chapter: 4
 layout: book
+order: 6
 ---
 
 # 第4章：ステークホルダー別コミュニケーション戦略

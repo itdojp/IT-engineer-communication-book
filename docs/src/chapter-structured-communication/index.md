@@ -3,6 +3,7 @@ title: "構造化コミュニケーション手法"
 description: "RFC形式・PREP法・段階的詳細化・デバッグ思考の活用"
 chapter: 3
 layout: book
+order: 5
 ---
 
 # 第3章：構造化コミュニケーション手法

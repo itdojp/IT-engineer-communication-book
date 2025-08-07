@@ -3,6 +3,7 @@ title: "キャリア開発とセルフブランディング"
 description: "技術者としてのキャリア戦略と外部発信"
 chapter: 10
 layout: book
+order: 12
 ---
 
 # 第10章：キャリア開発とセルフブランディング
