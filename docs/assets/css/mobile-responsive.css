@@ -8,15 +8,20 @@
   position: absolute;
   left: -9999px;
   opacity: 0;
+  pointer-events: none;
 }
 
-/* Prevent page jumping and unwanted focus */
+/* Label styling to prevent unwanted behaviors */
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
 .sidebar-toggle:focus {
   outline: none;
-}
-
-html {
-  scroll-behavior: auto;
 }
 
 /* Mobile/Tablet Implementation (≤1024px) */
@@ -62,21 +67,9 @@ html {
     transform: translateX(0) !important;
   }
   
-  /* Ensure sidebar content is interactive */
-  #sidebar-toggle:checked ~ .book-layout .book-sidebar .toc-link {
-    color: var(--text-secondary) !important;
-    pointer-events: auto !important;
-    cursor: pointer !important;
-  }
-  
-  #sidebar-toggle:checked ~ .book-layout .book-sidebar .toc-link:hover {
-    background: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-  }
-  
-  #sidebar-toggle:checked ~ .book-layout .book-sidebar .toc-link.active {
-    background: var(--bg-tertiary) !important;
-    color: var(--primary-color) !important;
+  /* Alternative selector for better compatibility */
+  body:has(#sidebar-toggle:checked) .book-sidebar {
+    transform: translateX(0) !important;
   }
   
   /* Background overlay */
@@ -93,6 +86,13 @@ html {
   }
 
   #sidebar-toggle:checked ~ .book-sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  /* Alternative selector for better compatibility */
+  body:has(#sidebar-toggle:checked) .book-sidebar-overlay {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
