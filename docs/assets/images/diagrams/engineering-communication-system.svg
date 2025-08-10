@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+      .layer-title { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: bold; fill: #fff; }
+      .component-title { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: bold; fill: #2c3e50; }
+      .text-content { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; fill: #2c3e50; }
+      .small-text { font-family: 'Noto Sans JP', sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .input-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .process-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .output-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .feedback-box { fill: #f39c12; stroke: #e67e22; stroke-width: 2; }
+      .component { fill: #fff; stroke: #95a5a6; stroke-width: 1; }
+      .system-flow { stroke: #34495e; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .feedback-line { stroke: #f39c12; stroke-width: 2; stroke-dasharray: 5,3; fill: none; marker-end: url(#arrowhead-orange); }
+      .process-connection { stroke: #9b59b6; stroke-width: 2; stroke-dasharray: 3,2; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 12 3, 0 6" fill="#34495e"/>
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f39c12"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" class="title" text-anchor="middle">エンジニアリング思考コミュニケーションシステム</text>
+
+  <!-- Input Layer -->
+  <g id="input">
+    <rect x="50" y="70" width="180" height="120" class="input-box" rx="10"/>
+    <text x="140" y="95" class="layer-title" text-anchor="middle">入力レイヤー</text>
+    <text x="140" y="115" class="layer-title" text-anchor="middle">(Input)</text>
+    
+    <rect x="65" y="125" width="150" height="55" class="component" rx="3"/>
+    <text x="140" y="145" class="component-title" text-anchor="middle">情報収集・分析</text>
+    <text x="75" y="160" class="text-content">• 要件定義</text>
+    <text x="75" y="175" class="text-content">• 技術仕様理解</text>
+  </g>
+
+  <!-- Processing Layer -->
+  <g id="processing">
+    <rect x="250" y="70" width="180" height="120" class="process-box" rx="10"/>
+    <text x="340" y="95" class="layer-title" text-anchor="middle">処理レイヤー</text>
+    <text x="340" y="115" class="layer-title" text-anchor="middle">(Processing)</text>
+    
+    <rect x="265" y="125" width="150" height="55" class="component" rx="3"/>
+    <text x="340" y="145" class="component-title" text-anchor="middle">構造化・最適化</text>
+    <text x="275" y="160" class="text-content">• 論理構造設計</text>
+    <text x="275" y="175" class="text-content">• 情報階層化</text>
+  </g>
+
+  <!-- Output Layer -->
+  <g id="output">
+    <rect x="450" y="70" width="180" height="120" class="output-box" rx="10"/>
+    <text x="540" y="95" class="layer-title" text-anchor="middle">出力レイヤー</text>
+    <text x="540" y="115" class="layer-title" text-anchor="middle">(Output)</text>
+    
+    <rect x="465" y="125" width="150" height="55" class="component" rx="3"/>
+    <text x="540" y="145" class="component-title" text-anchor="middle">伝達・表現</text>
+    <text x="475" y="160" class="text-content">• 適切な形式選択</text>
+    <text x="475" y="175" class="text-content">• 効果的な表現</text>
+  </g>
+
+  <!-- Feedback Layer -->
+  <g id="feedback">
+    <rect x="650" y="70" width="200" height="120" class="feedback-box" rx="10"/>
+    <text x="750" y="95" class="layer-title" text-anchor="middle">フィードバック</text>
+    <text x="750" y="115" class="layer-title" text-anchor="middle">(Feedback)</text>
+    
+    <rect x="665" y="125" width="170" height="55" class="component" rx="3"/>
+    <text x="750" y="145" class="component-title" text-anchor="middle">評価・改善</text>
+    <text x="675" y="160" class="text-content">• 理解度測定</text>
+    <text x="675" y="175" class="text-content">• プロセス最適化</text>
+  </g>
+
+  <!-- System Flow -->
+  <path d="M 230 130 L 250 130" class="system-flow"/>
+  <path d="M 430 130 L 450 130" class="system-flow"/>
+  <path d="M 630 130 L 650 130" class="system-flow"/>
+  <path d="M 750 190 Q 450 250 140 190" class="feedback-line"/>
+
+  <!-- Engineering Communication Model -->
+  <g id="model">
+    <rect x="50" y="220" width="800" height="440" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="5"/>
+    <text x="450" y="245" class="component-title" text-anchor="middle">エンジニア特化コミュニケーションモデル</text>
+    
+    <!-- Technical Specification Communication -->
+    <rect x="70" y="260" width="180" height="110" fill="#e6f3ff" stroke="#3498db" stroke-width="1" rx="3"/>
+    <text x="160" y="280" class="text-content" text-anchor="middle" font-weight="bold">技術仕様コミュニケーション</text>
+    <text x="80" y="300" class="small-text" font-weight="bold">構造化アプローチ:</text>
+    <text x="80" y="315" class="small-text">• RFC (Request for Comments) 形式</text>
+    <text x="80" y="330" class="small-text">• アーキテクチャ決定記録 (ADR)</text>
+    <text x="80" y="345" class="small-text">• テクニカルスペック文書</text>
+    <text x="80" y="360" class="small-text">効果: 正確性・再現性の確保</text>
+
+    <!-- Problem-Solution Communication -->
+    <rect x="270" y="260" width="180" height="110" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="3"/>
+    <text x="360" y="280" class="text-content" text-anchor="middle" font-weight="bold">問題解決コミュニケーション</text>
+    <text x="280" y="300" class="small-text" font-weight="bold">デバッグ思考の応用:</text>
+    <text x="280" y="315" class="small-text">• 問題の切り分け・特定</text>
+    <text x="280" y="330" class="small-text">• 仮説設定・検証</text>
+    <text x="280" y="345" class="small-text">• 段階的解決アプローチ</text>
+    <text x="280" y="360" class="small-text">効果: 論理的で効率的な対話</text>
+
+    <!-- Status Report Communication -->
+    <rect x="470" y="260" width="180" height="110" fill="#ffe6e6" stroke="#e74c3c" stroke-width="1" rx="3"/>
+    <text x="560" y="280" class="text-content" text-anchor="middle" font-weight="bold">進捗報告コミュニケーション</text>
+    <text x="480" y="300" class="small-text" font-weight="bold">データドリブンレポート:</text>
+    <text x="480" y="315" class="small-text">• 定量的な進捗指標</text>
+    <text x="480" y="330" class="small-text">• 課題とブロッカーの明示</text>
+    <text x="480" y="345" class="small-text">• 次アクションの具体化</text>
+    <text x="480" y="360" class="small-text">効果: 透明性と信頼性の向上</text>
+
+    <!-- Knowledge Transfer Communication -->
+    <rect x="670" y="260" width="160" height="110" fill="#fff3cd" stroke="#f39c12" stroke-width="1" rx="3"/>
+    <text x="750" y="280" class="text-content" text-anchor="middle" font-weight="bold">知識共有</text>
+    <text x="750" y="300" class="text-content" text-anchor="middle" font-weight="bold">コミュニケーション</text>
+    <text x="680" y="320" class="small-text">ドキュメント駆動:</text>
+    <text x="680" y="335" class="small-text">• 技術ブログ執筆</text>
+    <text x="680" y="350" class="small-text">• コードレビュー</text>
+    <text x="680" y="365" class="small-text">効果: 組織学習促進</text>
+
+    <!-- Cognitive Model -->
+    <text x="450" y="400" class="component-title" text-anchor="middle">エンジニア認知特性とコミュニケーション適応</text>
+    
+    <!-- Logical Thinking -->
+    <rect x="70" y="420" width="200" height="100" fill="#f3e6ff" stroke="#9b59b6" stroke-width="1" rx="3"/>
+    <text x="170" y="440" class="text-content" text-anchor="middle" font-weight="bold">論理的思考特性</text>
+    <text x="80" y="460" class="small-text">システム思考の活用:</text>
+    <text x="80" y="475" class="small-text">• 全体俯瞰からの情報整理</text>
+    <text x="80" y="490" class="small-text">• 因果関係の明示</text>
+    <text x="80" y="505" class="small-text">• 段階的詳細化アプローチ</text>
+
+    <!-- Detail-Oriented -->
+    <rect x="290" y="420" width="200" height="100" fill="#e6f3ff" stroke="#3498db" stroke-width="1" rx="3"/>
+    <text x="390" y="440" class="text-content" text-anchor="middle" font-weight="bold">詳細志向特性</text>
+    <text x="300" y="460" class="small-text">精緻性の管理:</text>
+    <text x="300" y="475" class="small-text">• 抽象度の適切な調整</text>
+    <text x="300" y="490" class="small-text">• 相手のレベルに合わせた説明</text>
+    <text x="300" y="505" class="small-text">• 必要最小限の情報選択</text>
+
+    <!-- Problem-Solving -->
+    <rect x="510" y="420" width="200" height="100" fill="#ffe6e6" stroke="#e74c3c" stroke-width="1" rx="3"/>
+    <text x="610" y="440" class="text-content" text-anchor="middle" font-weight="bold">問題解決志向</text>
+    <text x="520" y="460" class="small-text">解決重視アプローチ:</text>
+    <text x="520" y="475" class="small-text">• 課題の本質的特定</text>
+    <text x="520" y="490" class="small-text">• 実用的解決策の提示</text>
+    <text x="520" y="505" class="small-text">• 実装可能性の考慮</text>
+
+    <!-- Continuous Learning -->
+    <rect x="730" y="420" width="100" height="100" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="3"/>
+    <text x="780" y="440" class="text-content" text-anchor="middle" font-weight="bold">学習志向</text>
+    <text x="740" y="460" class="small-text">成長マインドセット:</text>
+    <text x="740" y="475" class="small-text">• 継続的改善</text>
+    <text x="740" y="490" class="small-text">• フィードバック活用</text>
+    <text x="740" y="505" class="small-text">• 知識共有重視</text>
+
+    <!-- Communication Optimization -->
+    <text x="450" y="550" class="component-title" text-anchor="middle">コミュニケーション最適化戦略</text>
+    
+    <rect x="70" y="570" width="760" height="80" fill="#fff" stroke="#95a5a6" stroke-width="1" rx="3"/>
+    <text x="80" y="590" class="text-content" font-weight="bold">効率性最適化:</text>
+    <text x="240" y="590" class="text-content" font-weight="bold">精度向上:</text>
+    <text x="420" y="590" class="text-content" font-weight="bold">関係性構築:</text>
+    <text x="620" y="590" class="text-content" font-weight="bold">学習促進:</text>
+    
+    <text x="80" y="605" class="small-text">• 構造化された情報伝達</text>
+    <text x="240" y="605" class="small-text">• 技術的正確性の担保</text>
+    <text x="420" y="605" class="small-text">• 信頼関係の構築</text>
+    <text x="620" y="605" class="small-text">• 知識共有文化形成</text>
+    
+    <text x="80" y="620" class="small-text">• 冗長性の削減</text>
+    <text x="240" y="620" class="small-text">• 曖昧性の排除</text>
+    <text x="420" y="620" class="small-text">• 継続的な対話改善</text>
+    <text x="620" y="620" class="small-text">• 組織学習能力向上</text>
+    
+    <text x="80" y="635" class="small-text">• 最適な伝達媒体選択</text>
+    <text x="240" y="635" class="small-text">• 検証可能な情報提供</text>
+    <text x="420" y="635" class="small-text">• 相互理解の深化</text>
+    <text x="620" y="635" class="small-text">• イノベーション創出支援</text>
+  </g>
+
+  <!-- Process Connection Lines -->
+  <line x1="160" y1="370" x2="160" y2="420" class="process-connection"/>
+  <line x1="360" y1="370" x2="390" y2="420" class="process-connection"/>
+  <line x1="560" y1="370" x2="610" y2="420" class="process-connection"/>
+  <line x1="750" y1="370" x2="780" y2="420" class="process-connection"/>
+</svg>
