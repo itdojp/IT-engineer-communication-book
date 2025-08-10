@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+      .layer-title { font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: bold; fill: #fff; }
+      .component-title { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: bold; fill: #2c3e50; }
+      .text-content { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; fill: #2c3e50; }
+      .small-text { font-family: 'Noto Sans JP', sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .monitor-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .analyze-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .prevent-box { fill: #f39c12; stroke: #e67e22; stroke-width: 2; }
+      .recover-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .optimize-box { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; }
+      .component { fill: #fff; stroke: #95a5a6; stroke-width: 1; }
+      .system-flow { stroke: #34495e; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .feedback-cycle { stroke: #9b59b6; stroke-width: 2; stroke-dasharray: 5,3; fill: none; marker-end: url(#arrowhead-purple); }
+      .wellness-gradient { fill: url(#wellnessGradient); }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 12 3, 0 6" fill="#34495e"/>
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#9b59b6"/>
+    </marker>
+    <linearGradient id="wellnessGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#f39c12;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" class="title" text-anchor="middle">技術的アプローチによるメンタルヘルス管理システム</text>
+
+  <!-- Monitor -->
+  <g id="monitor">
+    <rect x="50" y="70" width="160" height="120" class="monitor-box" rx="10"/>
+    <text x="130" y="95" class="layer-title" text-anchor="middle">監視</text>
+    <text x="130" y="115" class="layer-title" text-anchor="middle">(Monitor)</text>
+    
+    <rect x="65" y="125" width="130" height="55" class="component" rx="3"/>
+    <text x="130" y="145" class="component-title" text-anchor="middle">状態観測</text>
+    <text x="75" y="160" class="text-content">• メトリクス収集</text>
+    <text x="75" y="175" class="text-content">• 異常検知</text>
+  </g>
+
+  <!-- Analyze -->
+  <g id="analyze">
+    <rect x="230" y="70" width="160" height="120" class="analyze-box" rx="10"/>
+    <text x="310" y="95" class="layer-title" text-anchor="middle">分析</text>
+    <text x="310" y="115" class="layer-title" text-anchor="middle">(Analyze)</text>
+    
+    <rect x="245" y="125" width="130" height="55" class="component" rx="3"/>
+    <text x="310" y="145" class="component-title" text-anchor="middle">要因特定</text>
+    <text x="255" y="160" class="text-content">• パターン認識</text>
+    <text x="255" y="175" class="text-content">• 根本原因分析</text>
+  </g>
+
+  <!-- Prevent -->
+  <g id="prevent">
+    <rect x="410" y="70" width="160" height="120" class="prevent-box" rx="10"/>
+    <text x="490" y="95" class="layer-title" text-anchor="middle">予防</text>
+    <text x="490" y="115" class="layer-title" text-anchor="middle">(Prevent)</text>
+    
+    <rect x="425" y="125" width="130" height="55" class="component" rx="3"/>
+    <text x="490" y="145" class="component-title" text-anchor="middle">予防措置</text>
+    <text x="435" y="160" class="text-content">• 早期介入</text>
+    <text x="435" y="175" class="text-content">• 環境調整</text>
+  </g>
+
+  <!-- Recover -->
+  <g id="recover">
+    <rect x="590" y="70" width="160" height="120" class="recover-box" rx="10"/>
+    <text x="670" y="95" class="layer-title" text-anchor="middle">回復</text>
+    <text x="670" y="115" class="layer-title" text-anchor="middle">(Recover)</text>
+    
+    <rect x="605" y="125" width="130" height="55" class="component" rx="3"/>
+    <text x="670" y="145" class="component-title" text-anchor="middle">対処・回復</text>
+    <text x="615" y="160" class="text-content">• 対症療法</text>
+    <text x="615" y="175" class="text-content">• 復帰支援</text>
+  </g>
+
+  <!-- Optimize -->
+  <g id="optimize">
+    <rect x="370" y="210" width="160" height="120" class="optimize-box" rx="10"/>
+    <text x="450" y="235" class="layer-title" text-anchor="middle">最適化</text>
+    <text x="450" y="255" class="layer-title" text-anchor="middle">(Optimize)</text>
+    
+    <rect x="385" y="265" width="130" height="55" class="component" rx="3"/>
+    <text x="450" y="285" class="component-title" text-anchor="middle">継続改善</text>
+    <text x="395" y="300" class="text-content">• プロセス改善</text>
+    <text x="395" y="315" class="text-content">• 能力向上</text>
+  </g>
+
+  <!-- System Flow -->
+  <path d="M 210 130 L 230 130" class="system-flow"/>
+  <path d="M 390 130 L 410 130" class="system-flow"/>
+  <path d="M 570 130 L 590 130" class="system-flow"/>
+  <path d="M 670 190 L 450 210" class="system-flow"/>
+  <path d="M 370 270 Q 280 350 130 190" class="feedback-cycle"/>
+
+  <!-- Wellness Scale -->
+  <rect x="770" y="70" width="80" height="260" class="wellness-gradient" stroke="#34495e" stroke-width="1" rx="5"/>
+  <text x="810" y="60" class="small-text" text-anchor="middle">ウェルネス度</text>
+  <text x="860" y="90" class="small-text">高</text>
+  <text x="860" y="200" class="small-text">中</text>
+  <text x="860" y="310" class="small-text">低</text>
+
+  <!-- Technical Mental Health Framework -->
+  <g id="framework">
+    <rect x="50" y="350" width="800" height="310" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="5"/>
+    <text x="450" y="375" class="component-title" text-anchor="middle">エンジニア特化メンタルヘルス管理フレームワーク</text>
+    
+    <!-- Data-Driven Monitoring -->
+    <rect x="70" y="390" width="180" height="110" fill="#e6f3ff" stroke="#3498db" stroke-width="1" rx="3"/>
+    <text x="160" y="410" class="text-content" text-anchor="middle" font-weight="bold">データドリブン監視</text>
+    <text x="80" y="430" class="small-text" font-weight="bold">技術的指標の活用:</text>
+    <text x="80" y="445" class="small-text">• コードレビューの頻度・質</text>
+    <text x="80" y="460" class="small-text">• 作業時間とアウトプット比</text>
+    <text x="80" y="475" class="small-text">• エラー率・デバッグ時間</text>
+    <text x="80" y="490" class="small-text">効果: 客観的な状態把握</text>
+
+    <!-- Systems Thinking -->
+    <rect x="270" y="390" width="180" height="110" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="3"/>
+    <text x="360" y="410" class="text-content" text-anchor="middle" font-weight="bold">システム思考アプローチ</text>
+    <text x="280" y="430" class="small-text" font-weight="bold">全体最適の視点:</text>
+    <text x="280" y="445" class="small-text">• 個人-チーム-組織の相互作用</text>
+    <text x="280" y="460" class="small-text">• フィードバックループの設計</text>
+    <text x="280" y="475" class="small-text">• ボトルネックの特定・解決</text>
+    <text x="280" y="490" class="small-text">効果: 根本原因への対処</text>
+
+    <!-- Agile Methodology -->
+    <rect x="470" y="390" width="180" height="110" fill="#ffe6e6" stroke="#e74c3c" stroke-width="1" rx="3"/>
+    <text x="560" y="410" class="text-content" text-anchor="middle" font-weight="bold">アジャイル手法の適用</text>
+    <text x="480" y="430" class="small-text" font-weight="bold">反復的改善:</text>
+    <text x="480" y="445" class="small-text">• 短期スプリントでの状態確認</text>
+    <text x="480" y="460" class="small-text">• 振り返りによる課題特定</text>
+    <text x="480" y="475" class="small-text">• 段階的な改善実装</text>
+    <text x="480" y="490" class="small-text">効果: 継続的な適応・成長</text>
+
+    <!-- Automation & Tool -->
+    <rect x="670" y="390" width="160" height="110" fill="#fff3cd" stroke="#f39c12" stroke-width="1" rx="3"/>
+    <text x="750" y="410" class="text-content" text-anchor="middle" font-weight="bold">自動化・ツール活用</text>
+    <text x="680" y="430" class="small-text" font-weight="bold">効率化による負荷軽減:</text>
+    <text x="680" y="445" class="small-text">• 定型作業の自動化</text>
+    <text x="680" y="460" class="small-text">• 監視・アラートシステム</text>
+    <text x="680" y="475" class="small-text">• 意思決定支援ツール</text>
+    <text x="680" y="490" class="small-text">効果: 認知負荷の削減</text>
+
+    <!-- Implementation Patterns -->
+    <text x="450" y="530" class="component-title" text-anchor="middle">実装パターンと運用戦略</text>
+    
+    <!-- Personal Level -->
+    <rect x="70" y="550" width="200" height="100" fill="#f3e6ff" stroke="#9b59b6" stroke-width="1" rx="3"/>
+    <text x="170" y="570" class="text-content" text-anchor="middle" font-weight="bold">個人レベル実装</text>
+    <text x="80" y="590" class="small-text">セルフモニタリング系:</text>
+    <text x="80" y="605" class="small-text">• 日次振り返りログ</text>
+    <text x="80" y="620" class="small-text">• タイムトラッキング</text>
+    <text x="80" y="635" class="small-text">• エネルギー管理ダッシュボード</text>
+
+    <!-- Team Level -->
+    <rect x="290" y="550" width="200" height="100" fill="#e6f3ff" stroke="#3498db" stroke-width="1" rx="3"/>
+    <text x="390" y="570" class="text-content" text-anchor="middle" font-weight="bold">チームレベル実装</text>
+    <text x="300" y="590" class="small-text">チーム健康度管理:</text>
+    <text x="300" y="605" class="small-text">• 定期ヘルスチェック</text>
+    <text x="300" y="620" class="small-text">• ペアプログラミング促進</text>
+    <text x="300" y="635" class="small-text">• 知識共有セッション</text>
+
+    <!-- Organization Level -->
+    <rect x="510" y="550" width="200" height="100" fill="#e6ffe6" stroke="#2ecc71" stroke-width="1" rx="3"/>
+    <text x="610" y="570" class="text-content" text-anchor="middle" font-weight="bold">組織レベル実装</text>
+    <text x="520" y="590" class="small-text">文化・制度設計:</text>
+    <text x="520" y="605" class="small-text">• 心理的安全性の確保</text>
+    <text x="520" y="620" class="small-text">• 学習時間の公式確保</text>
+    <text x="520" y="635" class="small-text">• 技術的挑戦の奨励</text>
+
+    <!-- Continuous Improvement -->
+    <rect x="730" y="550" width="100" height="100" fill="#ffe6e6" stroke="#e74c3c" stroke-width="1" rx="3"/>
+    <text x="780" y="570" class="text-content" text-anchor="middle" font-weight="bold">継続改善</text>
+    <text x="740" y="590" class="small-text">PDCA サイクル:</text>
+    <text x="740" y="605" class="small-text">• 計画・実行</text>
+    <text x="740" y="620" class="small-text">• 検証・改善</text>
+    <text x="740" y="635" class="small-text">• スケール拡大</text>
+  </g>
+
+  <!-- Connection Lines -->
+  <line x1="160" y1="500" x2="170" y2="550" class="system-flow"/>
+  <line x1="360" y1="500" x2="390" y2="550" class="system-flow"/>
+  <line x1="560" y1="500" x2="610" y2="550" class="system-flow"/>
+  <line x1="750" y1="500" x2="780" y2="550" class="system-flow"/>
+</svg>
