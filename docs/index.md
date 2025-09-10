@@ -43,13 +43,13 @@ permalink: /
 
 ## 付録
 
-- [付録1 実践チェックリスト集](src/appendices/checklists.md)
+- 付録1 実践チェックリスト集
 
-- [付録2 テンプレート・フォーマット集](src/appendices/templates.md)
+- 付録2 テンプレート・フォーマット集
 
-- [付録3 ツール・リソース一覧](src/appendices/tools.md)
+- 付録3 ツール・リソース一覧
 
-- [付録4 参考文献・引用](src/appendices/references.md)
+- 付録4 参考文献・引用
 
 
 
