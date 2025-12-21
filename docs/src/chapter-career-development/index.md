@@ -1,5 +1,5 @@
 ---
-title: "キャリア開発とセルフブランディング"
+title: "第10章：キャリア開発とセルフブランディング"
 description: "技術者としてのキャリア戦略と外部発信"
 chapter: 10
 layout: book
@@ -1670,5 +1670,4 @@ class SustainableCareerGrowthSystem:
 ---
 
 **🚀 Ready to code your career? Let's build something amazing together.**
-
 
