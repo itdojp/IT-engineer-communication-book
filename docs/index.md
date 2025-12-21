@@ -14,42 +14,25 @@ permalink: /
 
 ## 目次
 
-
-
-- [第1章 クイックスタートガイド](src/chapter-quickstart/index.md)
-
-- [第2章 エンジニアリング思考とコミュニケーション](src/chapter-engineering-communication/index.md)
-
-- [第3章 エンジニア特有のコミュニケーション課題](src/chapter-communication-challenges/index.md)
-
-- [第4章 構造化コミュニケーション手法](src/chapter-structured-communication/index.md)
-
-- [第5章 ステークホルダー別コミュニケーション戦略](src/chapter-stakeholder-communication/index.md)
-
-- [第6章 デジタルコミュニケーション最適化](src/chapter-digital-communication/index.md)
-
-- [第7章 エンジニア特有のストレス要因分析](src/chapter-stress-analysis/index.md)
-
-- [第8章 技術的アプローチによるメンタルヘルス管理](src/chapter-technical-mental-health/index.md)
-
-- [第9章 予防的メンタルヘルスシステム構築](src/chapter-preventive-systems/index.md)
-
-- [第10章 技術リーダーシップとコミュニケーション](src/chapter-technical-leadership/index.md)
-
-- [第11章 キャリア開発とセルフブランディング](src/chapter-career-development/index.md)
-
-
+- [序章 クイックスタートガイド](src/chapter-quickstart/)
+- [第1章 エンジニアリング思考とコミュニケーション](src/chapter-engineering-communication/)
+- [第2章 エンジニア特有のコミュニケーション課題](src/chapter-communication-challenges/)
+- [第3章 構造化コミュニケーション手法](src/chapter-structured-communication/)
+- [第4章 ステークホルダー別コミュニケーション戦略](src/chapter-stakeholder-communication/)
+- [第5章 デジタルコミュニケーション最適化](src/chapter-digital-communication/)
+- [第6章 エンジニア特有のストレス要因分析](src/chapter-stress-analysis/)
+- [第7章 技術的アプローチによるメンタルヘルス管理](src/chapter-technical-mental-health/)
+- [第8章 予防的メンタルヘルスシステム構築](src/chapter-preventive-systems/)
+- [第9章 技術リーダーシップとコミュニケーション](src/chapter-technical-leadership/)
+- [第10章 キャリア開発とセルフブランディング](src/chapter-career-development/)
 
 
 ## 付録
 
-- 付録1 実践チェックリスト集
-
-- 付録2 テンプレート・フォーマット集
-
-- 付録3 ツール・リソース一覧
-
-- 付録4 参考文献・引用
+- 付録1 実践チェックリスト集（準備中）
+- 付録2 テンプレート・フォーマット集（準備中）
+- 付録3 ツール・リソース一覧（準備中）
+- 付録4 参考文献・引用（準備中）
 
 
 
