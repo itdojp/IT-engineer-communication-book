@@ -1,1 +1,25 @@
-{}
+introduction:
+  - title: クイックスタートガイド：今日から始める実践コミュニケーション改善
+    path: /src/chapter-quickstart/
+
+chapters:
+  - title: エンジニアリング思考とコミュニケーション
+    path: /src/chapter-engineering-コミュニケーション/
+  - title: エンジニア特有のコミュニケーション課題
+    path: /src/chapter-communication-challenges/
+  - title: 構造化コミュニケーション手法
+    path: /src/chapter-structured-communication/
+  - title: ステークホルダー別コミュニケーション戦略
+    path: /src/chapter-stakeholder-communication/
+  - title: デジタルコミュニケーション最適化
+    path: /src/chapter-digital-communication/
+  - title: エンジニア特有のストレス要因分析
+    path: /src/chapter-stress-analysis/
+  - title: 技術的アプローチによるメンタルヘルス管理
+    path: /src/chapter-technical-mental-health/
+  - title: 予防的メンタルヘルスシステム構築
+    path: /src/chapter-preventive-systems/
+  - title: 技術リーダーシップとコミュニケーション
+    path: /src/chapter-technical-leadership/
+  - title: キャリア開発とセルフブランディング
+    path: /src/chapter-career-development/
