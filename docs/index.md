@@ -14,7 +14,7 @@ permalink: /
 
 ## 目次
 
-- [序章 クイックスタートガイド](src/chapter-quickstart/)
+- [クイックスタートガイド：今日から始める実践コミュニケーション改善](src/chapter-quickstart/)
 - [第1章 エンジニアリング思考とコミュニケーション](src/chapter-engineering-communication/)
 - [第2章 エンジニア特有のコミュニケーション課題](src/chapter-communication-challenges/)
 - [第3章 構造化コミュニケーション手法](src/chapter-structured-communication/)
