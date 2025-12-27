@@ -1,10 +1,10 @@
 introduction:
-  - title: 序章 クイックスタートガイド
+  - title: クイックスタートガイド：今日から始める実践コミュニケーション改善
     path: /src/chapter-quickstart/
 
 chapters:
   - title: エンジニアリング思考とコミュニケーション
-    path: /src/chapter-engineering-communication/
+    path: /src/chapter-engineering-コミュニケーション/
   - title: エンジニア特有のコミュニケーション課題
     path: /src/chapter-communication-challenges/
   - title: 構造化コミュニケーション手法
