@@ -14,7 +14,7 @@ order: 6
 **読了時間**：100分  
 **前提知識**：第2章「エンジニア特有のコミュニケーション課題」、第3章「構造化コミュニケーション手法」  
 
-**習得できるスキル**：
+**習得できるスキル**
 - [ ] チーム内技術討議を効果的にファシリテーションできる
 - [ ] プロダクトマネージャーとの協働プロセスを最適化できる
 - [ ] 顧客・外部ベンダーとの技術的やり取りを円滑に行える
@@ -30,7 +30,7 @@ order: 6
 
 このフレームワークでは、議論の目的明確化、情報収集・分析、多角的評価、合意形成という4つのフェーズを通じて、技術的判断の品質と効率性を同時に向上させます。各フェーズで適切な手法とツールを使用することで、チーム全体の技術力向上にもつながります。
 
-**Technical Discussion Framework**：
+**Technical Discussion Framework**
 
 <svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
   <title>技術討議フレームワーク</title>
@@ -258,7 +258,7 @@ order: 6
 
 ### アーキテクチャ決定記録（ADR）の活用
 
-**ADR-Driven Technical Discussions**：
+**ADR-Driven Technical Discussions**
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0;">
 <h4 style="color: #1e293b; margin: 0 0 15px 0; text-align: center;">📋 ADRベースの技術討議プロセス</h4>
@@ -806,7 +806,7 @@ order: 6
 
 ### 知識共有システムの構築
 
-**Collective Intelligence Platform**：
+**Collective Intelligence Platform**
 
 ```markdown
 ## チーム知識共有システムの設計
@@ -938,7 +938,7 @@ knowledge_quality_metrics = {
 
 ### 要求定義プロセスの最適化
 
-**Requirements Engineering for Engineers**：
+**Requirements Engineering for Engineers**
 
 ```markdown
 ## エンジニア主導の要求定義プロセス
@@ -1182,7 +1182,7 @@ solution_proposal:
 
 ### 見積もり手法の精緻化
 
-**Engineering Estimation Framework**：
+**Engineering Estimation Framework**
 
 ```markdown
 ## エンジニアリング見積もりの科学的アプローチ
@@ -1349,7 +1349,7 @@ class EstimationLearningSystem:
 
 ### SLA設定と技術的合意
 
-**Service Level Agreement Engineering**：
+**Service Level Agreement Engineering**
 
 ```markdown
 ## 技術者主導のSLA設計
@@ -1525,7 +1525,7 @@ monthly_report = sla_monitor.generate_sla_report('2024-01', audience='customer')
 
 ### 障害対応・技術サポート
 
-**Incident Response Communication Framework**：
+**Incident Response Communication Framework**
 
 ```markdown
 ## 技術者主導の障害対応コミュニケーション
@@ -1724,7 +1724,7 @@ class IncidentResponseImprovement:
 
 ### 契約技術評価・ベンダー管理
 
-**Technical Vendor Evaluation Framework**：
+**Technical Vendor Evaluation Framework**
 
 ```markdown
 ## 技術ベンダー評価の体系的アプローチ
@@ -1891,7 +1891,7 @@ evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_req
 
 ### 💡 戦略的コミュニケーションの価値
 
-これらの手法により：
+これらの手法により、次のことが可能になります。
 - **効率的な技術討議**で意思決定速度を向上させられる
 - **ビジネス価値の翻訳**で技術提案の採用率を高められる
 - **プロフェッショナルな顧客対応**で信頼関係を構築できる
@@ -1913,7 +1913,7 @@ evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_req
 
 ## 次章への橋渡し
 
-ステークホルダー戦略を身につけたら：
+ステークホルダー戦略を身につけたら、次の章へ進んでください。
 
 - **デジタルツールでさらに効率化したい** → 第5章「デジタルコミュニケーション最適化」
 - **メンタルヘルス管理に関心がある** → 第6章「エンジニア特有のストレス要因分析」
