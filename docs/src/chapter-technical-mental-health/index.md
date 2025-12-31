@@ -738,7 +738,7 @@ maintenance_schedule:
       activities: ["週間目標達成度評価", "ストレス・パターン分析", "来週計画"]
       
     deep_recovery:
-      duration: "2-3時間"
+      duration: "2〜3時間"
       activities: ["趣味時間", "社会的活動", "完全リラックス"]
   
   monthly_maintenance:
@@ -783,7 +783,7 @@ class MentalHealthIncident:
         'P2_MODERATE': {
             'description': '中程度のストレス増加',
             'symptoms': ['集中力低下', 'イライラ増加', '疲労感蓄積'],
-            'response_time': '24-48時間以内',
+            'response_time': '24〜48時間以内',
             'escalation': ['セルフケア強化', 'サポート・ネットワーク活用']
         },
         'P3_MINOR': {
@@ -899,7 +899,7 @@ class MentalPerformanceProfiler:
                         'morning_light_exposure',
                         'caffeine_intake_optimization'
                     ],
-                    'expected_improvement': '20-30% energy increase',
+                    'expected_improvement': '20〜30% energy increase',
                     'implementation_time': '1-2 weeks'
                 })
         

@@ -111,7 +111,7 @@ order: 7
       ⏰ Same Day
     </text>
     <text x="295" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#d97706">
-      1-8時間
+      1〜8時間
     </text>
     
     <rect x="230" y="160" width="130" height="60" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
@@ -155,7 +155,7 @@ order: 7
       📋 Next Day
     </text>
     <text x="465" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#15803d">
-      8-24時間
+      8〜24時間
     </text>
     
     <rect x="400" y="160" width="130" height="60" rx="4" fill="#fff" stroke="#16a34a" stroke-width="1"/>
@@ -199,7 +199,7 @@ order: 7
       📊 Weekly
     </text>
     <text x="635" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#1d4ed8">
-      1-7日
+      1〜7日
     </text>
     
     <rect x="570" y="160" width="130" height="60" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="1"/>

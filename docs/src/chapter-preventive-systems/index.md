@@ -772,12 +772,12 @@ class AutomatedSelfCareSystem:
             'temperature_comfort': {
                 'productivity_optimization': {
                     'target_temp': '21-23°C',
-                    'humidity': '40-60%',
+                    'humidity': '40〜60%',
                     'air_circulation': 'gentle_breeze'
                 },
                 'sleep_optimization': {
                     'target_temp': '18-20°C',
-                    'humidity': '50-60%',
+                    'humidity': '50〜60%',
                     'gradual_adjustment': True
                 }
             }
