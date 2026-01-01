@@ -4,7 +4,7 @@ introduction:
 
 chapters:
   - title: エンジニアリング思考とコミュニケーション
-    path: /src/chapter-engineering-コミュニケーション/
+    path: /src/chapter-engineering-communication/
   - title: エンジニア特有のコミュニケーション課題
     path: /src/chapter-communication-challenges/
   - title: 構造化コミュニケーション手法
