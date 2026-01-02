@@ -14,7 +14,7 @@
 - 入口（読者導線）の現状:
   - リポジトリトップの `README.md` からオンライン版（GitHub Pages）と目次に誘導できる。
   - `docs/index.md` の章リンクは `src/.../` に統一されており、GitHub Pages のURL構造と整合している。
-  - 一方で、`docs/_data/navigation.yml` 側に実体と一致しないパスが含まれるため、サイドバー/prev-next のリンク切れリスクがある（後述）。
+  - 一方で、以前は `docs/_data/navigation.yml` 側に実体と一致しないパスが含まれており、サイドバー/prev-next のリンク切れリスクがあったが、本PRで修正済みである。
 
 ## 2. 現状の章構成サマリ
 
@@ -67,11 +67,11 @@
 - 付録の扱い:
   - `docs/index.md` に付録の見出しはあるが、リンクや本文ファイルが見当たらない（未作成なら目次から外す/「今後追加予定」と明記する等が必要）。
 - ナビゲーションデータ:
-  - `docs/_data/navigation.yml` の `path` が `docs/src/` のディレクトリ名と一致しない項目がある（例: `chapter-engineering-communication` 相当のパス表記が揺れている）。
+  - 以前は `docs/_data/navigation.yml` の `path` が `docs/src/` のディレクトリ名と一致しない項目があり、リンク切れリスクがあったが、本PRで修正済みである。
 
 ## 4. 構成改善の提案（案）
 
-- ナビゲーションの整合:
-  - `docs/_data/navigation.yml` の `path` を `docs/src/` のディレクトリ名に合わせ、サイドバー/prev-next のリンク切れを防ぐ。
+- ナビゲーションの整合（このPRで対応済み）:
+  - `docs/_data/navigation.yml` の `path` を `docs/src/` のディレクトリ名に合わせる修正を実施し、サイドバー/prev-next のリンク切れを防いだ。
 - 付録の方針確定:
   - 付録を作るなら、ページ作成とリンク追加までをセットで行う。作らないなら目次から外し、読者を迷わせない。
