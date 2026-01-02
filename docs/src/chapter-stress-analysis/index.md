@@ -14,7 +14,7 @@ order: 8
 **読了時間**：85分  
 **前提知識**：第1章「エンジニアリング思考とコミュニケーション」、メンタルヘルスの基本概念  
 
-**習得できるスキル**：
+**習得できるスキル**
 - [ ] 技術的ストレス要因を体系的に特定・評価できる
 - [ ] 組織的ストレス要因を客観的に評価し対処方針を立てられる
 - [ ] 自己の特性由来のストレスパターンを認識し管理できる
@@ -30,7 +30,7 @@ order: 8
 
 この関係を体系的に理解するため、技術的負債を4つのカテゴリ（設計債務、テスト債務、知識債務、インフラ債務）に分類します。それぞれがどのようなストレス要因となるのかを分析することで、技術的課題を心理的負担として捉え、適切な対策を講じることができます。
 
-**Technical Debt Stress Analysis Framework**：
+**Technical Debt Stress Analysis Framework**
 
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>技術的負債とストレスの構造的関係</title>
@@ -574,7 +574,7 @@ order: 8
 
 ### 🔄 技術陳腐化への不安
 
-**Technology Obsolescence Anxiety Framework**：
+**Technology Obsolescence Anxiety Framework**
 
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>技術陳腐化不安の構造的分析</title>
@@ -1035,7 +1035,7 @@ order: 8
 
 ### 🏗️ オンコール・運用負荷
 
-**Operational Stress & On-Call Burden Analysis**：
+**Operational Stress & On-Call Burden Analysis**
 
 ```markdown
 ## 運用負荷ストレスの体系的分析
@@ -1257,7 +1257,7 @@ class OnCallQualityMetrics:
 
 ### 🏢 非現実的期待とプレッシャー
 
-**Unrealistic Expectations Stress Framework**：
+**Unrealistic Expectations Stress Framework**
 
 ```markdown
 ## 期待値管理とストレス軽減
@@ -1511,7 +1511,7 @@ class StakeholderPressureManager:
 
 ### 🤝 チーム力学とコミュニケーション摩擦
 
-**Team Dynamics Stress Analysis**：
+**Team Dynamics Stress Analysis**
 
 ```markdown
 ## チーム内ストレス要因の解析
@@ -1671,7 +1671,7 @@ class PsychologicalSafetyOptimizer:
 
 ### 🎯 完璧主義とストレスの関係
 
-**Perfectionism Stress Analysis Framework**：
+**Perfectionism Stress Analysis Framework**
 
 ```markdown
 ## エンジニア特有の完璧主義ストレス
@@ -1912,7 +1912,7 @@ class PerfectionismStressManager:
 
 ### 🧠 認知バイアスと意思決定疲労
 
-**Cognitive Load & Decision Fatigue Management**：
+**Cognitive Load & Decision Fatigue Management**
 
 ```markdown
 ## エンジニアの認知負荷・意思決定疲労
@@ -2094,7 +2094,7 @@ class CognitiveBiasManager:
 
 ### 💡 システム思考によるストレス管理の価値
 
-これらの分析により：
+これらの分析により、次のことが可能になります。
 - **根本原因の特定**で表面的対処ではなく本質的改善が可能になる
 - **予防的アプローチ**でストレス蓄積を未然に防ぐシステムを構築できる
 - **個人最適化**で各エンジニアの特性に応じた効果的な対策を設計できる
@@ -2116,7 +2116,7 @@ class CognitiveBiasManager:
 
 ## 次章への橋渡し
 
-ストレス要因を理解したら：
+ストレス要因を理解したら、次の章へ進んでください。
 
 - **技術的アプローチでメンタルヘルス管理したい** → 第7章「技術的アプローチによるメンタルヘルス管理」
 - **予防的なシステムを構築したい** → 第8章「予防的メンタルヘルスシステム構築」
