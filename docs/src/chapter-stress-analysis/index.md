@@ -172,17 +172,17 @@ order: 8
   <g>
     <rect x="50" y="50" width="120" height="30" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
     <text x="110" y="70" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#dc2626">
-      High Impact (70-100%)
+      High Impact (70〜100%)
     </text>
     
     <rect x="50" y="90" width="120" height="30" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
     <text x="110" y="110" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#d97706">
-      Medium Impact (40-70%)
+      Medium Impact (40〜70%)
     </text>
     
     <rect x="50" y="130" width="120" height="30" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
     <text x="110" y="150" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#15803d">
-      Low Impact (0-40%)
+      Low Impact (0〜40%)
     </text>
   </g>
   
@@ -740,7 +740,7 @@ order: 8
     <!-- High Risk -->
     <rect x="50" y="270" width="100" height="25" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
     <text x="100" y="287" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#dc2626">
-      高リスク (70-100%)
+      高リスク (70〜100%)
     </text>
     <text x="60" y="305" font-family="Inter, sans-serif" font-size="8" fill="#b91c1c">
       • 主力技術の大幅変更期
@@ -752,7 +752,7 @@ order: 8
     <!-- Medium Risk -->
     <rect x="50" y="340" width="100" height="25" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
     <text x="100" y="357" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#d97706">
-      中リスク (40-70%)
+      中リスク (40〜70%)
     </text>
     <text x="60" y="375" font-family="Inter, sans-serif" font-size="8" fill="#92400e">
       • 安定技術での長期経験
@@ -924,10 +924,10 @@ order: 8
       ⚖️ 負荷バランシング
     </text>
     <text x="60" y="400" font-family="Inter, sans-serif" font-size="9" fill="#0369a1">
-      • 日次学習時間: 30-60分
+      • 日次学習時間: 30〜60分
     </text>
     <text x="60" y="415" font-family="Inter, sans-serif" font-size="9" fill="#0369a1">
-      • 週次深学習: 2-3時間×2回
+      • 週次深学習: 2〜3時間×2回
     </text>
     <text x="60" y="430" font-family="Inter, sans-serif" font-size="9" fill="#0369a1">
       • 学習:実務 = 20:80

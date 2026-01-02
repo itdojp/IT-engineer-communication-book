@@ -113,7 +113,7 @@ order: 2
   <!-- Time indicator -->
   <rect x="300" y="180" width="200" height="40" rx="20" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
   <text x="400" y="205" font-family="Inter, sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#475569">
-    ⏱️ 合計時間：2-3分以内
+    ⏱️ 合計時間：2〜3分以内
   </text>
   
   <!-- Benefit note -->

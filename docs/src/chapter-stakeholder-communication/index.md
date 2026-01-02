@@ -151,7 +151,7 @@ order: 6
       目的・範囲・参加者の明確化
     </text>
     <text x="150" y="408" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
-      5-10分
+      5〜10分
     </text>
   </g>
   
@@ -167,7 +167,7 @@ order: 6
       選択肢分析・評価基準設定
     </text>
     <text x="400" y="408" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
-      20-30分
+      20〜30分
     </text>
   </g>
   
@@ -183,7 +183,7 @@ order: 6
       合意形成・決定記録
     </text>
     <text x="650" y="408" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
-      10-15分
+      10〜15分
     </text>
   </g>
   
@@ -494,7 +494,7 @@ order: 6
 <div style="background: #f59e0b; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
 <p style="color: #d97706; font-size: 0.8em; font-weight: 600; margin: 0;">Moderate Consensus</p>
 </div>
-<p style="color: #92400e; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60-80%の合意</strong></p>
+<p style="color: #92400e; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60〜80%の合意</strong></p>
 <p style="color: #d97706; font-size: 0.65em; margin: 0; line-height: 1.3;">
 ⚠ 懸念事項への対処策検討<br>
 ⚠ 1週間以内に再評価
@@ -780,7 +780,7 @@ order: 6
 </div>
 <p style="color: #166534; font-size: 0.7em; margin: 0;">
 🎯 推奨: 技術研修計画策定<br>
-⏱️ 工数: 2-4週間<br>
+⏱️ 工数: 2〜4週間<br>
 🔥 優先度: High
 </p>
 </div>
@@ -792,7 +792,7 @@ order: 6
 </div>
 <p style="color: #166534; font-size: 0.7em; margin: 0;">
 🛠️ 推奨: 運用ツール・プロセス整備<br>
-⏱️ 工数: 1-2ヶ月<br>
+⏱️ 工数: 1〜2ヶ月<br>
 🔶 優先度: Medium
 </p>
 </div>
@@ -945,7 +945,7 @@ knowledge_quality_metrics = {
 
 ### Phase 1: Business Context Understanding（ビジネス文脈理解）
 **Goal**: PMの要求の背景にあるビジネス価値を理解
-**Duration**: 30-60分
+**Duration**: 30〜60分
 
 ```python
 class BusinessContextAnalyzer:
@@ -1023,7 +1023,7 @@ context = analyzer.analyze_requirement(requirement)
 
 ### Phase 2: Technical Feasibility Assessment（技術的実現性評価）
 **Goal**: ビジネス要求を技術的制約と照合し実現可能性を評価
-**Duration**: 60-90分
+**Duration**: 60〜90分
 
 ```python  
 class TechnicalFeasibilityAssessment:
@@ -1100,7 +1100,7 @@ assessment = feasibility_assessment.assess_requirement(address_autocomplete_requ
 
 ### Phase 3: Solution Design & Communication（解決策設計・コミュニケーション）
 **Goal**: 技術的解決策をビジネス価値と結びつけて提案
-**Duration**: 90-120分
+**Duration**: 90〜120分
 
 ```markdown
 #### エンジニア→PM コミュニケーションテンプレート
@@ -1328,7 +1328,7 @@ class EstimationLearningSystem:
                 'severity': 'high',
                 'description': '見積もりが楽観的すぎる傾向',
                 'average_overrun': sum(r['accuracy_ratio'] for r in overruns) / len(overruns),
-                'recommendation': '見積もりに20-30%のバッファを追加'
+                'recommendation': '見積もりに20〜30%のバッファを追加'
             }
         
         # 複雑性見積もりの困難

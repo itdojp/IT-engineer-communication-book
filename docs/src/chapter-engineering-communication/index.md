@@ -578,7 +578,7 @@ Normal Load (< 70%):
   - 創造的思考が活発
   - 学習効率が高い
 
-High Load (70-90%):
+High Load (70〜90%):
   - 集中は可能だが疲労蓄積
   - ルーチンタスクは処理可能
   - 新しい学習は困難
@@ -632,7 +632,7 @@ Long-term Pattern {
 - 意思決定速度：通常の50%以下で警告
 
 **Traffic（処理量）**：
-- 1日の有効作業時間：目標 6-7時間
+- 1日の有効作業時間：目標 6〜7時間
 - 完了タスク数：個人ベースラインとの比較
 - 集中セッション回数：目標 4-6セッション/日
 
@@ -881,7 +881,7 @@ Flow Zone:
          +---------------
            Low        High
 
-最適条件: Challenge ≈ Skill + 10-20%
+最適条件: Challenge ≈ Skill + 10〜20%
 （現在の技能レベルより少し上の挑戦）
 ```
 
@@ -975,7 +975,7 @@ distraction_tolerance = "low"
 flow_probability = "high"
 ```
 
-**Productive Time (13:00-16:00) - 70-80% Cognitive Capacity**
+**Productive Time (13:00-16:00) - 70〜80% Cognitive Capacity**
 ```
 task_types = [
     "implementation_work",
@@ -989,7 +989,7 @@ distraction_tolerance = "medium"
 flow_probability = "medium"
 ```
 
-**Administrative Time (16:00-18:00) - 40-60% Cognitive Capacity**
+**Administrative Time (16:00-18:00) - 40〜60% Cognitive Capacity**
 ```
 task_types = [
     "meetings_and_communication",
@@ -1008,7 +1008,7 @@ flow_probability = "low"
 **Task Switching Penalty**：
 ```
 Context Switch Cost:
-- Setup Time: 5-15分（タスクの複雑さに依存）
+- Setup Time: 5〜15分（タスクの複雑さに依存）
 - Mental Residue: 前のタスクの思考が残る
 - Flow Recovery: 深い集中状態の再構築
 
