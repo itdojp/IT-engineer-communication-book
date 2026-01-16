@@ -905,6 +905,7 @@ Week10-：組み合わせて使用
 - **すぐに応用したい** → 第4章「[ステークホルダー別コミュニケーション戦略](../chapter-stakeholder-communication/)」
 - **理論を深めたい** → 第1章「[エンジニアリング思考とコミュニケーション](../chapter-engineering-communication/)」
 - **チーム適用したい** → 第9章「[技術リーダーシップとコミュニケーション](../chapter-technical-leadership/)」
+- **キャリアにも活かしたい** → 第10章「[キャリア開発とセルフブランディング](../chapter-career-development/)」
 - **システム化したい** → 第8章「[予防的メンタルヘルスシステム構築](../chapter-preventive-systems/)」
 
 あなたの現在の課題と興味に応じて、最適な学習パスを選択してください。

@@ -511,6 +511,18 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
 
 ---
 
+## 🧭 課題別おすすめ読み進めルート
+
+「次にどの章を読むべきか」で迷う場合は、いまの課題に合わせて次のルートから選んでください。
+
+| 今の課題 | まず読む | 次に読む |
+|---|---|---|
+| 技術説明が長い／伝わらない | 第3章：[構造化コミュニケーション手法](../chapter-structured-communication/) | 第4章：[ステークホルダー別コミュニケーション戦略](../chapter-stakeholder-communication/) |
+| 「技術的に無理」を理解してもらえない | 第4章：[ステークホルダー別コミュニケーション戦略](../chapter-stakeholder-communication/) | 第3章：[構造化コミュニケーション手法](../chapter-structured-communication/) |
+| オンラインで誤解が起きやすい | 第5章：[デジタルコミュニケーション最適化](../chapter-digital-communication/) | 第3章：[構造化コミュニケーション手法](../chapter-structured-communication/) |
+| ストレスが高い／限界が近い | 第6章：[エンジニア特有のストレス要因分析](../chapter-stress-analysis/) | 第7章：[技術的アプローチによるメンタルヘルス管理](../chapter-technical-mental-health/) → 第8章：[予防的メンタルヘルスシステム構築](../chapter-preventive-systems/) |
+| リーダー・評価・キャリア文脈で改善したい | 第9章：[技術リーダーシップとコミュニケーション](../chapter-technical-leadership/) | 第10章：[キャリア開発とセルフブランディング](../chapter-career-development/) |
+
 ## 次に読む
 
 - 第1章: [エンジニアリング思考とコミュニケーション](../chapter-engineering-communication/)
