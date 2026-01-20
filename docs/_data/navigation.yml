@@ -23,3 +23,13 @@ chapters:
     path: /src/chapter-technical-leadership/
   - title: キャリア開発とセルフブランディング
     path: /src/chapter-career-development/
+
+appendices:
+  - title: 付録1 実践チェックリスト集
+    path: /src/appendix-01-checklists/
+  - title: 付録2 テンプレート・フォーマット集
+    path: /src/appendix-02-templates/
+  - title: 付録3 ツール・リソース一覧
+    path: /src/appendix-03-tools-resources/
+  - title: 付録4 参考文献・引用
+    path: /src/appendix-04-references/

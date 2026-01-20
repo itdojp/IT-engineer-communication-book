@@ -194,7 +194,7 @@ order: 6
   <!-- Benefits -->
   <rect x="200" y="450" width="400" height="30" rx="15" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
   <text x="400" y="470" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
-    💡 効果：意思決定速度60%向上、技術的負債30%削減、チーム満足度向上
+    💡 期待効果（目安）：意思決定速度の向上、技術的負債の削減、チーム満足度の向上
   </text>
 </svg>
 

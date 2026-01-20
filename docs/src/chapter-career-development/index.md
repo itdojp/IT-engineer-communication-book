@@ -30,31 +30,29 @@ order: 12
 
 技術力は高いのにキャリアが伸び悩むエンジニアが多い理由は、**「自分の価値を他者に伝えるスキル」の不足**です。技術的な成果を分かりやすく伝え、組織や市場での価値を明確化することが、サステナブルなキャリア成長の鍵です。
 
-```markdown
-## キャリア・システム・アーキテクチャ
+#### キャリア・システム・アーキテクチャ
 
-### キャリア・コンポーネント設計
-**Career Component Architecture**：
+##### キャリア・コンポーネント設計
+
+**Career Component Architecture**：  
 **キャリア開発の3つのコミュニケーション戦略**：
 
-```markdown
-## 技術者のキャリアコミュニケーションモデル
+###### 技術者のキャリアコミュニケーションモデル
 
-### 1. 内部コミュニケーション（組織内評価）
-- **成果の可視化**：技術的貢献をビジネスインパクトで表現
-- **プロセス改善提案**：現在の課題と解決策を構造化して伝達
-- **知識共有**：専門知識をチーム全体の資産に変換
+- **1. 内部コミュニケーション（組織内評価）**
+  - **成果の可視化**：技術的貢献をビジネスインパクトで表現
+  - **プロセス改善提案**：現在の課題と解決策を構造化して伝達
+  - **知識共有**：専門知識をチーム全体の資産に変換
+- **2. 外部コミュニケーション（市場価値向上）**
+  - **技術ブログ**：学んだことを他者に教える形でアウトプット
+  - **カンファレンス登壇**：実体験を通じた学びを社会に還元
+  - **OSS貢献**：コードとドキュメントで技術力を実証
+- **3. 戦略的ネットワーキング（関係性構築）**
+  - **技術コミュニティ参加**：共通の課題意識で繋がりを構築
+  - **メンタリング**：技術知識を伝えることで相互成長
+  - **業界情報交換**：他社エンジニアとの横断的関係構築
 
-### 2. 外部コミュニケーション（市場価値向上）
-- **技術ブログ**：学んだことを他者に教える形でアウトプット
-- **カンファレンス登壇**：実体験を通じた学びを社会に還元
-- **OSS貢献**：コードとドキュメントで技術力を実証
-
-### 3. 戦略的ネットワーキング（関係性構築）
-- **技術コミュニティ参加**：共通の課題意識で繋がりを構築
-- **メンタリング**：技術知識を伝えることで相互成長
-- **業界情報交換**：他社エンジニアとの横断的関係構築
-        
+```python
     def design_career_system(self):
         """キャリア・システム全体設計"""
         career_architecture = {
@@ -181,10 +179,10 @@ order: 12
 
 **Technical Differentiation Strategy**：
 
-```markdown
-## 技術的差別化・ポジショニング戦略
+#### 技術的差別化・ポジショニング戦略
 
-### T字型スキル開発アプローチ
+##### T字型スキル開発アプローチ
+
 **T-Shaped Skill Development**：
 ```python
 class TechnicalDifferentiationEngine:
@@ -312,10 +310,10 @@ class TechnicalDifferentiationEngine:
 
 **Career Analytics and Optimization**：
 
-```markdown
-## キャリア成長分析システム
+#### キャリア成長分析システム
 
-### データ駆動キャリア管理
+##### データ駆動キャリア管理
+
 **Data-Driven Career Management**：
 ```python
 class CareerAnalyticsSystem:
@@ -474,6 +472,8 @@ class CareerAnalyticsSystem:
         
         return optimization_algorithms
 
+```
+
 ---
 
 ## 10.2 技術者のセルフブランディング戦略
@@ -482,10 +482,10 @@ class CareerAnalyticsSystem:
 
 **Technical Brand Identity Architecture**：
 
-```markdown
-## 技術者ブランド・アイデンティティ・システム
+#### 技術者ブランド・アイデンティティ・システム
 
-### ブランド・アーキテクチャ設計
+##### ブランド・アーキテクチャ設計
+
 **Brand Architecture as System Design**：
 ```python
 class TechnicalBrandArchitecture:
@@ -653,10 +653,10 @@ class TechnicalBrandArchitecture:
 
 **Digital Presence Optimization System**：
 
-```markdown
-## デジタル・プレゼンス最適化システム
+#### デジタル・プレゼンス最適化システム
 
-### マルチプラットフォーム戦略
+##### マルチプラットフォーム戦略
+
 **Multi-Platform Digital Strategy**：
 ```python
 class DigitalPresenceOptimizer:
@@ -825,10 +825,10 @@ class DigitalPresenceOptimizer:
 
 **Community Engagement Architecture**：
 
-```markdown
-## 技術コミュニティ影響力構築システム
+#### 技術コミュニティ影響力構築システム
 
-### コミュニティ・ネットワーク設計
+##### コミュニティ・ネットワーク設計
+
 **Community Network Architecture**：
 ```python
 class TechnicalCommunityEngagement:
@@ -991,10 +991,10 @@ class TechnicalCommunityEngagement:
 
 **Open Source Contribution Strategy**：
 
-```markdown
-## オープンソース・コントリビューション戦略システム
+#### オープンソース・コントリビューション戦略システム
 
-### 戦略的OSS参加フレームワーク
+##### 戦略的OSS参加フレームワーク
+
 **Strategic OSS Participation Framework**：
 ```python
 class OpenSourceContributionStrategy:
@@ -1156,10 +1156,10 @@ class OpenSourceContributionStrategy:
 
 **Technical Expertise Monetization Framework**：
 
-```markdown
-## 技術的専門性収益化システム
+#### 技術的専門性収益化システム
 
-### 多様な収益ストリーム設計
+##### 多様な収益ストリーム設計
+
 **Diversified Revenue Stream Architecture**：
 ```python
 class TechnicalExpertiseMonetization:
@@ -1387,10 +1387,10 @@ class TechnicalExpertiseMonetization:
 
 **Sustainable Career Growth Architecture**：
 
-```markdown
-## 持続可能キャリア成長システム
+#### 持続可能キャリア成長システム
 
-### 長期キャリア・アーキテクチャ設計
+##### 長期キャリア・アーキテクチャ設計
+
 **Long-term Career Architecture**：
 ```python
 class SustainableCareerGrowthSystem:

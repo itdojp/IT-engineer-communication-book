@@ -49,10 +49,10 @@ permalink: /
 
 ## 付録
 
-- 付録1 実践チェックリスト集（準備中）
-- 付録2 テンプレート・フォーマット集（準備中）
-- 付録3 ツール・リソース一覧（準備中）
-- 付録4 参考文献・引用（準備中）
+- [付録1 実践チェックリスト集](src/appendix-01-checklists/)
+- [付録2 テンプレート・フォーマット集](src/appendix-02-templates/)
+- [付録3 ツール・リソース一覧](src/appendix-03-tools-resources/)
+- [付録4 参考文献・引用](src/appendix-04-references/)
 ---
 
 ## 📄 ライセンス
