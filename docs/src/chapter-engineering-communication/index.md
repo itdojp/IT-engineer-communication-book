@@ -960,12 +960,12 @@ urgent_only_filter() {
 
 **Cognitive Budget Management**：
 
-```markdown
-## 1日の認知リソース配分戦略
+#### 1日の認知リソース配分戦略
 
-### Energy-Based Task Scheduling
+##### Energy-Based Task Scheduling
+
 **Prime Time (9:00-12:00) - 100% Cognitive Capacity**
-```
+```python
 task_types = [
     "complex_algorithm_design",
     "architecture_decisions", 
@@ -979,7 +979,7 @@ flow_probability = "high"
 ```
 
 **Productive Time (13:00-16:00) - 70〜80% Cognitive Capacity**
-```
+```python
 task_types = [
     "implementation_work",
     "code_reviews",
@@ -993,7 +993,7 @@ flow_probability = "medium"
 ```
 
 **Administrative Time (16:00-18:00) - 40〜60% Cognitive Capacity**
-```
+```python
 task_types = [
     "meetings_and_communication",
     "planning_and_organization",

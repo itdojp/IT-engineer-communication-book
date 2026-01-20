@@ -239,7 +239,7 @@ order: 7
   <!-- Benefits -->
   <rect x="200" y="450" width="400" height="30" rx="15" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
   <text x="400" y="470" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
-    💡 効果：応答期待値の明確化により、ストレス50%削減、生産性30%向上
+    💡 期待効果（目安）：応答期待値の明確化により、ストレス低減・生産性向上
   </text>
 </svg>
 
@@ -373,199 +373,161 @@ order: 7
 
 **High-Performance Virtual Meeting System**
 
-```markdown
-## 技術者向け会議効率最適化
+#### 技術者向け会議効率最適化
 
-### 会議の構造化設計
-**Meeting Architecture Pattern**:
+##### 会議の構造化設計
+
+**Meeting Architecture Pattern**:  
 **リモート会議での不確実性削減アプローチ**
 
 ```python
-# 会議効率化の3つの核心原則
+# 会議効率化の3つの核心原則（例）
 meeting_principles = {
     'uncertainty_reduction': {
         'clear_purpose': "会議の目的と成功条件を事前共有",
-        'structured_agenda': "論点を3-5個に絞り込み", 
-        'defined_outcomes': "決定事項と次のアクションを明確化"
+        'structured_agenda': "論点を3-5個に絞り込み",
+        'defined_outcomes': "決定事項と次のアクションを明確化",
     },
     'cognitive_load_management': {
         'optimal_duration': "技術議論45分、意思決定30分が限界",
         'participant_limit': "発言する人は最大5名まで",
-        'context_sharing': "背景情報は会議前に文書共有"
-    }
+        'context_sharing': "背景情報は会議前に文書共有",
+    },
 }
 ```
-    
-**実践的な会議構造テンプレート**
 
-```markdown
-## 効率的会議の5フェーズ（合計45分）
+##### 実践的な会議構造テンプレート（例）
 
 1. **文脈共有**（5分）：前提情報の確認
-2. **現状報告**（10分）：データと事実の共有  
+2. **現状報告**（10分）：データと事実の共有
 3. **論点整理**（15分）：解決すべき課題の特定
 4. **意思決定**（10分）：具体的なアクションの決定
 5. **確認**（5分）：次回までの責任者・期限の明確化
-```
 
-**なぜこの構造が不確実性を削減するのか**
+##### なぜこの構造が不確実性を削減するのか
+
 - 参加者全員が同じ前提で議論できる（認識ギャップの解消）
 - 論点が明確で議論が発散しない（時間効率の向上）
 - 決定事項が具体的でアクションが明確（実行の確実性向上）
-            'duration': int(total_duration * time_allocation['context_setting']),
-            'activities': [
-                '会議の目的・成功条件の確認',
-                '前回からの進捗・変更点の共有',
-                '今回の議論スコープの明確化'
-            ],
-            'facilitator_actions': [
-                'スクリーン共有でアジェンダ表示',
-                '参加者の前提知識レベル確認',
-                'タイムボックスの宣言'
-            ]
-        })
-        
-        # Information Sharing（情報共有）
-        agenda_items.append({
-            'phase': 'information_sharing',
-            'duration': int(total_duration * time_allocation['information_sharing']),
-            'activities': [
-                '各担当者からの状況報告（2分/人）',
-                '技術調査結果・検証結果の共有',
-                '外部制約・新たな要求事項の報告'
-            ],
-            'facilitator_actions': [
-                'タイマー表示で時間管理',
-                '質問は後で受け付ける旨を通知',
-                '重要ポイントの視覚的記録'
-            ]
-        })
-        
-        # Discussion（議論）
-        agenda_items.append({
-            'phase': 'discussion',
-            'duration': int(total_duration * time_allocation['discussion']),
-            'activities': [
-                '選択肢の提示・比較検討',
-                '技術的制約・リスクの議論',
-                '異なる観点・懸念事項の共有'
-            ],
-            'facilitation_techniques': [
-                'ラウンドロビン形式での意見収集',
-                'デジタルホワイトボードでの視覚化',
-                'タイムボックス内での論点整理'
-            ]
-        })
-        
-        # Decision Making（意思決定）
-        agenda_items.append({
-            'phase': 'decision_making',
-            'duration': int(total_duration * time_allocation['decision_making']),
-            'activities': [
-                '合意形成・投票・最終決定',
-                '決定事項の明確化・文書化',
-                'リスク・制約条件の最終確認'
-            ],
-            'decision_tools': [
-                'ポーリング機能での意見集約',
-                '決定事項のリアルタイム記録',
-                '合意レベルの可視化'
-            ]
-        })
-        
-        # Action Planning（アクション計画）
-        agenda_items.append({
-            'phase': 'action_planning',
-            'duration': int(total_duration * time_allocation['action_planning']),
-            'activities': [
-                'アクションアイテムの定義',
-                '担当者・期限・成功条件の設定',
-                '次回ミーティング・フォローアップの計画'
-            ],
-            'output_requirements': [
-                'アクションアイテムリストの共有',
-                'ミーティングサマリーの配布予定',
-                '次回の議題・準備事項の通知'
-            ]
-        })
-        
-        return {
-            'total_duration': total_duration,
-            'agenda_items': agenda_items,
-            'time_allocation': time_allocation,
-            'buffer_time': int(total_duration * 0.05)  # 5%のバッファ
-        }
 
-# 会議品質メトリクス
+```python
+# 会議アジェンダ生成（概念コード）
+# total_duration と time_allocation は会議の規模に応じて与える前提
+agenda_items = []
+
+# Context Setting（文脈設定）
+agenda_items.append({
+    'phase': 'context_setting',
+    'duration': int(total_duration * time_allocation['context_setting']),
+    'activities': [
+        '会議の目的・成功条件の確認',
+        '前回からの進捗・変更点の共有',
+        '今回の議論スコープの明確化',
+    ],
+    'facilitator_actions': [
+        'スクリーン共有でアジェンダ表示',
+        '参加者の前提知識レベル確認',
+        'タイムボックスの宣言',
+    ],
+})
+
+# Information Sharing（情報共有）
+agenda_items.append({
+    'phase': 'information_sharing',
+    'duration': int(total_duration * time_allocation['information_sharing']),
+    'activities': [
+        '各担当者からの状況報告（2分/人）',
+        '技術調査結果・検証結果の共有',
+        '外部制約・新たな要求事項の報告',
+    ],
+    'facilitator_actions': [
+        'タイマー表示で時間管理',
+        '質問は後で受け付ける旨を通知',
+        '重要ポイントの視覚的記録',
+    ],
+})
+
+# Discussion（議論）
+agenda_items.append({
+    'phase': 'discussion',
+    'duration': int(total_duration * time_allocation['discussion']),
+    'activities': [
+        '選択肢の提示・比較検討',
+        '技術的制約・リスクの議論',
+        '異なる観点・懸念事項の共有',
+    ],
+    'facilitation_techniques': [
+        'ラウンドロビン形式での意見収集',
+        'デジタルホワイトボードでの視覚化',
+        'タイムボックス内での論点整理',
+    ],
+})
+
+# Decision Making（意思決定）
+agenda_items.append({
+    'phase': 'decision_making',
+    'duration': int(total_duration * time_allocation['decision_making']),
+    'activities': [
+        '合意形成・投票・最終決定',
+        '決定事項の明確化・文書化',
+        'リスク・制約条件の最終確認',
+    ],
+    'decision_tools': [
+        'ポーリング機能での意見集約',
+        '決定事項のリアルタイム記録',
+        '合意レベルの可視化',
+    ],
+})
+
+# Action Planning（アクション計画）
+agenda_items.append({
+    'phase': 'action_planning',
+    'duration': int(total_duration * time_allocation['action_planning']),
+    'activities': [
+        'アクションアイテムの定義',
+        '担当者・期限・成功条件の設定',
+        '次回ミーティング・フォローアップの計画',
+    ],
+    'output_requirements': [
+        'アクションアイテムリストの共有',
+        'ミーティングサマリーの配布予定',
+        '次回の議題・準備事項の通知',
+    ],
+})
+
+meeting_agenda = {
+    'total_duration': total_duration,
+    'agenda_items': agenda_items,
+    'time_allocation': time_allocation,
+    'buffer_time': int(total_duration * 0.05),  # 5%のバッファ
+}
+
+# 会議品質メトリクス（概念コード）
 class MeetingQualityMetrics:
-    """会議品質の定量的測定"""
-    
+    """会議品質の定量的測定（概念コード）"""
+
     def measure_meeting_effectiveness(self, meeting_data):
-        """会議効果の多次元評価"""
-        
         metrics = {
-            'time_efficiency': self._calculate_time_efficiency(meeting_data),
-            'participation_quality': self._measure_participation(meeting_data),
-            'decision_quality': self._evaluate_decisions(meeting_data),
-            'action_item_clarity': self._assess_action_items(meeting_data),
-            'participant_satisfaction': self._survey_satisfaction(meeting_data)
+            "time_efficiency": None,
+            "participation_quality": None,
+            "decision_quality": None,
+            "action_item_clarity": None,
+            "participant_satisfaction": None,
         }
-        
-        return {
-            'overall_score': sum(metrics.values()) / len(metrics),
-            'detailed_metrics': metrics,
-            'improvement_recommendations': self._generate_recommendations(metrics),
-            'best_practices_identified': self._identify_best_practices(meeting_data)
-        }
-    
-    def _calculate_time_efficiency(self, meeting_data):
-        """時間効率の測定"""
-        planned_duration = meeting_data['planned_duration']
-        actual_duration = meeting_data['actual_duration']
-        
-        # 時間遵守率
-        time_adherence = min(planned_duration / actual_duration, 1.0)
-        
-        # 価値創出時間率（実質的な議論・意思決定時間の割合）
-        productive_time = meeting_data['discussion_time'] + meeting_data['decision_time']
-        value_creation_ratio = productive_time / actual_duration
-        
-        # 遅延開始・技術的問題による時間ロス
-        technical_delay = meeting_data.get('technical_issues_time', 0)
-        late_start_delay = meeting_data.get('late_start_time', 0)
-        delay_impact = 1 - (technical_delay + late_start_delay) / actual_duration
-        
-        return (time_adherence * 0.4 + value_creation_ratio * 0.4 + delay_impact * 0.2)
-    
-    def _measure_participation(self, meeting_data):
-        """参加品質の測定"""
-        participants = meeting_data['participants']
-        speaking_time = meeting_data['speaking_time_per_participant']
-        
-        # 発言バランス（理想的には均等分布）
-        speaking_times = list(speaking_time.values())
-        speaking_balance = 1 - (max(speaking_times) - min(speaking_times)) / sum(speaking_times)
-        
-        # 能動的参加率（質問・提案・反応の頻度）
-        active_contributions = meeting_data['questions'] + meeting_data['proposals'] + meeting_data['reactions']
-        active_participation_rate = active_contributions / len(participants)
-        
-        # カメラ・マイク使用率
-        camera_usage_rate = meeting_data['camera_on_participants'] / len(participants)
-        engagement_score = (camera_usage_rate * 0.3 + active_participation_rate * 0.7)
-        
-        return (speaking_balance * 0.4 + engagement_score * 0.6)
+        return metrics
+
 ```
 
 ### ⚡ ツールチェーン最適化
 
 **Communication Tool Ecosystem Design**
 
-```markdown
-## 統合コミュニケーション基盤の構築
+#### 統合コミュニケーション基盤の構築
 
-### ツール選択・統合戦略
+##### ツール選択・統合戦略
+
 **Tool Integration Architecture**:
+
 ```yaml
 Communication_Tool_Stack:
   
@@ -789,10 +751,10 @@ class CommunicationToolOrchestrator:
 
 **Knowledge Architecture Design**
 
-```markdown
-## エンジニア組織の知識基盤設計
+#### エンジニア組織の知識基盤設計
 
-### 情報アーキテクチャの構築
+##### 情報アーキテクチャの構築
+
 **Information Architecture for Engineering Teams**:
 ```yaml
 Knowledge_Management_Structure:
@@ -1097,10 +1059,10 @@ class KnowledgeBaseAnalytics:
 
 **Advanced Search & Discovery System**
 
-```markdown
-## 知識発見システムの最適化
+#### 知識発見システムの最適化
 
-### セマンティック検索の実装
+##### セマンティック検索の実装
+
 **Semantic Search Architecture**:
 ```python
 class SemanticKnowledgeSearch:
@@ -1305,10 +1267,10 @@ class SearchExperienceOptimizer:
 
 **Channel Architecture & Governance**
 
-```markdown
-## エンジニア組織のSlack設計戦略
+#### エンジニア組織のSlack設計戦略
 
-### チャンネル分類・命名戦略
+##### チャンネル分類・命名戦略
+
 **Channel Taxonomy & Naming Convention**:
 ```yaml
 Slack_Channel_Architecture:
@@ -1589,10 +1551,10 @@ class SlackChannelOptimizer:
 
 **Intelligent Automation & Bot Integration**
 
-```markdown
-## エンジニア向けSlack自動化戦略
+#### エンジニア向けSlack自動化戦略
 
-### プロセス自動化の設計
+##### プロセス自動化の設計
+
 **Workflow Automation Architecture**:
 ```yaml
 Slack_Automation_Framework:

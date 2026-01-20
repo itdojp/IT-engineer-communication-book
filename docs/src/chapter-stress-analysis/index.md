@@ -1030,7 +1030,7 @@ order: 8
   <!-- Overall Impact -->
   <rect x="150" y="650" width="500" height="35" rx="17" fill="#ecfdf5" stroke="#bbf7d0" stroke-width="1"/>
   <text x="400" y="673" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
-    💡 効果: 学習効率3倍向上、技術不安70%軽減、キャリア競争力2倍強化
+    💡 期待効果（目安）: 学習効率の向上、技術不安の軽減、キャリア競争力の強化
   </text>
   
   <!-- Arrow marker definitions -->

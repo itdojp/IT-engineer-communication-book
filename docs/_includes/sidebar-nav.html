@@ -102,15 +102,44 @@
             </ul>
         </div>
 
+        <!-- Appendices -->
+        <div class="toc-section">
+            <h3 class="toc-section-title">📎 付録</h3>
+            <ul class="toc-list">
+                <li class="toc-item toc-chapter">
+                    <a href="{{ '/src/appendix-01-checklists/' | relative_url }}" class="toc-link {% if page.url contains 'appendix-01-checklists' %}active{% endif %}">
+                        <span class="chapter-title">付録1 実践チェックリスト集</span>
+                    </a>
+                </li>
+                <li class="toc-item toc-chapter">
+                    <a href="{{ '/src/appendix-02-templates/' | relative_url }}" class="toc-link {% if page.url contains 'appendix-02-templates' %}active{% endif %}">
+                        <span class="chapter-title">付録2 テンプレート・フォーマット集</span>
+                    </a>
+                </li>
+                <li class="toc-item toc-chapter">
+                    <a href="{{ '/src/appendix-03-tools-resources/' | relative_url }}" class="toc-link {% if page.url contains 'appendix-03-tools-resources' %}active{% endif %}">
+                        <span class="chapter-title">付録3 ツール・リソース一覧</span>
+                    </a>
+                </li>
+                <li class="toc-item toc-chapter">
+                    <a href="{{ '/src/appendix-04-references/' | relative_url }}" class="toc-link {% if page.url contains 'appendix-04-references' %}active{% endif %}">
+                        <span class="chapter-title">付録4 参考文献・引用</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
         <!-- Resources Section -->
         <div class="toc-section">
             <h3 class="toc-section-title">📚 リソース</h3>
             <ul class="toc-list">
+                {% if site.show_github_links %}
                 <li class="toc-item">
                     <a href="https://github.com/itdojp/IT-engineer-communication-book" class="toc-link" target="_blank" rel="noopener">
                         💾 GitHubリポジトリ
                     </a>
                 </li>
+                {% endif %}
                 <li class="toc-item">
                     <a href="https://itdojp.github.io/it-engineer-knowledge-architecture/" class="toc-link" target="_blank" rel="noopener">
                         📚 書籍一覧
