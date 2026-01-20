@@ -53,6 +53,9 @@ order: 12
   - **業界情報交換**：他社エンジニアとの横断的関係構築
 
 ```python
+class CareerSystemDesigner:
+    """キャリア・システム設計（概念コード）"""
+
     def design_career_system(self):
         """キャリア・システム全体設計"""
         career_architecture = {
