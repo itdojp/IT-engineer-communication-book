@@ -2,8 +2,8 @@
 
 対象（参照した主なファイル）
 - `docs/index.md`
-- `docs/src/chapter-quickstart/index.md`
-- `docs/src/chapter-engineering-communication/index.md` ほか `docs/src/chapter-*/index.md`
+- `src/chapter-quickstart/index.md`
+- `src/chapter-engineering-communication/index.md` ほか `src/chapter-*/index.md`
 - `docs/_data/navigation.yml`
 - `LICENSE.md`
 
@@ -18,47 +18,47 @@
 
 ## 2. 現状の章構成サマリ
 
-### 第1章: クイックスタートガイド（`docs/src/chapter-quickstart/index.md`）
+### 第1章: クイックスタートガイド（`src/chapter-quickstart/index.md`）
 - 狙い / 主なトピック: すぐ試せる改善法（PREP法など）と、効果測定・次アクション。
 - 学習目標: 「読了時間/実践開始/効果実感」など、行動ベースで提示。
 
-### 第2章: エンジニアリング思考とコミュニケーション（`docs/src/chapter-engineering-communication/index.md`）
+### 第2章: エンジニアリング思考とコミュニケーション（`src/chapter-engineering-communication/index.md`）
 - 狙い / 主なトピック: 認知特性、コミュニケーションのシステムモデル、メンタルヘルスとパフォーマンス、認知バイアス、フロー状態。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第3章: エンジニア特有のコミュニケーション課題（`docs/src/chapter-communication-challenges/index.md`）
+### 第3章: エンジニア特有のコミュニケーション課題（`src/chapter-communication-challenges/index.md`）
 - 狙い / 主なトピック: 技術者間の特徴、非技術者とのギャップ、組織階層での情報伝達。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第4章: 構造化コミュニケーション手法（`docs/src/chapter-structured-communication/index.md`）
+### 第4章: 構造化コミュニケーション手法（`src/chapter-structured-communication/index.md`）
 - 狙い / 主なトピック: RFC形式、PREP法、段階的詳細化、デバッグ思考、実践演習。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第5章: ステークホルダー別コミュニケーション戦略（`docs/src/chapter-stakeholder-communication/index.md`）
+### 第5章: ステークホルダー別コミュニケーション戦略（`src/chapter-stakeholder-communication/index.md`）
 - 狙い / 主なトピック: チーム内討議、PM/ビジネス連携、顧客/ベンダ対応（SLA、障害対応等）。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第6章: デジタルコミュニケーション最適化（`docs/src/chapter-digital-communication/index.md`）
+### 第6章: デジタルコミュニケーション最適化（`src/chapter-digital-communication/index.md`）
 - 狙い / 主なトピック: リモート協働、会議効率、ドキュメント/ナレッジ管理、チャット運用。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第7章: エンジニア特有のストレス要因分析（`docs/src/chapter-stress-analysis/index.md`）
+### 第7章: エンジニア特有のストレス要因分析（`src/chapter-stress-analysis/index.md`）
 - 狙い / 主なトピック: 技術的ストレス、組織/人間関係ストレス、個人特性由来ストレス。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第8章: 技術的アプローチによるメンタルヘルス管理（`docs/src/chapter-technical-mental-health/index.md`）
+### 第8章: 技術的アプローチによるメンタルヘルス管理（`src/chapter-technical-mental-health/index.md`）
 - 狙い / 主なトピック: システム思考でのメンタル設計、データ駆動モニタリング、個人アジャイル適用。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第9章: 予防的メンタルヘルスシステム構築（`docs/src/chapter-preventive-systems/index.md`）
+### 第9章: 予防的メンタルヘルスシステム構築（`src/chapter-preventive-systems/index.md`）
 - 狙い / 主なトピック: 予防システム設計、個人/チームレベルの予防システム。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第10章: 技術リーダーシップとコミュニケーション（`docs/src/chapter-technical-leadership/index.md`）
+### 第10章: 技術リーダーシップとコミュニケーション（`src/chapter-technical-leadership/index.md`）
 - 狙い / 主なトピック: 技術的意思決定と合意形成（テンプレート例を含む）。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
-### 第11章: キャリア開発とセルフブランディング（`docs/src/chapter-career-development/index.md`）
+### 第11章: キャリア開発とセルフブランディング（`src/chapter-career-development/index.md`）
 - 狙い / 主なトピック: キャリア設計、セルフブランディング、コミュニティでの影響力構築。
 - 学習目標: `## 学習目標と章の位置づけ` に記載あり。
 
@@ -67,11 +67,11 @@
 - 付録の扱い:
   - `docs/index.md` に付録の見出しはあるが、リンクや本文ファイルが見当たらない（未作成なら目次から外す/「今後追加予定」と明記する等が必要）。
 - ナビゲーションデータ:
-  - 以前は `docs/_data/navigation.yml` の `path` が `docs/src/` のディレクトリ名と一致しない項目があり、リンク切れリスクがあったが、本PRで修正済みである。
+  - 以前は `docs/_data/navigation.yml` の `path` が `src/` のディレクトリ名と一致しない項目があり、リンク切れリスクがあったが、本PRで修正済みである。
 
 ## 4. 構成改善の提案（案）
 
 - ナビゲーションの整合（このPRで対応済み）:
-  - `docs/_data/navigation.yml` の `path` を `docs/src/` のディレクトリ名に合わせる修正を実施し、サイドバー/prev-next のリンク切れを防いだ。
+  - `docs/_data/navigation.yml` の `path` を `src/` のディレクトリ名に合わせる修正を実施し、サイドバー/prev-next のリンク切れを防いだ。
 - 付録の方針確定:
   - 付録を作るなら、ページ作成とリンク追加までをセットで行う。作らないなら目次から外し、読者を迷わせない。
