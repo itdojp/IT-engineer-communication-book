@@ -39,28 +39,28 @@ permalink: /
 
 - **利害調整（交渉）が発生する**：説明や合意形成だけでは前に進まない状況では、交渉の枠組みが必要になる → [エンジニアの交渉力アーキテクチャ](https://itdojp.github.io/negotiation-for-engineers-book/)
 - **AI/エージェント支援を業務に組み込む**：下書き/要約/レビュー補助を運用に組み込む場合は、ガードレールと使い分けが重要になる → [AIエージェント・コミュニケーション実践ガイド](https://itdojp.github.io/ai-communication-book/)
-- **本書側の最小ガードレール**：AI支援を使う場合は、まず [付録1：実践チェックリスト集](src/appendix-01-checklists/) の「A10. AI支援を使う前のチェックリスト」を確認する
+- **本書側の最小ガードレール**：AI支援を使う場合は、まず [付録1：実践チェックリスト集](appendix-01-checklists/) の「A10. AI支援を使う前のチェックリスト」を確認する
 
 ## 目次
 
-- [クイックスタートガイド：今日から始める実践コミュニケーション改善](src/chapter-quickstart/)
-- [第1章 エンジニアリング思考とコミュニケーション](src/chapter-engineering-communication/)
-- [第2章 エンジニア特有のコミュニケーション課題](src/chapter-communication-challenges/)
-- [第3章 構造化コミュニケーション手法](src/chapter-structured-communication/)
-- [第4章 ステークホルダー別コミュニケーション戦略](src/chapter-stakeholder-communication/)
-- [第5章 デジタルコミュニケーション最適化](src/chapter-digital-communication/)
-- [第6章 エンジニア特有のストレス要因分析](src/chapter-stress-analysis/)
-- [第7章 技術的アプローチによるメンタルヘルス管理](src/chapter-technical-mental-health/)
-- [第8章 予防的メンタルヘルスシステム構築](src/chapter-preventive-systems/)
-- [第9章 技術リーダーシップとコミュニケーション](src/chapter-technical-leadership/)
-- [第10章 キャリア開発とセルフブランディング](src/chapter-career-development/)
+- [クイックスタートガイド：今日から始める実践コミュニケーション改善](chapter-quickstart/)
+- [第1章 エンジニアリング思考とコミュニケーション](chapter-engineering-communication/)
+- [第2章 エンジニア特有のコミュニケーション課題](chapter-communication-challenges/)
+- [第3章 構造化コミュニケーション手法](chapter-structured-communication/)
+- [第4章 ステークホルダー別コミュニケーション戦略](chapter-stakeholder-communication/)
+- [第5章 デジタルコミュニケーション最適化](chapter-digital-communication/)
+- [第6章 エンジニア特有のストレス要因分析](chapter-stress-analysis/)
+- [第7章 技術的アプローチによるメンタルヘルス管理](chapter-technical-mental-health/)
+- [第8章 予防的メンタルヘルスシステム構築](chapter-preventive-systems/)
+- [第9章 技術リーダーシップとコミュニケーション](chapter-technical-leadership/)
+- [第10章 キャリア開発とセルフブランディング](chapter-career-development/)
 
 ## 付録
 
-- [付録1 実践チェックリスト集](src/appendix-01-checklists/)
-- [付録2 テンプレート・フォーマット集](src/appendix-02-templates/)
-- [付録3 ツール・リソース一覧](src/appendix-03-tools-resources/)
-- [付録4 参考文献・引用](src/appendix-04-references/)
+- [付録1 実践チェックリスト集](appendix-01-checklists/)
+- [付録2 テンプレート・フォーマット集](appendix-02-templates/)
+- [付録3 ツール・リソース一覧](appendix-03-tools-resources/)
+- [付録4 参考文献・引用](appendix-04-references/)
 ---
 
 ## 📄 ライセンス

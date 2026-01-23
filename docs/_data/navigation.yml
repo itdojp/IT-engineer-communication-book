@@ -1,35 +1,35 @@
 introduction:
   - title: クイックスタートガイド：今日から始める実践コミュニケーション改善
-    path: /src/chapter-quickstart/
+    path: /chapter-quickstart/
 
 chapters:
   - title: エンジニアリング思考とコミュニケーション
-    path: /src/chapter-engineering-communication/
+    path: /chapter-engineering-communication/
   - title: エンジニア特有のコミュニケーション課題
-    path: /src/chapter-communication-challenges/
+    path: /chapter-communication-challenges/
   - title: 構造化コミュニケーション手法
-    path: /src/chapter-structured-communication/
+    path: /chapter-structured-communication/
   - title: ステークホルダー別コミュニケーション戦略
-    path: /src/chapter-stakeholder-communication/
+    path: /chapter-stakeholder-communication/
   - title: デジタルコミュニケーション最適化
-    path: /src/chapter-digital-communication/
+    path: /chapter-digital-communication/
   - title: エンジニア特有のストレス要因分析
-    path: /src/chapter-stress-analysis/
+    path: /chapter-stress-analysis/
   - title: 技術的アプローチによるメンタルヘルス管理
-    path: /src/chapter-technical-mental-health/
+    path: /chapter-technical-mental-health/
   - title: 予防的メンタルヘルスシステム構築
-    path: /src/chapter-preventive-systems/
+    path: /chapter-preventive-systems/
   - title: 技術リーダーシップとコミュニケーション
-    path: /src/chapter-technical-leadership/
+    path: /chapter-technical-leadership/
   - title: キャリア開発とセルフブランディング
-    path: /src/chapter-career-development/
+    path: /chapter-career-development/
 
 appendices:
   - title: 付録1 実践チェックリスト集
-    path: /src/appendix-01-checklists/
+    path: /appendix-01-checklists/
   - title: 付録2 テンプレート・フォーマット集
-    path: /src/appendix-02-templates/
+    path: /appendix-02-templates/
   - title: 付録3 ツール・リソース一覧
-    path: /src/appendix-03-tools-resources/
+    path: /appendix-03-tools-resources/
   - title: 付録4 参考文献・引用
-    path: /src/appendix-04-references/
+    path: /appendix-04-references/
