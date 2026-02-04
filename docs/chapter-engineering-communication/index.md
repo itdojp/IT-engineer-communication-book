@@ -282,7 +282,7 @@ order: 3
   <text x="175" y="75" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#16a34a">+</text>
   
   <circle cx="625" cy="70" r="8" fill="#dc2626" opacity="0.2"/>
-  <text x="625" y="75" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#dc2626">−</text>
+  <text x="625" y="75" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#dc2626">-</text>
 </svg>
 
 **詳細志向をコミュニケーションで活かす戦略**：
