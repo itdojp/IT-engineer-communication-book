@@ -654,7 +654,7 @@ JOINまたはbatch取得を検討してみてください。」
 
 **マイクロサービスアーキテクチャをチーム組織に応用**：
 
-```markdown
+````markdown
 ## Project-as-a-Service Architecture
 
 ### Domain-Driven Designのプロジェクト適用
@@ -708,6 +708,7 @@ Risk Circuit Breaker Thresholds:
 ・ リソース再配分・スキルサポート
 ・ プロセス改善・コミュニケーション強化
 ```
+````
 
 ### ステークホルダー管理：Interface Design Pattern
 

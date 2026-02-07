@@ -624,7 +624,7 @@ Long-term Pattern {
 
 **メンタルヘルス・メトリクス**：
 
-```markdown
+````markdown
 ## Mental Health Observability Stack
 
 ### Golden Signals for Mental Health
@@ -668,6 +668,7 @@ alert_rules:
     severity: "critical"
     action: ["mandatory_time_off", "environment_change_discussion"]
 ```
+````
 
 ### パフォーマンス最適化戦略
 
