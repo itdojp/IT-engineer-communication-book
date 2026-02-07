@@ -623,7 +623,7 @@ def tech_lead_filter(technical_info):
 
 **Escalation Decision Tree**：
 
-```markdown
+````markdown
 ## 技術的問題のエスカレーション判断
 
 ### 自動エスカレーション条件
@@ -687,6 +687,7 @@ escalation_rules:
       - "実装タイムライン"
       - "リスクと軽減策"
 ```
+````
 
 **Context Switching Cost の最小化**：
 ```python
@@ -894,7 +895,7 @@ delegation_criteria:
 
 **Effective Communication Patterns**：
 
-```markdown
+````markdown
 ## 高効率コミュニケーション・パターン集
 
 ### Pattern 1: Technical Spike Communication
@@ -935,6 +936,7 @@ spike_report = {
   }
 }
 ```
+````
 
 ### Pattern 2: Problem-Solution-Impact Communication  
 **用途**: 問題報告と解決策提案
@@ -1029,7 +1031,7 @@ class ArchitectureEvolution:
 
 **Communication Anti-Patterns**：
 
-```markdown
+````markdown
 ## 避けるべきコミュニケーション・パターン
 
 ### Anti-Pattern 1: "Technology for Technology's Sake"
@@ -1134,6 +1136,7 @@ class CommunicationOptimizer:
             'timeline': extract_critical_dates(content)
         }
 ```
+````
 
 ---
 
