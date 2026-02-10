@@ -1029,7 +1029,7 @@ class ArchitectureEvolution:
 
 **Communication Anti-Patterns**：
 
-```markdown
+````markdown
 ## 避けるべきコミュニケーション・パターン
 
 ### Anti-Pattern 1: "Technology for Technology's Sake"
@@ -1037,7 +1037,7 @@ class ArchitectureEvolution:
 **典型的な発言**:
 ```
 ❌ 悪い例:
-「最新のReact 18にアップグレードしましょう。
+「React 18にアップグレードしましょう。
 Concurrent Featuresがすごく興味深いです。
 Suspenseも使えるようになりますし...」
 
@@ -1134,6 +1134,7 @@ class CommunicationOptimizer:
             'timeline': extract_critical_dates(content)
         }
 ```
+````
 
 ---
 
