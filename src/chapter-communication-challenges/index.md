@@ -1029,7 +1029,7 @@ class ArchitectureEvolution:
 
 **Communication Anti-Patterns**：
 
-```markdown
+````markdown
 ## 避けるべきコミュニケーション・パターン
 
 ### Anti-Pattern 1: "Technology for Technology's Sake"
@@ -1134,6 +1134,7 @@ class CommunicationOptimizer:
             'timeline': extract_critical_dates(content)
         }
 ```
+````
 
 ---
 
