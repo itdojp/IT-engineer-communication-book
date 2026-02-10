@@ -1039,7 +1039,7 @@ class ArchitectureEvolution:
 **典型的な発言**:
 ```
 ❌ 悪い例:
-「最新のReact 18にアップグレードしましょう。
+「React 18にアップグレードしましょう。
 Concurrent Featuresがすごく興味深いです。
 Suspenseも使えるようになりますし...」
 
