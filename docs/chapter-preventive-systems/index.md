@@ -276,7 +276,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
     </text>
   </g>
 </svg>
-```
+```text
 
 ### システム要件定義
 
@@ -329,7 +329,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
         weighted_deviations.append(social_deviation * 0.25)
         
         return sum(weighted_deviations)
-```
+```text
 
 **FR-002: 予防的介入システム**
 ```yaml
@@ -1853,7 +1853,7 @@ class MentalHealthROICalculator:
 
 ### 🔄 予防システムの実装・運用サイクル
 
-```
+```text
 設計・構築 → デプロイ・監視 → 学習・最適化 → スケール・進化
     ↑                                           ↓
     ←←←← エンジニア組織らしい予防システム運用 ←←←←
