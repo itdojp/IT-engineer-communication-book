@@ -25,7 +25,7 @@ order: 15
 
 ### 図解・合意形成
 
-- ホワイトボード: Miro / FigJam / Google Jamboard（提供状況は要確認）
+- ホワイトボード: Miro / FigJam / Microsoft Whiteboard
 - 図の作成: Mermaid / draw.io（diagrams.net）/ Figma
 
 ### 運用・可観測性（通知と状況共有）
@@ -51,4 +51,3 @@ order: 15
 - 統合: API連携、Webhook、通知ルール、同一IDでのアクセス
 - 検索性: スレッド/リンク/タグ/命名規則、横断検索の可否
 - 定着: トレーニング、ガイドライン、最小ルール（やりすぎない）
-
