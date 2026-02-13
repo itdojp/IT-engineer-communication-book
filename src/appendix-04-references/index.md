@@ -23,11 +23,18 @@ order: 16
 - **参考**: 手法や用語の背景を示すための参照（必要に応じてURLを付与）。
 - **経験則**: 実務経験に基づく観測は、前提（組織規模/開発形態/ドメイン）を併記し、一般化しすぎない。
 
-## A4-3. 参考文献（要確認）
+## A4-3. 参考資料（例）
 
-本書で参照している（または参照したい）文献・資料は、今後この付録に集約する。現時点では、本文中に明示的な外部参照が少ないため、必要に応じて追記が必要である。
+本書の主張の根拠として一次情報を引用する場合は、本文中に URL・文書名・該当箇所を明示する。
 
-- 研究/統計（一次情報）: 要確認
-- 公的機関のガイドライン: 要確認
-- ベンダの公式ドキュメント: 要確認
-- 技術組織の公開事例: 要確認
+背景理解のための代表的な参考資料（例）:
+
+- 研究/統計（一次情報）
+  - Amy C. Edmondson. "Psychological Safety and Learning Behavior in Work Teams." Administrative Science Quarterly, 1999.
+  - Nicole Forsgren, Jez Humble, Gene Kim. "Accelerate: The Science of Lean Software and DevOps." 2018.
+- 公的機関のガイドライン
+  - 厚生労働省: 職場のメンタルヘルス、ハラスメント対策等のガイドライン（最新版を参照）
+- ベンダの公式ドキュメント
+  - GitHub Docs: Pull Request / Code Review / Discussions
+- 技術組織の公開事例
+  - Google re:Work: Project Aristotle（チームの有効性）
