@@ -290,7 +290,7 @@ order: 4
 
 **Shared Mental Models の構築**：
 
-```markdown
+````markdown
 ## Technical Context Repository
 
 ### システム全体像の共有
@@ -338,13 +338,15 @@ adr_template:
 
 ---
 
+````
+
 ## 2.2 非技術者との情報ギャップ
 
 ### 抽象化レベルの選択問題
 
 **Technical Abstraction Ladder**：
 
-```markdown
+````markdown
 ## 抽象化レベル設計
 
 ### Level 5: Implementation Details（実装詳細）
@@ -386,6 +388,8 @@ redis_config = {
 **内容例**:
 「ユーザー満足度の向上により離脱率20%削減。
 システム安定性向上により運用コスト30%削減」
+
+````
 
 ### ビジネス価値翻訳の技法
 
@@ -557,7 +561,7 @@ risks.sort(key=lambda x: x.business_risk_score(), reverse=True)
 
 **Hierarchical Information Flow Model**：
 
-```markdown
+````markdown
 ## 組織階層別情報フィルタリング
 
 ### Executive Level（経営レベル）
@@ -619,6 +623,8 @@ def tech_lead_filter(technical_info):
         'technology_stack': specify_tools_and_frameworks(technical_info)
     }
 ```
+
+````
 
 ### エスカレーション戦略の設計
 

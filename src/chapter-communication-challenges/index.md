@@ -290,7 +290,7 @@ order: 4
 
 **Shared Mental Models の構築**：
 
-```markdown
+````markdown
 ## Technical Context Repository
 
 ### システム全体像の共有
@@ -338,13 +338,15 @@ adr_template:
 
 ---
 
+````
+
 ## 2.2 非技術者との情報ギャップ
 
 ### 抽象化レベルの選択問題
 
 **Technical Abstraction Ladder**：
 
-```markdown
+````markdown
 ## 抽象化レベル設計
 
 ### Level 5: Implementation Details（実装詳細）
@@ -386,6 +388,8 @@ redis_config = {
 **内容例**:
 「ユーザー満足度の向上により離脱率20%削減。
 システム安定性向上により運用コスト30%削減」
+
+````
 
 ### ビジネス価値翻訳の技法
 
@@ -557,7 +561,7 @@ risks.sort(key=lambda x: x.business_risk_score(), reverse=True)
 
 **Hierarchical Information Flow Model**：
 
-```markdown
+````markdown
 ## 組織階層別情報フィルタリング
 
 ### Executive Level（経営レベル）
@@ -620,11 +624,13 @@ def tech_lead_filter(technical_info):
     }
 ```
 
+````
+
 ### エスカレーション戦略の設計
 
 **Escalation Decision Tree**：
 
-```markdown
+````markdown
 ## 技術的問題のエスカレーション判断
 
 ### 自動エスカレーション条件
@@ -669,10 +675,10 @@ escalation_rules:
       - "意思決定が必要な事項"
       - "推奨アクション"
 
-  advisory_escalation:
-    conditions:
-      - "architectural_decision_required == true"
-      - "resource_allocation_change_needed == true"
+	  advisory_escalation:
+	    conditions:
+	      - "architectural_decision_required == true"
+	      - "resource_allocation_change_needed == true"
       - "technology_adoption_decision == true"
       - "team_structure_optimization == true"
     
@@ -684,10 +690,12 @@ escalation_rules:
     information_template:
       - "決定が必要な事項"
       - "選択肢と評価"
-      - "推奨案と根拠"
-      - "実装タイムライン"
-      - "リスクと軽減策"
+	      - "推奨案と根拠"
+	      - "実装タイムライン"
+	      - "リスクと軽減策"
 ```
+
+````
 
 **Context Switching Cost の最小化**：
 ```python
@@ -895,7 +903,7 @@ delegation_criteria:
 
 **Effective Communication Patterns**：
 
-```markdown
+````markdown
 ## 高効率コミュニケーション・パターン集
 
 ### Pattern 1: Technical Spike Communication
@@ -933,9 +941,10 @@ spike_report = {
     'primary_option': 'zustand',
     'rationale': '小規模チームでの開発速度重視、既存Reactスキルの活用',
     'risk_mitigation': 'Redux Toolkitへの移行パスを確保'
-  }
+	}
 }
 ```
+````
 
 ### Pattern 2: Problem-Solution-Impact Communication  
 **用途**: 問題報告と解決策提案
