@@ -802,8 +802,6 @@ order: 6
 
 </div>
 
-```text
-
 ### 知識共有システムの構築
 
 **Collective Intelligence Platform**
