@@ -938,7 +938,7 @@ knowledge_quality_metrics = {
 
 **Requirements Engineering for Engineers**
 
-```markdown
+````markdown
 ## エンジニア主導の要求定義プロセス
 
 ### Phase 1: Business Context Understanding（ビジネス文脈理解）
@@ -1095,12 +1095,13 @@ address_autocomplete_requirement = {
 
 assessment = feasibility_assessment.assess_requirement(address_autocomplete_requirement)
 ```
+````
 
 ### Phase 3: Solution Design & Communication（解決策設計・コミュニケーション）
 **Goal**: 技術的解決策をビジネス価値と結びつけて提案
 **Duration**: 90〜120分
 
-```markdown
+````markdown
 #### エンジニア→PM コミュニケーションテンプレート
 
 **Solution Proposal Template**:
@@ -1177,12 +1178,13 @@ solution_proposal:
       - "ユーザー満足度調査（四半期）"
       - "運用コスト・エラー率（月次）"
 ```
+````
 
 ### 見積もり手法の精緻化
 
 **Engineering Estimation Framework**
 
-```markdown
+````markdown
 ## エンジニアリング見積もりの科学的アプローチ
 
 ### 三点見積もり法の改良版
@@ -1340,6 +1342,7 @@ class EstimationLearningSystem:
         
         return biases
 ```
+````
 
 ---
 
@@ -1349,7 +1352,7 @@ class EstimationLearningSystem:
 
 **Service Level Agreement Engineering**
 
-```markdown
+````markdown
 ## 技術者主導のSLA設計
 
 ### SLA構成要素の技術的定義
@@ -1426,6 +1429,7 @@ sla_technical_specification:
       response_time: "初動対応1時間以内、顧客通知4時間以内"
       resolution_time: "重大インシデント72時間以内解決"
 ```
+````
 
 **SLA監視・レポーティングシステム**:
 ```python
@@ -1525,7 +1529,7 @@ monthly_report = sla_monitor.generate_sla_report('2024-01', audience='customer')
 
 **Incident Response Communication Framework**
 
-```markdown
+````markdown
 ## 技術者主導の障害対応コミュニケーション
 
 ### 障害レベル分類と対応プロトコル
@@ -1587,6 +1591,7 @@ incident_classification:
     response_time: "検知から2時間以内に初動対応"
     communication_frequency: "1日1回状況更新"
 ```
+````
 
 **Post-Incident Review Process**:
 ```python
@@ -1724,7 +1729,7 @@ class IncidentResponseImprovement:
 
 **Technical Vendor Evaluation Framework**
 
-```markdown
+````markdown
 ## 技術ベンダー評価の体系的アプローチ
 
 ### ベンダー技術能力評価
@@ -1875,6 +1880,7 @@ project_requirements = {
 
 evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_requirements)
 ```
+````
 
 ---
 
