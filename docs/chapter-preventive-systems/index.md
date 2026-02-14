@@ -276,13 +276,12 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
     </text>
   </g>
 </svg>
-```text
 
 ### システム要件定義
 
 **Preventive Mental Health System Requirements**：
 
-```markdown
+````markdown
 ## システム要件仕様書
 
 ### 機能要件（Functional Requirements）
@@ -329,7 +328,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
         weighted_deviations.append(social_deviation * 0.25)
         
         return sum(weighted_deviations)
-```text
+````
 
 **FR-002: 予防的介入システム**
 ```yaml
@@ -376,7 +375,7 @@ preventive_intervention_system:
 
 **NFR-001: パフォーマンス要件**：
 
-```markdown
+````markdown
 ## システム・パフォーマンス仕様
 
 ### 応答時間要件
@@ -420,10 +419,11 @@ class PerformanceRequirements:
         'backup_recovery_time': '< 4 hours'
     }
 ```
+````
 
 **NFR-002: セキュリティ・プライバシー要件**：
 
-```markdown
+````markdown
 ## セキュリティ・プライバシー設計
 
 ### データ保護要件
@@ -503,6 +503,7 @@ class PrivacyProtectionSystem:
         
         return noisy_dataset
 ```
+````
 
 ---
 
@@ -512,7 +513,7 @@ class PrivacyProtectionSystem:
 
 **個人向けメンタルヘルス・オペレーティング・システム**：
 
-```markdown
+````markdown
 ## PHOS: Personal Health Operating System
 
 ### システム・コンポーネント設計
@@ -603,12 +604,13 @@ class PersonalHealthOS:
             'daily_summary': self.generate_daily_summary(processed_data)
         }
 ```
+````
 
 ### 適応的学習システム
 
 **Adaptive Personal Learning System**：
 
-```markdown
+````markdown
 ## 個人適応型学習・最適化
 
 ### 機械学習による個人化
@@ -709,12 +711,13 @@ class PersonalizedWellnessML:
             
         return self.model_ensemble.get_current_performance()
 ```
+````
 
 ### セルフケア自動化システム
 
 **Automated Self-Care System**：
 
-```markdown
+````markdown
 ## 自動化されたセルフケア・システム
 
 ### インテリジent・セルフケア・オーケストレーション
@@ -862,6 +865,7 @@ class AutomatedSelfCareSystem:
         
         return self.recovery_system.implement_protocols(recovery_protocols)
 ```
+````
 
 ---
 
@@ -871,7 +875,7 @@ class AutomatedSelfCareSystem:
 
 **Team Mental Health Observatory**：
 
-```markdown
+````markdown
 ## チーム・レベル・メンタルヘルス・システム
 
 ### 集合的健康状態の監視
@@ -963,12 +967,13 @@ class TeamMentalHealthObservatory:
             'intervention_strategy': intervention_points
         }
 ```
+````
 
 ### チーム・レジリエンス構築システム
 
 **Team Resilience Building Framework**：
 
-```markdown
+````markdown
 ## チーム・レジリエンス構築
 
 ### 集合的適応能力の強化
@@ -1096,12 +1101,13 @@ class TeamResilienceBuilder:
         
         return self.capacity_builder.implement_support_network(support_network_design)
 ```
+````
 
 ### チーム・インターベンション・システム
 
 **Team-Level Intervention Orchestration**：
 
-```markdown
+````markdown
 ## チーム・レベル介入システム
 
 ### 協調的介入戦略
@@ -1179,6 +1185,7 @@ team_intervention_framework:
           - success_story_sharing_meetings
           - collective_vision_creation_exercises
 ```
+````
 
 ---
 
@@ -1188,7 +1195,7 @@ team_intervention_framework:
 
 **Enterprise Mental Health Platform**：
 
-```markdown
+````markdown
 ## 組織レベル・メンタルヘルス・プラットフォーム
 
 ### エンタープライズ・アーキテクチャ設計
@@ -1358,12 +1365,13 @@ class OrganizationalMentalHealthPlatform:
         
         return self.intervention_orchestrator.implement_system(intervention_system)
 ```
+````
 
 ### 組織文化変革システム
 
 **Cultural Transformation for Mental Health**：
 
-```markdown
+````markdown
 ## メンタルヘルス重視文化への変革
 
 ### 文化変革アーキテクチャ
@@ -1537,6 +1545,7 @@ class MentalHealthCultureTransformation:
         
         return self.measurement_system.implement_monitoring(culture_monitoring_system)
 ```
+````
 
 ---
 
@@ -1546,7 +1555,7 @@ class MentalHealthCultureTransformation:
 
 **Integrated Preventive Mental Health Ecosystem**：
 
-```markdown
+````markdown
 ## 統合予防システム・エコシステム
 
 ### エンドツーエンド・システム統合
@@ -1697,12 +1706,13 @@ class IntegratedPreventiveMentalHealthEcosystem:
         
         return governance_model
 ```
+````
 
 ### ROI測定とビジネス価値実証
 
 **ROI Measurement and Business Value Demonstration**：
 
-```markdown
+````markdown
 ## ROI測定・ビジネス価値実証システム
 
 ### 包括的価値測定フレームワーク
@@ -1831,6 +1841,7 @@ class MentalHealthROICalculator:
         
         return business_metrics
 ```
+````
 
 ---
 
