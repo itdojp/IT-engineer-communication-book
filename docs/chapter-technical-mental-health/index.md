@@ -812,12 +812,12 @@ class MentalHealthIncident:
 
 **Mental Resilience Backup Systems**：
 
-```markdown
+````markdown
 ## レジリエンス・バックアップ・システム
 
 ### 多層防御によるメンタルヘルス保護
 **Defense in Depth Strategy**：
-```
+```text
 レイヤー1: 日常的予防策
 ├── 基本的生活習慣（睡眠・運動・栄養）
 ├── ストレス・モニタリング
@@ -837,6 +837,8 @@ class MentalHealthIncident:
 ├── 医療的介入
 ├── 緊急サポート・システム
 └── 長期回復プログラム
+```
+````
 
 ### Performance Tuning（パフォーマンス・チューニング）
 
