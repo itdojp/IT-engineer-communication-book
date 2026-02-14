@@ -539,9 +539,9 @@ dashboard_layout:
       - breathing_exercise_timer: "guided relaxation tools"
       
     insights:
-	  - pattern_alerts: "unusual patterns detected"
-	  - improvement_suggestions: "personalized recommendations"
-	  - milestone_celebrations: "positive reinforcement"
+      - pattern_alerts: "unusual patterns detected"
+      - improvement_suggestions: "personalized recommendations"
+      - milestone_celebrations: "positive reinforcement"
 ```
 ````
 
@@ -585,13 +585,13 @@ personal_sprint_framework:
       - metrics_analysis: "定量的な進捗評価"
       - stakeholder_feedback: "周囲からのフィードバック収集"
   
-	  sprint_retrospective:
-	    duration: "45分"
-	    focus_areas:
-	      - "何がうまくいったか"
-	      - "何を改善できるか"
-	      - "次のスプリントで試すこと"
-	      - "やめること・続けること・始めること"
+  sprint_retrospective:
+    duration: "45分"
+    focus_areas:
+      - "何がうまくいったか"
+      - "何を改善できるか"
+      - "次のスプリントで試すこと"
+      - "やめること・続けること・始めること"
 ```
 ````
 
