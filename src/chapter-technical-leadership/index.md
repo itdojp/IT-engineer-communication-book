@@ -654,7 +654,7 @@ JOINまたはbatch取得を検討してみてください。」
 
 **マイクロサービスアーキテクチャをチーム組織に応用**：
 
-```markdown
+````markdown
 ## Project-as-a-Service Architecture
 
 ### Domain-Driven Designのプロジェクト適用
@@ -678,7 +678,7 @@ JOINまたはbatch取得を検討してみてください。」
 ・ Owner: QA Lead
 ・ Interface: Test Report, Quality Metrics
 ・ SLA: リリース48h前までに品質確認
-```text
+```
 
 **Event-Driven Communication**：
 ```
@@ -694,7 +694,7 @@ JOINまたはbatch取得を検討してみてください。」
 ・ ステークホルダー通知システム
 ・ メトリクス更新システム
 ・ リスク監視システム
-```text
+```
 
 **Circuit Breaker for Project Risks**：
 ```
@@ -707,7 +707,8 @@ Risk Circuit Breaker Thresholds:
 ・ スコープ削減・優先度再評価
 ・ リソース再配分・スキルサポート
 ・ プロセス改善・コミュニケーション強化
-```text
+```
+````
 
 ### ステークホルダー管理：Interface Design Pattern
 
