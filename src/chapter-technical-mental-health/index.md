@@ -203,7 +203,7 @@ order: 9
 
 **高可用性（High Availability）設計**：
 
-```markdown
+````markdown
 ## Resilient Mental Health Architecture
 
 ### 冗長性（Redundancy）
@@ -234,12 +234,13 @@ class MentalHealthFailover:
         ]
         return self.execute_parallel(actions)
 ```
+````
 
 ### Load Balancing（負荷分散）戦略
 
 **Cognitive Load Distribution**：
 
-```markdown
+````markdown
 ## Mental Load Balancing Strategies
 
 ### Temporal Load Balancing（時間的負荷分散）
@@ -266,6 +267,7 @@ stress_circuit_breaker:
   action: ["immediate_break", "task_postponement", "support_request"]
   recovery_time: "minimum_30min"
 ```
+````
 
 ### スケーラビリティの考慮
 
@@ -329,7 +331,7 @@ class MentalHealthAutoScaler:
 
 **Personal Observability Stack**：
 
-```markdown
+````markdown
 ## Mental Health Metrics Collection
 
 ### Golden Signals for Personal Wellbeing
@@ -377,12 +379,13 @@ alerting_rules:
     severity: "warning"
     action: ["workload_review", "stress_assessment"]
 ```
+````
 
 ### 感情状態のデータモデリング
 
 **Emotional State Machine**：
 
-```markdown
+````markdown
 ## Emotion Tracking and Analysis
 
 ### 感情状態の構造化表現
@@ -429,12 +432,13 @@ class EmotionAnalyzer:
             'temporal_patterns': self.analyze_time_correlations(readings)
         }
 ```
+````
 
 ### ストレス予測アルゴリズム
 
 **Predictive Stress Analytics**：
 
-```markdown
+````markdown
 ## Stress Prediction System
 
 ### 機械学習によるストレス予測
@@ -490,12 +494,13 @@ class StressPredictionEngine:
             
         return min(risk_score, 1.0)  # 最大1.0に制限
 ```
+````
 
 ### リアルタイム・ダッシュボード設計
 
 **Personal Analytics Dashboard**：
 
-```markdown
+````markdown
 ## Self-Monitoring Dashboard Specification
 
 ### ダッシュボード・レイアウト設計
@@ -534,10 +539,11 @@ dashboard_layout:
       - breathing_exercise_timer: "guided relaxation tools"
       
     insights:
-      - pattern_alerts: "unusual patterns detected"
-      - improvement_suggestions: "personalized recommendations"
-      - milestone_celebrations: "positive reinforcement"
+	  - pattern_alerts: "unusual patterns detected"
+	  - improvement_suggestions: "personalized recommendations"
+	  - milestone_celebrations: "positive reinforcement"
 ```
+````
 
 ---
 
@@ -547,7 +553,7 @@ dashboard_layout:
 
 **Personal Development Sprints**：
 
-```markdown
+````markdown
 ## Personal Agile Methodology
 
 ### スプリント設計（2週間サイクル）
@@ -579,14 +585,15 @@ personal_sprint_framework:
       - metrics_analysis: "定量的な進捗評価"
       - stakeholder_feedback: "周囲からのフィードバック収集"
   
-  sprint_retrospective:
-    duration: "45分"
-    focus_areas:
-      - "何がうまくいったか"
-      - "何を改善できるか"
-      - "次のスプリントで試すこと"
-      - "やめること・続けること・始めること"
+	  sprint_retrospective:
+	    duration: "45分"
+	    focus_areas:
+	      - "何がうまくいったか"
+	      - "何を改善できるか"
+	      - "次のスプリントで試すこと"
+	      - "やめること・続けること・始めること"
 ```
+````
 
 ### Personal Kanban for Mental Health
 
@@ -618,7 +625,7 @@ WIP制限: To Do (3), In Progress (2) - 過負荷防止
 
 **Personal Continuous Improvement**：
 
-```markdown
+````markdown
 ## Kaizen for Mental Health
 
 ### 小さな改善の積み重ね
@@ -664,12 +671,13 @@ class PersonalKaizen:
         }
         return random.choice(improvements.get(area, ["observe and document current state"]))
 ```
+````
 
 ### A/Bテストによる自己実験
 
 **Personal A/B Testing Framework**：
 
-```markdown
+````markdown
 ## Self-Experimentation Methodology
 
 ### 仮説駆動型の行動変容
@@ -707,6 +715,7 @@ statistical_analysis:
   effect_size: "Cohen's d"
   practical_significance: "日常生活での体感的価値"
 ```
+````
 
 ---
 
@@ -716,7 +725,7 @@ statistical_analysis:
 
 **Preventive Mental Health Maintenance**：
 
-```markdown
+````markdown
 ## システム・メンテナンス・スケジュール
 
 ### 定期メンテナンス・カレンダー
@@ -755,12 +764,13 @@ maintenance_schedule:
       duration: "1日"
       activities: ["人生・キャリア目標見直し", "大きな環境変化検討", "スキル・関係性の棚卸し"]
 ```
+````
 
 ### 障害対応・インシデント管理
 
 **Mental Health Incident Response**：
 
-```markdown
+````markdown
 ## インシデント対応プロセス
 
 ### ストレス・インシデントの分類と対応
@@ -807,6 +817,7 @@ class MentalHealthIncident:
         else:
             return 'P3_MINOR'
 ```
+````
 
 ### バックアップとリカバリー戦略
 
@@ -844,7 +855,7 @@ class MentalHealthIncident:
 
 **Personal Performance Optimization**：
 
-```markdown
+````markdown
 ## メンタル・パフォーマンス最適化
 
 ### ボトルネック分析と改善
@@ -906,6 +917,7 @@ class MentalPerformanceProfiler:
         
         return optimizations
 ```
+````
 
 ---
 
@@ -915,7 +927,7 @@ class MentalPerformanceProfiler:
 
 **Personal Continuous Integration/Continuous Deployment**：
 
-```markdown
+````markdown
 ## Personal CI/CD Pipeline
 
 ### 継続的統合（Continuous Integration）
@@ -948,12 +960,13 @@ personal_ci_pipeline:
     warnings: "一部指標に注意が必要です"
     failures: "緊急の調整が必要です"
 ```
+````
 
 ### Infrastructure as Code（IaC）思考
 
 **Personal Environment as Code**：
 
-```markdown
+````markdown
 ## 個人環境のコード化
 
 ### 環境設定の自動化・再現可能性
@@ -1001,12 +1014,13 @@ deployment_strategy:
   rollback_plan: "効果のない変更の迅速な撤回手順"
   monitoring: "変更の影響を継続的に監視"
 ```
+````
 
 ### 監視・アラート・SLI/SLO設計
 
 **Personal Service Level Objectives**：
 
-```markdown
+````markdown
 ## 個人パフォーマンスSLI/SLO
 
 ### Service Level Indicators（SLI）
@@ -1059,12 +1073,13 @@ class PersonalSLO:
             'requires_attention': overall_health < 0.75
         }
 ```
+````
 
 ### Error Budget思考
 
 **Personal Error Budget Management**：
 
-```markdown
+````markdown
 ## 個人エラー・バジェット管理
 
 ### エラー・バジェットの概念適用
@@ -1126,6 +1141,7 @@ class PersonalErrorBudget:
         }
         return recommendations.get(budget_status, ["状況を詳しく分析してください"])
 ```
+````
 
 ---
 
