@@ -1040,13 +1040,12 @@ order: 8
     </marker>
   </defs>
 </svg>
-```text
 
 ### 🏗️ オンコール・運用負荷
 
 **Operational Stress & On-Call Burden Analysis**
 
-```markdown
+````markdown
 ## 運用負荷ストレスの体系的分析
 
 ### オンコール業務の多次元ストレス影響
@@ -1259,6 +1258,7 @@ class OnCallQualityMetrics:
             'optimization_roadmap': self._create_optimization_roadmap(effectiveness_metrics)
         }
 ```
+````
 
 ---
 
@@ -1268,7 +1268,7 @@ class OnCallQualityMetrics:
 
 **Unrealistic Expectations Stress Framework**
 
-```markdown
+````markdown
 ## 期待値管理とストレス軽減
 
 ### 期待値ギャップの構造的分析
@@ -1408,6 +1408,7 @@ expectation_management_communication:
         - "組織的判断・方針決定の要請"
         - "合意内容の文書化・共有"
 ```
+````
 
 **Stakeholder Pressure Management System**:
 ```python
@@ -1522,7 +1523,7 @@ class StakeholderPressureManager:
 
 **Team Dynamics Stress Analysis**
 
-```markdown
+````markdown
 ## チーム内ストレス要因の解析
 
 ### コミュニケーションパターンの分析
@@ -1673,6 +1674,7 @@ class PsychologicalSafetyOptimizer:
             'enablers': self._identify_speaking_enablers(speaking_indicators, response_quality)
         }
 ```
+````
 
 ---
 
@@ -1682,7 +1684,7 @@ class PsychologicalSafetyOptimizer:
 
 **Perfectionism Stress Analysis Framework**
 
-```markdown
+````markdown
 ## エンジニア特有の完璧主義ストレス
 
 ### 技術的完璧主義の多面的分析
@@ -1824,6 +1826,7 @@ perfectionism_management:
         - "ピアサポート・同僚との経験共有"
         - "心理的安全性の高いチーム環境構築"
 ```
+````
 
 **Perfectionism Management System**:
 ```python
@@ -1923,7 +1926,7 @@ class PerfectionismStressManager:
 
 **Cognitive Load & Decision Fatigue Management**
 
-```markdown
+````markdown
 ## エンジニアの認知負荷・意思決定疲労
 
 ### 技術的意思決定の認知負荷分析
@@ -2089,6 +2092,7 @@ class CognitiveBiasManager:
             'mitigation_strategies': self._suggest_confirmation_bias_mitigation(confirmation_indicators)
         }
 ```
+````
 
 ---
 
