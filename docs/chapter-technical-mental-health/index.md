@@ -837,7 +837,6 @@ class MentalHealthIncident:
 ├── 医療的介入
 ├── 緊急サポート・システム
 └── 長期回復プログラム
-```text
 
 ### Performance Tuning（パフォーマンス・チューニング）
 

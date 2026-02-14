@@ -386,13 +386,12 @@ redis_config = {
 **内容例**:
 「ユーザー満足度の向上により離脱率20%削減。
 システム安定性向上により運用コスト30%削減」
-```text
 
 ### ビジネス価値翻訳の技法
 
 **Value Translation Framework**：
 
-```markdown
+````markdown
 ## Technical → Business Value Mapping
 
 ### 技術改善のビジネス価値変換例
@@ -462,12 +461,13 @@ cost_benefit_analysis:
     - "レピュテーション損失の防止"
   net_benefit: "年間5000万円相当のリスク回避"
 ```
+````
 
 ### リスクコミュニケーションの構造化
 
 **Risk Communication Matrix**：
 
-```markdown
+````markdown
 ## Technical Risk → Business Risk Translation
 
 ### リスク評価フレームワーク
@@ -511,6 +511,7 @@ risks = [
 # ビジネスリスクスコアでソート
 risks.sort(key=lambda x: x.business_risk_score(), reverse=True)
 ```
+````
 
 **Risk Communication Template**：
 ```markdown
