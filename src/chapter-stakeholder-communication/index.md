@@ -274,7 +274,7 @@ order: 6
 
 <div style="margin-left: 32px;">
 <div style="background: #fff; padding: 10px; border-radius: 4px; margin-bottom: 8px;">
-<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">🚨 現在の課題</p>
+<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">[CRITICAL] 現在の課題</p>
 <ul style="color: #991b1b; font-size: 0.75em; margin: 0; padding-left: 15px;">
 <li>サービス間通信の複雑性増加</li>
 <li>エラーハンドリングの一貫性欠如</li>
@@ -496,8 +496,8 @@ order: 6
 </div>
 <p style="color: #92400e; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60〜80%の合意</strong></p>
 <p style="color: #d97706; font-size: 0.65em; margin: 0; line-height: 1.3;">
-⚠ 懸念事項への対処策検討<br>
-⚠ 1週間以内に再評価
+[WARN] 懸念事項への対処策検討<br>
+[WARN] 1週間以内に再評価
 </p>
 </div>
 
@@ -508,9 +508,9 @@ order: 6
 </div>
 <p style="color: #991b1b; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60%未満の合意</strong></p>
 <p style="color: #dc2626; font-size: 0.65em; margin: 0; line-height: 1.3;">
-🚨 問題定義の見直し<br>
-🚨 小さな実験での検証<br>
-🚨 上位者・専門家への相談
+[CRITICAL] 問題定義の見直し<br>
+[CRITICAL] 小さな実験での検証<br>
+[CRITICAL] 上位者・専門家への相談
 </p>
 </div>
 
@@ -1500,7 +1500,7 @@ class SLAMonitoringSystem:
                 sla_name: {
                     'target': result['target_value'],
                     'achieved': result['measured_value'],
-                    'status': '✅ 達成' if result['compliance_status'] == 'compliant' else '❌ 未達成',
+                    'status': '[OK] 達成' if result['compliance_status'] == 'compliant' else '[NG] 未達成',
                     'impact_description': self._describe_customer_impact(sla_name, result)
                 }
                 for sla_name, result in sla_results.items()
@@ -1888,10 +1888,10 @@ evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_req
 
 ### 🏆 この章で獲得したコミュニケーション戦略
 
-✅ **チーム内技術討議**：ADRベースの構造化された議論手法  
-✅ **PM・ビジネスサイド連携**：要求定義と価値翻訳の最適化  
-✅ **顧客・ベンダー対応**：SLA設計と障害対応の標準化  
-✅ **ステークホルダー管理**：相手に応じた最適なコミュニケーション設計
+[OK] **チーム内技術討議**：ADRベースの構造化された議論手法  
+[OK] **PM・ビジネスサイド連携**：要求定義と価値翻訳の最適化  
+[OK] **顧客・ベンダー対応**：SLA設計と障害対応の標準化  
+[OK] **ステークホルダー管理**：相手に応じた最適なコミュニケーション設計
 
 ### 💡 戦略的コミュニケーションの価値
 

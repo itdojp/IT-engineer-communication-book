@@ -134,7 +134,7 @@ order: 2
 <div style="display: flex; gap: 20px; margin: 20px 0;">
 
 <div style="flex: 1; padding: 20px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;">
-<h4 style="color: #dc2626; margin-top: 0;">❌ Before（改善前）</h4>
+<h4 style="color: #dc2626; margin-top: 0;">[NG] Before（改善前）</h4>
 <p style="font-style: italic; color: #991b1b; line-height: 1.6;">
 「今回のAPIなんですが、レスポンスが遅くて、調べてみたらデータベースのクエリが問題で、インデックスが足りてなくて...<br>
 <span style="color: #7f1d1d; font-size: 0.9em;">（3分間継続）</span><br>
@@ -146,7 +146,7 @@ order: 2
 </div>
 
 <div style="flex: 1; padding: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
-<h4 style="color: #16a34a; margin-top: 0;">✅ After（改善後）</h4>
+<h4 style="color: #16a34a; margin-top: 0;">[OK] After（改善後）</h4>
 <p style="color: #15803d; line-height: 1.6;">
 「APIレスポンス改善には<strong>インデックス追加が必要</strong>です <span style="background: #dbeafe; padding: 2px 6px; border-radius: 4px; font-size: 0.8em;">P</span><br>
 現在3秒→1秒に短縮できます <span style="background: #dcfce7; padding: 2px 6px; border-radius: 4px; font-size: 0.8em;">R</span><br>
@@ -243,7 +243,7 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
 
 **実践例の比較**
 
-| 段階 | ❌ 改善前 | ✅ 改善後 |
+| 段階 | [NG] 改善前 | [OK] 改善後 |
 |------|-----------|-----------|
 | **問題のある回答** | 「リアルタイム更新は無理です」 | |
 | **1. 制約明示** | - | 「完全なリアルタイム更新には制約があります」 |
@@ -380,14 +380,14 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
   
   <!-- Judgment Criteria -->
   <text x="450" y="80" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#374151">
-    🚨 判定基準
+    [CRITICAL] 判定基準
   </text>
   
   <!-- Danger Zone -->
   <g>
     <rect x="450" y="100" width="300" height="60" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
     <text x="470" y="120" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#dc2626">
-      🚨 15点以上：危険信号
+      [CRITICAL] 15点以上：危険信号
     </text>
     <text x="470" y="140" font-family="Inter, sans-serif" font-size="11" fill="#991b1b">
       即座の対処が必要
@@ -401,7 +401,7 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
   <g>
     <rect x="450" y="180" width="300" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
     <text x="470" y="200" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#d97706">
-      ⚠️ 10-14点：注意信号
+      [WARN] 10-14点：注意信号
     </text>
     <text x="470" y="220" font-family="Inter, sans-serif" font-size="11" fill="#92400e">
       予防的対策を実施
@@ -415,7 +415,7 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
   <g>
     <rect x="450" y="260" width="300" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
     <text x="470" y="280" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#15803d">
-      ✅ 9点以下：正常範囲
+      [OK] 9点以下：正常範囲
     </text>
     <text x="470" y="300" font-family="Inter, sans-serif" font-size="11" fill="#166534">
       現状維持・継続改善
@@ -474,19 +474,19 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
 
 ## 🚀 次のアクション：今すぐ始める3つのステップ
 
-### ✅ Step1：即座実践（5分）
+### [OK] Step1：即座実践（5分）
 **今日やること**
 - PREP法で1回技術説明をする
 - 制約説明テンプレートをメモ帳に保存
 - ストレスチェックを実施して点数を記録
 
-### ✅ Step2：習慣設定（3分）
+### [OK] Step2：習慣設定（3分）
 **今週やること**
 - 金曜17時にストレスチェックのリマインダー設定
 - PREP法の練習を毎日1回実施
 - 制約→代替案説明を1回実践
 
-### ✅ Step3：効果測定（2分）
+### [OK] Step3：効果測定（2分）
 **来週やること**
 - 1週間後のセルフチェック実施
 - 改善実感の記録
