@@ -125,7 +125,7 @@ order: 5
 
 <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
 
-### 🚨 よくある失敗パターン
+### [CRITICAL] よくある失敗パターン
 
 **状況**: 新アーキテクチャの提案会議
 
@@ -140,7 +140,7 @@ order: 5
 
 <div style="background: #dcfce7; border-left: 4px solid #16a34a; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
 
-### ✅ 根本原因と解決策
+### [OK] 根本原因と解決策
 
 **根本原因**: 優れた技術的思考を、他者に伝える構造が不適切
 
@@ -212,7 +212,7 @@ order: 5
   <g>
     <rect x="120" y="190" width="560" height="60" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
     <text x="140" y="205" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#dc2626">
-      🚨 背景・問題
+      [CRITICAL] 背景・問題
     </text>
     <text x="140" y="220" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
       • 現在の状況
@@ -284,7 +284,7 @@ order: 5
 <div style="display: flex; gap: 20px; margin: 20px 0;">
 
 <div style="flex: 1; padding: 20px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;">
-<h4 style="color: #dc2626; margin-top: 0;">❌ 構造化前</h4>
+<h4 style="color: #dc2626; margin-top: 0;">[NG] 構造化前</h4>
 <div style="background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #ef4444;">
 <p style="font-weight: 600; color: #374151; margin: 0 0 10px 0;">件名：DBについて</p>
 <p style="color: #6b7280; line-height: 1.6; margin: 0;">
@@ -307,7 +307,7 @@ order: 5
 </div>
 
 <div style="flex: 1; padding: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
-<h4 style="color: #16a34a; margin-top: 0;">✅ RFC形式適用後</h4>
+<h4 style="color: #16a34a; margin-top: 0;">[OK] RFC形式適用後</h4>
 <div style="background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #16a34a;">
 <div style="margin-bottom: 15px;">
 <div style="background: #dbeafe; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px;">
@@ -315,7 +315,7 @@ order: 5
 <p style="color: #1e40af; margin: 2px 0 0 0; font-size: 0.85em;">商品検索3秒→1秒短縮、UX改善</p>
 </div>
 <div style="background: #fef2f2; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px;">
-<p style="font-weight: 700; color: #dc2626; margin: 0; font-size: 0.9em;">🚨 背景・問題</p>
+<p style="font-weight: 700; color: #dc2626; margin: 0; font-size: 0.9em;">[CRITICAL] 背景・問題</p>
 <p style="color: #991b1b; margin: 2px 0 0 0; font-size: 0.85em;">平均3.2秒、苦情週5件、競合の2倍遅い</p>
 </div>
 <div style="background: #dcfce7; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px;">
@@ -407,7 +407,7 @@ Point（行動提案）
 <div style="display: flex; gap: 20px; margin: 20px 0;">
 
 <div style="flex: 1; padding: 20px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;">
-<h4 style="color: #dc2626; margin-top: 0;">❌ 時系列的説明（よくある失敗例）</h4>
+<h4 style="color: #dc2626; margin-top: 0;">[NG] 時系列的説明（よくある失敗例）</h4>
 <div style="background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #ef4444;">
 <p style="color: #6b7280; line-height: 1.6; margin: 0; font-style: italic;">
 「今回のフロントエンドフレームワークを検討しまして、<br>
@@ -425,7 +425,7 @@ Angularも一応確認して、複雑すぎるなと思って、<br>
 </div>
 
 <div style="flex: 1; padding: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
-<h4 style="color: #16a34a; margin-top: 0;">✅ PREP法適用後</h4>
+<h4 style="color: #16a34a; margin-top: 0;">[OK] PREP法適用後</h4>
 <div style="background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #16a34a;">
 
 <div style="display: flex; align-items: center; background: #dbeafe; padding: 10px; border-radius: 4px; margin-bottom: 8px;">
@@ -871,10 +871,10 @@ Week10-：組み合わせて使用
 
 ### 🏆 習得したスキルセット
 
-✅ **RFC形式**：技術提案の採用率向上  
-✅ **PREP法**：説明時間50%短縮  
-✅ **段階的詳細化**：相手別最適化  
-✅ **デバッグ思考**：問題の体系的解決
+[OK] **RFC形式**：技術提案の採用率向上  
+[OK] **PREP法**：説明時間50%短縮  
+[OK] **段階的詳細化**：相手別最適化  
+[OK] **デバッグ思考**：問題の体系的解決
 
 ### 💡 エンジニアとしての競争優位
 
