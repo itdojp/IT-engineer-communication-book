@@ -97,7 +97,7 @@ permalink: /
 ## 利用と更新情報
 
 - リポジトリ: [itdojp/IT-engineer-communication-book](https://github.com/itdojp/IT-engineer-communication-book)
-- 更新差分を追う場合は、GitHub のコミット履歴と Pull Request を参照してください。
+- 更新差分を追う場合は、[コミット履歴](https://github.com/itdojp/IT-engineer-communication-book/commits/main/) と [PR 一覧](https://github.com/itdojp/IT-engineer-communication-book/pulls) を参照してください。
 - 研修やチーム運用へ転用する場合は、付録テンプレートをそのまま流用せず、自組織の会議体や評価基準に合わせて調整してください。
 
 **お問い合わせ**  
