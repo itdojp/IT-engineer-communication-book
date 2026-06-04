@@ -79,5 +79,8 @@
         "title": "参考文献・引用"
       }
     ]
-  }
+  },
+  "license": "CC-BY-NC-SA-4.0",
+  "homepage": "https://itdojp.github.io/IT-engineer-communication-book/",
+  "repository": "https://github.com/itdojp/IT-engineer-communication-book"
 }

@@ -24,6 +24,19 @@
 
 - `docs/index.md`（オンライン版の目次ページと同内容）
 
+## 品質ゲート（ローカル）
+
+```bash
+npm run check:metadata
+npm test
+```
+
+実行内容:
+
+- メタデータ / ナビゲーション整合性検証
+- Markdown lint
+- `docs/` に対するリンク検証
+
 ## ライセンス
 
 - `LICENSE.md`（Creative Commons BY-NC-SA 4.0 / シリーズ統一ライセンス準拠）
