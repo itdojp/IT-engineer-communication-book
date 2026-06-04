@@ -1,12 +1,14 @@
 title: "エンジニアのための実践コミュニケーション設計"
 description: "システム思考とデータ駆動で身につける対人スキルとメンタル管理"
-author: "株式会社アイティードゥ"
+author: "ITDO Inc.（株式会社アイティードゥ）"
 version: "1.0.0"
+license: "CC-BY-NC-SA-4.0"
 lang: "ja"
 
 # GitHub Pages設定
 url: "https://itdojp.github.io"
 baseurl: "/IT-engineer-communication-book"
+homepage: "https://itdojp.github.io/IT-engineer-communication-book/"
 
 # Jekyll設定
 markdown: kramdown
@@ -41,6 +43,7 @@ kramdown:
   
 # リポジトリ情報
 repository: "itdojp/IT-engineer-communication-book"
+repository_url: "https://github.com/itdojp/IT-engineer-communication-book"
 show_github_links: false
 
 # Use custom book layout as default
