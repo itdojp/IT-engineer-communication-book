@@ -10,8 +10,9 @@
 
 const fs = require('fs');
 const path = require('path');
+const { isDeepStrictEqual } = require('util');
 
-const root = process.cwd();
+const root = path.resolve(__dirname, '..');
 const docs = path.join(root, 'docs');
 
 const expected = {
@@ -30,7 +31,8 @@ const expected = {
   repositoryGit: 'git+https://github.com/itdojp/IT-engineer-communication-book.git',
 };
 
-const navSections = ['introduction', 'chapters', 'appendices'];
+const requiredNavSections = ['introduction', 'chapters', 'appendices'];
+const supportedNavSections = ['introduction', 'chapters', 'additional', 'resources', 'appendices', 'afterword'];
 const requiredAssets = [
   'assets/css/main.css',
   'assets/css/syntax-highlighting.css',
@@ -120,7 +122,7 @@ function assertSafePath(route, label) {
 
 function readNavigation(filePath) {
   if (!fs.existsSync(filePath)) fail(`required file is missing: ${rel(filePath)}`);
-  const sections = Object.fromEntries(navSections.map((section) => [section, []]));
+  const sections = Object.fromEntries(supportedNavSections.map((section) => [section, []]));
   let currentSection = null;
   let currentItem = null;
   for (const rawLine of fs.readFileSync(filePath, 'utf8').split(/\r?\n/)) {
@@ -132,7 +134,7 @@ function readNavigation(filePath) {
       currentItem = null;
       continue;
     }
-    if (!navSections.includes(currentSection)) continue;
+    if (!supportedNavSections.includes(currentSection)) continue;
     let content = stripped;
     if (content.startsWith('- ')) {
       currentItem = {};
@@ -184,15 +186,17 @@ function checkBookConfig(config, label) {
   }
   const chapters = (config.structure && config.structure.chapters) || [];
   const appendices = (config.structure && config.structure.appendices) || [];
-  assertEqual(chapters.length, 11, `${label}.structure.chapters.length`);
-  assertEqual(appendices.length, 4, `${label}.structure.appendices.length`);
+  if (!chapters.length) fail(`${label}.structure.chapters must not be empty`);
+  if (!appendices.length) fail(`${label}.structure.appendices must not be empty`);
   return { chapters, appendices };
 }
 
 function checkMetadata(rootConfig, docsConfigJson, packageJson, packageLock) {
   const rootStructure = checkBookConfig(rootConfig, 'book-config.json');
   const docsStructure = checkBookConfig(docsConfigJson, 'docs/book-config.json');
-  assertEqual(JSON.stringify(docsStructure), JSON.stringify(rootStructure), 'docs/book-config.json.structure');
+  if (!isDeepStrictEqual(docsStructure, rootStructure)) {
+    fail('docs/book-config.json.structure mismatch: expected the same ordered chapter/appendix structure as book-config.json');
+  }
 
   assertEqual(packageJson.name, expected.packageName, 'package.json.name');
   for (const key of ['description', 'version', 'author', 'license']) {
@@ -238,9 +242,12 @@ function checkNavigation(bookConfig, navSectionsData) {
 
   const navRoutes = [];
   const seen = new Map();
-  for (const section of navSections) {
+  for (const section of requiredNavSections) {
+    if (!(navSectionsData[section] || []).length) fail(`navigation.${section} has no items`);
+  }
+
+  for (const section of supportedNavSections) {
     const items = navSectionsData[section] || [];
-    if (!items.length) fail(`navigation.${section} has no items`);
     for (const [index, item] of items.entries()) {
       const route = normalizePath(item.path);
       if (!item.title || !route) fail(`navigation.${section}[${index + 1}] is missing title or path`);
@@ -274,6 +281,12 @@ function checkNavigation(bookConfig, navSectionsData) {
   for (const route of structureRoutes) {
     if (!publishedRoutes.has(route)) fail(`book-config structure route has no docs page: ${route}`);
     if (!seen.has(route)) fail(`book-config structure route is missing from navigation: ${route}`);
+  }
+  const structureRouteSet = [...new Set(structureRoutes)].sort();
+  const structureMissing = expectedRoutes.filter((route) => !structureRouteSet.includes(route));
+  const structureExtra = structureRouteSet.filter((route) => !expectedRoutes.includes(route));
+  if (structureMissing.length || structureExtra.length) {
+    fail(`book-config/docs route mismatch: missing=${JSON.stringify(structureMissing)}, extra=${JSON.stringify(structureExtra)}`);
   }
 
   return { pageCount: publishedRoutes.size, navCount: navRoutes.length };
