@@ -117,8 +117,8 @@ order: 4
 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0;">
 
 ### 🏗️ インフラストラクチャ
-- **クラウド環境の制約**: AWS/GCP/Azureの特性と制限事項
-- **CI/CDパイプラインの前提**: デプロイ戦略とビルドプロセス
+- **クラウド環境の制約**: AWS/GCP/Azure の特性と制限事項
+- **CI/CD パイプラインの前提**: デプロイ戦略とビルドプロセス
 - **監視・ログ収集システム**: アラート基準とメトリクス定義
 
 ### ⚙️ 開発プロセス
@@ -366,7 +366,7 @@ redis_config = {
 ### Level 4: System Design（システム設計）
 **対象者**: 技術リード・アーキテクト
 **内容例**:
-「セッション情報をRedisクラスタで管理し、
+「セッション情報を Redis クラスタで管理し、
 複数のアプリケーションサーバー間で共有。
 可用性99.9%、レスポンス時間<100msを実現」
 
@@ -878,7 +878,7 @@ delegation_criteria:
     scope: "複数モジュール・システム間影響"
     examples:
       - "データベーススキーマ変更"
-      - "APIインターフェース変更"
+      - "API インターフェース変更"
       - "外部ライブラリの追加・更新"
       - "セキュリティ関連の実装"
     approval_process: "設計レビュー + テックリード承認"
@@ -890,8 +890,8 @@ delegation_criteria:
       - "新技術スタックの導入"
       - "システムアーキテクチャの大幅変更"
       - "開発プロセス・ツールチェーンの変更"
-      - "外部サービス・SaaSの導入"
-    approval_process: "アーキテクチャ委員会 + 工数見積 + ROI評価"
+      - "外部サービス・SaaS の導入"
+    approval_process: "アーキテクチャ委員会 + 工数見積 + ROI 評価"
 ```
 
 ---
@@ -1046,9 +1046,9 @@ class ArchitectureEvolution:
 **典型的な発言**:
 ```
 [NG] 悪い例:
-「React 18にアップグレードしましょう。
-Concurrent Featuresがすごく興味深いです。
-Suspenseも使えるようになりますし...」
+「React 18 にアップグレードしましょう。
+Concurrent Features がすごく興味深いです。
+Suspense も使えるようになりますし...」
 
 [OK] 良い例:  
 「React 18へのアップグレードを提案します。
@@ -1100,9 +1100,9 @@ def technical_explanation_optimizer(content, audience):
     return optimized_content
 
 # 使用例
-original = "Kubernetesクラスタでマイクロサービスをオートスケーリング"
+original = "Kubernetes クラスタでマイクロサービスをオートスケーリング"
 optimized = technical_explanation_optimizer(original, audience="business_stakeholder")
-# Result: "利用状況に応じて自動的にサーバー数を調整する仕組み（Kubernetesクラスタ）で、
+# Result: "利用状況に応じて自動的にサーバー数を調整する仕組み（Kubernetes クラスタ）で、
 #         機能ごとに分割したシステム（マイクロサービス）を効率的に運用"
 ```
 

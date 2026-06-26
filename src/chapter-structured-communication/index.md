@@ -472,7 +472,7 @@ Angularも一応確認して、複雑すぎるなと思って、<br>
 
 <div style="display: flex; align-items: center; background: #dc2626; color: white; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
 <span style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 14px; font-weight: bold;">P</span>
-<p style="margin: 0; font-weight: 700; font-size: 1.1em;">APIサーバーに性能問題が発生、即座の対応が必要</p>
+<p style="margin: 0; font-weight: 700; font-size: 1.1em;">API サーバーに性能問題が発生、即座の対応が必要</p>
 </div>
 
 <div style="background: #fff; padding: 15px; border-radius: 6px; border-left: 4px solid #16a34a; margin-bottom: 12px;">
@@ -617,10 +617,10 @@ Angularも一応確認して、複雑すぎるなと思って、<br>
 
 #### レベル3：物理レベル（5分・技術リード向け）
 ```text
-「各サービスはDockerコンテナで実装し、
-Kubernetesクラスタで運用します。
+「各サービスは Docker コンテナで実装し、
+Kubernetes クラスタで運用します。
 サービス間通信はREST API、
-データは各サービス専用DBで管理します」
+データは各サービス専用 DB で管理します」
 ```
 
 #### レベル4：実装レベル（15分・開発者向け）

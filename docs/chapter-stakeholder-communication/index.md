@@ -261,7 +261,7 @@ order: 6
 **ADR-Driven Technical Discussions**
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0;">
-<h4 style="color: #1e293b; margin: 0 0 15px 0; text-align: center;">📋 ADRベースの技術討議プロセス</h4>
+<h4 style="color: #1e293b; margin: 0 0 15px 0; text-align: center;">📋 ADR ベースの技術討議プロセス</h4>
 
 <div style="display: flex; gap: 20px; margin-bottom: 20px;">
 
@@ -942,7 +942,7 @@ knowledge_quality_metrics = {
 ## エンジニア主導の要求定義プロセス
 
 ### Phase 1: Business Context Understanding（ビジネス文脈理解）
-**Goal**: PMの要求の背景にあるビジネス価値を理解
+**Goal**: PM の要求の背景にあるビジネス価値を理解
 **Duration**: 30〜60分
 
 ```python
@@ -1353,9 +1353,9 @@ class EstimationLearningSystem:
 **Service Level Agreement Engineering**
 
 ````markdown
-## 技術者主導のSLA設計
+## 技術者主導の SLA 設計
 
-### SLA構成要素の技術的定義
+### SLA 構成要素の技術的定義
 ```yaml
 sla_technical_specification:
   
@@ -1512,7 +1512,7 @@ class SLAMonitoringSystem:
 # 使用例
 sla_monitor = SLAMonitoringSystem()
 
-# API応答時間SLAの登録
+# API 応答時間 SLA の登録
 sla_monitor.register_sla('api_response_time', {
     'target': 200,  # 200ms以内
     'measurement': 'average_response_time_ms',
@@ -1659,7 +1659,7 @@ class PostIncidentReview:
             },
             {
                 'category': 'automation',  
-                'action': 'DB接続プール枯渇時の自動スケーリング実装',
+                'action': 'DB 接続プール枯渇時の自動スケーリング実装',
                 'owner': 'インフラチーム',
                 'due_date': '1ヶ月後',
                 'success_criteria': '同様障害の自動復旧',
@@ -1888,9 +1888,9 @@ evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_req
 
 ### 🏆 この章で獲得したコミュニケーション戦略
 
-[OK] **チーム内技術討議**：ADRベースの構造化された議論手法  
+[OK] **チーム内技術討議**：ADR ベースの構造化された議論手法<br>
 [OK] **PM・ビジネスサイド連携**：要求定義と価値翻訳の最適化  
-[OK] **顧客・ベンダー対応**：SLA設計と障害対応の標準化  
+[OK] **顧客・ベンダー対応**：SLA 設計と障害対応の標準化<br>
 [OK] **ステークホルダー管理**：相手に応じた最適なコミュニケーション設計
 
 ### 💡 戦略的コミュニケーションの価値
@@ -1959,7 +1959,7 @@ evaluation_result = vendor_evaluation.evaluate_vendor(vendor_a_info, project_req
 ### 次の一手
 
 - 利害調整の体系を深めたい → シリーズ：[エンジニアの交渉力アーキテクチャ](https://itdojp.github.io/negotiation-for-engineers-book/)
-- AIで下書き/要約を作る場合 → シリーズ：[AIエージェント・コミュニケーション実践ガイド](https://itdojp.github.io/ai-communication-book/)（注意点は [付録1：実践チェックリスト集](../appendix-01-checklists/) の「A10. AI支援を使う前のチェックリスト」）
+- AI で下書き/要約を作る場合 → シリーズ：[AIエージェント・コミュニケーション実践ガイド](https://itdojp.github.io/ai-communication-book/)（注意点は [付録1：実践チェックリスト集](../appendix-01-checklists/) の「A10. AI支援を使う前のチェックリスト」）
 
 ---
 
