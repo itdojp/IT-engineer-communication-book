@@ -343,12 +343,12 @@ order: 7
 
 <!-- Example Usage -->
 <div style="background: #f3e8ff; padding: 15px; border-radius: 6px; border-left: 4px solid #8b5cf6;">
-<h6 style="color: #7c3aed; margin: 0 0 10px 0;">📝 実装例：API設計議論</h6>
+<h6 style="color: #7c3aed; margin: 0 0 10px 0;">📝 実装例：API 設計議論</h6>
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
 
 <div style="background: #fff; padding: 10px; border-radius: 4px;">
 <p style="color: #7c3aed; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">Topic</p>
-<p style="color: #6d28d9; font-size: 0.7em; margin: 0;">REST API v2.0設計方針</p>
+<p style="color: #6d28d9; font-size: 0.7em; margin: 0;">REST API v2.0 設計方針</p>
 </div>
 
 <div style="background: #fff; padding: 10px; border-radius: 4px;">
@@ -764,7 +764,7 @@ Knowledge_Management_Structure:
   architectural_knowledge:  # アーキテクチャ知識
     system_design:
       - "システム全体図・コンポーネント関係"
-      - "データフロー・API仕様・インターフェース定義"
+      - "データフロー・API 仕様・インターフェース定義"
       - "非機能要件・性能特性・スケーラビリティ考慮"
     
     decision_records:
@@ -1269,7 +1269,7 @@ class SearchExperienceOptimizer:
 
 **Channel Architecture & Governance**
 
-#### エンジニア組織のSlack設計戦略
+#### エンジニア組織の Slack 設計戦略
 
 ##### チャンネル分類・命名戦略
 
@@ -1565,9 +1565,9 @@ Slack_Automation_Framework:
     
     code_review_automation:
       triggers:
-        - "新しいPull Requestの作成"
-        - "PR上でのコメント・承認"
-        - "CI/CDテスト結果の更新"
+        - "新しい Pull Request の作成"
+        - "PR 上でのコメント・承認"
+        - "CI/CD テスト結果の更新"
       
       automated_actions:
         - "関連チャンネルへの通知"
@@ -1608,7 +1608,7 @@ Slack_Automation_Framework:
     
     documentation_updates:
       triggers:
-        - "コードベース・API仕様の変更"
+        - "コードベース・API 仕様の変更"
         - "新機能のリリース"
         - "ドキュメントの陳腐化検出"
       
@@ -1958,7 +1958,7 @@ class BotAnalyticsSystem:
 ### 次の一手
 
 - 会議で意思決定が必要 → [付録2：テンプレート・フォーマット集](../appendix-02-templates/) の「T2/T3」
-- AIで要約/下書きを作る場合 → シリーズ：[AIエージェント・コミュニケーション実践ガイド](https://itdojp.github.io/ai-communication-book/)（注意点は [付録1：実践チェックリスト集](../appendix-01-checklists/) の「A10. AI支援を使う前のチェックリスト」）
+- AI で要約/下書きを作る場合 → シリーズ：[AIエージェント・コミュニケーション実践ガイド](https://itdojp.github.io/ai-communication-book/)（注意点は [付録1：実践チェックリスト集](../appendix-01-checklists/) の「A10. AI支援を使う前のチェックリスト」）
 
 ---
 
