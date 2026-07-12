@@ -3,6 +3,19 @@
   "description": "システム思考とデータ駆動で身につける対人スキルとメンタル管理",
   "author": "ITDO Inc.（株式会社アイティードゥ）",
   "version": "1.0.0",
+  "ux": {
+    "profile": "B",
+    "modules": {
+      "quickStart": true,
+      "readingGuide": true,
+      "checklistPack": true,
+      "troubleshootingFlow": false,
+      "conceptMap": false,
+      "figureIndex": false,
+      "legalNotice": false,
+      "glossary": false
+    }
+  },
   "structure": {
     "chapters": [
       {

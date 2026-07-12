@@ -197,6 +197,9 @@ function checkMetadata(rootConfig, docsConfigJson, packageJson, packageLock) {
   if (!isDeepStrictEqual(docsStructure, rootStructure)) {
     fail('docs/book-config.json.structure mismatch: expected the same ordered chapter/appendix structure as book-config.json');
   }
+  if (!isDeepStrictEqual(docsConfigJson.ux, rootConfig.ux)) {
+    fail('docs/book-config.json.ux mismatch: expected the same UX profile and module flags as book-config.json');
+  }
 
   assertEqual(packageJson.name, expected.packageName, 'package.json.name');
   for (const key of ['description', 'version', 'author', 'license']) {
