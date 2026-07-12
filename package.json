@@ -8,7 +8,7 @@
     "build": "cd docs && bundle exec jekyll build",
     "test": "npm run check:metadata && npm run lint && npm run check-links",
     "lint": "markdownlint docs/**/*.md",
-    "check-links": "markdown-link-check docs/**/*.md",
+    "check-links": "markdown-link-check -c .markdown-link-check.json docs/**/*.md",
     "deploy": "gh-pages -d docs/_site",
     "check:metadata": "node scripts/check-metadata-consistency.js"
   },
