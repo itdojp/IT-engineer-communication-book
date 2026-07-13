@@ -32,6 +32,7 @@ order: 9
 
 **Human System Architecture**：
 
+<span id="figure-19" aria-hidden="true"></span>
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>Personal Mental Health System Architecture</title>
   <desc>システム設計原則を適用したメンタルヘルス管理アーキテクチャ</desc>

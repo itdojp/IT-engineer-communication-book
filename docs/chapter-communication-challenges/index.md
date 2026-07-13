@@ -32,6 +32,7 @@ order: 4
 
 **技術者間の高効率コミュニケーション**：
 
+<span id="figure-07" aria-hidden="true"></span>
 <svg width="800" height="350" viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
   <title>技術者間コミュニケーションの情報圧縮</title>
   <desc>専門用語による情報圧縮効果と効率性の可視化</desc>
@@ -140,6 +141,7 @@ order: 4
 
 **知識レベル・ミスマッチの類型**：
 
+<span id="figure-08" aria-hidden="true"></span>
 <svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
   <title>チーム内技術専門性マトリックス</title>
   <desc>メンバー別技術領域の専門性レベルと知識ギャップの可視化</desc>

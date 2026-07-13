@@ -39,6 +39,7 @@ order: 3
 
 **システム思考がコミュニケーションの不確実性を削減する仕組み**：
 
+<span id="figure-04" aria-hidden="true"></span>
 <svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
   <title>システム思考の認知プロセス</title>
   <desc>エンジニアの認知特性を4つの要素で構造化した図表</desc>
@@ -175,6 +176,7 @@ order: 3
 
 **詳細志向の認知特性**：
 
+<span id="figure-05" aria-hidden="true"></span>
 <svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
   <title>詳細志向の二面性</title>
   <desc>エンジニアの詳細志向がもたらすポジティブ・ネガティブ両面の影響</desc>
@@ -305,6 +307,7 @@ order: 3
 
 **認知負荷の3つのタイプ**：
 
+<span id="figure-06" aria-hidden="true"></span>
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <title>認知負荷とコミュニケーション効率</title>
   <desc>エンジニアの情報処理における3つの認知負荷タイプと最適化戦略</desc>

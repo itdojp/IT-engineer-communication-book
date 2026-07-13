@@ -33,3 +33,7 @@ appendices:
     path: /appendix-03-tools-resources/
   - title: 付録4 参考文献・引用
     path: /appendix-04-references/
+  - title: 付録5 コミュニケーショントラブルシューティングフロー
+    path: /appendix-05-troubleshooting-flow/
+  - title: 付録6 図版インデックス
+    path: /appendix-06-figure-index/

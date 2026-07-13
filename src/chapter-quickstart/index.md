@@ -36,6 +36,7 @@ order: 2
 
 **解決手法**：PREP法（30秒ルール）
 
+<span id="figure-01" aria-hidden="true"></span>
 <svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
   <title>PREP法による技術説明の最適化</title>
   <desc>エンジニア向けPREP法の4ステップ構造</desc>
@@ -170,6 +171,7 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
 
 **解決手法**：制約→価値変換フォーマット
 
+<span id="figure-02" aria-hidden="true"></span>
 <svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
   <title>制約説明の3ステップ変換</title>
   <desc>技術的制約を価値提案に変換するプロセス</desc>
@@ -265,6 +267,7 @@ user_idカラムにインデックス追加で実現 <span style="background: #f
 > 強いストレス状態が数週間以上続いている場合や、睡眠・食欲・日常生活に支障が出ている場合は、本書のフレームワークだけで抱え込まず、産業医・社内相談窓口・メンタルヘルス専門家などの専門機関への相談を検討してください。
 
 
+<span id="figure-03" aria-hidden="true"></span>
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <title>エンジニア向けストレス早期発見システム</title>
   <desc>5項目のストレス指標と判定基準を視覚化したチェックシステム</desc>

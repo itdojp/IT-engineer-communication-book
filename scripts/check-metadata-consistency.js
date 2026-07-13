@@ -47,7 +47,59 @@ const appendixRoutesById = {
   templates: '/appendix-02-templates/',
   tools: '/appendix-03-tools-resources/',
   references: '/appendix-04-references/',
+  'troubleshooting-flow': '/appendix-05-troubleshooting-flow/',
+  'figure-index': '/appendix-06-figure-index/',
 };
+
+const requiredUxModulePages = {
+  troubleshootingFlow: {
+    route: '/appendix-05-troubleshooting-flow/',
+    source: 'src/appendix-05-troubleshooting-flow/index.md',
+    public: 'docs/appendix-05-troubleshooting-flow/index.md',
+  },
+  figureIndex: {
+    route: '/appendix-06-figure-index/',
+    source: 'src/appendix-06-figure-index/index.md',
+    public: 'docs/appendix-06-figure-index/index.md',
+  },
+};
+
+const expectedInlineSvgCount = 20;
+const expectedFigures = [
+  ['F01', 'PREP法による技術説明の最適化', 'chapter-quickstart', 'figure-01'],
+  ['F02', '制約説明の3ステップ変換', 'chapter-quickstart', 'figure-02'],
+  ['F03', 'エンジニア向けストレス早期発見システム', 'chapter-quickstart', 'figure-03'],
+  ['F04', 'システム思考の認知プロセス', 'chapter-engineering-communication', 'figure-04'],
+  ['F05', '詳細志向の二面性', 'chapter-engineering-communication', 'figure-05'],
+  ['F06', '認知負荷とコミュニケーション効率', 'chapter-engineering-communication', 'figure-06'],
+  ['F07', '技術者間コミュニケーションの情報圧縮', 'chapter-communication-challenges', 'figure-07'],
+  ['F08', 'チーム内技術専門性マトリックス', 'chapter-communication-challenges', 'figure-08'],
+  ['F09', 'プログラミング思考をコミュニケーションに応用', 'chapter-structured-communication', 'figure-09'],
+  ['F10', 'RFC形式の基本構造', 'chapter-structured-communication', 'figure-10'],
+  ['F11', '技術討議フレームワーク', 'chapter-stakeholder-communication', 'figure-11'],
+  ['F12', '技術選定の定量的評価フレームワーク', 'chapter-stakeholder-communication', 'figure-12'],
+  ['F13', '非同期コミュニケーション時間軸設計', 'chapter-digital-communication', 'figure-13'],
+  ['F14', '技術的負債とストレスの構造的関係', 'chapter-stress-analysis', 'figure-14'],
+  ['F15', '技術的負債ストレス影響分析システム', 'chapter-stress-analysis', 'figure-15'],
+  ['F16', 'レガシーコードストレスパターン分析', 'chapter-stress-analysis', 'figure-16'],
+  ['F17', '技術陳腐化不安の構造的分析', 'chapter-stress-analysis', 'figure-17'],
+  ['F18', '技術学習最適化システム', 'chapter-stress-analysis', 'figure-18'],
+  ['F19', 'Personal Mental Health System Architecture', 'chapter-technical-mental-health', 'figure-19'],
+  ['F20', '多層防御型メンタルヘルス・アーキテクチャ', 'chapter-preventive-systems', 'figure-20'],
+];
+const expectedTroubleshootingTargets = [
+  ['appendix-01-checklists', 'a1'],
+  ['appendix-01-checklists', 'a3'],
+  ['appendix-01-checklists', 'a5'],
+  ['appendix-01-checklists', 'a9'],
+  ['appendix-02-templates', 't1-context-package'],
+  ['appendix-02-templates', 't2'],
+  ['appendix-02-templates', 't3'],
+  ['appendix-02-templates', 't4'],
+  ['appendix-02-templates', 't8'],
+  ['appendix-02-templates', 't9'],
+  ['appendix-02-templates', 't10'],
+];
 
 function fail(message) {
   console.error(`ERROR: ${message}`);
@@ -179,6 +231,12 @@ function assertEqual(actual, expectedValue, label) {
   }
 }
 
+function assertContains(haystack, needle, label) {
+  if (!haystack.includes(needle)) {
+    fail(`${label} does not contain ${JSON.stringify(needle)}`);
+  }
+}
+
 function checkBookConfig(config, label) {
   for (const key of ['title', 'description', 'author', 'version', 'license', 'homepage', 'repository']) {
     const expectedKey = key === 'repository' ? 'repositoryUrl' : key;
@@ -295,6 +353,83 @@ function checkNavigation(bookConfig, navSectionsData) {
   return { pageCount: publishedRoutes.size, navCount: navRoutes.length };
 }
 
+function countMatches(text, pattern) {
+  return [...text.matchAll(pattern)].map((match) => match[0]);
+}
+
+function checkUxModulePages(rootConfig, docsConfigJson, navigation) {
+  for (const moduleName of Object.keys(requiredUxModulePages)) {
+    assertEqual(rootConfig.ux && rootConfig.ux.modules && rootConfig.ux.modules[moduleName], true, `book-config.json.ux.modules.${moduleName}`);
+    assertEqual(docsConfigJson.ux && docsConfigJson.ux.modules && docsConfigJson.ux.modules[moduleName], true, `docs/book-config.json.ux.modules.${moduleName}`);
+
+    const modulePage = requiredUxModulePages[moduleName];
+    for (const relativePath of [modulePage.source, modulePage.public]) {
+      const filePath = path.join(root, relativePath);
+      if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+        fail(`${moduleName} page is missing: ${relativePath}`);
+      }
+      const frontMatter = parseFrontMatter(filePath);
+      assertEqual(frontMatter.ux_module, moduleName, `${relativePath} front matter ux_module`);
+      assertEqual(normalizePath(frontMatter.module_route), modulePage.route, `${relativePath} front matter module_route`);
+    }
+
+    const publicPagePath = path.join(root, modulePage.public);
+    assertEqual(markdownRoute(publicPagePath), modulePage.route, `${modulePage.public} published route`);
+    const navItems = Object.values(navigation).flat();
+    if (!navItems.some((item) => normalizePath(item.path) === modulePage.route)) {
+      fail(`${moduleName} route is missing from navigation: ${modulePage.route}`);
+    }
+  }
+
+  const countInlineSvgs = (dir) => listMarkdownFiles(dir)
+    .map((filePath) => countMatches(fs.readFileSync(filePath, 'utf8'), /<svg\b/g).length)
+    .reduce((total, count) => total + count, 0);
+  const sourceSvgCount = countInlineSvgs(path.join(root, 'src'));
+  const publicSvgCount = countInlineSvgs(docs);
+  assertEqual(sourceSvgCount, expectedInlineSvgCount, 'src inline SVG inventory count');
+  assertEqual(publicSvgCount, expectedInlineSvgCount, 'docs inline SVG inventory count');
+
+  const publicTroubleshooting = fs.readFileSync(path.join(root, requiredUxModulePages.troubleshootingFlow.public), 'utf8');
+  const sourceTroubleshooting = fs.readFileSync(path.join(root, requiredUxModulePages.troubleshootingFlow.source), 'utf8');
+  assertEqual(sourceTroubleshooting, publicTroubleshooting, 'src/docs troubleshooting flow content');
+  expectedTroubleshootingTargets.forEach(([target, anchor]) => {
+    assertContains(publicTroubleshooting, `../${target}/#${anchor}`, `troubleshooting target ${target}#${anchor}`);
+    for (const contentRoot of ['docs', 'src']) {
+      const targetPage = fs.readFileSync(path.join(root, contentRoot, target, 'index.md'), 'utf8');
+      assertContains(targetPage, `<span id="${anchor}" aria-hidden="true"></span>`, `${contentRoot} stable anchor ${target}#${anchor}`);
+    }
+  });
+
+  const figureIndexPath = path.join(root, requiredUxModulePages.figureIndex.public);
+  const figureIndex = fs.readFileSync(figureIndexPath, 'utf8');
+  const sourceFigureIndex = fs.readFileSync(path.join(root, requiredUxModulePages.figureIndex.source), 'utf8');
+  assertEqual(sourceFigureIndex, figureIndex, 'src/docs figure index content');
+  const figureRows = figureIndex.split(/\r?\n/).filter((line) => /^\| F\d{2} \|/.test(line));
+  assertEqual(figureRows.length, expectedFigures.length, 'figure index entry count');
+
+  const publicAnchors = [];
+  const sourceAnchors = [];
+  expectedFigures.forEach(([id, title, chapter, anchor], index) => {
+    const publicPage = fs.readFileSync(path.join(docs, chapter, 'index.md'), 'utf8');
+    const sourcePage = fs.readFileSync(path.join(root, 'src', chapter, 'index.md'), 'utf8');
+    const anchorMarkup = `<span id="${anchor}" aria-hidden="true"></span>`;
+    assertContains(publicPage, `${anchorMarkup}\n<svg`, `public ${id} anchor placement`);
+    assertContains(sourcePage, `${anchorMarkup}\n<svg`, `source ${id} anchor placement`);
+    assertContains(publicPage, `<title>${title}</title>`, `public ${id} SVG title`);
+    assertContains(sourcePage, `<title>${title}</title>`, `source ${id} SVG title`);
+    publicAnchors.push(...countMatches(publicPage, new RegExp(`id="${anchor}"`, 'g')));
+    sourceAnchors.push(...countMatches(sourcePage, new RegExp(`id="${anchor}"`, 'g')));
+
+    const row = figureRows[index] || '';
+    assertContains(row, `| ${id} | ${title} |`, `figure index ${id} title/order`);
+    assertContains(row, `](../${chapter}/#${anchor})`, `figure index ${id} route`);
+  });
+  assertEqual(publicAnchors.length, expectedFigures.length, 'public exact inline SVG anchors');
+  assertEqual(sourceAnchors.length, expectedFigures.length, 'source exact inline SVG anchors');
+
+  return { moduleCount: Object.keys(requiredUxModulePages).length, inlineSvgCount: publicSvgCount };
+}
+
 function checkAssets() {
   const missing = requiredAssets.filter((asset) => {
     const filePath = path.join(docs, asset);
@@ -311,5 +446,6 @@ const navigation = readNavigation(path.join(docs, '_data', 'navigation.yml'));
 
 checkMetadata(bookConfig, docsBookConfig, packageJson, packageLock);
 const counts = checkNavigation(bookConfig, navigation);
+const uxCounts = checkUxModulePages(bookConfig, docsBookConfig, navigation);
 checkAssets();
-console.log(`OK: metadata and navigation coverage are consistent (${counts.navCount} navigation entries, ${counts.pageCount} docs pages)`);
+console.log(`OK: metadata/navigation/UX coverage is consistent (${counts.navCount} navigation entries, ${counts.pageCount} docs pages, ${uxCounts.moduleCount} UX modules, ${uxCounts.inlineSvgCount} inline SVGs)`);

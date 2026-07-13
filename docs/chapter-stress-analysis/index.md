@@ -38,6 +38,7 @@ order: 8
 
 **Technical Debt Stress Analysis Framework**
 
+<span id="figure-14" aria-hidden="true"></span>
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>技術的負債とストレスの構造的関係</title>
   <desc>技術的負債がエンジニアに与える心理的影響の分析フレームワーク</desc>
@@ -224,6 +225,7 @@ order: 8
 
 **Technical Debt Impact Analysis System**:
 
+<span id="figure-15" aria-hidden="true"></span>
 <svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
   <title>技術的負債ストレス影響分析システム</title>
   <desc>技術的負債が開発チームに与える影響の定量的分析フレームワーク</desc>
@@ -420,6 +422,7 @@ order: 8
 
 **Legacy Code Stress Pattern Analysis**:
 
+<span id="figure-16" aria-hidden="true"></span>
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>レガシーコードストレスパターン分析</title>
   <desc>レガシーコードが開発者に与える心理的・業務的影響の構造的分析</desc>
@@ -585,6 +588,7 @@ order: 8
 
 **Technology Obsolescence Anxiety Framework**
 
+<span id="figure-17" aria-hidden="true"></span>
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>技術陳腐化不安の構造的分析</title>
   <desc>技術の急速な変化がエンジニアに与える心理的・キャリア的不安の分析フレームワーク</desc>
@@ -816,6 +820,7 @@ order: 8
 
 **Technology Learning Optimization System**:
 
+<span id="figure-18" aria-hidden="true"></span>
 <svg width="800" height="700" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
   <title>技術学習最適化システム</title>
   <desc>技術学習のストレス管理と効率化を実現する統合システム</desc>

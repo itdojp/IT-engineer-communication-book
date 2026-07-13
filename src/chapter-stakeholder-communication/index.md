@@ -32,6 +32,7 @@ order: 6
 
 **Technical Discussion Framework**
 
+<span id="figure-11" aria-hidden="true"></span>
 <svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
   <title>技術討議フレームワーク</title>
   <desc>エンジニア向け技術討議の構造化プロセス</desc>
@@ -524,6 +525,7 @@ order: 6
 
 ### 技術選定プロセスの標準化
 
+<span id="figure-12" aria-hidden="true"></span>
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>技術選定の定量的評価フレームワーク</title>
   <desc>5つの評価軸による技術選定マトリックス</desc>

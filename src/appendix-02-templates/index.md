@@ -9,6 +9,7 @@ order: 14
 
 この付録は、本文で登場する「再現可能なコミュニケーション」を支えるテンプレート集である。自分のチームの運用に合わせて、項目の追加・削除をしてよい。
 
+<span id="t1-context-package" aria-hidden="true"></span>
 ## T1. Context Package（非同期議論の文脈パッケージ）
 
 ```markdown
@@ -34,6 +35,7 @@ order: 14
 【Links】（一次情報リンク: チケット/PR/ログ/仕様/図）
 ```
 
+<span id="t2" aria-hidden="true"></span>
 ## T2. 会議アジェンダ（45分の意思決定会議）
 
 ```markdown
@@ -65,6 +67,7 @@ order: 14
 - 次回までに必要な準備
 ```
 
+<span id="t3" aria-hidden="true"></span>
 ## T3. 議事録（決定事項が残る形）
 
 ```markdown
@@ -92,6 +95,7 @@ order: 14
 - PR:
 ```
 
+<span id="t4" aria-hidden="true"></span>
 ## T4. 非同期依頼（レビュー/判断/作業）
 
 ```markdown
@@ -189,6 +193,7 @@ order: 14
 （実装/運用/コスト/組織）
 ```
 
+<span id="t8" aria-hidden="true"></span>
 ## T8. インシデント連絡（速報/続報/終報）
 
 ```markdown
@@ -213,6 +218,7 @@ order: 14
 - 学び:
 ```
 
+<span id="t9" aria-hidden="true"></span>
 ## T9. フィードバック（SBI: Situation/Behavior/Impact）
 
 ```markdown
@@ -224,6 +230,7 @@ order: 14
 【支援】（必要なら支援内容）
 ```
 
+<span id="t10" aria-hidden="true"></span>
 ## T10. 1on1アジェンダ
 
 ```markdown
