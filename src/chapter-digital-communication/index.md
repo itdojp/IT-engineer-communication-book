@@ -32,6 +32,7 @@ order: 7
 
 **Asynchronous Communication Architecture**
 
+<span id="figure-13" aria-hidden="true"></span>
 <svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
   <title>非同期コミュニケーション時間軸設計</title>
   <desc>4つの時間レイヤーによる情報ライフサイクル管理</desc>

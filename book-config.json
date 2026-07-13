@@ -77,6 +77,14 @@
       {
         "id": "references",
         "title": "参考文献・引用"
+      },
+      {
+        "id": "troubleshooting-flow",
+        "title": "コミュニケーショントラブルシューティングフロー"
+      },
+      {
+        "id": "figure-index",
+        "title": "図版インデックス"
       }
     ]
   },
@@ -86,9 +94,9 @@
       "quickStart": true,
       "readingGuide": true,
       "checklistPack": true,
-      "troubleshootingFlow": false,
+      "troubleshootingFlow": true,
       "conceptMap": false,
-      "figureIndex": false,
+      "figureIndex": true,
       "legalNotice": false,
       "glossary": false
     }

@@ -36,6 +36,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 
 **Defense in Depth for Mental Health**：
 
+<span id="figure-20" aria-hidden="true"></span>
 <svg width="800" height="870" viewBox="0 0 800 870" xmlns="http://www.w3.org/2000/svg">
   <title>多層防御型メンタルヘルス・アーキテクチャ</title>
   <desc>OSI参照モデルを適用した7層メンタルヘルス防御システム</desc>
