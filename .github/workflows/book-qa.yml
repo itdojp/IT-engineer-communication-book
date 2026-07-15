@@ -37,13 +37,13 @@ jobs:
       - name: Install dependencies (book)
         run: npm ci
 
+      - name: Canonical pilot drift gate
+        run: npm run check:pilot-drift
+
       - name: Root package QA
         run: |
           npm test
           npm audit --audit-level=moderate
-
-      - name: Canonical pilot drift gate
-        run: npm run check:pilot-drift
 
       - name: Install dependencies (book-formatter)
         working-directory: book-formatter
