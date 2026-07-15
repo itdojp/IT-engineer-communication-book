@@ -10,7 +10,9 @@
     "lint": "markdownlint docs/**/*.md",
     "check-links": "markdown-link-check -c .markdown-link-check.json docs/**/*.md",
     "deploy": "gh-pages -d docs/_site",
-    "check:metadata": "node scripts/check-metadata-consistency.js"
+    "check:metadata": "node scripts/check-metadata-consistency.js",
+    "sync:pilot": "node scripts/sync-pilot.js --write",
+    "check:pilot-drift": "node scripts/sync-pilot.js --check"
   },
   "keywords": [
     "book",
