@@ -39,3 +39,7 @@
 
 **株式会社アイティードゥ（ITDO Inc.）**  
 Email: knowledge@itdo.jp
+
+## Canonical authoring pilot
+
+付録1・付録2・Quickstartの本文は`src/`を正本とし、`docs/`は生成結果です。`node scripts/sync-pilot.js --write`で同期し、`npm run check:pilot-drift`で差分を検出します。`docs/`のpilot対象を直接編集してはいけません。layout、asset、navigationなどのsite implementationは別責務です。pilot外のlegacy `src/`は後続移行Issueの対象です。

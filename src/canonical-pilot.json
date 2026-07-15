@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "canonical_root": "src",
+  "generated_root": "docs",
+  "files": [
+    "appendix-01-checklists/index.md",
+    "appendix-02-templates/index.md",
+    "chapter-quickstart/index.md"
+  ]
+}

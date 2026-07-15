@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies (book)
         run: npm ci
 
+      - name: Canonical pilot drift gate
+        run: npm run check:pilot-drift
+
       - name: Root package QA
         run: |
           npm test

@@ -9,6 +9,25 @@ order: 14
 
 この付録は、本文で登場する「再現可能なコミュニケーション」を支えるテンプレート集である。自分のチームの運用に合わせて、項目の追加・削除をしてよい。
 
+注: テンプレート内の括弧（例:「（目的）」）や、`ADR-XXXX`/`A:` のような項目はプレースホルダーである。実案件の一次情報に置換して使用する。
+
+## T0. Communication Contract（依頼・相談・合意形成の最小契約）
+
+報告、相談、判断依頼、レビュー依頼を始める前に、最小限の契約として書く。
+詳細な資料を作る前の下書きとして、Issue、PR、チャット、議事録に転用できる。
+
+```markdown
+【Purpose】（何を決める/伝える/相談するか）
+【Context Boundary】（背景、制約、前提、今回は扱わない範囲）
+【Expected Output】（判断、レビュー、作業、承認、情報共有など）
+【Decision Owner】（最終判断者 / 承認者）
+【Participants】（依頼者、実行担当、レビュー担当、通知先）
+【Due / Next Update】（期限 / 次回更新時刻）
+【Evidence Location】（Issue / PR / ADR / 議事録 / Runbook）
+【Escalation / Stop Line】（詰まった時の相談先、止める条件）
+【Feedback Loop】（振り返り観点、次回改善する項目）
+```
+
 <span id="t1-context-package" aria-hidden="true"></span>
 ## T1. Context Package（非同期議論の文脈パッケージ）
 
