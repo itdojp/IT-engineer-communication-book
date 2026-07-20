@@ -20,6 +20,14 @@ order: 9
 - [ ] アジャイル手法を個人的成長に応用できる
 - [ ] 技術的フレームワークで感情・ストレス管理ができる
 
+### 本章の安全境界
+
+本章のメトリクスやコード例は、本人が状態変化に気づいて休息・相談・業務調整を選ぶための概念例です。医療上の診断、治療方針、緊急度の判定、採用・評価・配置などの人事判断を自動化するものではありません。
+
+心の健康は客観的な測定方法が十分確立しておらず、個人差も大きいため、単一の数値や固定値から状態を断定できません。例示する条件は検証前の仮説であり、誤検知と見逃しの両方が起こり得ます。数値が低くても本人の訴えを優先し、数値が高くても本人を病気・危機と決め付けないでください。
+
+個人の記録は本人管理を既定とし、職場へ共有する場合は目的、項目、共有先、保存期間、削除方法を示した個別の明示同意を得ます。同意しないことや撤回による不利益を認めません。差し迫った生命・身体の危険がある場合はスコア判定を待たず、居住地域の緊急通報または公式の危機相談窓口へ接続してください。
+
 ---
 
 ## 7.1 システム思考によるメンタルヘルス設計
@@ -264,7 +272,7 @@ energy_allocation:
     recovery: "flexible_pacing"
 
 stress_circuit_breaker:
-  threshold: "cognitive_load > 85%"
+  review_condition: "user_reports_overload OR user_defined_workload_signal_persists"
   action: ["immediate_break", "task_postponement", "support_request"]
   recovery_time: "minimum_30min"
 ```
@@ -302,249 +310,47 @@ Personal Support Ecosystem:
                   └─────────────────┘
 ```
 
-**Auto-Scaling Mechanisms**：
-```python
-class MentalHealthAutoScaler:
-    def evaluate_scaling_needs(self):
-        current_metrics = self.get_current_metrics()
-        
-        if current_metrics['stress'] > self.HIGH_THRESHOLD:
-            return self.scale_up_support()
-        elif current_metrics['stress'] < self.LOW_THRESHOLD:
-            return self.scale_down_to_baseline()
-        else:
-            return self.maintain_current_resources()
-    
-    def scale_up_support(self):
-        return {
-            'increase_social_contact': True,
-            'reduce_optional_commitments': True,
-            'activate_professional_help': True,
-            'emergency_protocols': 'standby'
-        }
-```
+**本人が選ぶサポート拡張**：
+
+サポートを増やす条件は、固定されたstress thresholdではなく、本人の明示的な依頼または事前に本人が決めた見直し条件とします。選択肢は、任意予定の削減、業務調整、信頼できる人への本人からの連絡、産業保健・外部専門家の案内です。システムは本人に確認せず連絡先を起動しません。
 
 ---
 
-## 7.2 データ駆動型セルフモニタリング
+## 7.2 本人主体のセルフモニタリング
 
-### メンタルヘルス・テレメトリーの設計
+### 観察と判定を分離する
 
-**Personal Observability Stack**：
+セルフモニタリングは、本人が状態変化に気づいて休息・相談・業務調整を選ぶための補助です。健康状態の推定、将来予測、診断、就業可否の判定には使いません。
 
-````markdown
-## Mental Health Metrics Collection
+#### 最小構成の観察項目
 
-### Golden Signals for Personal Wellbeing
+| 観察対象 | 例 | 解釈の境界 |
+|---|---|---|
+| 業務量 | 当番回数、割り込み回数、会議時間 | 健康状態ではなく業務条件 |
+| 作業の詰まり | PR滞留、未解決ブロッカー | 個人能力ではなく改善候補 |
+| 本人の任意入力 | 「今日は振り返りたい」の選択 | 診断名・重症度へ変換しない |
 
-**Latency（応答性）**：
-```python
-class MentalLatencyMetrics:
-    def measure_response_times(self):
-        return {
-            'decision_making_time': self.measure_decision_latency(),
-            'problem_solving_speed': self.measure_cognitive_speed(),
-            'emotional_recovery_time': self.measure_bounce_back(),
-            'sleep_onset_latency': self.measure_sleep_quality()
-        }
-    
-    def measure_decision_latency(self):
-        # 通常の意思決定時間からの乖離を測定
-        baseline = self.get_personal_baseline('decision_time')
-        current = self.current_decision_time()
-        
-        if current > baseline * 1.5:
-            return {'status': 'degraded', 'alert': True}
-        else:
-            return {'status': 'normal', 'alert': False}
-```
+生理情報、睡眠情報、感情推定は既定では収集しません。センシティブ情報を含まない業務条件も、本人端末内の短期メモを第一候補にします。
 
-**Throughput（処理量）**：
-```yaml
-productivity_metrics:
-  daily_measures:
-    - completed_tasks: "number of finished work items"
-    - focus_sessions: "deep work periods completed"
-    - learning_progress: "new concepts absorbed"
-    - social_interactions: "meaningful connections made"
-  
-  weekly_trends:
-    - velocity: "average tasks completed per day"
-    - quality_score: "error rate and rework frequency"
-    - satisfaction_index: "subjective wellbeing rating"
-    - energy_sustainability: "consistent performance across week"
+#### 仮説としての見直し条件
 
-alerting_rules:
-  productivity_decline:
-    condition: "weekly_velocity < baseline * 0.7 FOR 2weeks"
-    severity: "warning"
-    action: ["workload_review", "stress_assessment"]
-```
-````
+見直し条件は固定thresholdではなく、本人が試行期間を定めた仮説です。条件に合致しても、出力は本人への確認質問に限定します。
 
-### 感情状態のデータモデリング
+1. 本人が観察する項目と保存期間を選ぶ。
+2. 条件に合致したら、本人だけに「休息・業務調整・相談を検討しますか」と表示する。
+3. 本人が必要と判断した場合だけ、事前に選んだ相談先を表示する。
+4. 支援者への連絡は本人がその都度実行する。自動送信は行わない。
+5. 試行終了時に誤検知と見逃しを振り返り、不要な記録を削除する。
 
-**Emotional State Machine**：
+### 本人向けダッシュボードの最小設計
 
-````markdown
-## Emotion Tracking and Analysis
+| 領域 | 表示するもの | 表示しないもの |
+|---|---|---|
+| 業務条件 | 会議時間、割り込み、当番、本人が選んだメモ | 病名、危険度、性格・感情推定 |
+| 振り返り | 期間内の変化、未確認の項目 | 正常・異常の断定 |
+| 支援 | 休息、業務調整、産業保健・外部相談先へのリンク | 本人未操作の第三者通知 |
 
-### 感情状態の構造化表現
-**Multi-dimensional Emotion Model**：
-```python
-from dataclasses import dataclass
-from enum import Enum
-from typing import Dict, List
-import datetime
-
-class EmotionType(Enum):
-    JOY = "joy"
-    SADNESS = "sadness" 
-    ANGER = "anger"
-    FEAR = "fear"
-    SURPRISE = "surprise"
-    DISGUST = "disgust"
-    CALM = "calm"
-    EXCITED = "excited"
-
-@dataclass
-class EmotionReading:
-    timestamp: datetime.datetime
-    primary_emotion: EmotionType
-    intensity: float  # 0.0 - 1.0
-    confidence: float  # 0.0 - 1.0
-    triggers: List[str]
-    context: Dict[str, str]
-    
-    def to_metrics(self):
-        return {
-            'emotion_type': self.primary_emotion.value,
-            'intensity_score': self.intensity,
-            'trigger_count': len(self.triggers),
-            'context_complexity': len(self.context)
-        }
-
-class EmotionAnalyzer:
-    def analyze_patterns(self, readings: List[EmotionReading]):
-        return {
-            'dominant_emotions': self.get_emotion_distribution(readings),
-            'intensity_trends': self.calculate_intensity_trends(readings),
-            'trigger_patterns': self.identify_trigger_patterns(readings),
-            'temporal_patterns': self.analyze_time_correlations(readings)
-        }
-```
-````
-
-### ストレス予測アルゴリズム
-
-**Predictive Stress Analytics**：
-
-````markdown
-## Stress Prediction System
-
-### 機械学習によるストレス予測
-**Feature Engineering for Stress Prediction**：
-```python
-class StressPredictionEngine:
-    def extract_features(self, time_window_days=7):
-        features = {}
-        
-        # 作業パターン特徴量
-        features.update(self.extract_work_patterns())
-        
-        # 生理的特徴量  
-        features.update(self.extract_physiological_signals())
-        
-        # 環境的特徴量
-        features.update(self.extract_environmental_factors())
-        
-        # 社会的特徴量
-        features.update(self.extract_social_interactions())
-        
-        return features
-    
-    def extract_work_patterns(self):
-        return {
-            'avg_daily_work_hours': self.calculate_work_hours(),
-            'meeting_density': self.calculate_meeting_load(),
-            'deadline_pressure': self.assess_upcoming_deadlines(),
-            'task_complexity_score': self.evaluate_task_difficulty(),
-            'context_switches_per_hour': self.count_task_switches(),
-            'overtime_frequency': self.calculate_overtime_ratio()
-        }
-    
-    def predict_stress_risk(self, features):
-        # シンプルな予測モデル（実際は機械学習アルゴリズムを使用）
-        risk_score = 0
-        
-        # 重み付けされた特徴量の組み合わせ
-        if features['avg_daily_work_hours'] > 9:
-            risk_score += 0.3
-            
-        if features['meeting_density'] > 0.4:  # 40%以上が会議
-            risk_score += 0.2
-            
-        if features['deadline_pressure'] > 0.7:
-            risk_score += 0.25
-            
-        if features['context_switches_per_hour'] > 8:
-            risk_score += 0.15
-            
-        if features['sleep_quality_score'] < 0.6:
-            risk_score += 0.1
-            
-        return min(risk_score, 1.0)  # 最大1.0に制限
-```
-````
-
-### リアルタイム・ダッシュボード設計
-
-**Personal Analytics Dashboard**：
-
-````markdown
-## Self-Monitoring Dashboard Specification
-
-### ダッシュボード・レイアウト設計
-**Real-time Mental Health Metrics**：
-```yaml
-dashboard_layout:
-  header:
-    current_status:
-      - overall_wellbeing_score: "0-100 score with color coding"
-      - today_energy_level: "battery-style indicator"
-      - stress_alert_status: "traffic light system"
-    
-  main_panels:
-    stress_monitoring:
-      components:
-        - realtime_stress_level: "line chart, last 24h"
-        - stress_triggers_today: "tag cloud with frequency"
-        - prediction_next_3days: "forecast with confidence intervals"
-      
-    productivity_tracking:
-      components:
-        - focus_time_today: "progress bar vs target"
-        - task_completion_rate: "percentage with trend"
-        - quality_metrics: "error rate, rework frequency"
-    
-    recovery_status:
-      components:
-        - sleep_quality_trend: "7-day moving average"
-        - exercise_consistency: "streak counter"
-        - social_connection_index: "interaction quality score"
-
-  sidebar:
-    quick_actions:
-      - stress_relief_suggestions: "context-aware recommendations"
-      - emergency_contacts: "one-click access to support"
-      - breathing_exercise_timer: "guided relaxation tools"
-      
-    insights:
-      - pattern_alerts: "unusual patterns detected"
-      - improvement_suggestions: "personalized recommendations"
-      - milestone_celebrations: "positive reinforcement"
-```
-````
+共有機能の既定値は無効とし、個別明示同意、共有項目のプレビュー、送信先の再確認、同意撤回、削除を実装条件にします。数値が低くても本人の訴えを優先し、数値が高くても本人を病気・危機と決め付けません。
 
 ---
 
@@ -769,56 +575,27 @@ maintenance_schedule:
 
 ### 障害対応・インシデント管理
 
-**Mental Health Incident Response**：
+**人が判断する支援Runbook**：
 
-````markdown
-## インシデント対応プロセス
+メンタルヘルス上の支援をソフトウェア障害のseverity scoreへ変換しません。固定スコアや症状リストだけで緊急度を分類すると、誤検知、見逃し、本人への不利益が生じ得るためです。
 
-### ストレス・インシデントの分類と対応
-**Incident Severity Levels**：
-```python
-class MentalHealthIncident:
-    SEVERITY_LEVELS = {
-        'P0_CRITICAL': {
-            'description': '重大なメンタルヘルス危機',
-            'symptoms': ['自傷・自殺念慮', '重度のパニック発作', '現実認識困難'],
-            'response_time': '即座（5分以内）',
-            'escalation': ['医療機関受診', '緊急連絡先への連絡', '専門家介入']
-        },
-        'P1_MAJOR': {
-            'description': '深刻なストレス状態',
-            'symptoms': ['持続的不安', '睡眠・食事困難', '社会機能低下'],
-            'response_time': '当日中',
-            'escalation': ['信頼できる人への相談', 'カウンセリング予約', '業務調整']
-        },
-        'P2_MODERATE': {
-            'description': '中程度のストレス増加',
-            'symptoms': ['集中力低下', 'イライラ増加', '疲労感蓄積'],
-            'response_time': '24〜48時間以内',
-            'escalation': ['セルフケア強化', 'サポート・ネットワーク活用']
-        },
-        'P3_MINOR': {
-            'description': '軽微なストレス要因',
-            'symptoms': ['軽度の不安', '一時的な集中困難', 'やる気の低下'],
-            'response_time': '1週間以内',
-            'escalation': ['日常的対処法', '予防的措置の見直し']
-        }
-    }
-    
-    def classify_incident(self, symptoms, duration, impact):
-        """症状・継続期間・影響度からインシデント・レベルを判定"""
-        severity_score = self.calculate_severity(symptoms, duration, impact)
-        
-        if severity_score >= 90:
-            return 'P0_CRITICAL'
-        elif severity_score >= 70:
-            return 'P1_MAJOR'
-        elif severity_score >= 40:
-            return 'P2_MODERATE'
-        else:
-            return 'P3_MINOR'
-```
-````
+#### 差し迫った危険が疑われる場合
+
+本人が自傷・他害の切迫性を伝えた、現在の安全を保てない、または生命・身体への差し迫った危険が合理的に疑われる場合は、数値やアプリの判定を待ちません。
+
+1. 可能なら本人に、今いる地域と希望する連絡先を確認する。
+2. 居住地域の緊急通報、医療機関、または公的な危機相談窓口へ接続する。
+3. 安全に実施できる範囲で一人にせず、専門窓口の指示に従う。
+4. 共有する情報は支援に必要な最小限に限定する。
+5. 事後に、共有先・共有項目・判断理由をアクセス制限された記録へ残す。
+
+本人が意思表示できる場合は同意を優先します。緊急時の例外は、適用法令、組織規程、産業保健・医療専門家の判断に従い、生命・身体の保護に必要な最小範囲に限ります。
+
+#### 差し迫った危険ではない場合
+
+本人へ状況と希望を尋ね、休息、業務量・期限・当番の調整、産業医・保健師・EAP・地域の専門窓口などの選択肢を提示します。管理者は診断せず、本人から必要な業務上の配慮を聞きます。人事は制度案内と承認済みの配慮を扱い、診断名や生データを評価・査定へ利用しません。
+
+相談窓口、受付時間、緊急番号は地域と時点で異なります。固定の応答時間を保証せず、実行時に厚生労働省「こころの耳」「まもろうよ こころ」または居住地域の公的案内で最新情報を確認します。
 
 ### バックアップとリカバリー戦略
 
@@ -1017,132 +794,25 @@ deployment_strategy:
 ```
 ````
 
-### 監視・アラート・SLI/SLO設計
+### 本人向け確認プロンプトの設計
 
-**Personal Service Level Objectives**：
+個人を可用性、health score、SLO達成率で採点しません。業務上の事実と本人の希望を分離し、次の確認質問だけを提示します。
 
-````markdown
-## 個人パフォーマンスSLI/SLO
+- 休息や予定変更を希望しますか。
+- 業務量・期限・当番の調整を希望しますか。
+- 本人が選んだ相談先を表示しますか。
 
-### Service Level Indicators（SLI）
-**Personal Performance Measurements**：
-```python
-class PersonalSLI:
-    def calculate_availability_sli(self):
-        """個人の「可用性」= 正常に機能している時間の割合"""
-        total_hours = 24 * 7  # 1週間
-        functional_hours = total_hours - self.get_downtime_hours()
-        return functional_hours / total_hours
-    
-    def get_downtime_hours(self):
-        """機能停止時間（病気・極度疲労・バーンアウト状態）"""
-        return self.sick_hours + self.burnout_hours + self.severe_stress_hours
-    
-    def calculate_performance_sli(self):
-        """パフォーマンス = タスク完了時間の目標達成率"""
-        completed_tasks = self.get_completed_tasks_this_week()
-        on_time_tasks = [t for t in completed_tasks if t.completion_time <= t.estimated_time]
-        return len(on_time_tasks) / len(completed_tasks) if completed_tasks else 0
-    
-    def calculate_error_rate_sli(self):
-        """エラー率 = ミス・やり直しが必要だった作業の割合"""
-        total_work_items = self.get_total_work_items()
-        error_items = self.get_items_requiring_rework()
-        return len(error_items) / len(total_work_items) if total_work_items else 0
+出力から診断、緊急度、就業可否、評価・配置を推定することを禁止します。回答と業務条件は本人管理を既定とし、共有する場合は項目と送信先を本人が都度確定します。
 
-class PersonalSLO:
-    """Service Level Objectives - 個人パフォーマンス目標"""
-    
-    AVAILABILITY_TARGET = 0.95  # 95%の時間で正常機能
-    LATENCY_TARGET = 0.90       # 90%のタスクが期限内完了
-    ERROR_RATE_TARGET = 0.05    # エラー率5%以下
-    WELLBEING_TARGET = 7.0      # 10点満点で7点以上の主観的満足度
+### Capacity Budget思考
 
-    def evaluate_slo_compliance(self, sli_metrics):
-        """SLO達成状況の評価"""
-        compliance = {
-            'availability': sli_metrics.availability >= self.AVAILABILITY_TARGET,
-            'performance': sli_metrics.performance >= self.LATENCY_TARGET,
-            'quality': sli_metrics.error_rate <= self.ERROR_RATE_TARGET,
-            'wellbeing': sli_metrics.wellbeing_score >= self.WELLBEING_TARGET
-        }
-        
-        overall_health = sum(compliance.values()) / len(compliance)
-        return {
-            'individual_metrics': compliance,
-            'overall_health_score': overall_health,
-            'requires_attention': overall_health < 0.75
-        }
-```
-````
+Capacity Budgetは健康状態を正常・危険に分類するものではありません。本人が引き受けた業務量と回復時間を可視化し、追加作業を受けるか、期限・当番を調整するかを本人とチームが話し合うために使います。
 
-### Error Budget思考
-
-**Personal Error Budget Management**：
-
-````markdown
-## 個人エラー・バジェット管理
-
-### エラー・バジェットの概念適用
-**Planned Downtime vs Unplanned Incidents**：
-```python
-class PersonalErrorBudget:
-    def __init__(self, monthly_availability_target=0.95):
-        self.target_availability = monthly_availability_target
-        self.total_hours_per_month = 24 * 30
-        self.allowed_downtime = self.total_hours_per_month * (1 - monthly_availability_target)
-        
-    def calculate_current_budget(self):
-        """現在のエラー・バジェット残量"""
-        used_downtime = self.get_unplanned_downtime_this_month()
-        remaining_budget = self.allowed_downtime - used_downtime
-        
-        return {
-            'total_budget': self.allowed_downtime,
-            'used_budget': used_downtime,
-            'remaining_budget': remaining_budget,
-            'budget_utilization': used_downtime / self.allowed_downtime,
-            'status': self.get_budget_status(remaining_budget)
-        }
-    
-    def get_budget_status(self, remaining_budget):
-        """バジェット状況の評価"""
-        utilization = 1 - (remaining_budget / self.allowed_downtime)
-        
-        if utilization < 0.5:
-            return 'healthy'
-        elif utilization < 0.8:
-            return 'caution'  
-        elif utilization < 1.0:
-            return 'critical'
-        else:
-            return 'exceeded'
-    
-    def recommend_actions(self, budget_status):
-        """バジェット状況に応じた推奨アクション"""
-        recommendations = {
-            'healthy': [
-                "新しい挑戦に取り組める余裕あり",
-                "スキル向上・成長機会を積極的に"
-            ],
-            'caution': [
-                "予防的メンテナンスを強化",
-                "ストレス管理をより意識的に"
-            ],
-            'critical': [
-                "新しい取り組みは一時停止",
-                "回復・安定化にフォーカス",
-                "サポート・システム活用"
-            ],
-            'exceeded': [
-                "緊急事態：即座の介入が必要",
-                "専門家サポートの検討",
-                "環境・負荷の根本的見直し"
-            ]
-        }
-        return recommendations.get(budget_status, ["状況を詳しく分析してください"])
-```
-````
+- 対象はタスク数、当番回数、会議時間などの業務条件に限定します。
+- 目標値は本人とチームが期間限定の仮説として設定し、固定された医学的意味を持たせません。
+- 超過しても「緊急」「危機」と判定せず、追加作業の停止、期限交渉、休息、相談の選択肢を示します。
+- 本人が体調や安全への懸念を伝えた場合は、budget値に関係なく本人の訴えを優先します。
+- 差し迫った危険が疑われる場合は、本章の支援Runbookに従い地域の緊急通報・公的窓口へ人が接続します。
 
 ---
 
@@ -1151,17 +821,17 @@ class PersonalErrorBudget:
 ### 🏆 この章で習得した技術的アプローチ
 
 [OK] **システム思考の適用**：メンタルヘルスをシステム・アーキテクチャとして設計  
-[OK] **データ駆動の実践**：感情・ストレスの定量化と予測分析  
+[OK] **本人主体の振り返り**：最小限の記録と仮説検証
 [OK] **アジャイル手法の活用**：スプリント・カンバン・継続的改善による成長管理  
-[OK] **DevOps文化の導入**：CI/CD・監視・SLO思考による安定したパフォーマンス維持
+[OK] **運用設計の導入**：Runbook・振り返り・改善サイクルによる本人主体の支援
 
 ### 💡 エンジニアならではの強みを活かした自己管理
 
 **システム・エンジニアリング・スキルの転用**：
 - 複雑性の管理 → 感情・ストレス要因の構造化分析
 - 最適化思考 → 個人パフォーマンスのボトルネック改善  
-- 自動化・効率化 → セルフケアの仕組み化・習慣化
-- 監視・アラート → 早期警戒システムによる予防的対応
+- 自動化・効率化 → 本人が選んだリマインダーと削除処理
+- 観察・通知 → 本人が休息・相談を選ぶための気づき
 
 ### 🔄 継続的な自己改善フレームワーク
 
@@ -1173,10 +843,10 @@ class PersonalErrorBudget:
 
 **実装可能なアクション・プラン**：
 
-1. **Week 1-2**: 個人メトリクス収集システムの構築
+1. **Week 1-2**: 本人管理の最小記録と削除ルールの作成
 2. **Week 3-4**: アジャイル的目標設定とスプリント開始  
-3. **Week 5-6**: ストレス予測・早期警戒システムの実装
-4. **Week 7-8**: CI/CD思考による改善プロセスの自動化
+3. **Week 5-6**: 事前合意したサポート計画と相談導線の確認
+4. **Week 7-8**: 同意・保持・削除・監査の運用確認
 
 ### 🎯 技術者のメンタルヘルス管理における競争力
 
@@ -1194,47 +864,60 @@ class PersonalErrorBudget:
 
 ### 目的
 
-- 早期検知とリカバリを手順化し、再現性を上げます
-- 判断疲れを減らし、悪化時の初動を速くします
+- 本人が業務負荷の変化に気づき、休息・相談・業務調整を選びやすくします
+- 緊急時と非緊急時の導線を事前に確認し、固定スコアへの依存を避けます
 
 ### 前提
 
-- 医療行為・診断は扱いません（体調面の不安が強い場合は専門家への相談を優先してください）
-- 週1回15分の振り返り時間を確保できる
+- 医療行為、診断、緊急度判定、人事判断は扱いません
+- 記録は本人管理を既定とし、共有は任意かつ撤回可能にします
+- 体調面の不安や生活への支障がある場合は、数値に関係なく専門家への相談を優先します
 
 ### 入力
 
-- 第6章のストレスログ（なければ直近1週間の簡易ログ）
-- 現在の業務制約（会議、当番、締め切りなど）
+- 現在の業務制約（会議、当番、締め切り、割り込みなど）
+- 本人が任意で残した「振り返りたい」というメモ
+- 居住地域・職場で利用できる最新の相談先
 
 ### 手順（5ステップ以内）
 
-1. 監視するメトリクスを3つ選んでください（例：ストレススコア/睡眠/割り込み回数）
-2. 注意/危険の閾値を決めてください（例：スコア4以上が2日連続で危険）
-3. 閾値ごとのアクションを定義してください（例：タスク調整、相談、休息）
-4. 週次の振り返りを予定に入れ、必要なら [付録2：テンプレート・フォーマット集](../appendix-02-templates/) の「T10. 1on1アジェンダ」で共有できる形にしてください
-5. 2週間後に「メトリクス/閾値/アクション」を見直してください
+1. センシティブ情報を含まない業務条件を1〜3項目だけ選びます。
+2. 「この状態が続いたら見直す」という仮説を置きます。危険・正常というラベルは付けません。
+3. 本人が選べる対応（休息、期限・当番調整、相談）と、事前合意した連絡先を記載します。
+4. 保存場所、共有先、最短の保存期間、削除日、同意の撤回方法を記載します。
+5. 2週間後に誤検知・見逃し・役立ち方を確認し、不要な項目とデータを削除します。
 
 ### 成果物
 
-- メンタル運用Runbook（A4 1枚）
-- 週次振り返りのリマインダー（カレンダー）
+- 本人管理のサポートRunbook（A4 1枚）
+- 非緊急の相談先と、地域別の緊急導線
+- データ項目・目的・共有先・保存期間・削除方法の一覧
 
 ### 測定（KPI例）
 
-- 週次振り返りの実施率（例：月4回中何回）
-- 連続高ストレス日数（例：スコア4以上が続く日数）
-- 「危険」判定からの回復までの日数
+- 週次振り返りを実施できた回数
+- 本人が希望した業務調整の完了までの日数
+- 役に立たなかった通知と、見逃した本人申告の件数
+- 期限どおり削除できた記録の割合
 
 ### 典型失敗とリカバリ
 
-- 失敗：指標が多すぎて続かない → リカバリ：3指標に絞る
-- 失敗：悪化してから気づく → リカバリ：閾値を低めに置き、早めに介入する
+- 失敗：記録項目が多い → リカバリ：業務条件を1〜3項目に絞る
+- 失敗：条件を診断や評価として扱う → リカバリ：本人への確認質問へ戻す
+- 失敗：本人の操作なしに第三者へ送る → リカバリ：送信を停止し、事前合意と都度確認を実装する
+- 失敗：数値が低いため本人の訴えを無視する → リカバリ：本人の訴えを優先し専門家へ接続する
 
 ### 次の一手
 
 - チームレベルに展開したい → 第8章「[予防的メンタルヘルスシステム構築](../chapter-preventive-systems/)」
 - コミュニケーション改善とセットで進めたい → [付録2：テンプレート・フォーマット集](../appendix-02-templates/)
+
+## Source Notes（2026-07-20確認）
+
+- [厚生労働省「労働者の心の健康の保持増進のための指針」](https://www.mhlw.go.jp/web/t_doc?dataId=00tb3227&dataType=1&pageNo=1)：客観的測定の限界、個人差、4つのケア、本人意思と個人情報保護、専門家面談・医師の指導を含む事後措置体制を確認。
+- [CDC NIOSH Worker Well-Being Questionnaire](https://www.cdc.gov/niosh/twh/php/wellbq/)（2026-02-23更新）：well-beingを複数領域で扱うこと、組織利用時の匿名性と不要な識別情報を収集しない原則を確認。
+- [厚生労働省「こころの耳」](https://kokoro.mhlw.go.jp/)：働く人向けの相談窓口、産業保健支援、地域の専門機関への導線を確認。
+- [厚生労働省「まもろうよ こころ」](https://www.mhlw.go.jp/mamorouyokokoro/)：電話・SNS・地域別の危機相談先と、受付条件が窓口・地域で異なることを確認。
 
 ---
 
