@@ -255,7 +255,7 @@ order: 7
 </header>
 
 <div class="accessible-panel__body">
-<div class="accessible-card-grid accessible-card-grid--three">
+<div class="accessible-card-grid">
 <section class="accessible-card" aria-labelledby="context-package-heading">
 <h5 id="context-package-heading">Context Package</h5>
 <dl class="accessible-definition-list">
@@ -289,7 +289,7 @@ order: 7
 
 <section class="accessible-process" aria-labelledby="async-process-heading">
 <h5 id="async-process-heading">非同期議論の管理フロー</h5>
-<ol class="accessible-card-grid accessible-card-grid--three accessible-step-list">
+<ol class="accessible-card-grid accessible-step-list">
 <li class="accessible-card">
 <h6><span class="accessible-step-badge" aria-hidden="true">1</span> ステップ1: Discussion Start</h6>
 <p>文脈パッケージを作成・配信する</p>

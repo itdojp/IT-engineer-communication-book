@@ -185,6 +185,8 @@ function assertCssContract(css) {
 function assertTargetSection(text, target, built = false) {
   const section = extractSection(text, target, built);
   if (/\sstyle\s*=/i.test(section)) fail(`${target.id}: inline style remains in target section`);
+  const unsupportedClass = /\b(?:accessible-panel--decision|accessible-card-grid--three)\b/.exec(section);
+  if (unsupportedClass) fail(`${target.id}: unsupported no-op class remains: ${unsupportedClass[0]}`);
   if (/font-size\s*:\s*(?:0\.[0-9]+em|(?:[0-9]|1[0-5])px)/i.test(section)) {
     fail(`${target.id}: small text remains in target section`);
   }

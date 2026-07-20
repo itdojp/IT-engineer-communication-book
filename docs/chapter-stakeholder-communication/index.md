@@ -418,7 +418,7 @@ order: 6
 
 ### Phase 3: Collaborative Decision Making（協調的意思決定）
 
-<section id="accessible-consensus-decision" class="accessible-panel accessible-panel--decision" aria-labelledby="consensus-decision-heading">
+<section id="accessible-consensus-decision" class="accessible-panel" aria-labelledby="consensus-decision-heading">
 <header class="accessible-panel__header">
 <p class="accessible-kicker"><span class="accessible-step-badge" aria-hidden="true">3</span> フェーズ3</p>
 <h4 id="consensus-decision-heading">Collaborative Decision Making（協調的意思決定）</h4>
@@ -428,7 +428,7 @@ order: 6
 <div class="accessible-panel__body">
 <section aria-labelledby="consensus-steps-heading">
 <h5 id="consensus-steps-heading">合意形成の3ステップ</h5>
-<ol class="accessible-card-grid accessible-card-grid--three accessible-step-list">
+<ol class="accessible-card-grid accessible-step-list">
 <li class="accessible-card">
 <h6><span class="accessible-step-badge" aria-hidden="true">1</span> ステップ1: Individual Assessment</h6>
 <p>各メンバーが独立評価（5分）</p>
@@ -459,7 +459,7 @@ order: 6
 
 <section aria-labelledby="consensus-strategy-heading">
 <h5 id="consensus-strategy-heading">合意レベル別対応戦略</h5>
-<div class="accessible-card-grid accessible-card-grid--three">
+<div class="accessible-card-grid">
 <section class="accessible-status-card accessible-status-card--high" aria-labelledby="consensus-high-heading">
 <p class="accessible-status-label">状態: 高い合意</p>
 <h6 id="consensus-high-heading">High Consensus</h6>
