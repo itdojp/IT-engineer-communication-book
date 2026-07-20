@@ -41,6 +41,8 @@ test -z "$(git status --porcelain --untracked-files=all -- src docs)"
 追加確認:
 
 - manifest validationのnegative/convergence fixture
+- 複数file同期の後段write failureで、先行targetを含む全fileが元のbyte列へrollbackされるfixture
+- manifest/coverage failureをstack traceなしの1行診断で報告するprobe
 - pinned book-formatterのUnicode / textlint / links / layout / Markdown structure
 - PR/main Book QA、Pages
 - navigation全routeのHTTP 200、代表marker、asset

@@ -90,15 +90,66 @@ function createFsIo() {
         throw error;
       }
     },
-    write(filePath, value) {
-      fs.mkdirSync(path.dirname(filePath), { recursive: true });
-      fs.writeFileSync(filePath, value);
-    },
     listContentFiles(basePath) {
       return fs.readdirSync(basePath, { withFileTypes: true })
         .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(basePath, entry.name, 'index.md')))
         .map((entry) => `${entry.name}/index.md`)
         .sort();
+    },
+    applyAtomically(changes) {
+      const snapshots = new Map(changes.map((change) => [change.generatedPath, change.generated]));
+      for (const change of changes) {
+        const parent = path.dirname(change.generatedPath);
+        let existingParent = parent;
+        while (!fs.existsSync(existingParent)) {
+          const next = path.dirname(existingParent);
+          if (next === existingParent) fail(`no writable parent for generated output: ${change.relPath}`);
+          existingParent = next;
+        }
+        const parentStat = fs.lstatSync(existingParent);
+        if (!parentStat.isDirectory() || parentStat.isSymbolicLink()) {
+          fail(`generated parent is not a regular directory: ${change.relPath}`);
+        }
+        fs.accessSync(existingParent, fs.constants.W_OK);
+        if (fs.existsSync(change.generatedPath)) {
+          const targetStat = fs.lstatSync(change.generatedPath);
+          if (!targetStat.isFile() || targetStat.isSymbolicLink()) {
+            fail(`generated target is not a regular file: ${change.relPath}`);
+          }
+          fs.accessSync(change.generatedPath, fs.constants.W_OK);
+        }
+      }
+
+      const touched = [];
+      try {
+        for (const change of changes) {
+          fs.mkdirSync(path.dirname(change.generatedPath), { recursive: true });
+          touched.push(change.generatedPath);
+          fs.writeFileSync(change.generatedPath, change.source);
+        }
+        for (const change of changes) {
+          const written = fs.readFileSync(change.generatedPath);
+          if (!change.source.equals(written)) fail(`write verification failed: ${change.relPath}`);
+        }
+      } catch (error) {
+        const rollbackErrors = [];
+        for (const target of [...touched].reverse()) {
+          try {
+            const previous = snapshots.get(target);
+            if (previous === null) {
+              if (fs.existsSync(target)) fs.unlinkSync(target);
+            } else {
+              fs.writeFileSync(target, previous);
+            }
+          } catch (rollbackError) {
+            rollbackErrors.push(`${target}: ${rollbackError.message}`);
+          }
+        }
+        if (rollbackErrors.length > 0) {
+          fail(`${error.message}; rollback also failed: ${rollbackErrors.join('; ')}`);
+        }
+        throw error;
+      }
     },
   };
 }
@@ -119,6 +170,7 @@ function synchronize(root, manifest, io, write) {
     fail(`manifest coverage mismatch; unmapped generated content: ${unmappedGenerated.join(', ')}`);
   }
   const differences = [];
+  const changes = [];
   for (const relPath of manifest.files) {
     const sourcePath = mappedPath(root, manifest.canonical_root, relPath);
     const generatedPath = mappedPath(root, manifest.generated_root, relPath);
@@ -127,13 +179,10 @@ function synchronize(root, manifest, io, write) {
     const generated = io.read(generatedPath);
     if (generated === null || !source.equals(generated)) {
       differences.push(relPath);
-      if (write) io.write(generatedPath, source);
-    }
-    if (write) {
-      const synchronized = io.read(generatedPath);
-      if (synchronized === null || !source.equals(synchronized)) fail(`write verification failed: ${relPath}`);
+      changes.push({ relPath, generatedPath, source, generated });
     }
   }
+  if (write && changes.length > 0) io.applyAtomically(changes);
   return differences;
 }
 
@@ -169,15 +218,12 @@ function expectFailure(name, action, expected) {
   }
 }
 
-function createMemoryIo(initial) {
+function createMemoryIo(initial, options = {}) {
   const files = new Map(Object.entries(initial).map(([key, value]) => [key, Buffer.from(value)]));
   return {
     read(filePath) {
       const value = files.get(filePath);
       return value === undefined ? null : Buffer.from(value);
-    },
-    write(filePath, value) {
-      files.set(filePath, Buffer.from(value));
     },
     listContentFiles(basePath) {
       const prefix = `${basePath}${path.sep}`;
@@ -186,6 +232,30 @@ function createMemoryIo(initial) {
         .map((filePath) => path.relative(basePath, filePath).split(path.sep).join('/'))
         .filter((relPath) => /^[^/]+\/index\.md$/.test(relPath))
         .sort();
+    },
+    applyAtomically(changes) {
+      const snapshot = new Map([...files].map(([key, value]) => [key, Buffer.from(value)]));
+      for (const change of changes) {
+        if ((options.preflightReject || []).includes(change.generatedPath)) {
+          fail(`generated target failed preflight: ${change.relPath}`);
+        }
+      }
+      try {
+        for (const change of changes) {
+          files.set(change.generatedPath, Buffer.from(change.source));
+          if ((options.writeReject || []).includes(change.generatedPath)) {
+            fail(`generated target failed during write: ${change.relPath}`);
+          }
+        }
+        for (const change of changes) {
+          const written = files.get(change.generatedPath);
+          if (!written || !change.source.equals(written)) fail(`write verification failed: ${change.relPath}`);
+        }
+      } catch (error) {
+        files.clear();
+        for (const [key, value] of snapshot) files.set(key, Buffer.from(value));
+        throw error;
+      }
     },
   };
 }
@@ -229,6 +299,22 @@ function runSelfTest() {
   synchronize(root, baseline, missingGeneratedIo, true);
   if (synchronize(root, baseline, missingGeneratedIo, false).length !== 0) fail('self-test did not create missing generated output');
 
+  const twoFileManifest = clone(baseline);
+  twoFileManifest.files.push('chapter-two/index.md');
+  twoFileManifest.migration_batches[0].files.push('chapter-two/index.md');
+  const secondSourcePath = path.join(root, 'src/chapter-two/index.md');
+  const secondGeneratedPath = path.join(root, 'docs/chapter-two/index.md');
+  const atomicIo = createMemoryIo({
+    [sourcePath]: 'canonical-one',
+    [generatedPath]: 'stale-one',
+    [secondSourcePath]: 'canonical-two',
+    [secondGeneratedPath]: 'stale-two',
+  }, { writeReject: [secondGeneratedPath] });
+  expectFailure('later write failure', () => synchronize(root, twoFileManifest, atomicIo, true), 'failed during write');
+  if (atomicIo.read(generatedPath).toString() !== 'stale-one' || atomicIo.read(secondGeneratedPath).toString() !== 'stale-two') {
+    fail('self-test did not roll back every generated file after a later write failure');
+  }
+
   const unmappedSourcePath = path.join(root, 'src/chapter-two/index.md');
   const unmappedIo = createMemoryIo({
     [sourcePath]: 'canonical',
@@ -248,7 +334,7 @@ function runSelfTest() {
   const missingSourceIo = createMemoryIo({});
   expectFailure('missing canonical source', () => synchronize(root, baseline, missingSourceIo, false), 'missing canonical');
 
-  console.log('OK: canonical content sync self-test (10 negative/convergence cases)');
+  console.log('OK: canonical content sync self-test (11 negative/convergence cases)');
 }
 
 function loadManifest() {
@@ -281,4 +367,9 @@ function main() {
   }
 }
 
-main();
+try {
+  main();
+} catch (error) {
+  console.error(`canonical content sync failed: ${error.message}`);
+  process.exit(1);
+}

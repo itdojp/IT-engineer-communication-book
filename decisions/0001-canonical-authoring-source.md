@@ -21,6 +21,7 @@ chapter / appendix本文は`src/<path>/index.md`をauthoring source、同じ相�
 - generated: 同じ相対pathの`docs/<path>`
 - command: `npm run check:content-drift` / `npm run sync:content`
 - `check:content-drift`はmanifest不正、canonical/generated contentの欠落・未登録、mapping重複、path逸脱、byte driftで非0終了する
+- `sync:content`は全targetをpreflightし、途中のwrite/verification failureでは変更済みtargetを元のbyte列へrollbackする
 - CIはbuild前後にdriftを確認し、buildがtracked `src` / `docs`を変更した場合も失敗する
 - 手編集可能なのはcanonical `src`と、manifestで除外したsite implementationのみである
 - front matter、relative link、本文を含むbyte-exact matchを原則とし、例外mappingはmanifestとmigration evidenceへ記録する
