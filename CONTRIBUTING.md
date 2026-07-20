@@ -40,6 +40,8 @@
 **株式会社アイティードゥ（ITDO Inc.）**  
 Email: knowledge@itdo.jp
 
-## Canonical authoring pilot
+## Canonical authoring source
 
-付録1・付録2・Quickstartの本文は`src/`を正本とし、`docs/`は生成結果です。`node scripts/sync-pilot.js --write`で同期し、`npm run check:pilot-drift`で差分を検出します。`docs/`のpilot対象を直接編集してはいけません。layout、asset、navigationなどのsite implementationは別責務です。pilot外のlegacy `src/`は後続移行Issueの対象です。
+chapter / appendix本文は`src/`を正本とし、同じ相対pathの`docs/`は公開用の生成結果です。対象mappingは`src/canonical-content.json`で確認できます。本文を変更する場合は`src/`を編集し、`npm run sync:content`で同期してから`npm run check:content-drift`を実行してください。manifest対象の`docs/`を直接編集してはいけません。
+
+`docs/_config.yml`、navigation、layout、asset、公開topなどのsite implementationは本文生成の対象外であり、責務ごとに直接管理します。migrationとrollbackの契約は`decisions/0001-canonical-authoring-source.md`、batch証跡は`decisions/0002-canonical-content-migration-evidence.md`を参照してください。
