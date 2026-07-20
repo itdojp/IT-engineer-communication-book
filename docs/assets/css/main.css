@@ -598,3 +598,176 @@ a:hover {
         padding: 0;
     }
 }
+
+/* Accessible explanatory blocks (Issue #152)
+ * Text remains at the document base size or larger. Meaning is carried by
+ * visible labels and headings; color is only a redundant visual cue.
+ */
+.accessible-panel {
+    margin: 1.5rem 0;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 0.375rem solid #6b21a8;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.accessible-panel--context {
+    border-left-color: #1e40af;
+}
+
+.accessible-panel__header,
+.accessible-panel__body {
+    padding: 1rem;
+}
+
+.accessible-panel__header {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accessible-panel__header > :first-child,
+.accessible-card > :first-child,
+.accessible-status-card > :first-child,
+.accessible-process > :first-child,
+.accessible-example > :first-child {
+    margin-top: 0;
+}
+
+.accessible-panel__header > :last-child,
+.accessible-card > :last-child,
+.accessible-status-card > :last-child,
+.accessible-process > :last-child,
+.accessible-example > :last-child {
+    margin-bottom: 0;
+}
+
+.accessible-kicker,
+.accessible-status-label {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.accessible-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+    margin: 0;
+}
+
+.accessible-card,
+.accessible-status-card,
+.accessible-example,
+.accessible-process {
+    min-width: 0;
+    padding: 1rem;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    overflow-wrap: anywhere;
+}
+
+.accessible-status-card--high {
+    background: #f0fdf4;
+    border-left: 0.375rem solid #166534;
+}
+
+.accessible-status-card--moderate {
+    background: #fffbeb;
+    border-left: 0.375rem solid #92400e;
+}
+
+.accessible-status-card--low {
+    background: #fef2f2;
+    border-left: 0.375rem solid #991b1b;
+}
+
+.accessible-step-list {
+    padding: 0;
+    list-style: none;
+}
+
+.accessible-step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0.125rem 0.5rem;
+    color: #ffffff;
+    background: #1e40af;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.accessible-card ul,
+.accessible-status-card ul {
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+}
+
+.accessible-definition-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.accessible-definition-list--two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.accessible-definition-list > div {
+    min-width: 0;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    overflow-wrap: anywhere;
+}
+
+.accessible-definition-list dt {
+    font-weight: 700;
+}
+
+.accessible-definition-list dd {
+    margin: 0.25rem 0 0;
+}
+
+.accessible-process,
+.accessible-example {
+    margin-top: 1rem;
+}
+
+[data-theme="dark"] .accessible-status-card--high {
+    background: #16392b;
+}
+
+[data-theme="dark"] .accessible-status-card--moderate {
+    background: #422f12;
+}
+
+[data-theme="dark"] .accessible-status-card--low {
+    background: #461c25;
+}
+
+@media (max-width: 640px) {
+    .accessible-card-grid,
+    .accessible-definition-list--two-columns {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .accessible-panel__header,
+    .accessible-panel__body,
+    .accessible-card,
+    .accessible-status-card,
+    .accessible-process,
+    .accessible-example {
+        padding: 0.875rem;
+    }
+}

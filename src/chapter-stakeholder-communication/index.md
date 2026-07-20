@@ -418,110 +418,80 @@ order: 6
 
 ### Phase 3: Collaborative Decision Making（協調的意思決定）
 
-<div style="padding: 15px; background: #fce7f3; border: 1px solid #f9a8d4; border-radius: 8px; border-left: 4px solid #ec4899; margin: 20px 0;">
-<div style="display: flex; align-items: center; margin-bottom: 10px;">
-<span style="background: #ec4899; color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 12px; font-weight: bold;">3</span>
-<h5 style="color: #be185d; margin: 0;">Collaborative Decision Making</h5>
-</div>
-<p style="color: #9d174d; font-size: 0.8em; margin: 0 0 15px 32px; font-weight: 600;">⏱️ 20分</p>
+<section id="accessible-consensus-decision" class="accessible-panel" aria-labelledby="consensus-decision-heading">
+<header class="accessible-panel__header">
+<p class="accessible-kicker"><span class="accessible-step-badge" aria-hidden="true">3</span> フェーズ3</p>
+<h4 id="consensus-decision-heading">Collaborative Decision Making（協調的意思決定）</h4>
+<p><strong>所要時間:</strong> 20分</p>
+</header>
 
-<div style="margin-left: 32px;">
-
-<div style="background: #fdf2f8; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
-<h6 style="color: #be185d; margin: 0 0 10px 0;">🔄 合意形成の3ステップ</h6>
-
-<div style="display: flex; gap: 10px; margin-bottom: 15px;">
-
-<div style="flex: 1; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #f9a8d4;">
-<div style="display: flex; align-items: center; margin-bottom: 5px;">
-<span style="background: #be185d; color: white; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 10px; font-weight: bold;">1</span>
-<p style="color: #be185d; font-size: 0.8em; font-weight: 600; margin: 0;">Individual Assessment</p>
-</div>
-<p style="color: #9d174d; font-size: 0.7em; margin: 0 0 4px 22px;">各メンバーが独立評価（5分）</p>
-<ul style="color: #be185d; font-size: 0.65em; margin: 0; padding-left: 37px;">
+<div class="accessible-panel__body">
+<section aria-labelledby="consensus-steps-heading">
+<h5 id="consensus-steps-heading">合意形成の3ステップ</h5>
+<ol class="accessible-card-grid accessible-step-list">
+<li class="accessible-card">
+<h6><span class="accessible-step-badge" aria-hidden="true">1</span> ステップ1: Individual Assessment</h6>
+<p>各メンバーが独立評価（5分）</p>
+<ul>
 <li>1位・2位・却下の分類</li>
 <li>理由の簡潔な記述</li>
 </ul>
-</div>
-
-<div style="flex: 1; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #f9a8d4;">
-<div style="display: flex; align-items: center; margin-bottom: 5px;">
-<span style="background: #be185d; color: white; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 10px; font-weight: bold;">2</span>
-<p style="color: #be185d; font-size: 0.8em; font-weight: 600; margin: 0;">Perspective Sharing</p>
-</div>
-<p style="color: #9d174d; font-size: 0.7em; margin: 0 0 4px 22px;">視点共有セッション（10分）</p>
-<ul style="color: #be185d; font-size: 0.65em; margin: 0; padding-left: 37px;">
+</li>
+<li class="accessible-card">
+<h6><span class="accessible-step-badge" aria-hidden="true">2</span> ステップ2: Perspective Sharing</h6>
+<p>視点共有セッション（10分）</p>
+<ul>
 <li>選好理由の共有</li>
 <li>懸念事項の議論</li>
 <li>知識ギャップの特定</li>
 </ul>
-</div>
-
-<div style="flex: 1; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #f9a8d4;">
-<div style="display: flex; align-items: center; margin-bottom: 5px;">
-<span style="background: #be185d; color: white; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 10px; font-weight: bold;">3</span>
-<p style="color: #be185d; font-size: 0.8em; font-weight: 600; margin: 0;">Convergence Process</p>
-</div>
-<p style="color: #9d174d; font-size: 0.7em; margin: 0 0 4px 22px;">合意形成プロセス（5分）</p>
-<ul style="color: #be185d; font-size: 0.65em; margin: 0; padding-left: 37px;">
+</li>
+<li class="accessible-card">
+<h6><span class="accessible-step-badge" aria-hidden="true">3</span> ステップ3: Convergence Process</h6>
+<p>合意形成プロセス（5分）</p>
+<ul>
 <li>合意レベルの判定</li>
 <li>戦略の選択・実行</li>
 </ul>
-</div>
+</li>
+</ol>
+</section>
 
+<section aria-labelledby="consensus-strategy-heading">
+<h5 id="consensus-strategy-heading">合意レベル別対応戦略</h5>
+<div class="accessible-card-grid">
+<section class="accessible-status-card accessible-status-card--high" aria-labelledby="consensus-high-heading">
+<p class="accessible-status-label">状態: 高い合意</p>
+<h6 id="consensus-high-heading">High Consensus</h6>
+<p><strong>80%以上の合意</strong></p>
+<ul>
+<li>決定事項としてADRを作成する</li>
+<li>少数意見を軽減策として記録する</li>
+</ul>
+</section>
+<section class="accessible-status-card accessible-status-card--moderate" aria-labelledby="consensus-moderate-heading">
+<p class="accessible-status-label">状態: 要調整</p>
+<h6 id="consensus-moderate-heading">Moderate Consensus</h6>
+<p><strong>60〜80%の合意</strong></p>
+<ul>
+<li><strong>注意:</strong> 懸念事項への対処策を検討する</li>
+<li><strong>再確認:</strong> 1週間以内に再評価する</li>
+</ul>
+</section>
+<section class="accessible-status-card accessible-status-card--low" aria-labelledby="consensus-low-heading">
+<p class="accessible-status-label">状態: 低い合意</p>
+<h6 id="consensus-low-heading">Low Consensus</h6>
+<p><strong>60%未満の合意</strong></p>
+<ul>
+<li><strong>要対応:</strong> 問題定義を見直す</li>
+<li><strong>要検証:</strong> 小さな実験で検証する</li>
+<li><strong>要相談:</strong> 上位者・専門家へ相談する</li>
+</ul>
+</section>
 </div>
-
+</section>
 </div>
-
-<div style="background: #fdf2f8; padding: 15px; border-radius: 6px;">
-<h6 style="color: #be185d; margin: 0 0 10px 0;">📊 合意レベル別対応戦略</h6>
-
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-
-<div style="background: #dcfce7; padding: 10px; border-radius: 4px; border: 1px solid #bbf7d0;">
-<div style="display: flex; align-items: center; margin-bottom: 8px;">
-<div style="background: #16a34a; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
-<p style="color: #15803d; font-size: 0.8em; font-weight: 600; margin: 0;">High Consensus</p>
-</div>
-<p style="color: #166534; font-size: 0.7em; margin: 0 0 6px 0;"><strong>80%以上の合意</strong></p>
-<p style="color: #15803d; font-size: 0.65em; margin: 0; line-height: 1.3;">
-✓ 決定事項としてADR作成<br>
-✓ 少数意見を軽減策として記録
-</p>
-</div>
-
-<div style="background: #fef3c7; padding: 10px; border-radius: 4px; border: 1px solid #fde68a;">
-<div style="display: flex; align-items: center; margin-bottom: 8px;">
-<div style="background: #f59e0b; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
-<p style="color: #d97706; font-size: 0.8em; font-weight: 600; margin: 0;">Moderate Consensus</p>
-</div>
-<p style="color: #92400e; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60〜80%の合意</strong></p>
-<p style="color: #d97706; font-size: 0.65em; margin: 0; line-height: 1.3;">
-[WARN] 懸念事項への対処策検討<br>
-[WARN] 1週間以内に再評価
-</p>
-</div>
-
-<div style="background: #fef2f2; padding: 10px; border-radius: 4px; border: 1px solid #fecaca;">
-<div style="display: flex; align-items: center; margin-bottom: 8px;">
-<div style="background: #ef4444; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></div>
-<p style="color: #dc2626; font-size: 0.8em; font-weight: 600; margin: 0;">Low Consensus</p>
-</div>
-<p style="color: #991b1b; font-size: 0.7em; margin: 0 0 6px 0;"><strong>60%未満の合意</strong></p>
-<p style="color: #dc2626; font-size: 0.65em; margin: 0; line-height: 1.3;">
-[CRITICAL] 問題定義の見直し<br>
-[CRITICAL] 小さな実験での検証<br>
-[CRITICAL] 上位者・専門家への相談
-</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</section>
 
 ### 技術選定プロセスの標準化
 

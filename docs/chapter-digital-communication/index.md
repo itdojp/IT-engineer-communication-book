@@ -248,129 +248,74 @@ order: 7
 
 **Context Preservation Protocol**（文脈保存プロトコル）:
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin: 20px 0;">
-<h4 style="color: #1e293b; margin: 0 0 15px 0; text-align: center;">🧠 非同期コミュニケーション文脈管理</h4>
+<section id="accessible-async-context" class="accessible-panel accessible-panel--context" aria-labelledby="async-context-heading">
+<header class="accessible-panel__header">
+<h4 id="async-context-heading">非同期コミュニケーション文脈管理</h4>
+<p>議論の開始から要約までを、次の情報項目と順序で管理します。</p>
+</header>
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
+<div class="accessible-panel__body">
+<div class="accessible-card-grid">
+<section class="accessible-card" aria-labelledby="context-package-heading">
+<h5 id="context-package-heading">Context Package</h5>
+<dl class="accessible-definition-list">
+<div><dt>Topic</dt><dd>議論テーマの明確化</dd></div>
+<div><dt>Objective</dt><dd>目標・成功基準</dd></div>
+<div><dt>Background</dt><dd>関連する過去の文脈</dd></div>
+<div><dt>Timeline</dt><dd>決定期限・スケジュール</dd></div>
+</dl>
+</section>
 
-<!-- Context Package -->
-<div style="background: #dbeafe; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6;">
-<h6 style="color: #1d4ed8; margin: 0 0 10px 0;">📦 Context Package</h6>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #1e40af; font-size: 0.75em; margin: 0; font-weight: 600;">Topic</p>
-<p style="color: #3b82f6; font-size: 0.7em; margin: 2px 0 0 0;">議論テーマの明確化</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #1e40af; font-size: 0.75em; margin: 0; font-weight: 600;">Objective</p>
-<p style="color: #3b82f6; font-size: 0.7em; margin: 2px 0 0 0;">目標・成功基準</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #1e40af; font-size: 0.75em; margin: 0; font-weight: 600;">Background</p>
-<p style="color: #3b82f6; font-size: 0.7em; margin: 2px 0 0 0;">関連する過去の文脈</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px;">
-<p style="color: #1e40af; font-size: 0.75em; margin: 0; font-weight: 600;">Timeline</p>
-<p style="color: #3b82f6; font-size: 0.7em; margin: 2px 0 0 0;">決定期限・スケジュール</p>
-</div>
-</div>
+<section class="accessible-card" aria-labelledby="thread-management-heading">
+<h5 id="thread-management-heading">Thread Management</h5>
+<dl class="accessible-definition-list">
+<div><dt>Message Classification</dt><dd>質問・提案・決定・情報</dd></div>
+<div><dt>Decision Tracking</dt><dd>決定事項の自動抽出</dd></div>
+<div><dt>Action Items</dt><dd>行動項目の抽出・追跡</dd></div>
+<div><dt>New Participant</dt><dd>途中参加者への文脈提供</dd></div>
+</dl>
+</section>
 
-<!-- Thread Management -->
-<div style="background: #dcfce7; padding: 15px; border-radius: 6px; border-left: 4px solid #16a34a;">
-<h6 style="color: #15803d; margin: 0 0 10px 0;">🔄 Thread Management</h6>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #166534; font-size: 0.75em; margin: 0; font-weight: 600;">Message Classification</p>
-<p style="color: #16a34a; font-size: 0.7em; margin: 2px 0 0 0;">質問・提案・決定・情報</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #166534; font-size: 0.75em; margin: 0; font-weight: 600;">Decision Tracking</p>
-<p style="color: #16a34a; font-size: 0.7em; margin: 2px 0 0 0;">決定事項の自動抽出</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #166534; font-size: 0.75em; margin: 0; font-weight: 600;">Action Items</p>
-<p style="color: #16a34a; font-size: 0.7em; margin: 2px 0 0 0;">行動項目の抽出・追跡</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px;">
-<p style="color: #166534; font-size: 0.75em; margin: 0; font-weight: 600;">New Participant</p>
-<p style="color: #16a34a; font-size: 0.7em; margin: 2px 0 0 0;">途中参加者への文脈提供</p>
-</div>
+<section class="accessible-card" aria-labelledby="auto-summary-heading">
+<h5 id="auto-summary-heading">Auto Summary</h5>
+<dl class="accessible-definition-list">
+<div><dt>Key Points</dt><dd>重要論点の自動抽出</dd></div>
+<div><dt>Open Questions</dt><dd>未解決の質問特定</dd></div>
+<div><dt>Consensus Level</dt><dd>合意レベルの評価</dd></div>
+<div><dt>Next Actions</dt><dd>次のアクション項目整理</dd></div>
+</dl>
+</section>
 </div>
 
-<!-- Auto Summary -->
-<div style="background: #fef3c7; padding: 15px; border-radius: 6px; border-left: 4px solid #f59e0b;">
-<h6 style="color: #d97706; margin: 0 0 10px 0;">📋 Auto Summary</h6>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #92400e; font-size: 0.75em; margin: 0; font-weight: 600;">Key Points</p>
-<p style="color: #f59e0b; font-size: 0.7em; margin: 2px 0 0 0;">重要論点の自動抽出</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #92400e; font-size: 0.75em; margin: 0; font-weight: 600;">Open Questions</p>
-<p style="color: #f59e0b; font-size: 0.7em; margin: 2px 0 0 0;">未解決の質問特定</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 6px;">
-<p style="color: #92400e; font-size: 0.75em; margin: 0; font-weight: 600;">Consensus Level</p>
-<p style="color: #f59e0b; font-size: 0.7em; margin: 2px 0 0 0;">合意レベルの評価</p>
-</div>
-<div style="background: #fff; padding: 8px; border-radius: 4px;">
-<p style="color: #92400e; font-size: 0.75em; margin: 0; font-weight: 600;">Next Actions</p>
-<p style="color: #f59e0b; font-size: 0.7em; margin: 2px 0 0 0;">次のアクション項目整理</p>
-</div>
-</div>
+<section class="accessible-process" aria-labelledby="async-process-heading">
+<h5 id="async-process-heading">非同期議論の管理フロー</h5>
+<ol class="accessible-card-grid accessible-step-list">
+<li class="accessible-card">
+<h6><span class="accessible-step-badge" aria-hidden="true">1</span> ステップ1: Discussion Start</h6>
+<p>文脈パッケージを作成・配信する</p>
+</li>
+<li class="accessible-card">
+<h6><span class="accessible-step-badge" aria-hidden="true">2</span> ステップ2: Message Flow</h6>
+<p>構造化したメッセージを管理する</p>
+</li>
+<li class="accessible-card">
+<h6><span class="accessible-step-badge" aria-hidden="true">3</span> ステップ3: Auto Summary</h6>
+<p>20メッセージごとに自動サマリーを作成する</p>
+</li>
+</ol>
+</section>
 
+<section class="accessible-example" aria-labelledby="async-example-heading">
+<h5 id="async-example-heading">実装例: API設計議論</h5>
+<dl class="accessible-definition-list accessible-definition-list--two-columns">
+<div><dt>Topic</dt><dd>REST API v2.0 設計方針</dd></div>
+<div><dt>Participants</dt><dd>Lead Engineer、Backend Team、Frontend Team、PM</dd></div>
+<div><dt>Goal</dt><dd>API v2.0の設計方針決定と実装計画策定</dd></div>
+<div><dt>Timeline</dt><dd>2週間後までに決定</dd></div>
+</dl>
+</section>
 </div>
-
-<!-- Process Flow -->
-<div style="background: #f0fdf4; padding: 15px; border-radius: 6px; border-left: 4px solid #16a34a;">
-<h6 style="color: #15803d; margin: 0 0 10px 0;">🔄 非同期議論の管理フロー</h6>
-
-<div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-<div style="background: #3b82f6; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">1</div>
-<div style="flex: 1;">
-<p style="color: #15803d; margin: 0; font-size: 0.8em; font-weight: 600;">Discussion Start</p>
-<p style="color: #166534; margin: 0; font-size: 0.7em;">文脈パッケージ作成・配信</p>
-</div>
-<div style="background: #16a34a; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">2</div>
-<div style="flex: 1;">
-<p style="color: #15803d; margin: 0; font-size: 0.8em; font-weight: 600;">Message Flow</p>
-<p style="color: #166534; margin: 0; font-size: 0.7em;">構造化メッセージ管理</p>
-</div>
-<div style="background: #f59e0b; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">3</div>
-<div style="flex: 1;">
-<p style="color: #15803d; margin: 0; font-size: 0.8em; font-weight: 600;">Auto Summary</p>
-<p style="color: #166534; margin: 0; font-size: 0.7em;">20メッセージ毎に自動サマリー</p>
-</div>
-</div>
-
-</div>
-
-<!-- Example Usage -->
-<div style="background: #f3e8ff; padding: 15px; border-radius: 6px; border-left: 4px solid #8b5cf6;">
-<h6 style="color: #7c3aed; margin: 0 0 10px 0;">📝 実装例：API 設計議論</h6>
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-
-<div style="background: #fff; padding: 10px; border-radius: 4px;">
-<p style="color: #7c3aed; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">Topic</p>
-<p style="color: #6d28d9; font-size: 0.7em; margin: 0;">REST API v2.0 設計方針</p>
-</div>
-
-<div style="background: #fff; padding: 10px; border-radius: 4px;">
-<p style="color: #7c3aed; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">Participants</p>
-<p style="color: #6d28d9; font-size: 0.7em; margin: 0;">Lead Engineer, Backend Team, Frontend Team, PM</p>
-</div>
-
-<div style="background: #fff; padding: 10px; border-radius: 4px;">
-<p style="color: #7c3aed; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">Goal</p>
-<p style="color: #6d28d9; font-size: 0.7em; margin: 0;">API v2.0の設計方針決定と実装計画策定</p>
-</div>
-
-<div style="background: #fff; padding: 10px; border-radius: 4px;">
-<p style="color: #7c3aed; font-size: 0.8em; font-weight: 600; margin: 0 0 4px 0;">Timeline</p>
-<p style="color: #6d28d9; font-size: 0.7em; margin: 0;">2週間後までに決定</p>
-</div>
-
-</div>
-</div>
-
-</div>
+</section>
 
 ### 🎯 バーチャル会議の効率化
 
