@@ -21,8 +21,11 @@ const targetPages = [
   },
 ];
 const modes = [
-  { name: 'desktop-200-percent-effective-layout', width: 640, height: 900, mobile: false, pageScale: 1 },
-  { name: 'desktop-actual-200-percent-page-scale', width: 1280, height: 900, mobile: false, pageScale: 2 },
+  { name: 'desktop-1280', width: 1280, height: 900, mobile: false, pageScale: 1 },
+  // Browser zoom reduces the CSS layout viewport. A 640 CSS px viewport is
+  // the layout-equivalent of 200% zoom in a 1280 physical-pixel window and
+  // is stable across headless Chrome builds (unlike pinch pageScaleFactor).
+  { name: 'desktop-200-percent-browser-zoom', width: 640, height: 900, mobile: false, pageScale: 1 },
   { name: 'mobile-320', width: 320, height: 800, mobile: true, pageScale: 1 },
 ];
 const themes = ['light', 'dark'];
