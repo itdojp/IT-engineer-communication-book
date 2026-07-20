@@ -38,23 +38,23 @@ order: 10
 
 個人の状態を単一の数値で断定することはできません。システム的な設計の役割は、将来の健康状態を予測することではなく、相談先、業務調整、データ取扱い、緊急時の接続先を事前に合意し、必要なときに人が選べる状態を作ることです。
 
-サイバーセキュリティにおける「多層防御（Defense in Depth）」は、単一の防御ラインに依存せず、複数の独立した防御レイヤーを組み合わせることで、全体のセキュリティを向上させる戦略です。この概念をメンタルヘルスに適用すると、非常に効果的な予防システムを構築できます。
+サイバーセキュリティにおける「多層防御（Defense in Depth）」は、単一の防御ラインに依存せず、複数の独立した防御レイヤーを組み合わせることで、全体のセキュリティを向上させる戦略です。この概念を、本人が支援を選べる導線、職場環境の改善、データ保護という独立した安全策へ限定して応用します。
 
-OSI参照モデルの7層構造を参考に、個人から組織まで段階的に防御システムを配置することで、ストレス要因の早期発見、多重の予防策、システムの冗長性を確保できます。一つの層で対処しきれない問題も、複数の層が連携することで適切に処理されます。
+OSI参照モデルの層分離を参考に、本人の選択、相談先、職場環境、データ保護の責任を分けます。個人を監視・分類するのではなく、一つの導線が利用できない場合にも人が別の公式導線を選べるようにします。
 
 **Defense in Depth for Mental Health**：
 
 <span id="figure-20" aria-hidden="true"></span>
 <svg width="800" height="870" viewBox="0 0 800 870" xmlns="http://www.w3.org/2000/svg">
   <title>多層防御型メンタルヘルス・アーキテクチャ</title>
-  <desc>OSI参照モデルを適用した7層メンタルヘルス防御システム</desc>
+  <desc>本人の選択、相談先、職場環境、データ保護の責任を分離した支援システム</desc>
   
   <!-- Background -->
   <rect width="800" height="870" fill="#fefefe" stroke="none"/>
   
   <!-- Title -->
   <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
-    Defense in Depth for Mental Health Architecture
+    Defense in Depth for User-Controlled Support
   </text>
   
   <!-- Layer 7: Application -->
@@ -64,10 +64,10 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
       Layer 7: Application（個人の習慣・行動レベル）
     </text>
     <text x="120" y="105" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
-      • 瞑想、運動、睡眠管理　• ストレス対処技術　• セルフケア実践
+      • 本人が選ぶ休息・予定変更　• 業務調整　• 相談先の表示
     </text>
     <text x="120" y="120" font-family="Inter, sans-serif" font-size="10" fill="#991b1b">
-      • 認知行動療法　• マインドフルネス　• 生活習慣最適化
+      • 記録しない選択　• 共有項目の都度確認　• 同意撤回
     </text>
   </g>
   
@@ -78,10 +78,10 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
       Layer 6: Presentation（インターフェース・見える化）
     </text>
     <text x="120" y="205" font-family="Inter, sans-serif" font-size="10" fill="#92400e">
-      • ダッシュボード　• アラート・通知システム　• 可視化ツール
+      • 本人向け選択肢　• 地域別の公式相談先　• 共有前preview
     </text>
     <text x="120" y="220" font-family="Inter, sans-serif" font-size="10" fill="#92400e">
-      • レポート生成　• トレンド分析　• 状態表示インターフェース
+      • 受付条件・確認日　• 削除日　• 同意撤回インターフェース
     </text>
   </g>
   
@@ -92,10 +92,10 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
       Layer 5: Session（セッション管理・継続性確保）
     </text>
     <text x="120" y="305" font-family="Inter, sans-serif" font-size="10" fill="#166534">
-      • 習慣トラッキング　• 進捗状況管理　• モチベーション維持
+      • 目的限定　• 最小収集　• access制限
     </text>
     <text x="120" y="320" font-family="Inter, sans-serif" font-size="10" fill="#166534">
-      • セッション状態管理　• 継続支援機能　• 目標設定・調整
+      • 最短保持　• 訂正・export・削除　• access監査
     </text>
   </g>
   
@@ -103,13 +103,13 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
   <g>
     <rect x="100" y="360" width="600" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
     <text x="120" y="385" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">
-      Layer 4: Transport（データ転送・処理保証）
+      Layer 4: Transport（本人が制御する共有）
     </text>
     <text x="120" y="405" font-family="Inter, sans-serif" font-size="10" fill="#1e40af">
-      • データ整合性保証　• エラー検出・修正　• フロー制御
+      • 送信項目・送信先のpreview　• 本人の都度確定
     </text>
     <text x="120" y="420" font-family="Inter, sans-serif" font-size="10" fill="#1e40af">
-      • 信頼性のあるデータ転送　• バックアップ・冗長性確保
+      • 重複送信防止　• 既定無効　• 第三者への自動送信禁止
     </text>
   </g>
   
@@ -117,13 +117,13 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
   <g>
     <rect x="100" y="460" width="600" height="80" rx="8" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
     <text x="120" y="485" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#7c3aed">
-      Layer 3: Network（データルーティング・意思決定）
+      Layer 3: Network（本人による選択）
     </text>
     <text x="120" y="505" font-family="Inter, sans-serif" font-size="10" fill="#6d28d9">
-      • データ分析・解析　• パターン認識　• 異常検知
+      • 休息　• 業務調整　• 相談先表示
     </text>
     <text x="120" y="520" font-family="Inter, sans-serif" font-size="10" fill="#6d28d9">
-      • ルーティング・優先度判定　• アクション選択・決定支援
+      • 健康推定・緊急度判定禁止　• 本人の訴えを優先
     </text>
   </g>
   
@@ -131,13 +131,13 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
   <g>
     <rect x="100" y="560" width="600" height="80" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
     <text x="120" y="585" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#be185d">
-      Layer 2: Data Link（データフレーミング・構造化）
+      Layer 2: Data Link（データ境界）
     </text>
     <text x="120" y="605" font-family="Inter, sans-serif" font-size="10" fill="#9d174d">
-      • データ構造化・正規化　• メタデータ管理　• フォーマット変換
+      • 業務条件の最小記録　• センシティブ情報は既定で非収集
     </text>
     <text x="120" y="620" font-family="Inter, sans-serif" font-size="10" fill="#9d174d">
-      • データ品質管理　• フレーム検証・エラー検出
+      • 小集団抑制　• 目的限定　• 期限到来時の削除
     </text>
   </g>
   
@@ -145,7 +145,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
   <g>
     <rect x="100" y="660" width="600" height="80" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
     <text x="120" y="685" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#475569">
-      Layer 1: Physical（センサー・データ収集）
+      Layer 1: Physical（作業環境・利用可能な支援）
     </text>
   </g>
   
@@ -164,13 +164,13 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
       Data Processing
     </text>
     <text x="50" y="500" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 500)">
-      Analysis Engine
+      Human Review
     </text>
     <text x="50" y="600" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 600)">
       Data Structure
     </text>
     <text x="50" y="700" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 700)">
-      Raw Data
+      Minimal Data
     </text>
   </g>
   
@@ -220,13 +220,13 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
   <g>
     <rect x="100" y="660" width="600" height="80" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
     <text x="120" y="685" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#047857">
-      Layer 2: Data Link（計測・監視レベル）
+      Layer 2: Data Link（職場環境の改善レベル）
     </text>
     <text x="120" y="705" font-family="Inter, sans-serif" font-size="10" fill="#065f46">
-      • メトリクス収集　• パターン分析　• トレンド監視
+      • 会議時間・割り込み・当番の集約　• チーム対話
     </text>
     <text x="120" y="720" font-family="Inter, sans-serif" font-size="10" fill="#065f46">
-      • 早期警戒システム　• データ駆動型アラート
+      • 小集団の抑制　• 個人score・自動alertの禁止
     </text>
   </g>
   
@@ -290,9 +290,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 
 **Preventive Mental Health System Requirements**：
 
-## システム要件仕様書
-
-### 機能要件（Functional Requirements）
+#### 機能要件（Functional Requirements）
 
 **FR-001: 本人主体の気づきと確認**
 
@@ -313,17 +311,17 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 
 本人は同意前に目的、項目、共有先、保存期間、削除方法を確認でき、いつでも将来分の同意を撤回できます。同意しないことや撤回を評価・配置・雇用上の不利益へ利用しません。
 
-### 責任分界
+#### 責任分界
 
 | 役割 | 担うこと | 担わないこと |
 |---|---|---|
 | 本人 | 共有と相談先の選択、同意・撤回 | 自分だけで診断・危機対応を完結すること |
 | 管理者 | 業務量、期限、当番、職場環境の調整 | 診断、治療、健康生データの閲覧 |
-| 人事 | 制度案内、承認済みの就業上の手続き | 個人scoreによる評価・配置・離職予測 |
+| 人事 | 制度案内、承認済みの就業上の手続き | 禁止：個人scoreによる評価・配置・離職予測 |
 | 産業医・保健師等 | 専門的評価、必要最小限に加工した就業上の助言 | 不要な健康情報の組織共有 |
 | 緊急・危機窓口 | 地域の手順に基づく緊急支援 | アプリのscoreだけによる起動 |
 
-### 非機能要件（Non-Functional Requirements）
+#### 非機能要件（Non-Functional Requirements）
 
 **NFR-001: 支援導線の可用性要件**：
 
@@ -410,7 +408,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 | 設定 | 許可する例 | 禁止する例 |
 |---|---|---|
 | 起動 | 本人が選んだ時刻、作業区切り、本人の操作 | 推定したstress level、生理・睡眠・感情signal |
-| 動作 | 休憩、水分補給、予定見直しの通知 | 管理者・人事・家族への自動連絡 |
+| 動作 | 休憩、水分補給、予定見直しの通知 | 禁止：管理者・人事・家族への自動連絡 |
 | 記録 | 本人端末内の実施有無、短期保持 | 健康score、第三者向けranking |
 | 停止 | 本人が即時停止、期限で自動失効 | 同意撤回後の継続処理 |
 
@@ -435,7 +433,7 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 - 個人の生理、睡眠、気分、診断、相談内容
 - 個人・小集団のburnout、離職、健康risk score
 - メッセージ内容から推定した感情、心理状態、影響力の高い個人
-- 健康情報を使ったranking、manager alert、HR alert
+- 禁止：健康情報を使ったranking、manager alert、HR alert
 
 #### 2週間の改善ループ
 
@@ -462,8 +460,8 @@ OSI参照モデルの7層構造を参考に、個人から組織まで段階的�
 | 利用可 | 条件付き | 禁止 |
 |---|---|---|
 | 会議時間、当番回数、割り込み、未解決ブロッカーのチーム集計 | 匿名の任意survey。目的・最小集団・保持期間を事前提示 | 個人の生理・睡眠・感情推定、診断、相談内容 |
-| 制度利用率の十分に大きい集団での集計 | 再識別riskを評価し、小さいセルを抑制 | 個人・小集団のburnout、離職、健康risk予測 |
-| 職場環境改善策の実施記録 | 効果確認は集約値と対話を併用 | 個人scoreによるmanager・HR alert、評価・配置 |
+| 制度利用率の十分に大きい集団での集計 | 再識別riskを評価し、小さいセルを抑制 | 禁止：個人・小集団のburnout、離職、健康risk予測 |
+| 職場環境改善策の実施記録 | 効果確認は集約値と対話を併用 | 禁止：個人scoreによるmanager・HR alert、評価・配置 |
 
 #### 改善フロー
 
@@ -544,7 +542,8 @@ class IntegratedPreventiveMentalHealthEcosystem:
                     'policy_feedback': 'worker_dialogue_and_aggregate_evidence'
                 },
                 'organizational_to_personal': {
-                    'resource_directory': 'same_options_for_all_workers',
+                    'resource_directory': 'region_and_access_condition_scoped_official_options',
+                    'directory_metadata': 'region_access_conditions_verified_at_official_source',
                     'contact_action': 'opened_by_user',
                     'health_inference': 'prohibited',
                     'employment_decision_use': 'prohibited'
@@ -647,7 +646,7 @@ class IntegratedPreventiveMentalHealthEcosystem:
             
             'accountability_mechanisms': {
                 'performance_accountability': {
-                    'kpi_tracking': 'comprehensive_ecosystem_health_metrics',
+                    'kpi_tracking': 'service_safety_access_and_privacy_metrics',
                     'regular_reporting': 'transparent_performance_dashboards',
                     'improvement_commitment': 'continuous_improvement_targets',
                     'stakeholder_communication': 'regular_progress_updates'
@@ -665,140 +664,36 @@ class IntegratedPreventiveMentalHealthEcosystem:
 ```
 ````
 
-### ROI測定とビジネス価値実証
+相談先ディレクトリは全員へ同じ固定一覧を返しません。本人が選んだ居住地または現在地、受付時間・対象条件、利用言語・accessibility、公式情報のURL、最終確認日を組にして表示します。地域は健康データから推定せず本人が選択し、確認期限を過ぎた項目は利用可能と断定せず公式最新案内を開きます。
 
-**ROI Measurement and Business Value Demonstration**：
+### 安全性・運用品質の検証
 
-````markdown
-## ROI測定・ビジネス価値実証システム
+**Safety and Operational Assurance**：
 
-### 包括的価値測定フレームワーク
-**Comprehensive Value Measurement Framework**：
-```python
-class MentalHealthROICalculator:
-    """メンタルヘルス投資ROI計算システム"""
-    
-    def __init__(self):
-        self.cost_calculator = SystemCostCalculator()
-        self.benefit_calculator = BenefitQuantificationEngine()
-        self.impact_analyzer = BusinessImpactAnalyzer()
-        
-    def calculate_comprehensive_roi(self, time_period='annual'):
-        """包括的ROI計算"""
-        # コスト計算
-        total_costs = self.calculate_total_investment_costs(time_period)
-        
-        # 直接的ベネフィット計算
-        direct_benefits = self.calculate_direct_benefits(time_period)
-        
-        # 間接的ベネフィット計算
-        indirect_benefits = self.calculate_indirect_benefits(time_period)
-        
-        # 無形ベネフィット計算
-        intangible_benefits = self.calculate_intangible_benefits(time_period)
-        
-        # ROI計算
-        total_benefits = direct_benefits + indirect_benefits + intangible_benefits
-        roi_percentage = ((total_benefits - total_costs) / total_costs) * 100
-        
-        return {
-            'roi_percentage': roi_percentage,
-            'total_investment': total_costs,
-            'total_benefits': total_benefits,
-            'net_value': total_benefits - total_costs,
-            'payback_period': self.calculate_payback_period(total_costs, total_benefits),
-            'benefit_breakdown': {
-                'direct_benefits': direct_benefits,
-                'indirect_benefits': indirect_benefits,
-                'intangible_benefits': intangible_benefits
-            }
-        }
-    
-    def calculate_direct_benefits(self, time_period):
-        """直接的ベネフィット計算"""
-        direct_benefits = {}
-        
-        # 医療費削減
-        direct_benefits['healthcare_cost_reduction'] = {
-            'reduced_sick_days': self.calculate_sick_day_reduction_value(),
-            'lower_insurance_claims': self.calculate_insurance_claim_reduction(),
-            'preventive_care_savings': self.calculate_preventive_care_value(),
-            'eap_usage_optimization': self.calculate_eap_optimization_value()
-        }
-        
-        # 離職率削減
-        direct_benefits['turnover_reduction'] = {
-            'recruitment_cost_savings': self.calculate_recruitment_savings(),
-            'training_cost_savings': self.calculate_training_cost_reduction(),
-            'knowledge_retention_value': self.calculate_knowledge_retention_value(),
-            'disruption_cost_avoidance': self.calculate_disruption_avoidance()
-        }
-        
-        # 生産性向上
-        direct_benefits['productivity_improvement'] = {
-            'output_quality_improvement': self.calculate_quality_improvement_value(),
-            'efficiency_gains': self.calculate_efficiency_gain_value(),
-            'innovation_increase': self.calculate_innovation_value_increase(),
-            'customer_satisfaction_improvement': self.calculate_customer_satisfaction_value()
-        }
-        
-        return sum([
-            sum(category_benefits.values()) 
-            for category_benefits in direct_benefits.values()
-        ])
-    
-    def calculate_business_impact_metrics(self):
-        """ビジネス・インパクト・メトリクス計算"""
-        business_metrics = {
-            'financial_metrics': {
-                'revenue_impact': {
-                    'productivity_driven_revenue_increase': self.measure_productivity_revenue_correlation(),
-                    'customer_satisfaction_revenue_impact': self.measure_satisfaction_revenue_correlation(),
-                    'innovation_driven_new_revenue': self.measure_innovation_revenue_impact(),
-                    'market_reputation_revenue_effect': self.measure_reputation_revenue_correlation()
-                },
-                'cost_impact': {
-                    'operational_cost_reduction': self.measure_operational_cost_savings(),
-                    'risk_mitigation_cost_avoidance': self.measure_risk_cost_avoidance(),
-                    'compliance_cost_optimization': self.measure_compliance_cost_efficiency(),
-                    'infrastructure_cost_optimization': self.measure_infrastructure_efficiency()
-                }
-            },
-            
-            'operational_metrics': {
-                'efficiency_improvements': {
-                    'process_efficiency_gains': self.measure_process_efficiency_improvement(),
-                    'decision_making_speed_increase': self.measure_decision_speed_improvement(),
-                    'collaboration_effectiveness_boost': self.measure_collaboration_improvement(),
-                    'knowledge_sharing_enhancement': self.measure_knowledge_sharing_effectiveness()
-                },
-                'quality_improvements': {
-                    'error_rate_reduction': self.measure_error_rate_improvement(),
-                    'rework_frequency_decrease': self.measure_rework_reduction(),
-                    'customer_complaint_reduction': self.measure_complaint_reduction(),
-                    'compliance_score_improvement': self.measure_compliance_improvement()
-                }
-            },
-            
-            'strategic_metrics': {
-                'talent_metrics': {
-                    'employee_engagement_increase': self.measure_engagement_improvement(),
-                    'talent_retention_improvement': self.measure_retention_enhancement(),
-                    'employer_brand_strengthening': self.measure_brand_value_increase(),
-                    'talent_acquisition_efficiency': self.measure_recruitment_efficiency_improvement()
-                },
-                'competitive_advantage': {
-                    'market_differentiation_value': self.measure_differentiation_value(),
-                    'industry_leadership_positioning': self.measure_leadership_positioning_value(),
-                    'stakeholder_trust_enhancement': self.measure_stakeholder_trust_value(),
-                    'sustainability_rating_improvement': self.measure_sustainability_value()
-                }
-            }
-        }
-        
-        return business_metrics
+個人の健康状態、医療費、病欠、離職、生産性を結び付けてROIを算出すると、センシティブ情報の過剰収集、因果関係の誤認、相談しないことへの圧力を招き得ます。本章では個人の健康成果を金銭換算せず、支援へ安全に到達できるか、privacy controlが機能するか、職場環境の改善が実施されたかを検証します。
+
+```yaml
+safety_case:
+  support_access:
+    - "地域・受付条件・確認日・公式URLがそろった相談先の割合"
+    - "古い情報から公式最新案内へfallbackできるか"
+    - "システムを介さず相談できる代替導線があるか"
+  privacy_controls:
+    - "共有前previewと本人の都度確認が機能するか"
+    - "同意撤回後に将来の共有が停止するか"
+    - "access、共有、削除の監査記録を本人が確認できるか"
+    - "保持期限どおりに削除できたか"
+  work_environment:
+    - "会議、割り込み、当番、ブロッカーへの改善策を実施したか"
+    - "十分な集団単位でのみ結果を表示したか"
+    - "数値とチーム対話の両方で継続・変更・撤回を決めたか"
+  prohibited_metrics:
+    - "個人のhealth、stress、burnout、離職risk score"
+    - "病欠・相談・制度利用を個人評価へ接続する指標"
+    - "相談しないことを促す費用削減目標"
 ```
-````
+
+検証結果は個人の評価・配置・雇用判断に使いません。改善策のowner、期限、再確認条件は職場環境の運用記録へ残し、個人の相談記録とは分離します。
 
 ---
 

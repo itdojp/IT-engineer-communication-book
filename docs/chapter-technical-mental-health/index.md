@@ -43,14 +43,14 @@ order: 9
 <span id="figure-19" aria-hidden="true"></span>
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <title>Personal Mental Health System Architecture</title>
-  <desc>システム設計原則を適用したメンタルヘルス管理アーキテクチャ</desc>
+  <desc>本人主体の業務調整と相談導線を示すサポートアーキテクチャ</desc>
   
   <!-- Background -->
   <rect width="800" height="600" fill="#fefefe" stroke="none"/>
   
   <!-- Title -->
   <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
-    Personal Mental Health System Architecture
+    User-Controlled Support System Architecture
   </text>
   
   <!-- Layer 1: Interface Layer -->
@@ -71,18 +71,18 @@ order: 9
     
     <rect x="290" y="100" width="150" height="40" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
     <text x="365" y="115" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
-      アラート
+      本人向け確認
     </text>
     <text x="365" y="127" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
-      システム
+      プロンプト
     </text>
     
     <rect x="460" y="100" width="150" height="40" rx="4" fill="#fff" stroke="#3b82f6" stroke-width="1"/>
     <text x="535" y="115" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
-      外部サポート
+      相談先一覧
     </text>
     <text x="535" y="127" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#1d4ed8">
-      連携
+      本人が起動
     </text>
   </g>
   
@@ -127,26 +127,26 @@ order: 9
     
     <rect x="120" y="340" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
     <text x="195" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
-      認知的評価
+      業務条件の
     </text>
     <text x="195" y="367" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
-      エンジン
+      整理
     </text>
     
     <rect x="290" y="340" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
     <text x="365" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
-      ストレス分析
+      本人による
     </text>
     <text x="365" y="367" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
-      アルゴリズム
+      振り返り
     </text>
     
     <rect x="460" y="340" width="150" height="40" rx="4" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
     <text x="535" y="355" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
-      意思決定支援
+      選択肢の
     </text>
     <text x="535" y="367" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#d97706">
-      システム
+      プロンプト
     </text>
   </g>
   
@@ -154,31 +154,31 @@ order: 9
   <g>
     <rect x="100" y="420" width="600" height="100" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
     <text x="400" y="445" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#dc2626">
-      📊 Monitoring Layer（監視レイヤー）
+      📊 Review Layer（本人管理の振り返りレイヤー）
     </text>
     
     <rect x="120" y="460" width="150" height="40" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
     <text x="195" y="475" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
-      ストレス
+      会議時間
     </text>
     <text x="195" y="487" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
-      センサー
+      のメモ
     </text>
     
     <rect x="290" y="460" width="150" height="40" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
     <text x="365" y="475" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
-      感情状態
+      割り込み
     </text>
     <text x="365" y="487" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
-      トラッキング
+      のメモ
     </text>
     
     <rect x="460" y="460" width="150" height="40" rx="4" fill="#fff" stroke="#ef4444" stroke-width="1"/>
     <text x="535" y="475" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
-      パフォーマンス
+      当番・期限
     </text>
     <text x="535" y="487" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle" fill="#dc2626">
-      メトリクス
+      のメモ
     </text>
   </g>
   
@@ -195,16 +195,16 @@ order: 9
     Response
   </text>
   <text x="50" y="350" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 350)">
-    Analysis
+    Human Review
   </text>
   <text x="50" y="470" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" transform="rotate(-90, 50, 470)">
-    Data Collection
+    User-controlled Notes
   </text>
   
   <!-- System Benefits -->
   <rect x="200" y="550" width="400" height="30" rx="15" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
   <text x="400" y="570" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#16a34a">
-    💡 効果：体系的なセルフケア、予防的メンタルヘルス管理、データドリブンな改善
+    💡 効果：本人主体の振り返り、相談先の可視化、業務条件の改善
   </text>
 </svg>
 
@@ -212,71 +212,47 @@ order: 9
 
 **高可用性（High Availability）設計**：
 
-````markdown
-## Resilient Mental Health Architecture
+支援の可用性は、個人の状態をscoreで分類することではなく、本人が必要な選択肢へ到達できることとして設計します。
 
-### 冗長性（Redundancy）
-**Multiple Coping Strategies**：
-- Primary: 運動・瞑想・睡眠最適化
-- Secondary: 趣味・社会的活動・専門的サポート
-- Tertiary: 環境変更・休暇・医療的介入
-
-**Failover Mechanism**：
-```python
-class MentalHealthFailover:
-    def handle_stress_event(self, stress_level):
-        if stress_level < 30:
-            return self.normal_operations()
-        elif stress_level < 70:
-            return self.activate_secondary_coping()
-        elif stress_level < 90:
-            return self.emergency_protocols()
-        else:
-            return self.crisis_management()
-    
-    def activate_secondary_coping(self):
-        actions = [
-            "reduce_non_essential_tasks",
-            "activate_support_network", 
-            "increase_recovery_time",
-            "engage_stress_relief_activities"
-        ]
-        return self.execute_parallel(actions)
+```yaml
+user_controlled_support_plan:
+  activation: "user_initiated_only"
+  ordinary_options:
+    - "休息・予定変更"
+    - "業務量・期限・当番の調整"
+    - "本人が選んだ相談先の表示"
+  decision_boundary:
+    - "健康状態、診断、緊急度を推定しない"
+    - "第三者へ自動送信しない"
+    - "本人の訴えを数値で上書きしない"
+  failure_fallback:
+    - "公式窓口を直接確認できる代替導線"
+    - "記録せずに相談できる選択肢"
 ```
-````
 
 ### Load Balancing（負荷分散）戦略
 
-**Cognitive Load Distribution**：
+**Workload Distribution**：
 
-````markdown
-## Mental Load Balancing Strategies
+業務負荷の分散では健康や能力を推定せず、本人とチームが確認できる仕事上の事実だけを使います。時間帯や休憩の長さは固定せず、本人が試行期間を定めて選択します。
 
-### Temporal Load Balancing（時間的負荷分散）
-**Daily Energy Budget Management**：
 ```yaml
-energy_allocation:
-  morning_peak: 
-    allocation: 40%
-    tasks: ["complex_problem_solving", "creative_work", "important_decisions"]
-    recovery: "10min_break_every_90min"
-  
-  afternoon_steady:
-    allocation: 35% 
-    tasks: ["routine_implementation", "meetings", "code_reviews"]
-    recovery: "15min_break_every_2hours"
-  
-  evening_decline:
-    allocation: 25%
-    tasks: ["administrative_work", "learning", "reflection"]
-    recovery: "flexible_pacing"
-
-stress_circuit_breaker:
-  review_condition: "user_reports_overload OR user_defined_workload_signal_persists"
-  action: ["immediate_break", "task_postponement", "support_request"]
-  recovery_time: "minimum_30min"
+workload_review:
+  observable_work_conditions:
+    - "会議時間"
+    - "割り込み回数"
+    - "当番回数"
+    - "未解決ブロッカー"
+  review_condition: "本人の申告または本人が決めた業務条件"
+  user_options:
+    - "追加作業を受けない"
+    - "期限・当番を調整する"
+    - "休息または相談を選ぶ"
+  prohibited_outputs:
+    - "健康score"
+    - "正常・危険の分類"
+    - "本人未操作の通知"
 ```
-````
 
 ### スケーラビリティの考慮
 
@@ -306,7 +282,7 @@ Personal Support Ecosystem:
                   │                 │
                   │ ・Request Router │
                   │ ・Load Balancer │
-                  │ ・Health Checker │
+                  │ ・Consent Check  │
                   └─────────────────┘
 ```
 
@@ -383,7 +359,7 @@ personal_sprint_framework:
       - "昨日達成したこと"
       - "今日やること"  
       - "ブロッカー・課題はあるか"
-      - "エネルギーレベルはどうか"
+      - "業務量・期限・当番の調整を希望するか"
   
   sprint_review:
     duration: "30分"
@@ -415,14 +391,14 @@ personal_sprint_framework:
 ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
 │   Backlog   │  │   To Do     │  │ In Progress │  │    Done     │
 │             │  │             │  │             │  │             │
-│ ストレス対策 │  │ 運動習慣化   │  │ 睡眠改善    │  │ 瞑想習慣    │
-│ アイデア集  │  │            │  │ プログラム  │  │ 確立 ✓      │
-│             │  │ 対話改善     │  │            │  │            │
-│ ・読書習慣  │  │            │  │ 週3回実施中 │  │ ストレス    │
-│ ・SNS制限   │  │            │  │            │  │ 測定開始 ✓  │
-│ ・趣味時間  │  │ 栄養バランス│  │ ヨガ・筋トレ │  │            │
-│ ・環境整備  │  │ 見直し      │  │ 継続中      │  │ 環境音楽    │
-│            │  │            │  │            │  │ 導入 ✓      │
+│ 会議削減案  │  │ 当番調整     │  │ WIP制限     │  │ 期限調整     │
+│             │  │            │  │ 試行中      │  │ 完了 ✓      │
+│             │  │ 相談先確認  │  │            │  │            │
+│ ・割り込み  │  │            │  │ 2週間試行   │  │ 不要記録    │
+│ ・当番回数  │  │            │  │            │  │ 削除済み ✓ │
+│ ・会議時間  │  │ 保持期限    │  │ ブロッカー  │  │            │
+│ ・blocker   │  │ 見直し      │  │ 解消中      │  │ 導線確認 ✓ │
+│            │  │            │  │            │  │            │
 └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘
 
 WIP制限: To Do (3), In Progress (2) - 過負荷防止
@@ -430,99 +406,52 @@ WIP制限: To Do (3), In Progress (2) - 過負荷防止
 
 ### 継続的改善（Kaizen）の実装
 
-**Personal Continuous Improvement**：
+**User-Controlled Work Improvement**：
 
-````markdown
-## Kaizen for Mental Health
+小さな改善は、本人が選んだ業務条件を一つだけ変え、不要なら撤回する運用にします。健康・睡眠・感情をbaseline化しません。
 
-### 小さな改善の積み重ね
-**1% Improvement Philosophy**：
 ```python
-class PersonalKaizen:
-    def __init__(self):
-        self.improvement_areas = [
-            "sleep_quality", "exercise_consistency", "stress_management",
-            "social_connections", "learning_habits", "work_efficiency"
-        ]
-        self.current_baseline = self.establish_baseline()
-    
-    def daily_kaizen_cycle(self):
-        """毎日1つの小さな改善を実装"""
-        today_focus = self.select_improvement_area()
-        small_change = self.design_minimal_improvement(today_focus)
-        
+class PersonalWorkKaizen:
+    def propose(self, user_selected_area):
+        options = {
+            "meeting_load": ["会議を1件短くする", "非同期で代替できる議題を選ぶ"],
+            "interruptions": ["集中時間の通知を出す", "問い合わせ窓口を一本化する"],
+            "duty_rotation": ["当番交代を相談する", "引継ぎ項目を減らす"],
+            "open_blockers": ["ownerを確認する", "期限と依存関係を再合意する"],
+        }
         return {
-            'area': today_focus,
-            'change': small_change,
-            'measurement': self.define_success_metric(small_change),
-            'timeline': '24時間以内の実装・評価'
+            "options": options.get(user_selected_area, []),
+            "decision_owner": "user",
+            "health_inference": "prohibited",
+            "rollback": "stop_and_delete_notes",
         }
-    
-    def design_minimal_improvement(self, area):
-        improvements = {
-            'sleep_quality': [
-                "就寝30分前にスマホを別室に置く",
-                "寝室温度を1度下げる", 
-                "就寝時刻を10分早める"
-            ],
-            'stress_management': [
-                "1日1回、5分間の深呼吸を追加",
-                "ストレス感知時の対処法を1つ覚える",
-                "感謝することを3つ書き出す"
-            ],
-            'work_efficiency': [
-                "集中時間を25分→30分に延長",
-                "会議前5分の準備時間を確保",
-                "1日の終わりに明日の最重要タスクを1つ決める"
-            ]
-        }
-        return random.choice(improvements.get(area, ["observe and document current state"]))
 ```
-````
 
-### A/Bテストによる自己実験
+### 期間限定の自己実験
 
-**Personal A/B Testing Framework**：
+**User-Controlled Trial Framework**：
 
-````markdown
-## Self-Experimentation Methodology
+自己実験は医療効果を検証するものではありません。本人が仕事の進め方を一つだけ変え、業務上の結果と継続価値を振り返るために使います。
 
-### 仮説駆動型の行動変容
-**Hypothesis-Driven Self-Improvement**：
 ```yaml
-experiment_template:
-  hypothesis: 
-    statement: "朝の瞑想習慣により、1日の集中力が向上する"
-    measurable_outcome: "午前中の集中セッション継続時間"
-    expected_improvement: "平均25分→35分（40%向上）"
-  
-  experimental_design:
-    control_condition: "通常の朝ルーチン（運動→朝食→作業開始）"
-    treatment_condition: "瞑想追加（運動→10分瞑想→朝食→作業開始）"
-    duration: "各条件2週間ずつ"
-    randomization: "週単位で条件をランダム切り替え"
-  
-  metrics:
-    primary: 
-      - focus_session_duration: "ポモドーロ・テクニック継続時間"
-      - task_completion_rate: "午前中の計画タスク完了率"
-    secondary:
-      - subjective_wellbeing: "1-10スケールの主観的満足度"
-      - stress_level: "午前中の平均ストレス値"
-      - creative_output: "新しいアイデア・解決策の数"
-  
-  success_criteria:
-    primary_threshold: "集中時間30%以上向上"
-    secondary_threshold: "wellbeing score 1ポイント以上向上"
-    sustainability: "効果が2週間継続"
-
-statistical_analysis:
-  significance_test: "paired t-test"
-  confidence_level: "95%"
-  effect_size: "Cohen's d"
-  practical_significance: "日常生活での体感的価値"
+trial_template:
+  hypothesis: "朝の作業前に10分の準備時間を置くと、着手時の迷いが減る"
+  duration: "本人が決めた短い試行期間"
+  observable_work_outcomes:
+    - "最初のタスクへ着手するまでの時間"
+    - "未解決ブロッカーの有無"
+    - "本人が継続する価値を感じたか"
+  data_boundary:
+    - "睡眠、生理、感情、診断情報を収集しない"
+    - "本人端末へ必要最小限だけ短期保存する"
+    - "第三者へ自動共有しない"
+  decision:
+    - "継続"
+    - "変更"
+    - "撤回して記録を削除"
 ```
-````
+
+単一人物の短期データへ統計的有意性や医学的意味を付与しません。結果は本人の選択を補助するだけで、評価・配置・就業可否には利用しません。
 
 ---
 
@@ -530,48 +459,29 @@ statistical_analysis:
 
 ### プリベンティブ・メンテナンス戦略
 
-**Preventive Mental Health Maintenance**：
+**User-Controlled Review Schedule**：
 
-````markdown
-## システム・メンテナンス・スケジュール
+振り返りは本人が必要なときに起動し、未実施を異常とみなしません。健康・睡眠・感情の入力を要求せず、記録しない選択を用意します。
 
-### 定期メンテナンス・カレンダー
-**Scheduled Maintenance Windows**：
 ```yaml
-maintenance_schedule:
-  daily_maintenance:
-    morning_checkin:
-      duration: "10分"
-      activities: ["体調確認", "エネルギーレベル評価", "1日の優先度設定"]
-      
-    evening_shutdown:
-      duration: "15分" 
-      activities: ["1日の振り返り", "ストレス・リリース", "翌日準備"]
-  
-  weekly_maintenance:
-    week_retrospective:
-      duration: "30分"
-      activities: ["週間目標達成度評価", "ストレス・パターン分析", "来週計画"]
-      
-    deep_recovery:
-      duration: "2〜3時間"
-      activities: ["趣味時間", "社会的活動", "完全リラックス"]
-  
-  monthly_maintenance:
-    comprehensive_review:
-      duration: "1時間"
-      activities: ["月間メトリクス分析", "目標・戦略見直し", "システム改善"]
-      
-    system_optimization:
-      duration: "半日"
-      activities: ["環境整備", "ツール・習慣の見直し", "新しい実験計画"]
-  
-  quarterly_maintenance:
-    major_system_upgrade:
-      duration: "1日"
-      activities: ["人生・キャリア目標見直し", "大きな環境変化検討", "スキル・関係性の棚卸し"]
+review_schedule:
+  activation: "user_selected_or_user_initiated"
+  default_storage: "none"
+  optional_reviews:
+    workday:
+      - "当日の優先順位と未解決ブロッカー"
+      - "業務量・期限・当番の調整を希望するか"
+    weekly:
+      - "会議時間・割り込み・当番の変化"
+      - "継続、変更、撤回する改善案"
+    periodic:
+      - "相談先の地域・受付条件・確認日"
+      - "保存中の記録と削除期限"
+  prohibited:
+    - "健康・睡眠・感情の必須入力"
+    - "未入力から異常を推定"
+    - "第三者への自動共有"
 ```
-````
 
 ### 障害対応・インシデント管理
 
@@ -599,103 +509,55 @@ maintenance_schedule:
 
 ### バックアップとリカバリー戦略
 
-**Mental Resilience Backup Systems**：
+**User-Controlled Support Layers**：
 
-````markdown
-## レジリエンス・バックアップ・システム
-
-### 多層防御によるメンタルヘルス保護
-**Defense in Depth Strategy**：
 ```text
-レイヤー1: 日常的予防策
-├── 基本的生活習慣（睡眠・運動・栄養）
-├── ストレス・モニタリング
-└── 定期的セルフケア
+レイヤー1: 本人が選ぶ日常の選択肢
+├── 休息・予定変更
+├── 業務量・期限・当番の調整
+└── 記録しないという選択
 
-レイヤー2: 早期警戒・対応
-├── ストレス・アラート・システム
-├── 初期対処法データベース
-└── サポート・ネットワーク活用
+レイヤー2: 業務条件の見直し
+├── 会議時間・割り込み・当番の確認
+├── 本人への確認質問
+└── 不要な記録の削除
 
-レイヤー3: 中級対応・回復
-├── 専門的サポート（カウンセリング等）
-├── 環境調整・業務負荷軽減
-└── 集中的セルフケア・プログラム
+レイヤー3: 本人が選ぶ専門的支援
+├── 産業医・保健師・EAP
+├── 地域の医療・相談機関
+└── 共有項目・送信先の都度確認
 
-レイヤー4: 緊急対応・危機管理
-├── 医療的介入
-├── 緊急サポート・システム
-└── 長期回復プログラム
+レイヤー4: 差し迫った危険への接続
+├── scoreを待たない
+├── 地域の緊急通報・公的危機窓口
+└── 必要最小限の共有と事後記録
 ```
-````
 
-### Performance Tuning（パフォーマンス・チューニング）
+### 業務条件レビュー
 
-**Personal Performance Optimization**：
+次の例は、健康状態ではなく仕事の進め方を本人が振り返るための処理です。閾値、severity、診断、緊急度は出力しません。
 
-````markdown
-## メンタル・パフォーマンス最適化
-
-### ボトルネック分析と改善
-**Performance Profiling for Mental Health**：
 ```python
-class MentalPerformanceProfiler:
-    def profile_daily_performance(self):
-        """1日のメンタル・パフォーマンスをプロファイリング"""
-        profile_data = {
-            'energy_curve': self.measure_energy_throughout_day(),
-            'cognitive_load': self.analyze_cognitive_demand(),
-            'stress_peaks': self.identify_stress_hotspots(),
-            'recovery_efficiency': self.measure_recovery_rates()
+class WorkConditionReview:
+    def summarize(self, user_selected_notes):
+        allowed = {
+            "meeting_time",
+            "interruptions",
+            "duty_rotations",
+            "open_blockers",
         }
-        
-        bottlenecks = self.identify_bottlenecks(profile_data)
-        return self.generate_optimization_recommendations(bottlenecks)
-    
-    def identify_bottlenecks(self, profile_data):
-        bottlenecks = []
-        
-        # エネルギー・ボトルネック
-        if profile_data['energy_curve']['morning_drop'] > 0.3:
-            bottlenecks.append({
-                'type': 'energy_depletion',
-                'location': 'morning_routine',
-                'severity': 'high',
-                'recommendation': 'improve_sleep_quality_or_morning_nutrition'
-            })
-        
-        # 認知負荷ボトルネック  
-        if profile_data['cognitive_load']['peak_hours'] > 0.9:
-            bottlenecks.append({
-                'type': 'cognitive_overload',
-                'location': 'peak_work_hours',
-                'severity': 'medium',
-                'recommendation': 'implement_micro_breaks_and_load_balancing'
-            })
-        
-        return bottlenecks
-    
-    def generate_optimization_recommendations(self, bottlenecks):
-        """ボトルネック解消のための最適化提案"""
-        optimizations = []
-        
-        for bottleneck in bottlenecks:
-            if bottleneck['type'] == 'energy_depletion':
-                optimizations.append({
-                    'strategy': 'energy_management',
-                    'actions': [
-                        'sleep_schedule_optimization',
-                        'nutrition_timing_adjustment', 
-                        'morning_light_exposure',
-                        'caffeine_intake_optimization'
-                    ],
-                    'expected_improvement': '20〜30% energy increase',
-                    'implementation_time': '1-2 weeks'
-                })
-        
-        return optimizations
+        observations = {
+            key: value
+            for key, value in user_selected_notes.items()
+            if key in allowed
+        }
+        return {
+            "observations": observations,
+            "prompt": "休息・業務調整・相談の選択肢を表示しますか",
+            "health_inference": "prohibited",
+            "third_party_contact": "user_confirms_each_time",
+        }
 ```
-````
 
 ---
 
@@ -703,42 +565,25 @@ class MentalPerformanceProfiler:
 
 ### CI/CD：継続的な自己改善
 
-**Personal Continuous Integration/Continuous Deployment**：
+**Personal Continuous Improvement**：
 
-````markdown
-## Personal CI/CD Pipeline
+CI/CDの比喩は、本人が選んだ改善を小さく試して撤回できる運用に限定します。健康指標の正常範囲、対人関係の質、認知能力、幸福度を自動検証しません。
 
-### 継続的統合（Continuous Integration）
-**Daily Integration of Self-Improvements**：
 ```yaml
-personal_ci_pipeline:
-  triggers:
-    - daily_reflection_commit
-    - weekly_goal_update
-    - monthly_metric_review
-    
+personal_improvement_pipeline:
+  trigger: "本人が振り返りを開始"
   stages:
-    code_quality_check:
-      - habit_consistency_check: "習慣の実行率 > 80%"
-      - goal_alignment_test: "行動と目標の整合性確認"  
-      - wellbeing_metric_validation: "メンタルヘルス指標の正常範囲確認"
-      
-    integration_tests:
-      - work_life_balance_test: "仕事・プライベートの調和確認"
-      - relationship_health_test: "人間関係の質的評価"
-      - stress_resilience_test: "ストレス対処能力の検証"
-      
-    performance_tests:
-      - cognitive_performance_benchmark: "認知能力のベースライン比較"
-      - productivity_regression_test: "生産性指標の低下検出"
-      - happiness_index_monitoring: "主観的幸福度の追跡"
-
-  notifications:
-    success: "今日も順調に成長中！"
-    warnings: "一部指標に注意が必要です"
-    failures: "緊急の調整が必要です"
+    data_boundary_check:
+      - "業務条件以外のセンシティブ情報を既定で収集しない"
+      - "保存項目と削除日を本人が確認"
+    work_condition_review:
+      - "会議、割り込み、当番、ブロッカーを整理"
+      - "固定thresholdや正常・危険の分類を行わない"
+    user_decision:
+      - "継続、変更、撤回から本人が選択"
+      - "共有は項目と送信先を本人が都度確定"
+  output: "本人だけに選択肢を表示"
 ```
-````
 
 ### Infrastructure as Code（IaC）思考
 
@@ -765,9 +610,9 @@ personal_infrastructure:
       - time_tracking: "toggl_with_pomodoro_integration"
       
     monitoring_tools:
-      - health_tracking: "apple_health_with_custom_shortcuts"
-      - mood_tracking: "daylio_with_custom_metrics"
-      - productivity_analytics: "rescuetime_with_custom_goals"
+      - workload_notes: "local_user_controlled_notes"
+      - support_directory: "region_scoped_official_resources"
+      - deletion_reminder: "user_selected_retention_date"
   
   mental_environment:
     daily_routines:
@@ -856,7 +701,7 @@ Capacity Budgetは健康状態を正常・危険に分類するものではあ�
 - **メンテナンス性**: 長期的に持続可能な自己管理システム
 - **改善可能性**: データに基づく継続的な最適化
 
-エンジニアの強みである「システム設計・データ分析・継続的改善」の思考パターンは、メンタルヘルス管理においても極めて有効です。技術的なアプローチで、より効果的で持続可能な自己管理を実現しましょう。
+システム設計の比喩が役立つ範囲は人により異なります。適用範囲を業務条件の整理、本人が選ぶ支援導線、同意・保持・削除の運用に限定し、数値だけで健康状態を判断しない自己管理を続けます。
 
 ---
 
