@@ -418,6 +418,36 @@ OSI参照モデルの層分離を参考に、本人の選択、相談先、職�
 
 ## 8.3 チーム・レベルの予防システム構築
 
+### 心理的安全性の定義と把握
+
+心理的安全性は、**対人リスクを取ってもこのチームでは安全だという、チーム成員の共有信念**です。個人の性格や勇気、いつも意見が一致する状態、発言・質問・失敗報告の回数そのものではありません。チーム単位の認識を扱うため、管理者が行動ログだけから個人やチームの内的状態を推定しません。
+
+#### 主な把握方法
+
+| 方法 | 役割 | 判断境界 |
+|---|---|---|
+| 任意survey | チーム成員本人の認識を、目的と取扱いを示して把握する | 集約値を真の状態や個人属性とみなさない |
+| レトロスペクティブ | 集約結果と最近の業務文脈をチームで解釈する | 発言者を記録せず、改善actionだけを残す |
+| facilitatorを含む対話 | surveyで表しにくい懸念と改善案を扱う | 参加・発言を強制せず、本人の同意なく引用しない |
+| system observation | 報告経路、acknowledgeまでの時間、会議構造などのprocess frictionを確認する | 心理的安全性、感情、意欲をscore・推定しない |
+
+communication pattern、error reporting frequency、idea sharing frequencyは、release時期、業務量、報告規程、会議構造など複数の要因で変化します。これらは「報告経路が使いにくくないか」「対話の機会が不足していないか」を尋ねる補助情報にはなりますが、心理的安全性scoreの入力にはしません。
+
+#### surveyのprivacy contract
+
+| 項目 | 必須条件 |
+|---|---|
+| 目的 | チーム規範と職場環境の改善だけに限定し、評価・配置・懲戒へ利用しない |
+| 任意性 | 回答しない権利と途中離脱を示し、未回答を否定的なsignalにしない |
+| 収集 | 氏名、account ID、個人を絞り込む属性を収集しない。自由記述は既定で無効にする |
+| 集計粒度 | team単位。privacy reviewで最低回答数を事前に定め、未達または小さい属性cellは表示しない |
+| access | raw回答は集計を担う限定ownerだけが扱い、管理者・人事・team leadへ開示しない |
+| 共有 | teamへ集約結果と回答条件だけを返す。部署間ranking、個人推定、経営向け個人比較を作らない |
+| 保持 | raw回答は集計と品質確認後の指定日に削除する。集約結果も次の測定cycleまでに削除または置換する |
+| action | 単一scoreや固定thresholdではなく、回答分布、非回答、対話、業務文脈からチームが改善案を選ぶ |
+
+回答前に、最低回答数、集計owner、共有先、raw回答と集約結果の削除日を通知します。最低回答数を満たさない場合は値を表示せず、期間や対象teamを安易に結合しません。集約値が良好でも本人の懸念を否定せず、低い値でも個人の責任にしません。
+
 ### チームの職場環境改善ループ
 
 チームでは個人のhealth score、stress score、感情、相談履歴を収集しません。匿名化されたように見える個人scoreも、小規模チームでは再識別できるため使用しません。
@@ -425,8 +455,9 @@ OSI参照モデルの層分離を参考に、本人の選択、相談先、職�
 #### 利用する情報
 
 - 会議時間、割り込み回数、当番偏り、PR滞留、未解決ブロッカーなどの集約済み業務条件
-- 目的、任意性、最小集団、保持期間を事前提示した匿名survey
+- 上記privacy contractに従う任意surveyの集約結果
 - レトロスペクティブや1on1で本人が自発的に共有した改善要望
+- 報告経路や会議構造のsystem observation。ただし、発言・報告回数から心理状態を推定しない
 
 #### 利用しない情報
 
@@ -796,6 +827,8 @@ safety_case:
 - [厚生労働省「労働者の心の健康の保持増進のための指針」](https://www.mhlw.go.jp/web/t_doc?dataId=00tb3227&dataType=1&pageNo=1)：客観的測定の限界と個人差、本人意思・個人情報保護、4つのケア、専門家面談と医師の指導を含む体制、利用目的限定と不利益防止を確認。
 - [個人情報保護委員会「要配慮個人情報」FAQ](https://www.ppc.go.jp/all_faq_index/faq3-q2-4/)：健康・精神障害等に関する要配慮個人情報の取得・第三者提供で原則として事前同意が必要であることを確認。
 - [CDC NIOSH Worker Well-Being Questionnaire](https://www.cdc.gov/niosh/twh/php/wellbq/)（2026-02-23更新）：worker well-beingを複数領域で扱うこと、組織利用時の匿名性保護と不要な識別・属性情報を収集しない原則を確認。
+- [Edmondson, “Psychological Safety and Learning Behavior in Work Teams” (1999)](https://doi.org/10.2307/2666999)（2026-07-20確認）：心理的安全性を対人リスクに関するteam membersのshared beliefとして導入し、51 work teamsのmulti-method field studyでteam-level constructとして扱ったことを確認。本章は結果を任意組織の因果効果や固定thresholdへ一般化しない。
+- [Google re:Work “Understand team effectiveness”](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness)（2026-07-20確認）：team member surveyを集約・匿名化し、team discussionへ接続したGoogleの運用例を確認。Google固有の調査・組織文脈であり、本章の普遍的な評価基準にはしない。
 - [厚生労働省「こころの耳」](https://kokoro.mhlw.go.jp/)：働く人、事業者、産業保健向けの最新相談導線を確認。
 - [厚生労働省「まもろうよ こころ」](https://www.mhlw.go.jp/mamorouyokokoro/)：電話・SNS・地域別窓口があり、受付時間・利用条件は地域と窓口で異なることを確認。
 
