@@ -27,15 +27,20 @@
 ## 品質ゲート（ローカル）
 
 ```bash
+npm run check:content-drift
 npm run check:metadata
 npm test
+npm run build
 ```
 
 実行内容:
 
+- `src` canonical contentと公開`docs`のbyte-exact drift検証
 - メタデータ / ナビゲーション整合性検証
 - Markdown lint
 - `docs/` に対するリンク検証
+
+chapter / appendix本文は`src/`を編集し、`npm run sync:content`で`docs/`へ同期します。mappingとsite implementationの除外scopeは[`src/canonical-content.json`](src/canonical-content.json)を参照してください。
 
 ## ライセンス
 

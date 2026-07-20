@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "canonical_root": "src",
+  "generated_root": "docs",
+  "migration_batches": [
+    {
+      "id": "pilot-137",
+      "source_issue": 137,
+      "baseline_commit": "257ec443042f691ebe1741446fb8aca7f3ff1818",
+      "files": [
+        "appendix-01-checklists/index.md",
+        "appendix-02-templates/index.md",
+        "chapter-quickstart/index.md"
+      ]
+    },
+    {
+      "id": "full-content-149",
+      "source_issue": 149,
+      "baseline_commit": "257ec443042f691ebe1741446fb8aca7f3ff1818",
+      "files": [
+        "appendix-03-tools-resources/index.md",
+        "appendix-04-references/index.md",
+        "appendix-05-troubleshooting-flow/index.md",
+        "appendix-06-figure-index/index.md",
+        "chapter-career-development/index.md",
+        "chapter-communication-challenges/index.md",
+        "chapter-digital-communication/index.md",
+        "chapter-engineering-communication/index.md",
+        "chapter-preventive-systems/index.md",
+        "chapter-stakeholder-communication/index.md",
+        "chapter-stress-analysis/index.md",
+        "chapter-structured-communication/index.md",
+        "chapter-technical-leadership/index.md",
+        "chapter-technical-mental-health/index.md"
+      ]
+    }
+  ],
+  "files": [
+    "appendix-01-checklists/index.md",
+    "appendix-02-templates/index.md",
+    "appendix-03-tools-resources/index.md",
+    "appendix-04-references/index.md",
+    "appendix-05-troubleshooting-flow/index.md",
+    "appendix-06-figure-index/index.md",
+    "chapter-career-development/index.md",
+    "chapter-communication-challenges/index.md",
+    "chapter-digital-communication/index.md",
+    "chapter-engineering-communication/index.md",
+    "chapter-preventive-systems/index.md",
+    "chapter-quickstart/index.md",
+    "chapter-stakeholder-communication/index.md",
+    "chapter-stress-analysis/index.md",
+    "chapter-structured-communication/index.md",
+    "chapter-technical-leadership/index.md",
+    "chapter-technical-mental-health/index.md"
+  ],
+  "site_implementation_exclusions": [
+    "docs/_config.yml",
+    "docs/_data/**",
+    "docs/_includes/**",
+    "docs/_layouts/**",
+    "docs/assets/**",
+    "docs/Gemfile",
+    "docs/book-config.json",
+    "docs/index.md"
+  ]
+}

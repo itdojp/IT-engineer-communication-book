@@ -677,10 +677,10 @@ escalation_rules:
       - "意思決定が必要な事項"
       - "推奨アクション"
 
-	  advisory_escalation:
-	    conditions:
-	      - "architectural_decision_required == true"
-	      - "resource_allocation_change_needed == true"
+  advisory_escalation:
+    conditions:
+      - "architectural_decision_required == true"
+      - "resource_allocation_change_needed == true"
       - "technology_adoption_decision == true"
       - "team_structure_optimization == true"
     
@@ -692,11 +692,10 @@ escalation_rules:
     information_template:
       - "決定が必要な事項"
       - "選択肢と評価"
-	      - "推奨案と根拠"
-	      - "実装タイムライン"
-	      - "リスクと軽減策"
+      - "推奨案と根拠"
+      - "実装タイムライン"
+      - "リスクと軽減策"
 ```
-
 ````
 
 **Context Switching Cost の最小化**：
@@ -943,7 +942,7 @@ spike_report = {
     'primary_option': 'zustand',
     'rationale': '小規模チームでの開発速度重視、既存Reactスキルの活用',
     'risk_mitigation': 'Redux Toolkitへの移行パスを確保'
-	}
+  }
 }
 ```
 ````

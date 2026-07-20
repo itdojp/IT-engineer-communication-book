@@ -37,8 +37,8 @@ jobs:
       - name: Install dependencies (book)
         run: npm ci
 
-      - name: Canonical pilot drift gate
-        run: npm run check:pilot-drift
+      - name: Canonical content drift gate
+        run: npm run check:content-drift
 
       - name: Root package QA
         run: |
@@ -97,6 +97,17 @@ jobs:
         with:
           source: ./${{ steps.scan.outputs.dir }}
           destination: ./_site
+
+      - name: Canonical content post-build drift gate
+        shell: bash
+        run: |
+          npm run check:content-drift
+          git diff --exit-code -- src docs
+          if [ -n "$(git status --porcelain --untracked-files=all -- src docs)" ]; then
+            echo "::error::Build changed or created files under canonical/generated content roots"
+            git status --short --untracked-files=all -- src docs
+            exit 1
+          fi
 
       - name: Smoke check built site (top + navigation + assets)
         shell: bash
