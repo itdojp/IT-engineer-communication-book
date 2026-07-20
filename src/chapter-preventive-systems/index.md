@@ -54,7 +54,7 @@ OSI参照モデルの層分離を参考に、本人の選択、相談先、職�
   
   <!-- Title -->
   <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
-    Defense in Depth for User-Controlled Support
+    多層防御型メンタルヘルス・アーキテクチャ
   </text>
   
   <!-- Layer 7: Application -->

@@ -50,7 +50,7 @@ order: 9
   
   <!-- Title -->
   <text x="400" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1e293b">
-    User-Controlled Support System Architecture
+    Personal Mental Health System Architecture
   </text>
   
   <!-- Layer 1: Interface Layer -->
