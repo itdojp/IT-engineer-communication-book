@@ -98,6 +98,19 @@ jobs:
           source: ./${{ steps.scan.outputs.dir }}
           destination: ./_site
 
+      - name: Accessible content contract (rendered + browser)
+        run: |
+          node scripts/check-accessible-content-blocks.js --built-site _site
+          node scripts/check-accessible-content-browser.js --site _site --json "${{ runner.temp }}/accessibility-browser-report.json"
+
+      - name: Upload accessibility browser report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: accessibility-browser-report
+          path: ${{ runner.temp }}/accessibility-browser-report.json
+          if-no-files-found: ignore
+
       - name: Canonical content post-build drift gate
         shell: bash
         run: |
