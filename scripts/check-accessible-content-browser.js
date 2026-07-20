@@ -40,18 +40,43 @@ function sleep(ms) {
 
 async function stopProcess(child) {
   if (!child || child.exitCode !== null || child.signalCode !== null) return;
-  child.kill('SIGTERM');
+  signalProcessTree(child, 'SIGTERM');
   await Promise.race([
     new Promise((resolve) => child.once('exit', resolve)),
     sleep(3000),
   ]);
   if (child.exitCode === null && child.signalCode === null) {
-    child.kill('SIGKILL');
+    signalProcessTree(child, 'SIGKILL');
     await Promise.race([
       new Promise((resolve) => child.once('exit', resolve)),
       sleep(3000),
     ]);
   }
+}
+
+function signalProcessTree(child, signal) {
+  if (process.platform !== 'win32') {
+    try {
+      process.kill(-child.pid, signal);
+      return;
+    } catch (_) {}
+  }
+  child.kill(signal);
+}
+
+async function removeDirectoryWithRetries(directory) {
+  let lastError;
+  for (let attempt = 0; attempt < 20; attempt += 1) {
+    try {
+      fs.rmSync(directory, { recursive: true, force: true });
+      return;
+    } catch (error) {
+      lastError = error;
+      if (!['ENOTEMPTY', 'EBUSY', 'EPERM'].includes(error.code)) throw error;
+      await sleep(100 * (attempt + 1));
+    }
+  }
+  throw lastError;
 }
 
 function findChrome() {
@@ -127,7 +152,10 @@ function launchChrome(chrome, userDataDir) {
     'about:blank',
   ];
   if (typeof process.getuid === 'function' && process.getuid() === 0) args.unshift('--no-sandbox');
-  const child = spawn(chrome, args, { stdio: ['ignore', 'ignore', 'pipe'] });
+  const child = spawn(chrome, args, {
+    stdio: ['ignore', 'ignore', 'pipe'],
+    detached: process.platform !== 'win32',
+  });
   return new Promise((resolve, reject) => {
     let stderr = '';
     const timer = setTimeout(() => {
@@ -370,12 +398,15 @@ async function main() {
   const userDataDir = fs.mkdtempSync(path.join(tempBase, 'chrome-a11y-'));
   const server = await startStaticServer(siteDir);
   let chromeProcess;
+  let browserClient;
   let client;
   try {
     const address = server.address();
     const origin = `http://127.0.0.1:${address.port}`;
     const launched = await launchChrome(findChrome(), userDataDir);
     chromeProcess = launched.child;
+    browserClient = new CdpClient(launched.browserWebSocketUrl);
+    await browserClient.connect();
     const page = await openPage(launched.browserWebSocketUrl, 'about:blank');
     client = page.client;
     const results = await runAudits(client, origin);
@@ -390,9 +421,13 @@ async function main() {
     console.log(`OK: browser accessibility check passed (${results.length} combinations, minimum font ${minFont}px, minimum contrast ${minContrast.toFixed(2)}:1)`);
   } finally {
     if (client) client.close();
+    if (browserClient) {
+      try { await browserClient.send('Browser.close'); } catch (_) {}
+      browserClient.close();
+    }
     await stopProcess(chromeProcess);
     await new Promise((resolve) => server.close(resolve));
-    fs.rmSync(userDataDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    await removeDirectoryWithRetries(userDataDir);
     try { fs.rmdirSync(tempBase); } catch (_) {}
     try { fs.rmdirSync(path.dirname(tempBase)); } catch (_) {}
   }
