@@ -98,6 +98,9 @@ jobs:
           source: ./${{ steps.scan.outputs.dir }}
           destination: ./_site
 
+      - name: Published UX metadata contract
+        run: node scripts/check-metadata-consistency.js --built-site _site
+
       - name: Accessible content contract (rendered + browser)
         run: |
           node scripts/check-accessible-content-blocks.js --built-site _site

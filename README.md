@@ -29,9 +29,12 @@
 ```bash
 npm run check:content-drift
 npm run check:metadata
+npm run test:metadata-ux
 npm test
 npm run build
 ```
+
+`test:metadata-ux` は一時copyのUX module flagを1件だけ反転し、source checkerが不一致を検出することを確認します。`build`はJekyll生成後の`docs/_site/book-config.json`についても、canonicalなUX profileと全module flagsの一致を検査します。
 
 実行内容:
 

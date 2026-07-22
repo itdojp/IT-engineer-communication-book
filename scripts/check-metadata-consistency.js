@@ -438,7 +438,40 @@ function checkAssets() {
   if (missing.length) fail(`required public assets are missing or empty: ${missing.join(', ')}`);
 }
 
-const bookConfig = readJson(path.join(root, 'book-config.json'));
+function parseArgs(argv) {
+  const options = {
+    rootConfig: path.join(root, 'book-config.json'),
+    builtSite: null,
+  };
+  for (let index = 0; index < argv.length; index += 1) {
+    const argument = argv[index];
+    if (!['--root-config', '--built-site'].includes(argument)) {
+      fail(`unknown argument: ${argument}`);
+    }
+    const value = argv[index + 1];
+    if (!value || value.startsWith('--')) fail(`${argument} requires a path`);
+    const resolved = path.resolve(root, value);
+    if (argument === '--root-config') options.rootConfig = resolved;
+    if (argument === '--built-site') options.builtSite = resolved;
+    index += 1;
+  }
+  return options;
+}
+
+function checkBuiltUxMetadata(bookConfig, builtSite, rootConfigPath) {
+  if (!fs.existsSync(builtSite) || !fs.statSync(builtSite).isDirectory()) {
+    fail(`built site directory is missing: ${rel(builtSite)}`);
+  }
+  const builtConfigPath = path.join(builtSite, 'book-config.json');
+  const builtConfig = readJson(builtConfigPath);
+  if (!isDeepStrictEqual(builtConfig.ux, bookConfig.ux)) {
+    fail(`${rel(builtConfigPath)}.ux mismatch: expected the canonical UX profile and complete module flags from ${rel(rootConfigPath)}`);
+  }
+  return Object.keys((bookConfig.ux && bookConfig.ux.modules) || {}).length;
+}
+
+const options = parseArgs(process.argv.slice(2));
+const bookConfig = readJson(options.rootConfig);
 const docsBookConfig = readJson(path.join(docs, 'book-config.json'));
 const packageJson = readJson(path.join(root, 'package.json'));
 const packageLock = readJson(path.join(root, 'package-lock.json'));
@@ -448,4 +481,6 @@ checkMetadata(bookConfig, docsBookConfig, packageJson, packageLock);
 const counts = checkNavigation(bookConfig, navigation);
 const uxCounts = checkUxModulePages(bookConfig, docsBookConfig, navigation);
 checkAssets();
-console.log(`OK: metadata/navigation/UX coverage is consistent (${counts.navCount} navigation entries, ${counts.pageCount} docs pages, ${uxCounts.moduleCount} UX modules, ${uxCounts.inlineSvgCount} inline SVGs)`);
+const builtModuleCount = options.builtSite ? checkBuiltUxMetadata(bookConfig, options.builtSite, options.rootConfig) : null;
+const builtSummary = builtModuleCount === null ? '' : `, built UX profile + ${builtModuleCount} module flags`;
+console.log(`OK: metadata/navigation/UX coverage is consistent (${counts.navCount} navigation entries, ${counts.pageCount} docs pages, ${uxCounts.moduleCount} UX modules, ${uxCounts.inlineSvgCount} inline SVGs${builtSummary})`);
