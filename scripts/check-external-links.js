@@ -39,14 +39,16 @@ function normalizeUrl(value) {
 function withoutCode(markdown) {
   let fence = null;
   return markdown.split(/\r?\n/).map((line) => {
-    const opening = line.match(/^\s*(`{3,}|~{3,})/);
-    if (opening) {
-      const marker = opening[1][0];
-      if (fence === null) fence = marker;
-      else if (fence === marker) fence = null;
+    if (fence !== null) {
+      const closing = line.match(/^\s*(`{3,}|~{3,})\s*$/);
+      if (closing && closing[1][0] === fence.marker && closing[1].length >= fence.length) fence = null;
       return '';
     }
-    if (fence !== null) return '';
+    const opening = line.match(/^\s*(`{3,}|~{3,})/);
+    if (opening) {
+      fence = { marker: opening[1][0], length: opening[1].length };
+      return '';
+    }
     return line.replace(/`[^`]*`/g, (match) => ' '.repeat(match.length));
   }).join('\n');
 }
@@ -410,7 +412,12 @@ async function requestOnce(url, request) {
       if (redirects.length >= request.maxRedirects) {
         return { policyError: `redirect limit ${request.maxRedirects} exceeded`, status: response.status, finalUrl: current, redirects };
       }
-      const next = new URL(location, current);
+      let next;
+      try {
+        next = new URL(location, current);
+      } catch (error) {
+        return { policyError: `redirect Location is invalid: ${error.message}`, status: response.status, finalUrl: current, redirects };
+      }
       if (!['http:', 'https:'].includes(next.protocol)) {
         return { policyError: `redirect uses unsupported protocol ${next.protocol}`, status: response.status, finalUrl: current, redirects };
       }
@@ -559,6 +566,7 @@ function createFixtureServer() {
     counters.set(pathname, (counters.get(pathname) || 0) + 1);
     if (pathname === '/ok' || pathname === '/reference' || pathname === '/report_(final)' || pathname === '/angle') response.writeHead(200).end('ok');
     else if (pathname === '/redirect') response.writeHead(302, { location: '/ok' }).end();
+    else if (pathname === '/bad-redirect') response.writeHead(302, { location: 'http://[invalid' }).end();
     else if (pathname === '/retry' && counters.get(pathname) === 1) response.writeHead(503).end('retry');
     else if (pathname === '/retry') response.writeHead(200).end('recovered');
     else if (pathname === '/not-found') response.writeHead(404).end('missing');
@@ -608,6 +616,7 @@ async function selfTest() {
       `[ok](${base}/ok)`,
       `[duplicate](${base}/ok)`,
       `[redirect](${base}/redirect)`,
+      `[bad redirect](${base}/bad-redirect)`,
       `[retry](${base}/retry)`,
       `[missing](${base}/not-found)`,
       `[gone](${base}/gone)`,
@@ -617,6 +626,10 @@ async function selfTest() {
       '[reference][paper]',
       `[paper]: ${base}/reference`,
       '`[code](https://example.invalid/ignored)`',
+      '````text',
+      '```',
+      '[nested code](https://example.invalid/nested-code)',
+      '````',
     ].join('\n'));
     const config = {
       sourceRoots: ['src'],
@@ -625,7 +638,7 @@ async function selfTest() {
       request: { timeoutMs: 500, retries: 2, retryDelayMs: 5, concurrency: 3, maxRedirects: 3, allowHttpsToHttp: false, allowPrivateTargets: true, httpsToHttpAllowlist: [], userAgent: 'fixture-monitor/1.0' },
     };
     const inventory = buildInventory(config, fixtureRoot);
-    invariant(inventory.links.length === 9, `self-test expected 9 unique URLs, got ${inventory.links.length}`);
+    invariant(inventory.links.length === 10, `self-test expected 10 unique URLs, got ${inventory.links.length}`);
     invariant(inventory.links.find((link) => link.url === normalizeUrl(`${base}/ok`)).occurrences.length === 2, 'self-test did not de-duplicate the duplicate URL');
     const referenceLink = inventory.links.find((link) => link.url === normalizeUrl(`${base}/reference`));
     invariant(referenceLink && referenceLink.occurrences.length === 1, 'self-test did not extract the used reference-style link exactly once');
@@ -645,6 +658,7 @@ async function selfTest() {
     invariant(report.summary.categories.permanent === 2, 'self-test must classify 404 and 410 as permanent');
     invariant(report.summary.categories.transient === 1, 'self-test must classify persistent 503 as transient');
     invariant(report.summary.categories.redirect === 1, 'self-test must preserve redirect evidence');
+    invariant(report.summary.categories['policy-error'] === 1, 'self-test must classify malformed redirect Location as a policy error');
     invariant(counters.get('/retry') === 2, `self-test retry recovery expected 2 attempts, got ${counters.get('/retry')}`);
     invariant(counters.get('/not-found') === 1 && counters.get('/gone') === 1, 'self-test must not retry permanent 404/410');
     invariant(counters.get('/transient') === 3, `self-test transient endpoint expected 3 attempts, got ${counters.get('/transient')}`);
@@ -677,7 +691,7 @@ async function selfTest() {
     }
   }
   const tracked = validateTrackedContract();
-  console.log(`OK: external-link monitor self-test (present/missing required, duplicate, redirect, retry recovery, 404, 410, transient, no-finding, exact/expired ignore; tracked ${tracked.sourceFileCount} files / ${tracked.uniqueUrlCount} URLs / scheduled+manual only)`);
+  console.log(`OK: external-link monitor self-test (required presence, duplicate, reference/balanced links, fence length, DNS safety, redirect/malformed redirect, retry recovery, 404, 410, transient, no-finding, exact/expired ignore; tracked ${tracked.sourceFileCount} files / ${tracked.uniqueUrlCount} URLs / scheduled+manual only)`);
 }
 
 async function run(argv) {
