@@ -2,7 +2,9 @@
 'use strict';
 
 const fs = require('fs');
+const dns = require('dns');
 const http = require('http');
+const https = require('https');
 const net = require('net');
 const path = require('path');
 
@@ -49,8 +51,8 @@ function withoutCode(markdown) {
   }).join('\n');
 }
 
-function isPrivateTarget(url) {
-  const hostname = new URL(url).hostname.toLowerCase().replace(/^\[|\]$/g, '');
+function isPrivateHostname(value) {
+  const hostname = value.toLowerCase().replace(/^\[|\]$/g, '');
   if (hostname === 'localhost' || hostname.endsWith('.localhost')) return true;
   const ipVersion = net.isIP(hostname);
   if (ipVersion === 4) {
@@ -70,6 +72,10 @@ function isPrivateTarget(url) {
   return false;
 }
 
+function isPrivateTarget(url) {
+  return isPrivateHostname(new URL(url).hostname);
+}
+
 function lineNumberAt(text, index) {
   let line = 1;
   for (let offset = 0; offset < index; offset += 1) {
@@ -81,14 +87,44 @@ function lineNumberAt(text, index) {
 function extractHttpLinks(markdown) {
   const text = withoutCode(markdown);
   const matches = [];
+  const definitions = new Map();
+  const definitionRanges = [];
+  const definitionPattern = /^[ \t]{0,3}\[([^\]]+)\]:\s*(?:<([^>]+)>|(\S+))(?:\s+.*)?$/gm;
+  const normalizeLabel = (label) => label.trim().replace(/\s+/g, ' ').toLowerCase();
+  for (const match of text.matchAll(definitionPattern)) {
+    const label = normalizeLabel(match[1]);
+    invariant(!definitions.has(label), `duplicate Markdown reference definition: ${match[1]}`);
+    definitions.set(label, { url: normalizeUrl(match[2] || match[3]), index: match.index });
+    definitionRanges.push([match.index, match.index + match[0].length]);
+  }
+
+  const referenceText = [...text];
+  for (const match of text.matchAll(/!?\[([^\]]+)\]\[([^\]]*)\]/g)) {
+    const definition = definitions.get(normalizeLabel(match[2] || match[1]));
+    if (definition) matches.push({ url: definition.url, line: lineNumberAt(text, match.index) });
+    for (let index = match.index; index < match.index + match[0].length; index += 1) referenceText[index] = ' ';
+  }
+  const shortcutText = referenceText.join('');
+  for (const match of shortcutText.matchAll(/!?\[([^\]]+)\](?![\[(:])/g)) {
+    const definition = definitions.get(normalizeLabel(match[1]));
+    if (definition) matches.push({ url: definition.url, line: lineNumberAt(shortcutText, match.index) });
+  }
+
+  const directText = [...text];
+  for (const [start, end] of definitionRanges) {
+    for (let index = start; index < end; index += 1) {
+      if (directText[index] !== '\n') directText[index] = ' ';
+    }
+  }
+  const directMarkdown = directText.join('');
   const patterns = [
     /!?\[[^\]]*\]\(\s*(https?:\/\/[^\s)]+)(?:\s+(?:"[^"]*"|'[^']*'))?\s*\)/g,
     /<(https?:\/\/[^>\s]+)>/g,
     /<a\b[^>]*\bhref\s*=\s*["'](https?:\/\/[^"']+)["'][^>]*>/gi,
   ];
   for (const pattern of patterns) {
-    for (const match of text.matchAll(pattern)) {
-      matches.push({ url: normalizeUrl(match[1]), line: lineNumberAt(text, match.index) });
+    for (const match of directMarkdown.matchAll(pattern)) {
+      matches.push({ url: normalizeUrl(match[1]), line: lineNumberAt(directMarkdown, match.index) });
     }
   }
   return matches.sort((left, right) => left.line - right.line || left.url.localeCompare(right.url));
@@ -191,33 +227,72 @@ function sleep(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
+function publicLookup(hostname, options, callback) {
+  const lookupOptions = typeof options === 'number' ? { family: options } : { ...(options || {}) };
+  dns.lookup(hostname, { family: lookupOptions.family || 0, hints: lookupOptions.hints || 0, all: true, verbatim: true }, (error, addresses) => {
+    if (error) return callback(error);
+    if (!addresses.length) return callback(new Error(`DNS returned no addresses for ${hostname}`));
+    const privateAddress = addresses.find((entry) => isPrivateHostname(entry.address));
+    if (privateAddress) {
+      const policyError = new Error(`hostname ${hostname} resolved to private/loopback address ${privateAddress.address}`);
+      policyError.code = 'PRIVATE_TARGET';
+      return callback(policyError);
+    }
+    const selected = addresses[0];
+    if (lookupOptions.all) return callback(null, addresses);
+    return callback(null, selected.address, selected.family);
+  });
+}
+
+function requestHeaders(url, request) {
+  return new Promise((resolve, reject) => {
+    const parsed = new URL(url);
+    const client = parsed.protocol === 'https:' ? https : http;
+    let settled = false;
+    const options = {
+      method: 'GET',
+      agent: false,
+      headers: {
+        'user-agent': request.userAgent,
+        accept: 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
+      },
+    };
+    if (!request.allowPrivateTargets) options.lookup = publicLookup;
+    const outgoing = client.request(parsed, options, (response) => {
+      settled = true;
+      clearTimeout(timer);
+      const result = { status: response.statusCode, headers: response.headers };
+      response.destroy();
+      resolve(result);
+    });
+    const timer = setTimeout(() => {
+      const error = new Error('timeout');
+      error.code = 'ETIMEDOUT';
+      outgoing.destroy(error);
+    }, request.timeoutMs);
+    outgoing.on('error', (error) => {
+      clearTimeout(timer);
+      if (!settled) reject(error);
+    });
+    outgoing.end();
+  });
+}
+
 async function requestOnce(url, request) {
   let current = url;
   const redirects = [];
   const downgradeAllowed = request.allowHttpsToHttp || (request.httpsToHttpAllowlist || []).some((entry) => entry.url === url);
   for (;;) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), request.timeoutMs);
     let response;
     try {
-      response = await fetch(current, {
-        method: 'GET',
-        redirect: 'manual',
-        signal: controller.signal,
-        headers: {
-          'user-agent': request.userAgent,
-          accept: 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
-        },
-      });
+      response = await requestHeaders(current, request);
     } catch (error) {
-      clearTimeout(timer);
-      return { transportError: error.name === 'AbortError' ? 'timeout' : error.message, finalUrl: current, redirects };
+      if (error.code === 'PRIVATE_TARGET') return { policyError: error.message, finalUrl: current, redirects };
+      return { transportError: error.code === 'ETIMEDOUT' ? 'timeout' : error.message, finalUrl: current, redirects };
     }
-    clearTimeout(timer);
 
     if (response.status >= 300 && response.status < 400) {
-      await response.body?.cancel();
-      const location = response.headers.get('location');
+      const location = response.headers.location;
       if (!location) return { policyError: `redirect ${response.status} has no Location header`, status: response.status, finalUrl: current, redirects };
       if (redirects.length >= request.maxRedirects) {
         return { policyError: `redirect limit ${request.maxRedirects} exceeded`, status: response.status, finalUrl: current, redirects };
@@ -237,7 +312,6 @@ async function requestOnce(url, request) {
       continue;
     }
 
-    await response.body?.cancel();
     return { status: response.status, finalUrl: current, redirects };
   }
 }
@@ -370,7 +444,7 @@ function createFixtureServer() {
   const server = http.createServer((request, response) => {
     const pathname = new URL(request.url, 'http://127.0.0.1').pathname;
     counters.set(pathname, (counters.get(pathname) || 0) + 1);
-    if (pathname === '/ok') response.writeHead(200).end('ok');
+    if (pathname === '/ok' || pathname === '/reference') response.writeHead(200).end('ok');
     else if (pathname === '/redirect') response.writeHead(302, { location: '/ok' }).end();
     else if (pathname === '/retry' && counters.get(pathname) === 1) response.writeHead(503).end('retry');
     else if (pathname === '/retry') response.writeHead(200).end('recovered');
@@ -411,6 +485,8 @@ async function selfTest() {
   const fixtureRoot = fs.mkdtempSync(path.join(tempParent, 'external-link-monitor-'));
   const { server, counters } = createFixtureServer();
   try {
+    const localhostLookupError = await new Promise((resolve) => publicLookup('localhost', {}, (error) => resolve(error)));
+    invariant(localhostLookupError && localhostLookupError.code === 'PRIVATE_TARGET', 'self-test DNS lookup did not reject localhost/private resolution');
     await new Promise((resolve, reject) => server.listen(0, '127.0.0.1', (error) => error ? reject(error) : resolve()));
     const base = `http://127.0.0.1:${server.address().port}`;
     const sourceRoot = path.join(fixtureRoot, 'src');
@@ -423,6 +499,8 @@ async function selfTest() {
       `[missing](${base}/not-found)`,
       `[gone](${base}/gone)`,
       `[transient](${base}/transient)`,
+      '[reference][paper]',
+      `[paper]: ${base}/reference`,
       '`[code](https://example.invalid/ignored)`',
     ].join('\n'));
     const config = {
@@ -432,8 +510,10 @@ async function selfTest() {
       request: { timeoutMs: 500, retries: 2, retryDelayMs: 5, concurrency: 3, maxRedirects: 3, allowHttpsToHttp: false, allowPrivateTargets: true, httpsToHttpAllowlist: [], userAgent: 'fixture-monitor/1.0' },
     };
     const inventory = buildInventory(config, fixtureRoot);
-    invariant(inventory.links.length === 6, `self-test expected 6 unique URLs, got ${inventory.links.length}`);
+    invariant(inventory.links.length === 7, `self-test expected 7 unique URLs, got ${inventory.links.length}`);
     invariant(inventory.links.find((link) => link.url === normalizeUrl(`${base}/ok`)).occurrences.length === 2, 'self-test did not de-duplicate the duplicate URL');
+    const referenceLink = inventory.links.find((link) => link.url === normalizeUrl(`${base}/reference`));
+    invariant(referenceLink && referenceLink.occurrences.length === 1, 'self-test did not extract the used reference-style link exactly once');
 
     let missingRequiredDetected = false;
     try {
