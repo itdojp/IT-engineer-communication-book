@@ -84,6 +84,111 @@ function lineNumberAt(text, index) {
   return line;
 }
 
+function isEscaped(text, index) {
+  let backslashes = 0;
+  for (let cursor = index - 1; cursor >= 0 && text[cursor] === '\\'; cursor -= 1) backslashes += 1;
+  return backslashes % 2 === 1;
+}
+
+function openingLabelBracket(text, closingIndex) {
+  let nested = 0;
+  for (let index = closingIndex - 1; index >= 0; index -= 1) {
+    if (isEscaped(text, index)) continue;
+    if (text[index] === ']') nested += 1;
+    if (text[index] === '[') {
+      if (nested === 0) return index;
+      nested -= 1;
+    }
+  }
+  return -1;
+}
+
+function unescapeMarkdownDestination(value) {
+  return value.replace(/\\([!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~-])/g, '$1');
+}
+
+function extractInlineMarkdownLinks(text) {
+  const links = [];
+  for (let closingLabel = 0; closingLabel < text.length - 1; closingLabel += 1) {
+    if (text[closingLabel] !== ']' || text[closingLabel + 1] !== '(' || isEscaped(text, closingLabel)) continue;
+    const openingLabel = openingLabelBracket(text, closingLabel);
+    if (openingLabel < 0) continue;
+    let cursor = closingLabel + 2;
+    while (/[ \t\n]/.test(text[cursor] || '')) cursor += 1;
+    let destination = '';
+    let closingLink = -1;
+    if (text[cursor] === '<') {
+      cursor += 1;
+      while (cursor < text.length) {
+        if (text[cursor] === '>' && !isEscaped(text, cursor)) {
+          cursor += 1;
+          break;
+        }
+        destination += text[cursor];
+        cursor += 1;
+      }
+    } else {
+      let depth = 0;
+      while (cursor < text.length) {
+        const character = text[cursor];
+        if (character === '\\' && cursor + 1 < text.length) {
+          destination += `${character}${text[cursor + 1]}`;
+          cursor += 2;
+          continue;
+        }
+        if (character === '(') {
+          depth += 1;
+          destination += character;
+          cursor += 1;
+          continue;
+        }
+        if (character === ')') {
+          if (depth === 0) {
+            closingLink = cursor;
+            break;
+          }
+          depth -= 1;
+          destination += character;
+          cursor += 1;
+          continue;
+        }
+        if (/\s/.test(character) && depth === 0) break;
+        destination += character;
+        cursor += 1;
+      }
+    }
+    if (closingLink < 0) {
+      let quote = null;
+      let titleDepth = 0;
+      for (; cursor < text.length; cursor += 1) {
+        const character = text[cursor];
+        if (character === '\\') {
+          cursor += 1;
+          continue;
+        }
+        if (quote) {
+          if (character === quote) quote = null;
+          continue;
+        }
+        if (character === '"' || character === "'") {
+          quote = character;
+          continue;
+        }
+        if (character === '(') titleDepth += 1;
+        else if (character === ')' && titleDepth > 0) titleDepth -= 1;
+        else if (character === ')' && titleDepth === 0) {
+          closingLink = cursor;
+          break;
+        }
+      }
+    }
+    if (closingLink < 0 || !/^https?:\/\//i.test(destination)) continue;
+    links.push({ url: normalizeUrl(unescapeMarkdownDestination(destination)), line: lineNumberAt(text, closingLabel), start: openingLabel, end: closingLink + 1 });
+    closingLabel = closingLink;
+  }
+  return links;
+}
+
 function extractHttpLinks(markdown) {
   const text = withoutCode(markdown);
   const matches = [];
@@ -117,14 +222,22 @@ function extractHttpLinks(markdown) {
     }
   }
   const directMarkdown = directText.join('');
+  const inlineLinks = extractInlineMarkdownLinks(directMarkdown);
+  matches.push(...inlineLinks.map(({ url, line }) => ({ url, line })));
+  const remainingText = [...directMarkdown];
+  for (const link of inlineLinks) {
+    for (let index = link.start; index < link.end; index += 1) {
+      if (remainingText[index] !== '\n') remainingText[index] = ' ';
+    }
+  }
+  const remainingMarkdown = remainingText.join('');
   const patterns = [
-    /!?\[[^\]]*\]\(\s*(https?:\/\/[^\s)]+)(?:\s+(?:"[^"]*"|'[^']*'))?\s*\)/g,
     /<(https?:\/\/[^>\s]+)>/g,
     /<a\b[^>]*\bhref\s*=\s*["'](https?:\/\/[^"']+)["'][^>]*>/gi,
   ];
   for (const pattern of patterns) {
-    for (const match of directMarkdown.matchAll(pattern)) {
-      matches.push({ url: normalizeUrl(match[1]), line: lineNumberAt(directMarkdown, match.index) });
+    for (const match of remainingMarkdown.matchAll(pattern)) {
+      matches.push({ url: normalizeUrl(match[1]), line: lineNumberAt(remainingMarkdown, match.index) });
     }
   }
   return matches.sort((left, right) => left.line - right.line || left.url.localeCompare(right.url));
@@ -444,7 +557,7 @@ function createFixtureServer() {
   const server = http.createServer((request, response) => {
     const pathname = new URL(request.url, 'http://127.0.0.1').pathname;
     counters.set(pathname, (counters.get(pathname) || 0) + 1);
-    if (pathname === '/ok' || pathname === '/reference') response.writeHead(200).end('ok');
+    if (pathname === '/ok' || pathname === '/reference' || pathname === '/report_(final)' || pathname === '/angle') response.writeHead(200).end('ok');
     else if (pathname === '/redirect') response.writeHead(302, { location: '/ok' }).end();
     else if (pathname === '/retry' && counters.get(pathname) === 1) response.writeHead(503).end('retry');
     else if (pathname === '/retry') response.writeHead(200).end('recovered');
@@ -499,6 +612,8 @@ async function selfTest() {
       `[missing](${base}/not-found)`,
       `[gone](${base}/gone)`,
       `[transient](${base}/transient)`,
+      `[balanced](${base}/report_(final))`,
+      `[angle](<${base}/angle> "title")`,
       '[reference][paper]',
       `[paper]: ${base}/reference`,
       '`[code](https://example.invalid/ignored)`',
@@ -510,10 +625,12 @@ async function selfTest() {
       request: { timeoutMs: 500, retries: 2, retryDelayMs: 5, concurrency: 3, maxRedirects: 3, allowHttpsToHttp: false, allowPrivateTargets: true, httpsToHttpAllowlist: [], userAgent: 'fixture-monitor/1.0' },
     };
     const inventory = buildInventory(config, fixtureRoot);
-    invariant(inventory.links.length === 7, `self-test expected 7 unique URLs, got ${inventory.links.length}`);
+    invariant(inventory.links.length === 9, `self-test expected 9 unique URLs, got ${inventory.links.length}`);
     invariant(inventory.links.find((link) => link.url === normalizeUrl(`${base}/ok`)).occurrences.length === 2, 'self-test did not de-duplicate the duplicate URL');
     const referenceLink = inventory.links.find((link) => link.url === normalizeUrl(`${base}/reference`));
     invariant(referenceLink && referenceLink.occurrences.length === 1, 'self-test did not extract the used reference-style link exactly once');
+    invariant(inventory.links.some((link) => link.url === normalizeUrl(`${base}/report_(final)`)), 'self-test did not preserve a balanced-parenthesis destination');
+    invariant(inventory.links.find((link) => link.url === normalizeUrl(`${base}/angle`)).occurrences.length === 1, 'self-test angle destination was missed or counted twice');
 
     let missingRequiredDetected = false;
     try {
