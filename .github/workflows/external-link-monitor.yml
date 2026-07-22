@@ -1,0 +1,88 @@
+name: External Link Monitor
+
+on:
+  schedule:
+    - cron: '27 4 * * 3'
+  workflow_dispatch: {}
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: external-link-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    name: External link monitor
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22.22.2'
+
+      - name: Probe canonical external links
+        id: probe
+        shell: bash
+        run: |
+          set +e
+          node scripts/check-external-links.js \
+            --json external-link-report.json \
+            --markdown external-link-summary.md
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Publish job summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f external-link-summary.md ]; then
+            cat external-link-summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## External link monitor" >> "$GITHUB_STEP_SUMMARY"
+            echo "Monitor did not produce a Markdown report." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload monitor evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: external-link-monitor-report
+          path: |
+            external-link-report.json
+            external-link-summary.md
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Evaluate monitor result
+        if: always()
+        shell: bash
+        env:
+          MONITOR_EXIT_CODE: ${{ steps.probe.outputs.exit_code }}
+        run: |
+          case "${MONITOR_EXIT_CODE:-2}" in
+            0)
+              echo "No permanent external-link findings."
+              ;;
+            1)
+              echo "::error::Permanent 404/410 or redirect-policy findings were detected. See the report artifact."
+              exit 1
+              ;;
+            2)
+              echo "::error::External-link monitor infrastructure/configuration failed. See the report artifact."
+              exit 1
+              ;;
+            *)
+              echo "::error::Unexpected monitor exit code: ${MONITOR_EXIT_CODE:-missing}"
+              exit 1
+              ;;
+          esac
