@@ -30,11 +30,14 @@
 npm run check:content-drift
 npm run check:metadata
 npm run test:metadata-ux
+npm run test:external-links
 npm test
 npm run build
 ```
 
 `test:metadata-ux` は一時copyのUX module flagを1件だけ反転し、source checkerが不一致を検出することを確認します。`build`はJekyll生成後の`docs/_site/book-config.json`についても、canonicalなUX profileと全module flagsの一致を検査します。
+
+外部HTTP(S)参照はPR QAから分離し、scheduled/manual workflowで監視します。local HTTP serverによる決定的な分類testは`test:external-links`、実ネットワークprobeは`npm run check:external-links`です。分類・artifact・一時ignoreの保守手順は[`project-management/external-link-monitor.md`](project-management/external-link-monitor.md)を参照してください。
 
 実行内容:
 

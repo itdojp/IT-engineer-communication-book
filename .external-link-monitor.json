@@ -1,0 +1,26 @@
+{
+  "sourceRoots": [
+    "src"
+  ],
+  "requiredUrls": [
+    "https://itdojp.github.io/ai-communication-book/",
+    "https://itdojp.github.io/negotiation-for-engineers-book/"
+  ],
+  "ignore": [],
+  "request": {
+    "timeoutMs": 10000,
+    "retries": 2,
+    "retryDelayMs": 1000,
+    "concurrency": 4,
+    "maxRedirects": 5,
+    "allowHttpsToHttp": false,
+    "allowPrivateTargets": false,
+    "httpsToHttpAllowlist": [
+      {
+        "url": "https://doi.org/10.2307/2666999",
+        "reason": "The DOI resolver emits one legacy HTTP Location hop before the publisher restores HTTPS"
+      }
+    ],
+    "userAgent": "ITDO-Book-Link-Monitor/1.0 (+https://github.com/itdojp/IT-engineer-communication-book)"
+  }
+}
